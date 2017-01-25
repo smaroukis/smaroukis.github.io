@@ -11,7 +11,9 @@ layout: default
       <div class="entry">
         {{ post.excerpt }}
       </div>
-      {{% include line_stream.html %}}
+
+      <div w3-include-html="line_stream.html"></div>
+
     </article>
   {% endfor %}
 </div>
