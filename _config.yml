@@ -6,7 +6,12 @@
 name: Spencer Maroukis
 
 # Short bio or description (displayed in the header)
-description: Mostly I like to learn new things.
+description: Electrical engineer @ Pacific Gas & Electric working on the future of the distribution grid.
+
+github: [metadata]
+
+# Theme
+theme: jekyll-theme-leap-day # find these at https://rubygems.org/search?utf8=✓&query=jekyll-theme
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://github.com/smaroukis.png
@@ -73,7 +78,7 @@ sass:
   style: :expanded # You might prefer to minify using :compressed
 
 # Use the following plug-ins
-gems:
+plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
 
