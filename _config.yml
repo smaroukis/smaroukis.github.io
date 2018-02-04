@@ -19,6 +19,10 @@ markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
 permalink:         /articles/:year-:month/:title
+theme: leonids
+
+sass:
+    sass_dir: ./_sass
 
 kramdown:
   auto_ids: true
