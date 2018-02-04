@@ -1,0 +1,20 @@
+# careers section data
+# if you don't have language feature(language.yml is empty), ignore "i18n" items
+- name: PG&E
+  date: November 2017 - <i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
+  job: Engineer in Training
+
+- name: Pacific Gas & Electric
+  link: https://www.pge.com
+  date: September 2017 - <i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
+  job: Engineer, Grid Integration & Innovation
+
+- name: The Edible Project
+  link: https://itunes.apple.com/us/app/edible-food-for-any-diet-or-allergy/id1192997037?mt=8
+  date: June 2017 - August 2017
+  job: Content Creator
+
+- name: The University of Michigan Power and Energy Laboratory
+  link: eecs.umich.edu/mpel/
+  date: June 2015 - May 2016
+  job: Undergraduate Researcher 
