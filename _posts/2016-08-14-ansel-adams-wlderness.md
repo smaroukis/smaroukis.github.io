@@ -5,11 +5,11 @@ excerpt: "A scramble up Mt. Ritter for my first mountaineering adventure"
 categories: [hiking, outdoors, California]
 ---
 
-![Cover]({{site.url}}/img/2016/ansel_adams/cover.JPG)
-
 I was fortunate enough to undergo my first true mountaineering experience with two weekends left in summer internship at Pacific Gas & Electric. It was a weekend trip to Ansel Adams wilderness, with epitomic views of the High Sierras and idyllic lakeside camping. We hiked in 6 miles to camp at Ediza Lake and the next day undertook the class 3 climb to the top of Mount Ritter (3,700ft elevation change over 3 miles, 13,143 ft summit).  The access to wilderness in California is unprecedented, and if you're willing to drive 4.5 hours after work on a Friday, you'll be rewarded with weekend memories that last a lifetime. (shoutout to Ryan and Aaron for letting my pass out in the  back of the car as they drove both ways).
 
-[//]: # (TODO insert ansel adams mapbox map route)
+You can see the route below, starting at the Agnew Meadows trailhead near the Devils Postpile National Monument, our campsite at Ediza Lake, and the class 3 route to the top of Ritter.
+
+<iframe width="100%" height="500px" frameBorder="0" src="https://a.tiles.mapbox.com/v4/smaroukis.15aik54i.html?access_token=pk.eyJ1Ijoic21hcm91a2lzIiwiYSI6ImNpcTZyNW96djAwZ3BmbmtrcnZpbXRoMG0ifQ.wlaRgsckB1_vTtYKWEhZJw"></iframe>
 
 Mt. Ritter sits on the edge of Ansel Adams wilderness, the historic photographer that was famous for his black and white prints.
 

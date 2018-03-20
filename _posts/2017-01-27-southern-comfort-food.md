@@ -2,7 +2,7 @@
 layout: post
 title: Southern Comfort Food at Foster Falls
 excerpt: "Michigan Climbing Club trip to Foster Falls"
-categories: [climbing, outdoors]
+categories: [climbing, outdoors, Tennessee]
 ---
 
 ![Cover](/img/foster_falls/ff_cover.jpeg)
