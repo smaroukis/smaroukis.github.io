@@ -5,46 +5,9 @@
     <description>Electrical engineer @ Pacific Gas &amp; Electric working on the future of the distribution grid.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 20 Mar 2018 06:04:16 +0000</pubDate>
-    <lastBuildDate>Tue, 20 Mar 2018 06:04:16 +0000</lastBuildDate>
+    <pubDate>Thu, 22 Mar 2018 15:08:58 +0000</pubDate>
+    <lastBuildDate>Thu, 22 Mar 2018 15:08:58 +0000</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
-    
-      <item>
-        <title>Title</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/img/foster_falls/ff_cover.jpeg&quot; alt=&quot;Cover&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;heading-1&quot;&gt;Heading 1&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/foster_falls/ff_cover.jpeg&quot; alt=&quot;Photo text&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/file/echo-lake-to-angora.pdf&quot;&gt;pdf example&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/articles/2017-01/southern-comfort-food&quot;&gt;Link to a post&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/articles/2017-01/southern-comfort-food&quot;&gt;Link to a post&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;Link to a page&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/file/echo-lake-to-angora.pdf&quot;&gt;Link to a file&lt;/a&gt;&lt;/p&gt;
-
-&lt;div id=&quot;map&quot; class=&quot;map leaflet-container&quot; style=&quot;height: 500px; position:relative;&quot;&gt;&lt;/div&gt;
-
-&lt;script&gt;
-    var map = L.map('map').setView([-118.179,36.495], 10);
-    L.tileLayer('https://api.mapbox.com/styles/v1/smaroukis/cj079ohrl00012ro37wtvmoea/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic21hcm91a2lzIiwiYSI6ImNpcTZyNW96djAwZ3BmbmtrcnZpbXRoMG0ifQ.wlaRgsckB1_vTtYKWEhZJw').addTo(map)
-&lt;/script&gt;
-
-</description>
-        <pubDate>Mon, 12 Mar 2018 06:35:21 +0000</pubDate>
-        <link>http://localhost:4000/articles/2018-03/YYYY-MM-DD-example-post</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2018-03/YYYY-MM-DD-example-post</guid>
-        
-        
-        <category>tag1</category>
-        
-        <category>tag2</category>
-        
-      </item>
     
       <item>
         <title>Southern Comfort Food at Foster Falls</title>
@@ -81,62 +44,6 @@ an Unmarked 5.9+/5.10a @ Lower Jimmy (all the way to the left)&lt;/li&gt;
         <category>outdoors</category>
         
         <category>Tennessee</category>
-        
-      </item>
-    
-      <item>
-        <title>On the Road Toward Self-Learning Japanese</title>
-        <description>&lt;p&gt;I will soon receive an International Minor for Engineers from the University of Michigan, which requires 4 semesters of language proficiency and 10 globally focused credits ranging from world economics to religion. I quickly finished my language requirements taking 3rd and 4th semester French as a Freshman and studying abroad as a Sophomore. Another year passed and I found myself two semesters away from graduating, with a nagging feeling in my soul. Influenced by Rolfe Potts’ Vagabonding, having the desire to serve a community and live abroad, I decided to pursue something I had been thinking about for a while but had not dedicated the time and effort to - learning Japanese.&lt;/p&gt;
-
-&lt;p&gt;On the path of learning anything, it is important to surround oneself with motivation and support. Unfortunately it was October, and the Japanese class at Michigan spans a whole year. So I decided to teach myself with the hopes of testing into the second semester class in January. The rest of this post describes the tools and system I used. (Update: I made it.)&lt;/p&gt;
-
-&lt;p&gt;My first step was setting a schedule and then getting a system in place for learning, week by week. One of the greatest language learning and memory resources is Anki. Anki has a strong community of developers and language learners, and is also used by many medical students. &lt;/p&gt;
-
-&lt;p&gt;There are a ton of Japanese language learning resources out there. The takeaways from scouring many of them are: &lt;/p&gt;
-
-&lt;p&gt;master hiragana and katakana, NO ROMANI ALLOWED
-use the Genki textbooks for easy to understand grammar and great illustrations
-learn kanji starting with simple strokes first, learning radicals and mnemonics to build upon for future complex characters
-use SRS and Anki for recall&lt;/p&gt;
-
-&lt;h2 id=&quot;tools-im-using&quot;&gt;TOOLS I’M USING&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Genki I (Textbook and Audio) for grammar and vocab
-    &lt;h3 id=&quot;anki-shared-decks&quot;&gt;Anki Shared Decks&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/1758197267&quot;&gt;Genki I Grammar (through Chapter 6)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/942922371&quot;&gt;Genki Vocab by Chapter&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/748570187&quot;&gt;KanjiDamage Deck&lt;/a&gt;
-    &lt;h3 id=&quot;anki-add-ons&quot;&gt;Anki Add-ons&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/301952613&quot;&gt;Awesome TTS&lt;/a&gt; - for adding speech to Japanese characters&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/787914845&quot;&gt;Create Copy of Selected Cards&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Japanese Support - generates bulk readings and furigana&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jisho.org&quot;&gt;Jisho.org&lt;/a&gt; (for Mac users: even better is the Alfred Jisho &lt;a href=&quot;https://github.com/janclarin/jisho-alfred-workflow&quot;&gt;workflow&lt;/a&gt; that I found - Japanese vocab is literally a hotkey away)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Japanese-Busy-People-Kana-Workbook/dp/1568364016/ref=pd_sbs_14_t_2?_encoding=UTF8&amp;amp;psc=1&amp;amp;refRID=MQYK016RGC4KD5E5TRX6&quot;&gt;Japanese for Busy People Kana Workbook&lt;/a&gt; - to master hiragana, katakana and subtleties of pronunciation (and those tricky nasal consonants)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://hinative.com&quot;&gt;HiNative&lt;/a&gt; - to ask random quick questions on language, culture, or pronunciation&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://lang-8.com&quot;&gt;Lang8&lt;/a&gt; - for proofreading essays or longer passages&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;recall-vs-recognition---adding-the-possibility-of-reversed-cards-in-anki&quot;&gt;RECALL VS. RECOGNITION - ADDING THE POSSIBILITY OF REVERSED CARDS IN ANKI&lt;/h2&gt;
-&lt;p&gt;For the Anki Genki Vocab deck, I made the following changes&lt;/p&gt;
-
-&lt;p&gt;1) Added in a “Mnemonic” field for hard to remember words&lt;/p&gt;
-
-&lt;p&gt;2) Made the “Recall” card type optional, not prompting with English until I wanted to practice recall later down the line (I believe I can learn a larger amount of vocab faster this way).&lt;/p&gt;
-
-&lt;p&gt;For #2 I had to make the following edits, which is a good way to have the optional-reversed functionality that you see in some of Anki’s default card types.&lt;/p&gt;
-
-&lt;p&gt;Click on Browse, go to the Genki Vocab deck and click “Fields”, adding a field titled “Add Reversed” (spelling is important). After this go into “Cards” on the current deck where you should see the Recognition and Recall card types. To keep the Recall card types as optional for the future, add in the following tag around the displayed content:&lt;/p&gt;
-
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{{# Add Reversed}}...{{/Add Reversed}}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 06 Nov 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2016-11/japanese</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2016-11/japanese</guid>
-        
         
       </item>
     
@@ -200,93 +107,6 @@ use SRS and Anki for recall&lt;/p&gt;
         <category>outdoors</category>
         
         <category>California</category>
-        
-      </item>
-    
-      <item>
-        <title>North Side v. South Side</title>
-        <description>&lt;h2 id=&quot;its-the-ultimate-show-down&quot;&gt;IT’S THE ULTIMATE SHOW DOWN..&lt;/h2&gt;
-&lt;p&gt;Jets vs. Sharks. Biggie vs. Pac. and now… North Campus vs. Central Campus. Quantified.&lt;/p&gt;
-
-&lt;p&gt;If you didn’t go to the University of Michigan or never cared to attend any of your engineering classes, then let me inform you of the rivalry underlying much of the angst that comes with heaping amounts of student debt, cramming for exams, and getting involved in way too many extra curriculars because well, everyone else is.&lt;/p&gt;
-
-&lt;p&gt;North Campus sprung from a need for the university to accommodate its burgeoning student population. Taken from the University of Michigan Millennial Project:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Space on the University of Michigan campus became inadequate to accommodate the post-war growth of the University. In anticipation of this growing need, the Regents had begun to acquire farmland property on the sloping hills lying just to the northeast of the Huron River. Although there were some early thoughts given to relocating the School of Education, Natural Resources, Music, and Fine Arts to the North Campus, the construction of the Phoenix Memorial Project soon re-purposed the site for engineering research. More specifically, the early plans for the North Campus included the Cooley Memorial Laboratory to house the electronics research associated with the Willow Run Laboratories, the Phoenix Memorial Laboratory, the Automotive Laboratory, and a storage library.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Today North Campus houses the engineering campus including classrooms and a research facility, the School of Art and Architecture, the School of Information, and the School of Music, Theatre, and Dance. Also many unfortunate and forever-looked-down-upon freshmen are placed into the 3rd biggest residential hall in the country, Burseley Hall, more often known as the “Dirty Burs”.&lt;/p&gt;
-
-&lt;p&gt;For many, this is where the bitter contempt starts. Missing out on 15 minutes of sleep due to an always cramped bus ride to Central, the worst dining hall food on campus, and late night Ubers or SafeRides back to a lonely, far off dorm room in the boondocks of the student population (it’s October and you need to be looking for a place on Central already for next Fall).&lt;/p&gt;
-
-&lt;p&gt;But for engineers, artists, and the musically inclined, it is likely to be a place akin to home for four years. Late nights in the Dude, the 24 hour library and nap-place-of-choice for many, will become nostalgic pastimes. Some of the best minds in academia do their work in the research centers here, a place which forms the proving ground for ideas that will go on to be the central intellectual property of future Fortune 500 companies.&lt;/p&gt;
-
-&lt;p&gt;And basically everything else is on Central campus, including the largest football stadium in the country, dirty college dive bars posing as sports bars, Saturday morning tailgates, activist gatherings, Blank Slate ice cream, and everything else indicative of a healthy social life.&lt;/p&gt;
-
-&lt;p&gt;I wanted to put the $600 tracking device that I carry around on my body all day to some good use for once, so I decided to compare the data I’ve been collecting through the Moves app using this quantification jewel called Zenobase. Zenobase imports, collects, and stores data that you tell it to, and you can do some pretty cool and simple visualizations with it. It took a late Saturday night but I was able to graph some data on my North Campus vs. Central Campus habits.&lt;/p&gt;
-
-&lt;p&gt;Theoretically I should be spending about a third of my time on North, with engineering classes, work and projects. I compared two months with full datasets, August and September. There are three figures for each, with North being in orange and Central in blue. The top figure is the duration for each day over the month, the left is the time for each day of the week (plotted for Mon-Fri since there is no reason I should be on North on the weekend…barring feelings of loneliness and separation with my engineering kiln), and the right is the hourly spread.&lt;/p&gt;
-
-&lt;p&gt;In August I was working in a lab in EECS from 9-5. Not surprisingly work took up most of the day and is represented in the day of the week spread on the left. Your welcome NSA I’m doing your job for you.&lt;/p&gt;
-
-&lt;p&gt;For September I’m actually a bit surprised at how much I tended to be on Central, because it feels like I’m usually in EECS 1220 until at least 10 every night. Soon with more data I’ll be able to correlate location with type of work, whether I work on Electromagnetics in 1220, Hatcher, or the BBB more. Currently I’m using the Apple Watch I won at Mhacks(!!) with the Hours app to track how much time I spend on each class. Then maybe instead of telling me to stand up each hour my watch will tell me that I should be working on my Data Structures project.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 10 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2016-08/north-side-v-south-side</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2016-08/north-side-v-south-side</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Happy Isles to Half Dome</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/img/foster_falls/ff_cover.jpeg&quot; alt=&quot;Cover&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Half dome in Yosemite is the much proclaimed “hike you must do before you die”. Although the hype is unprecedented, and the tourists abounding, the experience is nevertheless astounding. This was the longest hike I’d ever done at 18 miles over 12 hours. Luckily I was able to bring along my sister and my dad, having only told them I had applied and won the day-permit lottery less than 24 hours before we started at the Happy Isles trailhead. On the way down, I could hear my sister, a former diver at Michigan, saying that it was one of the hardest things she had ever done. So much for division 1 athletics.&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;500px&quot; frameborder=&quot;0&quot; src=&quot;https://a.tiles.mapbox.com/v4/smaroukis.0ihna43h.html?access_token=pk.eyJ1Ijoic21hcm91a2lzIiwiYSI6ImNpcTZyNW96djAwZ3BmbmtrcnZpbXRoMG0ifQ.wlaRgsckB1_vTtYKWEhZJw&quot;&gt;&lt;/iframe&gt;
-
-</description>
-        <pubDate>Tue, 02 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2016-08/half-dome</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2016-08/half-dome</guid>
-        
-        
-        <category>2016</category>
-        
-        <category>California</category>
-        
-        <category>hiking</category>
-        
-        <category>outdoors</category>
-        
-        <category>2016</category>
-        
-      </item>
-    
-      <item>
-        <title>L'alpe D'huez</title>
-        <description>&lt;p&gt;I remember as a little kid, watching on television as the announcer enthusiastically kept mentioning this strange sounding word, “peloton”. I became transfixed on the strategical maneuvers of this newfangled entity, made up of nothing more than grown men on bicycles. There was apparently a hierarchy of teams within this peloton and within these teams there were leaders, cyclists who were so remarkable in the hearts and minds of their colleagues that their kit-mates would lay a whole month-long bike race on the line so as to get their leader a few more minutes in the standings.&lt;/p&gt;
-
-&lt;p&gt;The drama of the world’s biggest cycling race mirrors the formidable Alps. As a once-in-a-lifetime experience, I had brought my bike overseas as I studied abroad in Paris, fantasizing of hammering pedal over pedal on the same roads helicopters pan cameras over every July. My dad was ecstatic to visit me and travel to Le Bourg d’Oisans, a small village near the L’Alpe D’Huez summit, one of the most famous climbs in the history of &lt;strong&gt;le Tour&lt;/strong&gt;. Below is the route we did on the second day, halfway up to Huez and over to the formidable Col de Sarenne, which was at the time the most difficult bike ride I had been on, and certainly the most beautiful.&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;500px&quot; frameborder=&quot;0&quot; src=&quot;https://a.tiles.mapbox.com/v4/smaroukis.1aifogk4.html?access_token=pk.eyJ1Ijoic21hcm91a2lzIiwiYSI6ImNpcTZyNW96djAwZ3BmbmtrcnZpbXRoMG0ifQ.wlaRgsckB1_vTtYKWEhZJw&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>Thu, 21 May 2015 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2015-05/alpe-dhuez</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2015-05/alpe-dhuez</guid>
-        
-        
-        <category>2015</category>
-        
-        <category>France</category>
-        
-        <category>outdoors</category>
-        
-        <category>cycling</category>
-        
-        <category>2015</category>
         
       </item>
     

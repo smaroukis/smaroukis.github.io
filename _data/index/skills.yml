@@ -2,5 +2,5 @@
 
 label: Ability
 id : cs
-aspects: Power Systems, Control Systems, Python, GIS, Latex, bash
-percentage: 85, 70, 65, 15, 20, 30
+aspects: Power Flow, Symmetrical Components, Control Systems, Python, bash, Latex
+percentage: 85, 65, 80, 80, 40, 40
