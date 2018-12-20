@@ -5,7 +5,7 @@ excerpt: "Some resources for getting into climbing training: spreadsheets, posts
 categories: [climbing, training, quantified-self]
 ---
 
-tl;dr just download the [bouldering logbook]({{ site.baseurl }}{% link /file/bouldering-log.pdf %}).
+tl;dr just download the [bouldering logbook]({{ site.baseurl }} /file/bouldering-log.pdf).
 
 ## Why Train?
 
@@ -20,12 +20,12 @@ And when training season rolls around in the Spring, you can bet that in this mo
 
 ## Workouts
 - [bouldering circuits](https://www.tensionclimbing.com/tension-climbing-blog/2017/5/20/training-with-bouldering-circuits) by tension climbing. 3 different circuits spanning the power-to-endurance spectrum.
-- Steve Maisch's [pyramids](https://touchstoneclimbing.com/building-a-pyramid-for-better-climbing/). Basically you need to build out your pyramid by sending easier climbs and not trying to redpoint everything. My notes in a [pdf]({{ site.baseurl }}{% link /file/pyramid-training.pdf %}) since Steve's website was down when I wrote this. More of reality check/tracking tool.
+- Steve Maisch's [pyramids](https://touchstoneclimbing.com/building-a-pyramid-for-better-climbing/). Basically you need to build out your pyramid by sending easier climbs and not trying to redpoint everything. My notes in a [pdf]({{ site.baseurl }}/file/pyramid-training.pdf) since Steve's website was down when I wrote this. More of reality check/tracking tool.
 
 ## Tracking
 I'm not the [first](https://www.mountainproject.com/forum/topic/109211980/the-nerdy-joy-of-tracking-your-training), [nor](http://stevenlow.org/my-4-year-self-assessment-of-climbing-strength-training-and-hangboard/) the [last](http://therockgymlog.byethost7.com/MartinsTraining.html) to track training, but I'd thought I'd share what I'm using.
 
-Since you can't improve what you can't measure, I've made a [pdf]({{ site.baseurl }}{% link /file/bouldering-log.pdf %}) that, if you print with the binding on the _short edge_, will turn into a booklet perfectly innocuous enough to fold into your chalk bag.
+Since you can't improve what you can't measure, I've made a [pdf]({{ site.baseurl }}/file/bouldering-log.pdf) that, if you print with the binding on the _short edge_, will turn into a booklet perfectly innocuous enough to fold into your chalk bag.
 
 I like to quantify the bouldering circuit workouts above by:
 
