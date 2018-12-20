@@ -2,12 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spencer</title>
-    <description>Electrical engineer @ Pacific Gas &amp; Electric working on the future of the distribution grid.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 20 Mar 2018 06:04:16 +0000</pubDate>
-    <lastBuildDate>Tue, 20 Mar 2018 06:04:16 +0000</lastBuildDate>
-    <generator>Jekyll v3.6.2</generator>
+    <description>Electrical engineer @ Pacific Gas &amp; Electric operating the distribution grid.</description>
+    <link>https://smaroukis.github.io/</link>
+    <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 17 Dec 2018 07:43:57 +0000</pubDate>
+    <lastBuildDate>Mon, 17 Dec 2018 07:43:57 +0000</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Climbing Training — Train to Perform</title>
+        <description>&lt;p&gt;tl;dr just download the &lt;a href=&quot;/file/bouldering-log.pdf&quot;&gt;bouldering logbook&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-train&quot;&gt;Why Train?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Training and performance are two different things. If you’re trying to perform all the time, you aren’t going to realize your potential. If you’re not trying to realize your potential, then don’t bother reading the rest of this.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://www.tensionclimbing.com/tension-climbing-blog/2017/4/2/rules&quot;&gt;quote from tension climbing&lt;/a&gt; sums it up well. At times we may wonder why we go to the nearest warehouse-turned-climbing-gym to slap, crimp, and pinch “plastic globs attached to plywood walls”, we may be frustrated with our stagnating climbing grade, we may curse in frustration at another rainy weekend or lack of dependable partners. But could we imagine a life without climbing, without purpose?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The mystery of human existence lies not in just staying alive, but in finding something to live for.
+~ &lt;em&gt;The Brothers Karamazov&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And when training season rolls around in the Spring, you can bet that in this moment, climbing is what we live for.&lt;/p&gt;
+
+&lt;h2 id=&quot;workouts&quot;&gt;Workouts&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tensionclimbing.com/tension-climbing-blog/2017/5/20/training-with-bouldering-circuits&quot;&gt;bouldering circuits&lt;/a&gt; by tension climbing. 3 different circuits spanning the power-to-endurance spectrum.&lt;/li&gt;
+  &lt;li&gt;Steve Maisch’s &lt;a href=&quot;https://touchstoneclimbing.com/building-a-pyramid-for-better-climbing/&quot;&gt;pyramids&lt;/a&gt;. Basically you need to build out your pyramid by sending easier climbs and not trying to redpoint everything. My notes in a &lt;a href=&quot;/file/pyramid-training.pdf&quot;&gt;pdf&lt;/a&gt; since Steve’s website was down when I wrote this. More of reality check/tracking tool.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;tracking&quot;&gt;Tracking&lt;/h2&gt;
+&lt;p&gt;I’m not the &lt;a href=&quot;https://www.mountainproject.com/forum/topic/109211980/the-nerdy-joy-of-tracking-your-training&quot;&gt;first&lt;/a&gt;, &lt;a href=&quot;http://stevenlow.org/my-4-year-self-assessment-of-climbing-strength-training-and-hangboard/&quot;&gt;nor&lt;/a&gt; the &lt;a href=&quot;http://therockgymlog.byethost7.com/MartinsTraining.html&quot;&gt;last&lt;/a&gt; to track training, but I’d thought I’d share what I’m using.&lt;/p&gt;
+
+&lt;p&gt;Since you can’t improve what you can’t measure, I’ve made a &lt;a href=&quot;/file/bouldering-log.pdf&quot;&gt;pdf&lt;/a&gt; that, if you print with the binding on the &lt;em&gt;short edge&lt;/em&gt;, will turn into a booklet perfectly innocuous enough to fold into your chalk bag.&lt;/p&gt;
+
+&lt;p&gt;I like to quantify the bouldering circuit workouts above by:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;number of sets&lt;/li&gt;
+  &lt;li&gt;number of rounds within a set (where you climb multiple problems – either linked or unlinked)&lt;/li&gt;
+  &lt;li&gt;rest between rounds and between sets&lt;/li&gt;
+  &lt;li&gt;angle of wall&lt;/li&gt;
+  &lt;li&gt;type of holds&lt;/li&gt;
+  &lt;li&gt;V-difficulty&lt;/li&gt;
+  &lt;li&gt;total time climbing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then it is easy to compare if you’re working more on the power side (less total time on the wall versus total time of workout) or if you’re more on the endurance side.&lt;/p&gt;
+
+&lt;p&gt;I’ve found it easiest to plan out ahead of time what I want to do, and then execute when I get to the gym. But what are you doing still reading? Get off the compter and get to the gym!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+        <link>https://smaroukis.github.io/articles/2018-04/climbing-training</link>
+        <guid isPermaLink="true">https://smaroukis.github.io/articles/2018-04/climbing-training</guid>
+        
+        
+        <category>climbing</category>
+        
+        <category>training</category>
+        
+        <category>quantified-self</category>
+        
+      </item>
     
       <item>
         <title>Title</title>
@@ -72,8 +131,8 @@ an Unmarked 5.9+/5.10a @ Lower Jimmy (all the way to the left)&lt;/li&gt;
 
 </description>
         <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2017-01/southern-comfort-food</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2017-01/southern-comfort-food</guid>
+        <link>https://smaroukis.github.io/articles/2017-01/southern-comfort-food</link>
+        <guid isPermaLink="true">https://smaroukis.github.io/articles/2017-01/southern-comfort-food</guid>
         
         
         <category>climbing</category>
@@ -150,49 +209,49 @@ use SRS and Anki for recall&lt;/p&gt;
 
 &lt;p&gt;Mt. Ritter sits on the edge of Ansel Adams wilderness, the historic photographer that was famous for his black and white prints.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/2016/ansel_adams/ryan-lake.jpg&quot; alt=&quot;Ryan's BW photo of the lake&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/img/2016/ansel_adams/ryan-lake.jpg&quot; alt=&quot;Ryan&#39;s BW photo of the lake&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Ryan woke up early and took some Ansel-inspired pictures of Ediza lake and the Minarets.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/2016/ansel_adams/ryan-minarets.jpg&quot; alt=&quot;Ryan BW Minarets&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/img/2016/ansel_adams/ryan-minarets.jpg&quot; alt=&quot;Ryan BW Minarets&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Then we set off for a big day – three miles to the summit, then 9 more back down all the way to the trailhead.&lt;/p&gt;
 
 &lt;p&gt;The first few miles were meandering up the meadows towards the base of the mountain.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/2016/ansel_adams/approach.jpg&quot; alt=&quot;approach&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/img/2016/ansel_adams/approach.jpg&quot; alt=&quot;approach&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Then there are some waterfall scrambles on tight precipices, but it is only class 2 or 3. Soon you start to feel very high.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;http://localhost:4000/img/2016/ansel_adams/moraines_below.JPG&quot; /&gt;
+    &lt;img src=&quot;https://smaroukis.github.io/img/2016/ansel_adams/moraines_below.JPG&quot; /&gt;
     &lt;figcaption&gt; Looking back at the moraines below. &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;There is mention of a frog looking structure. Once you go around that you should see the scree-filled gully that shoots up to the peak. It’s steep, and the rock is crumbly, but it’s maybe 4th class at most.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;http://localhost:4000/img/2016/ansel_adams/scree1.JPG&quot; /&gt;
+    &lt;img src=&quot;https://smaroukis.github.io/img/2016/ansel_adams/scree1.JPG&quot; /&gt;
     &lt;figcaption&gt; The scree field heads around the corner up and to the right.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/2016/ansel_adams/scree2.JPG&quot; alt=&quot;scree 2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/img/2016/ansel_adams/scree2.JPG&quot; alt=&quot;scree 2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;There was still some snow left, albeit rotten.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/2016/ansel_adams/snowfield1.JPG&quot; alt=&quot;snowfield1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/img/2016/ansel_adams/snowfield1.JPG&quot; alt=&quot;snowfield1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;At the top, it is hard not to feel like you’re on top of the world.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/2016/ansel_adams/cover.JPG&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/img/2016/ansel_adams/cover.JPG&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;From the summit, looking out at the whole of Ansel Adams Wilderness&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/2016/ansel_adams/summit-3.JPG&quot; alt=&quot;me&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/img/2016/ansel_adams/summit-3.JPG&quot; alt=&quot;me&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2016-08/ansel-adams-wlderness</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2016-08/ansel-adams-wlderness</guid>
+        <link>https://smaroukis.github.io/articles/2016-08/ansel-adams-wlderness</link>
+        <guid isPermaLink="true">https://smaroukis.github.io/articles/2016-08/ansel-adams-wlderness</guid>
         
         
         <category>hiking</category>
