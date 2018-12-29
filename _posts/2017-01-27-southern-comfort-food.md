@@ -2,10 +2,11 @@
 layout: post
 title: Southern Comfort Food at Foster Falls
 excerpt: "Michigan Climbing Club trip to Foster Falls"
-categories: [climbing, outdoors, Tennessee]
+categories: [outdoors]
+tags: [outdoors]
 ---
 
-![Cover](/img/foster_falls/ff_cover.jpeg)
+![Cover](/assets/img/foster_falls/ff_cover.jpeg)
 
 I was itching to get back outside to climb on some real rock ever since my first outdoor trip to the Red River Gorge in October '16. We originally planned on going back to the Red in January, but winter finally decided to show up so we pushed the trip a few hours further to Tennessee. Having grown up outside of Chattanooga between the ages of 4 and 12, I had no idea how much good climbing there was in the surrounding area. After a weekend though I had a new moniker stuck in my head, "Foster Falls ain't no joke!".
 

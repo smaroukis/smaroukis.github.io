@@ -2,7 +2,8 @@
 layout: post
 title: Asymmetrical Fault Currents
 excerpt: "Overview of asymmetrical fault currents and curve of asymmetry factors back-calculation"
-categories: [power systems, engineering]
+categories: [power systems engineering]
+tags: [power systems engineering]
 ---
 
 > Asymmetry in fault currents due to the inductive nature of power systems results in higher-than-normal transient conditions that may exceed the interrupting rating of devices or cause saturation of relaying CTs (and thus device misoperation).
@@ -18,21 +19,25 @@ The asymmetry, with respect to the zero axis of the sinusoidal current, arises f
 
 Asymmetrical current can be broken into both a purely symmetrical AC component and a purely aperiodic DC component. The AC component is symmetrical about the y-axis. The DC component is exponentially decaying with a time constant proportional to X/R. The initial magnitude of the DC current depends on the time of occurence due to the closing phase angle determined by the offset from the zero-crossing of the voltage waveform and the system phase angle, $$\theta=\tan^{-1}(X/R)$$.
 
-![A basic asymmetrical current waveform]({{"/code/latex/asym-current/asym-current.pdf"}})
+![A basic asymmetrical current waveform]({{"/assets/latex/asym-current/asym-current.pdf"}})
 
-Asymmetrical Current
+The asymmetrical waveform is the sum of the DC and AC components. In a true power system, it must start from zero as shown.
 
-:   $$ i_{asym}(t) = i_{dc}(t) + i_{ac}(t) $$
+## Case: Inductive System, $$X>>R$$, $$\theta \approx 90°$$
 
-For the simplified case with no offset:
+### Conditions for Maximum DC Offset
 
-$$ i_{ac}(t) = \sqrt{2} I_{ac} sin(\omega t - \theta) $$
+The worst case is for a fault occuring near a zero-crossing of the voltage where the _closing angle_ $$\alpha=0$$). At this point the current is at a peak, and so an opposing DC current of the same magnitude will be induced. The asymmetric current will then increase until a point when the current sine wave is lagging the voltage by 90°.
 
-$$ i_{dc}(t) = I_{dc} e^{-\omega t R/X} $$
+[//]: Todo Figure
 
-Here we can see the RMS value of the symmetrical waveform, $$ I_{ac} $$, and the starting value of the DC component, $$I_{dc}$$. Having no DC voltage to maintain it, the DC component decays with a time constant $$ \tau=\frac{X/R}{2\pi f} $$. R/X can be thought of as a damping coefficient for the DC current, since the time constant decreases with increased R (relative to X). Usually this value is given in X/R, where a larger value will cause a slower decay. IEEE/IEC standards use X/R $$=$$ 17 ($$\tau =$$ 45ms or ~2.7 cycles), which is relatively high for a distribution breaker, but X/R > 50 is not uncommon for a large generator[^2].
+$$ i_{ac}(t) = \sqrt{2} I_{ac} sin(\omega t + \alpha - \theta) $$
 
-Since current cannot change instantaneously in a power system, 
+$$ i_{dc}(t) = I_{dc} e^{-\frac{\omega R}{X}t} $$
+
+Here we can see the RMS value of the symmetrical waveform, $$ I_{ac} $$, and the starting value of the DC component, $$I_{dc}$$. Having no DC voltage to maintain it, the DC component decays with a time constant $$ \tau=\frac{X/R}{\omega} =\frac{L}{R} $$. Usually the system X/R value is given, where a larger value will cause a slower decay. IEEE/IEC standards use X/R $$=$$ 17 ($$\tau =$$ 45ms or ~2.7 cycles), which is an expected value near a distribution breaker, but X/R > 50 is not uncommon for a large generator[^2].
+
+Since current cannot change instantaneously in a power system, the range of the maximum DC offset is
 
 $$
 i_{asym}(t=0)=0 \\
@@ -40,13 +45,14 @@ i_{asym}(t=0)=0 \\
 -\sqrt{2}I_{ac} \le I_{dc} \le \sqrt{2}I_{ac} \\
 $$
 
-For a sinusoidal wave with a DC offset of $$A_0$$ and a purely symmetric magnitude of $$A_1$$, the RMS value is equal to
+In general, for a asymmetric sinsoidal wave with a DC offset of $$A_0$$ and a purely symmetric **peak** of $$A_1$$, the RMS value is equal to[^3]
 
-$$ u_{RMS} = \sqrt{A_0^2 + \frac{A_1^2}{2}} $$[^3]
+$$ u_{RMS} = \sqrt{A_0^2 + \frac{A_1^2}{2}} \\
+= \sqrt{A_0^2 + A_{1,RMS}^2} $$
 
-thus the maximum RMS value that the asymmetric fault current can obtain is 
+thus the maximum RMS value that the asymmetric fault current can obtain is
 
-$$ I_{max, asym} = \sqrt{I_{dc}^2 + I_{ac}^2} \\
+$$ \displaystyle I_{max, asym} = \sqrt{(I_{dc}^2 + I_{ac}^2)} \\
 = \sqrt{3} I_{dc} \\
 = 1.732 \times I_{dc} \\
 $$
@@ -55,15 +61,23 @@ Since in reality the DC component will decay during the first half cycle before 
 
 $$ I_{max,asym} \approx 1.6 $$
 
-[//]: TODO: Fig 1
-
-## Case: Purely Inductive System (R=0)
-
 ### Conditions for No DC Offset
 
-### Conditions for Maximum DC Offset
+Conversely, for no DC offset in this inductive system, if the fault occurs at a voltage peak (zero current crossing), since the closing angle is equal to the system angle, no offset will develop.
+
+In fact the full asymmetrical waveform based on the closing and system angle is 
+
+$$ i_{asym}(t) = \frac{V_f}{Z_f}(sin(\omega t+\alpha-\theta)-sin(\alpha-\theta)e^{-\frac{\omega R}{X}t}) \\
+\alpha=\theta\approx 90°\Rightarrow i_{asym}(t) = \frac{V_f}{Z_f}(sin(\omega t)-0) $$
+
+[//]: TODO Figure
 
 ## Case: System with Resistance Included
+
+$$ i_{asym}(t) = \sqrt I_{ac} (sin(\omega t + \alpha - \theta) - sin(\theta t e^{-\frac{\omega R}{X}t)) $$
+
+Including the component in front of the DC term since previously $$ sin(\theta=90°)=1 $$.
+
 
 ## Equation & Curve of Asymmetric Factor
 
@@ -91,4 +105,4 @@ $$ \kappa(X,R) = \sqrt{1+2e^{-2\pi R/X}} $$
 
 [//]: [^2]: TODO: Generator X/R Citation
 
-[//]: [^3]: TODO: Insert math proof
+[^3]: <https://masteringelectronicsdesign.com/how-to-derive-the-rms-value-of-a-sine-wave-with-a-dc-offset/>

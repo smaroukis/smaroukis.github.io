@@ -37,7 +37,7 @@ kramdown:
 #
 owner:
   name: Spencer
-  avatar: headshot.jpg
+  avatar: assets/img/avatar.jpg
   job: "Power Systems Engineer"
   bio: "Electron traffic controller by week, rock climber by weekend."
   email: smaroukis@gmail.com 

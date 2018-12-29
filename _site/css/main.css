@@ -644,6 +644,7 @@ a.read-more { padding: 5px 8px; }
 
 #post { padding-bottom: 50px; }
 #post .post-header { margin: 0 auto 50px; }
+#post .post-content { font-size: 20px; }
 
 #post h1 { margin: 0.5em 0 1em; }
 

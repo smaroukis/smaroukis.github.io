@@ -5,15 +5,15 @@ excerpt: "This is a description under the title."
 categories: [tag1, tag2]
 ---
 
-![Cover](/img/foster_falls/ff_cover.jpeg)
+![Cover](/assets/img/foster_falls/ff_cover.jpeg)
 
 ## Photo with Caption
 
-![Photo text]({{"/img/foster_falls/ff_cover.jpeg"}})
+![Photo text]({{"/assets/img/foster_falls/ff_cover.jpeg"}})
 
 ## PDF hyperlink
 
-[pdf example]({{"/file/echo-lake-to-angora.pdf"}})
+[pdf example]({{"/assets/file/echo-lake-to-angora.pdf"}})
 
 [//]: # (This is a comment)
 
@@ -27,7 +27,7 @@ categories: [tag1, tag2]
 
 [Link to a page]({{ site.baseurl }}{% link index.html %})
 
-[Link to a file]({{ site.baseurl }}{% link /file/echo-lake-to-angora.pdf %})
+[Link to a assets/file]({{ site.baseurl }}{% link /assets/file/echo-lake-to-angora.pdf %})
 
 ## Embedded Map
 

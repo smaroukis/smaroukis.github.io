@@ -2,7 +2,8 @@
 layout: post
 title: 'North Side v. South Side'
 excerpt: 'Two campuses battle for your time. Only one can win.'
-categories: []
+categories: [Michigan]
+tags: [Michigan]
 ---
 ## IT'S THE ULTIMATE SHOW DOWN..
 Jets vs. Sharks. Biggie vs. Pac. and now... North Campus vs. Central Campus. Quantified.
