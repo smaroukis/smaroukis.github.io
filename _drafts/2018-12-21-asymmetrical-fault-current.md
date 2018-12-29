@@ -11,14 +11,14 @@ Asymmetrical fault currents are AC fault currents with a DC offset that quickly 
 
 > Asymmetry occurs to some degree in __all three-phase__ faults since all three-phase currents cannot be 0 simultaneously.
 
-[//]: TODO: Do LG and LL faults also have DC offset? 
-
 The asymmetry, with respect to the zero axis of the sinusoidal current, arises from the need for currents and voltages to satisfy two rules:
 
 1. Current must lag voltage by the system phase angle (90° for purely reactive systems)
 2. Current cannot change instantaneously across an inductance (and both large conductors and large machines are inductive)
 
 Asymmetrical current can be broken into both a purely symmetrical AC component and a purely aperiodic DC component. The AC component is symmetrical about the y-axis. The DC component is exponentially decaying with a time constant proportional to X/R. The initial magnitude of the DC current depends on the time of occurence due to the closing phase angle determined by the offset from the zero-crossing of the voltage waveform and the system phase angle, $$\theta=\tan^{-1}(X/R)$$.
+
+![A basic asymmetrical current waveform]({{"/code/latex/asym-current/asym-current.pdf"}})
 
 Asymmetrical Current
 
