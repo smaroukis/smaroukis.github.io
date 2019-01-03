@@ -2,7 +2,8 @@
 layout: post
 title: L'alpe D'huez
 excerpt: "A Tour de Force"
-categories: [2015, France, outdoors, cycling]
+categories: [outdoors]
+tags: [outdoors]
 ---
 
 I remember as a little kid, watching on television as the announcer enthusiastically kept mentioning this strange sounding word, "peloton". I became transfixed on the strategical maneuvers of this newfangled entity, made up of nothing more than grown men on bicycles. There was apparently a hierarchy of teams within this peloton and within these teams there were leaders, cyclists who were so remarkable in the hearts and minds of their colleagues that their kit-mates would lay a whole month-long bike race on the line so as to get their leader a few more minutes in the standings. 

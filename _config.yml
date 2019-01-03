@@ -4,7 +4,7 @@
 ####################################
 #
 title: Spencer
-email: 
+email: smaroukis@gmail.com
 description: Electrical engineer @ Pacific Gas & Electric operating the distribution grid.
 url: https://smaroukis.github.io # the base hostname & protocol for your site
 keywords: ["Power Systems", "Energy", "Clean Tech"]
@@ -37,7 +37,7 @@ kramdown:
 #
 owner:
   name: Spencer
-  avatar: headshot.jpg
+  avatar: assets/img/avatar.jpg
   job: "Power Systems Engineer"
   bio: "Electron traffic controller by week, rock climber by weekend."
   email: smaroukis@gmail.com 

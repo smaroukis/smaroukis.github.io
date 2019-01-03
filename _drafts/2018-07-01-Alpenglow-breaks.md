@@ -2,7 +2,8 @@
 layout: post
 title: Alpenglow Breaks
 excerpt: "A Successful Failed Attempt on Mt. Shasta"
-categories: [mountaineering, outdoors, california]
+categories: [outdoors]
+tags: [outdoors]
 ---
 
 5:40 am, Sacramento. Isaak is parked in his van, waiting outside my apartment. I am late, as usual. Internally, I justify my lateness,

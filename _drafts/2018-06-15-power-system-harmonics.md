@@ -2,7 +2,8 @@
 layout: post
 title: Harmonics in Power Systems
 excerpt: ""
-categories: [power-engineering, harmonics]
+categories: [power systems engineering]
+tags: [power systems engineering]
 ---
 
 
