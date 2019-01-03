@@ -5,9 +5,239 @@
     <description>Electrical engineer @ Pacific Gas &amp; Electric operating the distribution grid.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 Dec 2018 20:16:57 +0000</pubDate>
-    <lastBuildDate>Sat, 29 Dec 2018 20:16:57 +0000</lastBuildDate>
+    <pubDate>Thu, 03 Jan 2019 02:49:44 +0000</pubDate>
+    <lastBuildDate>Thu, 03 Jan 2019 02:49:44 +0000</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>Asymmetrical Fault Currents</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Asymmetry in fault currents due to the inductive nature of power systems results in higher-than-normal transient conditions that may exceed the interrupting rating of devices or cause saturation of relaying CTs (and thus device misoperation).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Asymmetrical fault currents are AC fault currents with a DC offset that quickly decays to zero. The result is higher than normal fault currents that may exceed the interrupting rating of devices or cause saturation of relaying CTs on protective devices. Asymmetry occurs to some degree in all three-phase faults since all phase currents cannot be 0 at the same time. Conversely, line-to-ground are mostly symmetric, since insulator failure or flashoiver usually occurs near voltage peaks (zero-current crossing for naturally reactive systems)&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. Here we’ll talk about asymmetric currents out on the distribution system, far from a generator, so we won’t be taking into account the generator subtransient, transient, and steady state impedances.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Asymmetry occurs to some degree in &lt;strong&gt;all three-phase&lt;/strong&gt; faults since all three-phase currents cannot be 0 simultaneously.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The asymmetry, with respect to the zero axis of the sinusoidal current, arises from the need for currents and voltages to satisfy two rules:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Current must lag voltage by the system phase angle (90° for purely reactive systems)&lt;/li&gt;
+  &lt;li&gt;Current cannot change instantaneously across an inductance (and both large conductors and large machines are inductive)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Asymmetrical current can be broken into both a purely symmetrical AC component and a purely aperiodic DC component. The AC component is symmetrical about the y-axis. The DC component is exponentially decaying with a time constant proportional to X/R. The initial magnitude of the DC current depends on the time of occurence due to the closing phase angle determined by the offset from the zero-crossing of the voltage waveform and the system phase angle, &lt;script type=&quot;math/tex&quot;&gt;\theta=\tan^{-1}(X/R)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/latex/asym-current/asym-current.pdf&quot; alt=&quot;A basic asymmetrical current waveform&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The asymmetrical waveform is the sum of the DC and AC components. In a power system, it will develop from zero as shown.&lt;/p&gt;
+
+&lt;h2 id=&quot;case-inductive-system-xr-theta-approx-90&quot;&gt;Case: Inductive System, &lt;script type=&quot;math/tex&quot;&gt;X&gt;&gt;R&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\theta \approx 90°&lt;/script&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;conditions-for-maximum-dc-offset&quot;&gt;Conditions for Maximum DC Offset&lt;/h3&gt;
+
+&lt;p&gt;The worst case is for a fault occuring near a zero-crossing of the voltage where the &lt;em&gt;closing angle&lt;/em&gt; &lt;script type=&quot;math/tex&quot;&gt;\alpha=0&lt;/script&gt;. At this point the current is at a peak, and so an opposing DC current of the same magnitude will be induced. The asymmetric current will then increase until a point when the current sine wave is lagging the voltage by 90°.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;i_{ac}(t) = \sqrt{2} I_{ac} sin(\omega t + \alpha - \theta)&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;i_{dc}(t) = I_{dc} e^{-\omega tR/X}&lt;/script&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;I_{ac}&lt;/script&gt;, the RMS value of the symmetrical waveform, depends on the type of fault, the pre-fault voltage and equivalent impedance. For three phase faults, &lt;script type=&quot;math/tex&quot;&gt;I_{ac} = V/(Z_1+Z_F)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;I_{dc}&lt;/script&gt; is the starting value (and maximum) of the DC component. Having no DC voltage to maintain it, the DC component decays with a time constant &lt;script type=&quot;math/tex&quot;&gt;\tau=\frac{X/R}{\omega} =\frac{L}{R}&lt;/script&gt;. Usually the system X/R value is given, where a larger value will cause a slower decay. IEEE/IEC standards use X/R &lt;script type=&quot;math/tex&quot;&gt;=&lt;/script&gt; 17 (&lt;script type=&quot;math/tex&quot;&gt;\tau =&lt;/script&gt; 45ms or ~2.7 cycles), which is an expected value near a distribution breaker, but X/R &amp;gt; 50 is not uncommon for a large generator&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since current cannot change instantaneously in a power system, the range of the maximum DC offset is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;i_{asym}(t=0)=0 \\
+\Rightarrow i_{dc}(0) = -i_{ac}(0)  \\
+-\sqrt{2}I_{ac} \le I_{dc} \le \sqrt{2}I_{ac} \\&lt;/script&gt;
+
+&lt;p&gt;In general, for a asymmetric sinsoidal wave with a DC offset of &lt;script type=&quot;math/tex&quot;&gt;A_0&lt;/script&gt; and a purely symmetric &lt;strong&gt;peak&lt;/strong&gt; of &lt;script type=&quot;math/tex&quot;&gt;A_1&lt;/script&gt;, the RMS value is equal to&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;u_{RMS} = \sqrt{A_0^2 + \frac{A_1^2}{2}} \\
+= \sqrt{A_0^2 + A_{1,RMS}^2}&lt;/script&gt;
+
+&lt;p&gt;thus the maximum RMS value that the asymmetric fault current can obtain is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\displaystyle I_{max, asym} = \sqrt{(I_{dc}^2 + I_{ac}^2)} \\
+= \sqrt{3} I_{ac} \\
+= 1.732 \times I_{ac}&lt;/script&gt;
+
+&lt;p&gt;Since in reality the DC component will decay during the first half cycle before the asymmetric current reaches its peak,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;I_{max,asym} \approx 1.6 \times I_{ac}&lt;/script&gt;
+
+&lt;p&gt;(this approximation is also shown in the limit of the &lt;a href=&quot;#equation--curve-of-asymmetric-factor&quot;&gt;graph of asymmetric curve factors&lt;/a&gt; below)&lt;/p&gt;
+
+&lt;h3 id=&quot;conditions-for-no-dc-offset&quot;&gt;Conditions for No DC Offset&lt;/h3&gt;
+
+&lt;p&gt;Conversely if the fault occurs at a voltage peak (zero current crossing), no offset will develop since the closing angle is equal to the system angle.&lt;/p&gt;
+
+&lt;p&gt;In fact the full asymmetrical waveform based on the closing (&lt;script type=&quot;math/tex&quot;&gt;\alpha&lt;/script&gt;) and system (&lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;) angles is&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;i_{asym}(t) = I_{ac} (sin(\omega t + \alpha - \theta) - sin(\alpha - \theta) e^{-\omega tR/X})&lt;/script&gt;
+
+&lt;p&gt;With &lt;script type=&quot;math/tex&quot;&gt;\alpha=\theta\approx 90°&lt;/script&gt;,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;i_{asym}(t) = I_{ac}sin(\omega t)&lt;/script&gt;
+
+&lt;h2 id=&quot;equation--curve-of-asymmetric-factor&quot;&gt;Equation &amp;amp; Curve of Asymmetric Factor&lt;/h2&gt;
+
+&lt;p&gt;The Asymmetry Factor, &lt;script type=&quot;math/tex&quot;&gt;\kappa&lt;/script&gt;, can be used to calculate the total asymmetric current from just the symmetric current and the X/R value of the system.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\kappa := \frac{I_{asym}}{I_{ac}} \Rightarrow I_{asym} = \kappa I_{ac}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;I_{RMS, asym} = \sqrt{I_{dc}^2 + I_{ac}^2} \\
+= \sqrt{ I_{ac}^2 + (\sqrt{2}I_{ac}e^{-\omega tR/X})^2} \\
+= I_{ac} \sqrt{1+2e^{-2\omega t R/X}} \\
+\Rightarrow \kappa(t,X,R,\omega) = \sqrt{1+2e^{-2\omega t R/X}}&lt;/script&gt;
+
+&lt;p&gt;And taking &lt;script type=&quot;math/tex&quot;&gt;t=\text{half cycle}=1/120s&lt;/script&gt; since the worst case peak value of the asymmetric current would occur a half cycle after the fault occurence,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\kappa(X,R) = \sqrt{1+2e^{-2\pi R/X}}&lt;/script&gt;
+
+&lt;p&gt;The equation as a function of X/R is shown in the interactive graph below.&lt;/p&gt;
+
+&lt;div id=&quot;cb165ea6-2b53-4749-a74a-23007c036f6c&quot; style=&quot;height: 100%; width: 100%;&quot; class=&quot;plotly-graph-div&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL=&quot;https://plot.ly&quot;;Plotly.newPlot(&quot;cb165ea6-2b53-4749-a74a-23007c036f6c&quot;, [{&quot;y&quot;: [1.0000034873362755, 1.000028318658172, 1.0001264021319973, 1.0003881278823001, 1.0009286475997388, 1.0018657023091548, 1.0033006508323994, 1.0053074808025657, 1.0079294124783176, 1.0111807212848305, 1.0150513483214005, 1.0195125040789026, 1.024522164881904, 1.030029896495041, 1.03598078914381, 1.042318490926619, 1.0489874293778594, 1.0559343521970252, 1.0631093246902337, 1.0704663103987337, 1.077963442940384, 1.0855630769732811, 1.0932316873186607, 1.1009396689200621, 1.108661076818727, 1.1163733345705935, 1.12405693118547, 1.1316951203342005, 1.1392736308532363, 1.1467803941292616, 1.1542052914756635, 1.1615399228792902, 1.168777397311502, 1.1759121440158509, 1.1829397436942921, 1.1898567782306928, 1.1966606974521394, 1.2033497013892498, 1.2099226365229665, 1.2163789045732143, 1.2227183824772698, 1.228941352310948, 1.23504844001557, 1.2410405619028089, 1.2469188780144262, 1.2526847515125499, 1.2583397133673822, 1.2638854316925998, 1.269323685154173, 1.2746563399461732, 1.2798853298877588, 1.2850126392494414, 1.2900402879645538, 1.294970318924072, 1.2998047870902003, 1.3045457501969113, 1.3091952608344455, 1.3137553597400649, 1.3182280701395341, 1.3226153930032403, 1.3269193030978867, 1.3311417457296095, 1.3352846340874005, 1.33934984710716, 1.3433392277866825, 1.34725458189063, 1.35109767699221, 1.354870241804964, 1.358573965763948, 1.3622104988207144, 1.3657814514210098, 1.369288394638028, 1.3727328604375235, 1.3761163420540987, 1.3794402944606348, 1.3827061349151497, 1.385915243571411, 1.389068964141397, 1.3921686045992818, 1.395215437917974, 1.3982107028304447, 1.401155604609136, 1.4040513158576586, 1.406898977309796, 1.4096996986315415, 1.4124545592225168, 1.4151646090136547, 1.4178308692585146, 1.420454333316007, 1.4230359674226651, 1.4255767114529263, 1.4280774796661528, 1.4305391614393674, 1.4329626219848883, 1.4353487030522274, 1.4376982236137759, 1.4400119805339369, 1.4422907492214823, 1.4445352842650128, 1.4467463200514863, 1.4489245713678578, 1.4510707339859297, 1.4531854852305754, 1.4552694845315355, 1.4573233739590272, 1.4593477787434381, 1.461343307779405, 1.4633105541145883, 1.465250095423483, 1.4671624944666077, 1.4690482995354295, 1.4709080448833842, 1.4727422511433605, 1.4745514257320145, 1.4763360632412799, 1.4780966458174438, 1.4798336435281478, 1.4815475147176778, 1.483238706350891, 1.4849076543461353, 1.4865547838974997, 1.4881805097867313, 1.4897852366851516, 1.4913693594458843, 1.4929332633867216, 1.4944773245639178, 1.4960019100372213, 1.4975073781264263, 1.498994078659726, 1.500462353214145, 1.5019125353483054, 1.5033449508277956, 1.50475991784338, 1.5061577472222956, 1.5075387426328684, 1.5089032007826737, 1.510251411610459, 1.5115836584720408, 1.5129002183203788, 1.514201361880027, 1.5154873538161482, 1.5167584528982783, 1.5180149121590167, 1.5192569790478194, 1.5204848955800498, 1.5216988984814608, 1.5228992193282478, 1.524086084682836, 1.5252597162255324, 1.5264203308821938, 1.5275681409480308, 1.5287033542076904, 1.5298261740517316, 1.530936799589619, 1.5320354257593494, 1.5331222434338216, 1.5341974395240603, 1.5352611970793932, 1.5363136953846876, 1.5373551100547367, 1.5383856131258962, 1.5394053731450534, 1.540414555256022, 1.5414133212834442, 1.5424018298142772, 1.543380236276951, 1.5443486930182615, 1.5453073493780818, 1.5462563517619548, 1.5471958437116375, 1.5481259659736626, 1.5490468565659792, 1.549958650842734, 1.550861481557251, 1.5517554789232677, 1.552640770674482, 1.5535174821224604, 1.5543857362129638, 1.5552456535807324, 1.556097352602786, 1.556940949450278, 1.5577765581389522, 1.5586042905782451, 1.5594242566190704, 1.5602365641003317, 1.5610413188942003, 1.5618386249501908, 1.5626285843380803, 1.563411297289694, 1.564186862239603, 1.5649553758647559, 1.565716933123086, 1.566471627291117, 1.5672195500005979, 1.5679607912742008, 1.5686954395603028, 1.5694235817668816, 1.570145303294552, 1.570860688068764, 1.5715698185711922, 1.5722727758703348, 1.572969639651348, 1.5736604882451373, 1.5743453986567253, 1.5750244465929182, 1.575697706489291, 1.5763652515365083, 1.5770271537060032, 1.5776834837750282, 1.5783343113510988, 1.5789797048958454, 1.5796197317482898, 1.5802544581475628, 1.5808839492550777, 1.5815082691761744, 1.5821274809812513, 1.582741646726394, 1.5833508274735184, 1.583955083310042, 1.5845544733680912, 1.585149055843263, 1.5857388880129488, 1.586324026254234, 1.586904526061384, 1.5874804420629294, 1.5880518280383558, 1.5886187369344174, 1.5891812208810736, 1.5897393312070687, 1.5902931184551565, 1.5908426323969833, 1.591387922047635, 1.5919290356798623, 1.592466020837984, 1.5929989243514844, 1.5935277923483104, 1.5940526702678715, 1.5945736028737578, 1.5950906342661773, 1.5956038078941208, 1.596113166567265, 1.5966187524676134, 1.5971206071608894, 1.597618771607681, 1.5981132861743477, 1.5986041906436934, 1.5990915242254118, 1.5995753255663108, 1.6000556327603168, 1.6005324833582728, 1.6010059143775266, 1.601475962311318, 1.6019426631379723, 1.602406052329899, 1.6028661648624065, 1.6033230352223315, 1.6037766974164933, 1.6042271849799712, 1.6046745309842145, 1.605118768044986, 1.605559928330143, 1.6059980435672614, 1.6064331450511047, 1.6068652636509435, 1.6072944298177252, 1.6077206735911043, 1.6081440246063272, 1.6085645121009835, 1.6089821649216225, 1.609397011530237, 1.6098090800106215, 1.6102183980746048, 1.6106249930681587, 1.611028891977389, 1.6114301214344096, 1.611828707723102, 1.6122246767847634, 1.6126180542236463, 1.6130088653123904, 1.6133971349973508, 1.6137828879038254, 1.6141661483411809, 1.6145469403078823, 1.614925287496426, 1.615301213298182, 1.6156747408081424, 1.6160458928295822, 1.6164146918786322, 1.6167811601887656, 1.617145319715205, 1.6175071921392417, 1.6178667988724797, 1.6182241610609998, 1.6185792995894475, 1.6189322350850441, 1.6192829879215282], &quot;x&quot;: [0.5, 0.6, 0.7, 0.7999999999999999, 0.8999999999999999, 0.9999999999999999, 1.0999999999999999, 1.1999999999999997, 1.2999999999999998, 1.4, 1.4999999999999998, 1.5999999999999996, 1.6999999999999997, 1.7999999999999998, 1.8999999999999997, 1.9999999999999996, 2.0999999999999996, 2.1999999999999997, 2.3, 2.3999999999999995, 2.4999999999999996, 2.5999999999999996, 2.6999999999999993, 2.7999999999999994, 2.8999999999999995, 2.9999999999999996, 3.0999999999999996, 3.1999999999999993, 3.2999999999999994, 3.3999999999999995, 3.499999999999999, 3.599999999999999, 3.6999999999999993, 3.7999999999999994, 3.8999999999999995, 3.999999999999999, 4.1, 4.199999999999999, 4.299999999999999, 4.399999999999999, 4.499999999999999, 4.599999999999999, 4.699999999999999, 4.799999999999999, 4.899999999999999, 4.999999999999999, 5.099999999999999, 5.199999999999999, 5.299999999999999, 5.399999999999999, 5.499999999999999, 5.599999999999999, 5.699999999999999, 5.799999999999999, 5.899999999999999, 5.999999999999999, 6.099999999999999, 6.199999999999998, 6.299999999999999, 6.399999999999999, 6.499999999999998, 6.599999999999999, 6.699999999999998, 6.799999999999999, 6.899999999999999, 6.999999999999998, 7.099999999999999, 7.199999999999998, 7.299999999999999, 7.399999999999999, 7.499999999999998, 7.599999999999999, 7.699999999999998, 7.799999999999998, 7.899999999999999, 7.999999999999998, 8.099999999999998, 8.2, 8.299999999999997, 8.399999999999999, 8.499999999999998, 8.599999999999998, 8.699999999999998, 8.799999999999999, 8.899999999999999, 8.999999999999998, 9.099999999999998, 9.199999999999998, 9.299999999999997, 9.399999999999999, 9.499999999999998, 9.599999999999998, 9.699999999999998, 9.799999999999997, 9.899999999999999, 9.999999999999998, 10.099999999999998, 10.199999999999998, 10.299999999999997, 10.399999999999999, 10.499999999999998, 10.599999999999998, 10.699999999999998, 10.799999999999997, 10.899999999999999, 10.999999999999998, 11.099999999999998, 11.199999999999998, 11.299999999999997, 11.399999999999997, 11.499999999999998, 11.599999999999998, 11.699999999999998, 11.799999999999997, 11.899999999999997, 11.999999999999998, 12.099999999999998, 12.199999999999998, 12.299999999999997, 12.399999999999997, 12.499999999999996, 12.599999999999998, 12.699999999999998, 12.799999999999997, 12.899999999999997, 12.999999999999996, 13.099999999999998, 13.199999999999998, 13.299999999999997, 13.399999999999997, 13.499999999999996, 13.599999999999998, 13.699999999999998, 13.799999999999997, 13.899999999999997, 13.999999999999996, 14.099999999999998, 14.199999999999998, 14.299999999999997, 14.399999999999997, 14.499999999999996, 14.599999999999996, 14.699999999999998, 14.799999999999997, 14.899999999999997, 14.999999999999996, 15.099999999999996, 15.199999999999998, 15.299999999999997, 15.399999999999997, 15.499999999999996, 15.599999999999996, 15.699999999999996, 15.799999999999997, 15.899999999999997, 15.999999999999996, 16.099999999999994, 16.199999999999996, 16.299999999999997, 16.4, 16.499999999999996, 16.599999999999998, 16.699999999999996, 16.799999999999997, 16.899999999999995, 16.999999999999996, 17.099999999999998, 17.199999999999996, 17.299999999999997, 17.399999999999995, 17.499999999999996, 17.599999999999998, 17.699999999999996, 17.799999999999997, 17.899999999999995, 17.999999999999996, 18.099999999999994, 18.199999999999996, 18.299999999999997, 18.399999999999995, 18.499999999999996, 18.599999999999994, 18.699999999999996, 18.799999999999997, 18.899999999999995, 18.999999999999996, 19.099999999999994, 19.199999999999996, 19.299999999999997, 19.399999999999995, 19.499999999999996, 19.599999999999994, 19.699999999999996, 19.799999999999997, 19.899999999999995, 19.999999999999996, 20.099999999999994, 20.199999999999996, 20.299999999999997, 20.399999999999995, 20.499999999999996, 20.599999999999994, 20.699999999999996, 20.799999999999997, 20.899999999999995, 20.999999999999996, 21.099999999999994, 21.199999999999996, 21.299999999999997, 21.399999999999995, 21.499999999999996, 21.599999999999994, 21.699999999999996, 21.799999999999994, 21.899999999999995, 21.999999999999996, 22.099999999999994, 22.199999999999996, 22.299999999999994, 22.399999999999995, 22.499999999999996, 22.599999999999994, 22.699999999999996, 22.799999999999994, 22.899999999999995, 22.999999999999996, 23.099999999999994, 23.199999999999996, 23.299999999999994, 23.399999999999995, 23.499999999999996, 23.599999999999994, 23.699999999999996, 23.799999999999994, 23.899999999999995, 23.999999999999996, 24.099999999999994, 24.199999999999996, 24.299999999999994, 24.399999999999995, 24.499999999999993, 24.599999999999994, 24.699999999999996, 24.799999999999994, 24.899999999999995, 24.999999999999993, 25.099999999999994, 25.199999999999996, 25.299999999999994, 25.399999999999995, 25.499999999999993, 25.599999999999994, 25.699999999999996, 25.799999999999994, 25.899999999999995, 25.999999999999993, 26.099999999999994, 26.199999999999996, 26.299999999999994, 26.399999999999995, 26.499999999999993, 26.599999999999994, 26.699999999999996, 26.799999999999994, 26.899999999999995, 26.999999999999993, 27.099999999999994, 27.199999999999996, 27.299999999999994, 27.399999999999995, 27.499999999999993, 27.599999999999994, 27.699999999999996, 27.799999999999994, 27.899999999999995, 27.999999999999993, 28.099999999999994, 28.199999999999992, 28.299999999999994, 28.399999999999995, 28.499999999999993, 28.599999999999994, 28.699999999999992, 28.799999999999994, 28.899999999999995, 28.999999999999993, 29.099999999999994, 29.199999999999992, 29.299999999999994, 29.399999999999995, 29.499999999999993, 29.599999999999994, 29.699999999999992, 29.799999999999994, 29.899999999999995, 29.999999999999993], &quot;mode&quot;: &quot;markers+lines&quot;, &quot;name&quot;: &quot;t=1/120s&quot;}], {&quot;title&quot;: &quot;Curve of Asymmetry Factors&quot;, &quot;xaxis&quot;: {&quot;type&quot;: &quot;log&quot;, &quot;dtick&quot;: &quot;D1&quot;, &quot;title&quot;: &quot;X/R&quot;}, &quot;yaxis&quot;: {&quot;type&quot;: &quot;log&quot;}}, {&quot;linkText&quot;: &quot;Export to plot.ly&quot;, &quot;showLink&quot;: true})&lt;/script&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Zocholl, Stanley E., &lt;em&gt;Analyzing and Applying Current Transformers&lt;/em&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;Yuen, Moon H. “Short Circuit ABC–Learn It in an Hour, Use It Anywhere, Memorize No Formula.” &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://masteringelectronicsdesign.com/how-to-derive-the-rms-value-of-a-sine-wave-with-a-dc-offset/&quot;&gt;https://masteringelectronicsdesign.com/how-to-derive-the-rms-value-of-a-sine-wave-with-a-dc-offset/&lt;/a&gt; &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;de Metz-Noblat, Benoit, Frédéric Dumas, and Georges Thomasset. “Calculation of short-circuit currents.” &lt;em&gt;Cahier technique 158&lt;/em&gt; &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/articles/2019-01/asymmetrical-fault-current</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2019-01/asymmetrical-fault-current</guid>
+        
+        <category>power systems engineering</category>
+        
+        <category>graphs</category>
+        
+        
+        <category>power systems engineering</category>
+        
+      </item>
+    
+      <item>
+        <title>Example Syntax Post</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/foster_falls/ff_cover.jpeg&quot; alt=&quot;Cover&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;photo-with-caption&quot;&gt;Photo with Caption&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/foster_falls/ff_cover.jpeg&quot; alt=&quot;Photo text&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;pdf-hyperlink&quot;&gt;PDF hyperlink&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/file/echo-lake-to-angora.pdf&quot;&gt;pdf example&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;link-to-other-posts&quot;&gt;Link to other posts&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;/articles/2017-01/southern-comfort-food&quot;&gt;Link to a post&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/articles/2017-01/southern-comfort-food&quot;&gt;Link to a post&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/&quot;&gt;Link to a page&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/file/echo-lake-to-angora.pdf&quot;&gt;Link to a assets/file&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;embedded-map&quot;&gt;Embedded Map&lt;/h2&gt;
+
+&lt;div id=&quot;map&quot; class=&quot;map leaflet-container&quot; style=&quot;height: 500px; position:relative;&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    var map = L.map('map').setView([-118.179,36.495], 10);
+    L.tileLayer('https://api.mapbox.com/styles/v1/smaroukis/cj079ohrl00012ro37wtvmoea/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic21hcm91a2lzIiwiYSI6ImNpcTZyNW96djAwZ3BmbmtrcnZpbXRoMG0ifQ.wlaRgsckB1_vTtYKWEhZJw').addTo(map)
+&lt;/script&gt;
+
+&lt;h2 id=&quot;latex&quot;&gt;Latex&lt;/h2&gt;
+
+&lt;p&gt;Surround maths in &lt;code class=&quot;highlighter-rouge&quot;&gt;$$...$$&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 29 Dec 2018 00:41:33 +0000</pubDate>
+        <link>http://localhost:4000/articles/2018-12/YYYY-MM-DD-example-post</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2018-12/YYYY-MM-DD-example-post</guid>
+        
+        
+        <category>tag1</category>
+        
+        <category>tag2</category>
+        
+      </item>
+    
+      <item>
+        <title>Alpenglow Breaks</title>
+        <description>&lt;p&gt;5:40 am, Sacramento. Isaak is parked in his van, waiting outside my apartment. I am late, as usual. Internally, I justify my lateness,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Unlike Isaak, who lives in a van, I have to get out of a bed with a plush, two inch mattress pad. Of course I’m f*cking late. Why do we have to wake up so early anyway?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I loaded up Isaak’s van with a backpack of camping gear and a sled. The sled was of the cheap, brightly colored variety that you find during the holiday season in bins at the front of the store. They are the type that no one actually really needs or wants, the type sure to last only a few runs, maybe less. But they are cheap and conveniently placed, so I bought one the day before at an electronics store.&lt;/p&gt;
+
+&lt;p&gt;[Sled Image]&lt;/p&gt;
+
+&lt;p&gt;I had met Isaak rock climbing at Phantom Spires the previous weekend, and through a mutual friend we had planned to climb Mount Shasta, the fifth highest peak in California (14,179 feet), and a straightfoward summit if the weather is right.&lt;/p&gt;
+
+&lt;p&gt;We hit the road from Sacramento with 4 hours ahead of us, but I didn’t offer to drive. There was something about taking responsibility of Isaak’s home that I didn’t quite feel ready for, and we had only met once prior. Plus I could catch up on some sleep-eye that I missed out on the night before. Not wanting to be dull, I stroke up some conversation which inevitably turned into a vanlife inquiry.&lt;/p&gt;
+
+&lt;p&gt;Isaak’s van setup is simple enough: the model is a Ford E-series, the classic plumber’s van; there’s a bed in the back where one can sleep diagonally; hard flooring and cabinets; a mini fridge and lots of books. 180 watts of solar panels power the fridge from a 12 volt battery, which can hold its own without solar for about a day or so. It wasn’t an idealized version of living out of a van that you might see online or on social media — it was just the bare necessities of life to keep one fed, sheltered, and — for Isaak — climbing.&lt;/p&gt;
+
+&lt;p&gt;My inquiry revealed that vanlife is not only about free spirits frolicking about in the great paved-by environments of the West, but also about trying to keep cool in the summer, keep warm in the winter, and find peace of mind in the form of a parking spot before hitting the ol’ sack. Isaak says the most stressful thing about living in his van was finding a safe place to park for the night.“The first year was hard,” Isaak says, “there’s places in Sacramento that definitely don’t feel safe to park in at night. In nicer neighborhoods people call the cops on you.” Uncomfortable to say the least. And this is coming from someone who wedges their hands into granite cracks for fun. Now though, he is relatively settled, with a famer’s consent to park on his land at night.&lt;/p&gt;
+
+&lt;p&gt;At some pause in the conversation I dozed off, later to wake up as we arrived in Redding to pick up Cliff, the last of our party. We switched vehicles to Cliff’s more fuel efficient and accomodating SUV. Then it was another hour to the town of Mount Shasta which sits at the base of the mountain, a town of transients and PCT’ers alike. At the gear shop in town I heard it is “pretty easy to tell them apart”. In my head I envisioned a gear-laden PCT hiker contrasted to a ragged and grizzled hitchiker sporting torn clothes.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/articles/2018-07/Alpenglow-breaks</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2018-07/Alpenglow-breaks</guid>
+        
+        <category>outdoors</category>
+        
+        
+        <category>outdoors</category>
+        
+      </item>
+    
+      <item>
+        <title>Harmonics in Power Systems</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Delta connected transformers will filter third order harmonics.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;After coming across this a few times I wanted to find a source. In fact it was one of the most simple proofs, and probably was mentioned at one time in my power systems class.&lt;/p&gt;
+
+&lt;p&gt;It has to do with the phase angle shift caused by the &lt;script type=&quot;math/tex&quot;&gt;k^{th}&lt;/script&gt; harmonic component.&lt;/p&gt;
+
+&lt;p&gt;First, we can represent the current waveform as a Fourier Series, which is an infinite sum of sinusoids that can be used to represent &lt;em&gt;any&lt;/em&gt; periodic function.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;i_a(t) = \sum_{k=1}^{\infty} I_k sin(k\omega_1 t + \Theta_k)&lt;/script&gt;
+</description>
+        <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/articles/2018-06/power-system-harmonics</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2018-06/power-system-harmonics</guid>
+        
+        <category>power systems engineering</category>
+        
+        
+        <category>power systems engineering</category>
+        
+      </item>
     
       <item>
         <title>Climbing Training — Train to Perform</title>
@@ -107,6 +337,66 @@ an Unmarked 5.9+/5.10a @ Lower Jimmy (all the way to the left)&lt;/li&gt;
       </item>
     
       <item>
+        <title>On the Road Toward Self-Learning Japanese</title>
+        <description>&lt;p&gt;I will soon receive an International Minor for Engineers from the University of Michigan, which requires 4 semesters of language proficiency and 10 globally focused credits ranging from world economics to religion. I quickly finished my language requirements taking 3rd and 4th semester French as a Freshman and studying abroad as a Sophomore. Another year passed and I found myself two semesters away from graduating, with a nagging feeling in my soul. Influenced by Rolfe Potts’ Vagabonding, having the desire to serve a community and live abroad, I decided to pursue something I had been thinking about for a while but had not dedicated the time and effort to - learning Japanese.&lt;/p&gt;
+
+&lt;p&gt;On the path of learning anything, it is important to surround oneself with motivation and support. Unfortunately it was October, and the Japanese class at Michigan spans a whole year. So I decided to teach myself with the hopes of testing into the second semester class in January. The rest of this post describes the tools and system I used. (Update: I made it.)&lt;/p&gt;
+
+&lt;p&gt;My first step was setting a schedule and then getting a system in place for learning, week by week. One of the greatest language learning and memory resources is Anki. Anki has a strong community of developers and language learners, and is also used by many medical students. &lt;/p&gt;
+
+&lt;p&gt;There are a ton of Japanese language learning resources out there. The takeaways from scouring many of them are: &lt;/p&gt;
+
+&lt;p&gt;master hiragana and katakana, NO ROMANI ALLOWED
+use the Genki textbooks for easy to understand grammar and great illustrations
+learn kanji starting with simple strokes first, learning radicals and mnemonics to build upon for future complex characters
+use SRS and Anki for recall&lt;/p&gt;
+
+&lt;h2 id=&quot;tools-im-using&quot;&gt;TOOLS I’M USING&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Genki I (Textbook and Audio) for grammar and vocab
+    &lt;h3 id=&quot;anki-shared-decks&quot;&gt;Anki Shared Decks&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/1758197267&quot;&gt;Genki I Grammar (through Chapter 6)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/942922371&quot;&gt;Genki Vocab by Chapter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/748570187&quot;&gt;KanjiDamage Deck&lt;/a&gt;
+    &lt;h3 id=&quot;anki-add-ons&quot;&gt;Anki Add-ons&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/301952613&quot;&gt;Awesome TTS&lt;/a&gt; - for adding speech to Japanese characters&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/787914845&quot;&gt;Create Copy of Selected Cards&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Japanese Support - generates bulk readings and furigana&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jisho.org&quot;&gt;Jisho.org&lt;/a&gt; (for Mac users: even better is the Alfred Jisho &lt;a href=&quot;https://github.com/janclarin/jisho-alfred-workflow&quot;&gt;workflow&lt;/a&gt; that I found - Japanese vocab is literally a hotkey away)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Japanese-Busy-People-Kana-Workbook/dp/1568364016/ref=pd_sbs_14_t_2?_encoding=UTF8&amp;amp;psc=1&amp;amp;refRID=MQYK016RGC4KD5E5TRX6&quot;&gt;Japanese for Busy People Kana Workbook&lt;/a&gt; - to master hiragana, katakana and subtleties of pronunciation (and those tricky nasal consonants)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hinative.com&quot;&gt;HiNative&lt;/a&gt; - to ask random quick questions on language, culture, or pronunciation&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://lang-8.com&quot;&gt;Lang8&lt;/a&gt; - for proofreading essays or longer passages&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;recall-vs-recognition---adding-the-possibility-of-reversed-cards-in-anki&quot;&gt;RECALL VS. RECOGNITION - ADDING THE POSSIBILITY OF REVERSED CARDS IN ANKI&lt;/h2&gt;
+&lt;p&gt;For the Anki Genki Vocab deck, I made the following changes&lt;/p&gt;
+
+&lt;p&gt;1) Added in a “Mnemonic” field for hard to remember words&lt;/p&gt;
+
+&lt;p&gt;2) Made the “Recall” card type optional, not prompting with English until I wanted to practice recall later down the line (I believe I can learn a larger amount of vocab faster this way).&lt;/p&gt;
+
+&lt;p&gt;For #2 I had to make the following edits, which is a good way to have the optional-reversed functionality that you see in some of Anki’s default card types.&lt;/p&gt;
+
+&lt;p&gt;Click on Browse, go to the Genki Vocab deck and click “Fields”, adding a field titled “Add Reversed” (spelling is important). After this go into “Cards” on the current deck where you should see the Recognition and Recall card types. To keep the Recall card types as optional for the future, add in the following tag around the displayed content:&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{{# Add Reversed}}...{{/Add Reversed}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 06 Nov 2016 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/articles/2016-11/japanese</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2016-11/japanese</guid>
+        
+        <category>language</category>
+        
+        
+        <category>language</category>
+        
+      </item>
+    
+      <item>
         <title>Mt. Ritter Summit - Ansel Adams Wilderness</title>
         <description>&lt;p&gt;I was fortunate enough to undergo my first true mountaineering experience with two weekends left in summer internship at Pacific Gas &amp;amp; Electric. It was a weekend trip to Ansel Adams wilderness, with epitomic views of the High Sierras and idyllic lakeside camping. We hiked in 6 miles to camp at Ediza Lake and the next day undertook the class 3 climb to the top of Mount Ritter (3,700ft elevation change over 3 miles, 13,143 ft summit).  The access to wilderness in California is unprecedented, and if you’re willing to drive 4.5 hours after work on a Friday, you’ll be rewarded with weekend memories that last a lifetime. (shoutout to Ryan and Aaron for letting my pass out in the  back of the car as they drove both ways).&lt;/p&gt;
 
@@ -159,6 +449,66 @@ an Unmarked 5.9+/5.10a @ Lower Jimmy (all the way to the left)&lt;/li&gt;
         <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
         <link>http://localhost:4000/articles/2016-08/ansel-adams-wlderness</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2016-08/ansel-adams-wlderness</guid>
+        
+        <category>outdoors</category>
+        
+        
+        <category>outdoors</category>
+        
+      </item>
+    
+      <item>
+        <title>North Side v. South Side</title>
+        <description>&lt;h2 id=&quot;its-the-ultimate-show-down&quot;&gt;IT’S THE ULTIMATE SHOW DOWN..&lt;/h2&gt;
+&lt;p&gt;Jets vs. Sharks. Biggie vs. Pac. and now… North Campus vs. Central Campus. Quantified.&lt;/p&gt;
+
+&lt;p&gt;If you didn’t go to the University of Michigan or never cared to attend any of your engineering classes, then let me inform you of the rivalry underlying much of the angst that comes with heaping amounts of student debt, cramming for exams, and getting involved in way too many extra curriculars because well, everyone else is.&lt;/p&gt;
+
+&lt;p&gt;North Campus sprung from a need for the university to accommodate its burgeoning student population. Taken from the University of Michigan Millennial Project:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Space on the University of Michigan campus became inadequate to accommodate the post-war growth of the University. In anticipation of this growing need, the Regents had begun to acquire farmland property on the sloping hills lying just to the northeast of the Huron River. Although there were some early thoughts given to relocating the School of Education, Natural Resources, Music, and Fine Arts to the North Campus, the construction of the Phoenix Memorial Project soon re-purposed the site for engineering research. More specifically, the early plans for the North Campus included the Cooley Memorial Laboratory to house the electronics research associated with the Willow Run Laboratories, the Phoenix Memorial Laboratory, the Automotive Laboratory, and a storage library.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Today North Campus houses the engineering campus including classrooms and a research facility, the School of Art and Architecture, the School of Information, and the School of Music, Theatre, and Dance. Also many unfortunate and forever-looked-down-upon freshmen are placed into the 3rd biggest residential hall in the country, Burseley Hall, more often known as the “Dirty Burs”.&lt;/p&gt;
+
+&lt;p&gt;For many, this is where the bitter contempt starts. Missing out on 15 minutes of sleep due to an always cramped bus ride to Central, the worst dining hall food on campus, and late night Ubers or SafeRides back to a lonely, far off dorm room in the boondocks of the student population (it’s October and you need to be looking for a place on Central already for next Fall).&lt;/p&gt;
+
+&lt;p&gt;But for engineers, artists, and the musically inclined, it is likely to be a place akin to home for four years. Late nights in the Dude, the 24 hour library and nap-place-of-choice for many, will become nostalgic pastimes. Some of the best minds in academia do their work in the research centers here, a place which forms the proving ground for ideas that will go on to be the central intellectual property of future Fortune 500 companies.&lt;/p&gt;
+
+&lt;p&gt;And basically everything else is on Central campus, including the largest football stadium in the country, dirty college dive bars posing as sports bars, Saturday morning tailgates, activist gatherings, Blank Slate ice cream, and everything else indicative of a healthy social life.&lt;/p&gt;
+
+&lt;p&gt;I wanted to put the $600 tracking device that I carry around on my body all day to some good use for once, so I decided to compare the data I’ve been collecting through the Moves app using this quantification jewel called Zenobase. Zenobase imports, collects, and stores data that you tell it to, and you can do some pretty cool and simple visualizations with it. It took a late Saturday night but I was able to graph some data on my North Campus vs. Central Campus habits.&lt;/p&gt;
+
+&lt;p&gt;Theoretically I should be spending about a third of my time on North, with engineering classes, work and projects. I compared two months with full datasets, August and September. There are three figures for each, with North being in orange and Central in blue. The top figure is the duration for each day over the month, the left is the time for each day of the week (plotted for Mon-Fri since there is no reason I should be on North on the weekend…barring feelings of loneliness and separation with my engineering kiln), and the right is the hourly spread.&lt;/p&gt;
+
+&lt;p&gt;In August I was working in a lab in EECS from 9-5. Not surprisingly work took up most of the day and is represented in the day of the week spread on the left. Your welcome NSA I’m doing your job for you.&lt;/p&gt;
+
+&lt;p&gt;For September I’m actually a bit surprised at how much I tended to be on Central, because it feels like I’m usually in EECS 1220 until at least 10 every night. Soon with more data I’ll be able to correlate location with type of work, whether I work on Electromagnetics in 1220, Hatcher, or the BBB more. Currently I’m using the Apple Watch I won at Mhacks(!!) with the Hours app to track how much time I spend on each class. Then maybe instead of telling me to stand up each hour my watch will tell me that I should be working on my Data Structures project.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 10 Aug 2016 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/articles/2016-08/north-side-v-south-side</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2016-08/north-side-v-south-side</guid>
+        
+        <category>Michigan</category>
+        
+        
+        <category>Michigan</category>
+        
+      </item>
+    
+      <item>
+        <title>Happy Isles to Half Dome</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/foster_falls/ff_cover.jpeg&quot; alt=&quot;Cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Half dome in Yosemite is the much proclaimed “hike you must do before you die”. Although the hype is unprecedented, and the tourists abounding, the experience is nevertheless astounding. This was the longest hike I’d ever done at 18 miles over 12 hours. Luckily I was able to bring along my sister and my dad, having only told them I had applied and won the day-permit lottery less than 24 hours before we started at the Happy Isles trailhead. On the way down, I could hear my sister, a former diver at Michigan, saying that it was one of the hardest things she had ever done. So much for division 1 athletics.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;500px&quot; frameborder=&quot;0&quot; src=&quot;https://a.tiles.mapbox.com/v4/smaroukis.0ihna43h.html?access_token=pk.eyJ1Ijoic21hcm91a2lzIiwiYSI6ImNpcTZyNW96djAwZ3BmbmtrcnZpbXRoMG0ifQ.wlaRgsckB1_vTtYKWEhZJw&quot;&gt;&lt;/iframe&gt;
+
+</description>
+        <pubDate>Tue, 02 Aug 2016 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/articles/2016-08/half-dome</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2016-08/half-dome</guid>
         
         <category>outdoors</category>
         

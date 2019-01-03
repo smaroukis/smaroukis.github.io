@@ -19,17 +19,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f5f5f5">
   
-  <!-- Include MathJax for Latex Rendering -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        processEscapes: true
-      },
-      "HTML-CSS": {scale: 90}
-    });
-  </script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  {% if page.math %}
+    {% include mathjax.html %}
+  {% endif %}
+  {% if page.graphs %}
+    {% include plotly.html %}
+  {% endif %}
 
   <!-- Twitter Tags -->
   <meta name="twitter:card" content="summary">
