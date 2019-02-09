@@ -5,8 +5,8 @@
     <description>Electrical engineer @ Pacific Gas &amp; Electric operating the distribution grid.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Jan 2019 02:49:44 +0000</pubDate>
-    <lastBuildDate>Thu, 03 Jan 2019 02:49:44 +0000</lastBuildDate>
+    <pubDate>Sat, 09 Feb 2019 23:16:41 +0000</pubDate>
+    <lastBuildDate>Sat, 09 Feb 2019 23:16:41 +0000</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -136,110 +136,6 @@
       </item>
     
       <item>
-        <title>Example Syntax Post</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/foster_falls/ff_cover.jpeg&quot; alt=&quot;Cover&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;photo-with-caption&quot;&gt;Photo with Caption&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/foster_falls/ff_cover.jpeg&quot; alt=&quot;Photo text&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;pdf-hyperlink&quot;&gt;PDF hyperlink&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;/assets/file/echo-lake-to-angora.pdf&quot;&gt;pdf example&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;link-to-other-posts&quot;&gt;Link to other posts&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;/articles/2017-01/southern-comfort-food&quot;&gt;Link to a post&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/articles/2017-01/southern-comfort-food&quot;&gt;Link to a post&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;Link to a page&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/assets/file/echo-lake-to-angora.pdf&quot;&gt;Link to a assets/file&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;embedded-map&quot;&gt;Embedded Map&lt;/h2&gt;
-
-&lt;div id=&quot;map&quot; class=&quot;map leaflet-container&quot; style=&quot;height: 500px; position:relative;&quot;&gt;&lt;/div&gt;
-
-&lt;script&gt;
-    var map = L.map('map').setView([-118.179,36.495], 10);
-    L.tileLayer('https://api.mapbox.com/styles/v1/smaroukis/cj079ohrl00012ro37wtvmoea/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic21hcm91a2lzIiwiYSI6ImNpcTZyNW96djAwZ3BmbmtrcnZpbXRoMG0ifQ.wlaRgsckB1_vTtYKWEhZJw').addTo(map)
-&lt;/script&gt;
-
-&lt;h2 id=&quot;latex&quot;&gt;Latex&lt;/h2&gt;
-
-&lt;p&gt;Surround maths in &lt;code class=&quot;highlighter-rouge&quot;&gt;$$...$$&lt;/code&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 29 Dec 2018 00:41:33 +0000</pubDate>
-        <link>http://localhost:4000/articles/2018-12/YYYY-MM-DD-example-post</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2018-12/YYYY-MM-DD-example-post</guid>
-        
-        
-        <category>tag1</category>
-        
-        <category>tag2</category>
-        
-      </item>
-    
-      <item>
-        <title>Alpenglow Breaks</title>
-        <description>&lt;p&gt;5:40 am, Sacramento. Isaak is parked in his van, waiting outside my apartment. I am late, as usual. Internally, I justify my lateness,&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Unlike Isaak, who lives in a van, I have to get out of a bed with a plush, two inch mattress pad. Of course I’m f*cking late. Why do we have to wake up so early anyway?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I loaded up Isaak’s van with a backpack of camping gear and a sled. The sled was of the cheap, brightly colored variety that you find during the holiday season in bins at the front of the store. They are the type that no one actually really needs or wants, the type sure to last only a few runs, maybe less. But they are cheap and conveniently placed, so I bought one the day before at an electronics store.&lt;/p&gt;
-
-&lt;p&gt;[Sled Image]&lt;/p&gt;
-
-&lt;p&gt;I had met Isaak rock climbing at Phantom Spires the previous weekend, and through a mutual friend we had planned to climb Mount Shasta, the fifth highest peak in California (14,179 feet), and a straightfoward summit if the weather is right.&lt;/p&gt;
-
-&lt;p&gt;We hit the road from Sacramento with 4 hours ahead of us, but I didn’t offer to drive. There was something about taking responsibility of Isaak’s home that I didn’t quite feel ready for, and we had only met once prior. Plus I could catch up on some sleep-eye that I missed out on the night before. Not wanting to be dull, I stroke up some conversation which inevitably turned into a vanlife inquiry.&lt;/p&gt;
-
-&lt;p&gt;Isaak’s van setup is simple enough: the model is a Ford E-series, the classic plumber’s van; there’s a bed in the back where one can sleep diagonally; hard flooring and cabinets; a mini fridge and lots of books. 180 watts of solar panels power the fridge from a 12 volt battery, which can hold its own without solar for about a day or so. It wasn’t an idealized version of living out of a van that you might see online or on social media — it was just the bare necessities of life to keep one fed, sheltered, and — for Isaak — climbing.&lt;/p&gt;
-
-&lt;p&gt;My inquiry revealed that vanlife is not only about free spirits frolicking about in the great paved-by environments of the West, but also about trying to keep cool in the summer, keep warm in the winter, and find peace of mind in the form of a parking spot before hitting the ol’ sack. Isaak says the most stressful thing about living in his van was finding a safe place to park for the night.“The first year was hard,” Isaak says, “there’s places in Sacramento that definitely don’t feel safe to park in at night. In nicer neighborhoods people call the cops on you.” Uncomfortable to say the least. And this is coming from someone who wedges their hands into granite cracks for fun. Now though, he is relatively settled, with a famer’s consent to park on his land at night.&lt;/p&gt;
-
-&lt;p&gt;At some pause in the conversation I dozed off, later to wake up as we arrived in Redding to pick up Cliff, the last of our party. We switched vehicles to Cliff’s more fuel efficient and accomodating SUV. Then it was another hour to the town of Mount Shasta which sits at the base of the mountain, a town of transients and PCT’ers alike. At the gear shop in town I heard it is “pretty easy to tell them apart”. In my head I envisioned a gear-laden PCT hiker contrasted to a ragged and grizzled hitchiker sporting torn clothes.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2018-07/Alpenglow-breaks</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2018-07/Alpenglow-breaks</guid>
-        
-        <category>outdoors</category>
-        
-        
-        <category>outdoors</category>
-        
-      </item>
-    
-      <item>
-        <title>Harmonics in Power Systems</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;Delta connected transformers will filter third order harmonics.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;After coming across this a few times I wanted to find a source. In fact it was one of the most simple proofs, and probably was mentioned at one time in my power systems class.&lt;/p&gt;
-
-&lt;p&gt;It has to do with the phase angle shift caused by the &lt;script type=&quot;math/tex&quot;&gt;k^{th}&lt;/script&gt; harmonic component.&lt;/p&gt;
-
-&lt;p&gt;First, we can represent the current waveform as a Fourier Series, which is an infinite sum of sinusoids that can be used to represent &lt;em&gt;any&lt;/em&gt; periodic function.&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;i_a(t) = \sum_{k=1}^{\infty} I_k sin(k\omega_1 t + \Theta_k)&lt;/script&gt;
-</description>
-        <pubDate>Fri, 15 Jun 2018 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2018-06/power-system-harmonics</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2018-06/power-system-harmonics</guid>
-        
-        <category>power systems engineering</category>
-        
-        
-        <category>power systems engineering</category>
-        
-      </item>
-    
-      <item>
         <title>Climbing Training — Train to Perform</title>
         <description>&lt;p&gt;tl;dr just download the &lt;a href=&quot;/assets/file/bouldering-log.pdf&quot;&gt;bouldering logbook&lt;/a&gt;.&lt;/p&gt;
 
@@ -301,102 +197,6 @@
       </item>
     
       <item>
-        <title>Southern Comfort Food at Foster Falls</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/foster_falls/ff_cover.jpeg&quot; alt=&quot;Cover&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I was itching to get back outside to climb on some real rock ever since my first outdoor trip to the Red River Gorge in October ‘16. We originally planned on going back to the Red in January, but winter finally decided to show up so we pushed the trip a few hours further to Tennessee. Having grown up outside of Chattanooga between the ages of 4 and 12, I had no idea how much good climbing there was in the surrounding area. After a weekend though I had a new moniker stuck in my head, “Foster Falls ain’t no joke!”.&lt;/p&gt;
-
-&lt;p&gt;Chat Steel was our guidebook. It is awesome. Generally I felt the routes were a harder than the Red, and even on the 7’s and 8’s you had to do a lot of route finding.&lt;/p&gt;
-
-&lt;h2 id=&quot;routes&quot;&gt;Routes&lt;/h2&gt;
-
-&lt;p&gt;We did mostly routes around the 5.10 level, some of the classics were (rating as out of &lt;em&gt;**&lt;/em&gt;):&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Narcissim&lt;/em&gt; (@ Diehydrals), 5.10b ***&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Hurts So Good&lt;/em&gt; (@ Paradox Wall), 5.10a ***&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Mammplitude&lt;/em&gt; (@ Red Light District), 5.10a **&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Miss Prissy &amp;amp; Miss Scarlet&lt;/em&gt; (@ Lower Jimmy), 5.9 **
-an Unmarked 5.9+/5.10a @ Lower Jimmy (all the way to the left)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We stayed at the Foster Falls campground, which was right by the trail leading to the crag, which was a long L shaped continuous wall that took more than an hour to walk all of.&lt;/p&gt;
-
-&lt;p&gt;[comment] TODO: Add more photos&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2017-01/southern-comfort-food</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2017-01/southern-comfort-food</guid>
-        
-        <category>outdoors</category>
-        
-        
-        <category>outdoors</category>
-        
-      </item>
-    
-      <item>
-        <title>On the Road Toward Self-Learning Japanese</title>
-        <description>&lt;p&gt;I will soon receive an International Minor for Engineers from the University of Michigan, which requires 4 semesters of language proficiency and 10 globally focused credits ranging from world economics to religion. I quickly finished my language requirements taking 3rd and 4th semester French as a Freshman and studying abroad as a Sophomore. Another year passed and I found myself two semesters away from graduating, with a nagging feeling in my soul. Influenced by Rolfe Potts’ Vagabonding, having the desire to serve a community and live abroad, I decided to pursue something I had been thinking about for a while but had not dedicated the time and effort to - learning Japanese.&lt;/p&gt;
-
-&lt;p&gt;On the path of learning anything, it is important to surround oneself with motivation and support. Unfortunately it was October, and the Japanese class at Michigan spans a whole year. So I decided to teach myself with the hopes of testing into the second semester class in January. The rest of this post describes the tools and system I used. (Update: I made it.)&lt;/p&gt;
-
-&lt;p&gt;My first step was setting a schedule and then getting a system in place for learning, week by week. One of the greatest language learning and memory resources is Anki. Anki has a strong community of developers and language learners, and is also used by many medical students. &lt;/p&gt;
-
-&lt;p&gt;There are a ton of Japanese language learning resources out there. The takeaways from scouring many of them are: &lt;/p&gt;
-
-&lt;p&gt;master hiragana and katakana, NO ROMANI ALLOWED
-use the Genki textbooks for easy to understand grammar and great illustrations
-learn kanji starting with simple strokes first, learning radicals and mnemonics to build upon for future complex characters
-use SRS and Anki for recall&lt;/p&gt;
-
-&lt;h2 id=&quot;tools-im-using&quot;&gt;TOOLS I’M USING&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Genki I (Textbook and Audio) for grammar and vocab
-    &lt;h3 id=&quot;anki-shared-decks&quot;&gt;Anki Shared Decks&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/1758197267&quot;&gt;Genki I Grammar (through Chapter 6)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/942922371&quot;&gt;Genki Vocab by Chapter&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/748570187&quot;&gt;KanjiDamage Deck&lt;/a&gt;
-    &lt;h3 id=&quot;anki-add-ons&quot;&gt;Anki Add-ons&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/301952613&quot;&gt;Awesome TTS&lt;/a&gt; - for adding speech to Japanese characters&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ankiweb.net/shared/info/787914845&quot;&gt;Create Copy of Selected Cards&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Japanese Support - generates bulk readings and furigana&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jisho.org&quot;&gt;Jisho.org&lt;/a&gt; (for Mac users: even better is the Alfred Jisho &lt;a href=&quot;https://github.com/janclarin/jisho-alfred-workflow&quot;&gt;workflow&lt;/a&gt; that I found - Japanese vocab is literally a hotkey away)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Japanese-Busy-People-Kana-Workbook/dp/1568364016/ref=pd_sbs_14_t_2?_encoding=UTF8&amp;amp;psc=1&amp;amp;refRID=MQYK016RGC4KD5E5TRX6&quot;&gt;Japanese for Busy People Kana Workbook&lt;/a&gt; - to master hiragana, katakana and subtleties of pronunciation (and those tricky nasal consonants)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://hinative.com&quot;&gt;HiNative&lt;/a&gt; - to ask random quick questions on language, culture, or pronunciation&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://lang-8.com&quot;&gt;Lang8&lt;/a&gt; - for proofreading essays or longer passages&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;recall-vs-recognition---adding-the-possibility-of-reversed-cards-in-anki&quot;&gt;RECALL VS. RECOGNITION - ADDING THE POSSIBILITY OF REVERSED CARDS IN ANKI&lt;/h2&gt;
-&lt;p&gt;For the Anki Genki Vocab deck, I made the following changes&lt;/p&gt;
-
-&lt;p&gt;1) Added in a “Mnemonic” field for hard to remember words&lt;/p&gt;
-
-&lt;p&gt;2) Made the “Recall” card type optional, not prompting with English until I wanted to practice recall later down the line (I believe I can learn a larger amount of vocab faster this way).&lt;/p&gt;
-
-&lt;p&gt;For #2 I had to make the following edits, which is a good way to have the optional-reversed functionality that you see in some of Anki’s default card types.&lt;/p&gt;
-
-&lt;p&gt;Click on Browse, go to the Genki Vocab deck and click “Fields”, adding a field titled “Add Reversed” (spelling is important). After this go into “Cards” on the current deck where you should see the Recognition and Recall card types. To keep the Recall card types as optional for the future, add in the following tag around the displayed content:&lt;/p&gt;
-
-&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{{# Add Reversed}}...{{/Add Reversed}}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 06 Nov 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2016-11/japanese</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2016-11/japanese</guid>
-        
-        <category>language</category>
-        
-        
-        <category>language</category>
-        
-      </item>
-    
-      <item>
         <title>Mt. Ritter Summit - Ansel Adams Wilderness</title>
         <description>&lt;p&gt;I was fortunate enough to undergo my first true mountaineering experience with two weekends left in summer internship at Pacific Gas &amp;amp; Electric. It was a weekend trip to Ansel Adams wilderness, with epitomic views of the High Sierras and idyllic lakeside camping. We hiked in 6 miles to camp at Ediza Lake and the next day undertook the class 3 climb to the top of Mount Ritter (3,700ft elevation change over 3 miles, 13,143 ft summit).  The access to wilderness in California is unprecedented, and if you’re willing to drive 4.5 hours after work on a Friday, you’ll be rewarded with weekend memories that last a lifetime. (shoutout to Ryan and Aaron for letting my pass out in the  back of the car as they drove both ways).&lt;/p&gt;
 
@@ -449,66 +249,6 @@ use SRS and Anki for recall&lt;/p&gt;
         <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
         <link>http://localhost:4000/articles/2016-08/ansel-adams-wlderness</link>
         <guid isPermaLink="true">http://localhost:4000/articles/2016-08/ansel-adams-wlderness</guid>
-        
-        <category>outdoors</category>
-        
-        
-        <category>outdoors</category>
-        
-      </item>
-    
-      <item>
-        <title>North Side v. South Side</title>
-        <description>&lt;h2 id=&quot;its-the-ultimate-show-down&quot;&gt;IT’S THE ULTIMATE SHOW DOWN..&lt;/h2&gt;
-&lt;p&gt;Jets vs. Sharks. Biggie vs. Pac. and now… North Campus vs. Central Campus. Quantified.&lt;/p&gt;
-
-&lt;p&gt;If you didn’t go to the University of Michigan or never cared to attend any of your engineering classes, then let me inform you of the rivalry underlying much of the angst that comes with heaping amounts of student debt, cramming for exams, and getting involved in way too many extra curriculars because well, everyone else is.&lt;/p&gt;
-
-&lt;p&gt;North Campus sprung from a need for the university to accommodate its burgeoning student population. Taken from the University of Michigan Millennial Project:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Space on the University of Michigan campus became inadequate to accommodate the post-war growth of the University. In anticipation of this growing need, the Regents had begun to acquire farmland property on the sloping hills lying just to the northeast of the Huron River. Although there were some early thoughts given to relocating the School of Education, Natural Resources, Music, and Fine Arts to the North Campus, the construction of the Phoenix Memorial Project soon re-purposed the site for engineering research. More specifically, the early plans for the North Campus included the Cooley Memorial Laboratory to house the electronics research associated with the Willow Run Laboratories, the Phoenix Memorial Laboratory, the Automotive Laboratory, and a storage library.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Today North Campus houses the engineering campus including classrooms and a research facility, the School of Art and Architecture, the School of Information, and the School of Music, Theatre, and Dance. Also many unfortunate and forever-looked-down-upon freshmen are placed into the 3rd biggest residential hall in the country, Burseley Hall, more often known as the “Dirty Burs”.&lt;/p&gt;
-
-&lt;p&gt;For many, this is where the bitter contempt starts. Missing out on 15 minutes of sleep due to an always cramped bus ride to Central, the worst dining hall food on campus, and late night Ubers or SafeRides back to a lonely, far off dorm room in the boondocks of the student population (it’s October and you need to be looking for a place on Central already for next Fall).&lt;/p&gt;
-
-&lt;p&gt;But for engineers, artists, and the musically inclined, it is likely to be a place akin to home for four years. Late nights in the Dude, the 24 hour library and nap-place-of-choice for many, will become nostalgic pastimes. Some of the best minds in academia do their work in the research centers here, a place which forms the proving ground for ideas that will go on to be the central intellectual property of future Fortune 500 companies.&lt;/p&gt;
-
-&lt;p&gt;And basically everything else is on Central campus, including the largest football stadium in the country, dirty college dive bars posing as sports bars, Saturday morning tailgates, activist gatherings, Blank Slate ice cream, and everything else indicative of a healthy social life.&lt;/p&gt;
-
-&lt;p&gt;I wanted to put the $600 tracking device that I carry around on my body all day to some good use for once, so I decided to compare the data I’ve been collecting through the Moves app using this quantification jewel called Zenobase. Zenobase imports, collects, and stores data that you tell it to, and you can do some pretty cool and simple visualizations with it. It took a late Saturday night but I was able to graph some data on my North Campus vs. Central Campus habits.&lt;/p&gt;
-
-&lt;p&gt;Theoretically I should be spending about a third of my time on North, with engineering classes, work and projects. I compared two months with full datasets, August and September. There are three figures for each, with North being in orange and Central in blue. The top figure is the duration for each day over the month, the left is the time for each day of the week (plotted for Mon-Fri since there is no reason I should be on North on the weekend…barring feelings of loneliness and separation with my engineering kiln), and the right is the hourly spread.&lt;/p&gt;
-
-&lt;p&gt;In August I was working in a lab in EECS from 9-5. Not surprisingly work took up most of the day and is represented in the day of the week spread on the left. Your welcome NSA I’m doing your job for you.&lt;/p&gt;
-
-&lt;p&gt;For September I’m actually a bit surprised at how much I tended to be on Central, because it feels like I’m usually in EECS 1220 until at least 10 every night. Soon with more data I’ll be able to correlate location with type of work, whether I work on Electromagnetics in 1220, Hatcher, or the BBB more. Currently I’m using the Apple Watch I won at Mhacks(!!) with the Hours app to track how much time I spend on each class. Then maybe instead of telling me to stand up each hour my watch will tell me that I should be working on my Data Structures project.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 10 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2016-08/north-side-v-south-side</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2016-08/north-side-v-south-side</guid>
-        
-        <category>Michigan</category>
-        
-        
-        <category>Michigan</category>
-        
-      </item>
-    
-      <item>
-        <title>Happy Isles to Half Dome</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/img/foster_falls/ff_cover.jpeg&quot; alt=&quot;Cover&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Half dome in Yosemite is the much proclaimed “hike you must do before you die”. Although the hype is unprecedented, and the tourists abounding, the experience is nevertheless astounding. This was the longest hike I’d ever done at 18 miles over 12 hours. Luckily I was able to bring along my sister and my dad, having only told them I had applied and won the day-permit lottery less than 24 hours before we started at the Happy Isles trailhead. On the way down, I could hear my sister, a former diver at Michigan, saying that it was one of the hardest things she had ever done. So much for division 1 athletics.&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;500px&quot; frameborder=&quot;0&quot; src=&quot;https://a.tiles.mapbox.com/v4/smaroukis.0ihna43h.html?access_token=pk.eyJ1Ijoic21hcm91a2lzIiwiYSI6ImNpcTZyNW96djAwZ3BmbmtrcnZpbXRoMG0ifQ.wlaRgsckB1_vTtYKWEhZJw&quot;&gt;&lt;/iframe&gt;
-
-</description>
-        <pubDate>Tue, 02 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2016-08/half-dome</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2016-08/half-dome</guid>
         
         <category>outdoors</category>
         
