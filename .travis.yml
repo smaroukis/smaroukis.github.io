@@ -12,9 +12,14 @@ deploy:
   provider: pages
   local-dir: ./_site
   target-branch: master
-  email: smaroukis@gmail.com
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   keep-history: true
   on:
     branch: gh-pages
+notifications:
+  email:
+    recipients:
+      - smaroukis@gmail.com
+    on_success: always
+    on_failure: always
