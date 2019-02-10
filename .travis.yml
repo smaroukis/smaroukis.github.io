@@ -1,14 +1,20 @@
 language: ruby
+cache: bundler
 rvm:
  - 2.5.0
-
-script: bundle exec jekyll build
-
-addons:
-  apt:
-    packages:
-     - libcurl4-openssl-dev
-
+branches:
+  only:
+  - gh-pages
+script: 
+- bundle exec jekyll build
 sudo: false
-
-cache: bundler
+deploy:
+  provider: pages
+  local-dir: ./site
+  target-branch: master
+  email: smaroukis@gmail.com
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: gh-pages
