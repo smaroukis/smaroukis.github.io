@@ -10,7 +10,7 @@ script:
 sudo: false
 deploy:
   provider: pages
-  local-dir: ./site
+  local-dir: ./_site
   target-branch: master
   email: smaroukis@gmail.com
   skip-cleanup: true
