@@ -19,7 +19,8 @@ markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
 permalink:         /articles/:year-:month/:title
-theme: leonids
+remote_theme: leonids
+exclude: [vendor]
 
 sass:
     sass_dir: ./_sass

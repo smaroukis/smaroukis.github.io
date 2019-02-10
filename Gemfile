@@ -5,6 +5,7 @@ gem 'github-pages', group: :jekyll_plugins
 
 gem "leonids"
 gem "jekyll-theme-leap-day"
+gem "html-proofer"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
