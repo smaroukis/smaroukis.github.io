@@ -2,11 +2,7 @@ language: ruby
 rvm:
  - 2.5.0
 
-script: bundle exec jekyll build && htmlproofer ./_site
-
-  env:
-    global:
-      - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+script: bundle exec jekyll build
 
 addons:
   apt:
@@ -16,11 +12,3 @@ addons:
 sudo: false
 
 cache: bundler
-
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN  
-  keep-history: true
-  on:
-    branch: master
