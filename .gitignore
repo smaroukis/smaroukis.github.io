@@ -1,0 +1,5 @@
+Gemfile.lock
+README.log
+.sass-cache
+*.ipynb
+
