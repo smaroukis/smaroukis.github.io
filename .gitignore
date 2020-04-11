@@ -1,5 +1,13 @@
-Gemfile.lock
-README.log
-.sass-cache
+# metadata from Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# folders from bundler
+.bundle/
+vendor/
+
+# others
 *.ipynb
 
