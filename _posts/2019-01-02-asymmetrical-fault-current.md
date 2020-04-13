@@ -4,7 +4,7 @@ title: Asymmetrical Fault Currents
 excerpt: "Overview of asymmetrical fault currents and curve of asymmetry factor back-calculation"
 categories: [power systems engineering]
 tags: [power systems engineering, graphs]
-use_math: true
+katex: true
 graphs: true
 ---
 

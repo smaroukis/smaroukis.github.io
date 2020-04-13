@@ -1,6 +1,21 @@
 <script type="text/javascript" src="{{ site.url }}/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="{{ site.url }}/js/main.js"></script>
 
+<!-- for using katex with kramdown, to render math/tex tags via katex -->
+{% if page.katex %}
+<script>
+  $("script[type='math/tex']").replaceWith(function() {
+      var tex = $(this).text();
+      return katex.renderToString(tex, {displayMode: false});
+  });
+
+  $("script[type='math/tex; mode=display']").replaceWith(function() {
+      var tex = $(this).html();
+      return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+  });
+</script>
+{% endif %}
+
 {% if site.owner.google.analytics %}
 <!-- Asynchronous Google Analytics snippet -->
 <script>

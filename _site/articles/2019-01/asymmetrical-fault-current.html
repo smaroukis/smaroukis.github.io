@@ -15,19 +15,16 @@
   <meta name="theme-color" content="#f5f5f5">
   
   
-    
-  <!-- Include MathJax for Latex Rendering -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        processEscapes: true
-      },
-      "HTML-CSS": {scale: 90}
-    });
-  </script>
+    <!-- JS and CSS CDN Sources for Katex ... See /_includes/js.html for script converting kramdown math/tex script tags (used for mathjax) to kramdown recognizeable ones -->
+  <!-- Include Katex for Latex Rendering-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=Tex-AMS_CHMTL' async></script>
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
   
   
     <!-- Plotly -->
@@ -329,7 +326,7 @@
 
 
         <footer>
-  &copy; 2020 Spencer. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-bolt bolt-icon" style="color:gold"></i>
+  &copy; 2020 Dev. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-bolt bolt-icon" style="color:gold"></i>
 </footer>
 
       </div>
@@ -337,6 +334,21 @@
   </div>
   <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+<!-- for using katex with kramdown, to render math/tex tags via katex -->
+
+<script>
+  $("script[type='math/tex']").replaceWith(function() {
+      var tex = $(this).text();
+      return katex.renderToString(tex, {displayMode: false});
+  });
+
+  $("script[type='math/tex; mode=display']").replaceWith(function() {
+      var tex = $(this).html();
+      return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+  });
+</script>
+
 
 
 
