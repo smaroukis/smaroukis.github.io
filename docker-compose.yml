@@ -1,0 +1,12 @@
+# usage: `docker compose up`
+version: '3.7'
+services:
+  site:
+    environment:
+      - JEKYLL_ENV=docker
+    command: jekyll serve --incremental --config _config.yml,_config.docker.yml # needed for windows see https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/ 
+    image: jekyll/jekyll
+    volumes:
+      - .:/srv/jekyll
+    ports:
+      - 4000:4000
