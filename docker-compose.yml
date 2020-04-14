@@ -1,3 +1,4 @@
+# for local development only; for deployment use JEKYLL_ENV=production and --config _config.yml
 # usage: `docker compose up`
 version: '3.7'
 services:

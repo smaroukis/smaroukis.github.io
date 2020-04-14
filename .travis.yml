@@ -1,12 +1,11 @@
-language: ruby
-cache: bundler
-rvm:
- - 2.5.0
+language: python # since we will use the ruby of the docker image 
+before_install:
+  - docker pull jekyll/jekyll:3.8
 branches:
   only:
   - gh-pages
 script: 
-- bundle exec jekyll build
+  - docker run --rm -it -v="$PWD:/srv/jekyll" jekyll/jekyll:3.8 /bin/bash -c "chmod a_wx . && jekyll build"
 sudo: false
 deploy:
   provider: pages
