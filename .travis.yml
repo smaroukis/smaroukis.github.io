@@ -5,7 +5,7 @@ branches:
   only:
   - gh-pages
 script: 
-  - docker run --rm -it -v="$PWD:/srv/jekyll" jekyll/jekyll:3.8 /bin/bash -c "jekyll build"
+  - docker run --rm -it -v="$PWD:/srv/jekyll" jekyll/jekyll:3.8 /bin/bash -c "chmod a+wx . && jekyll build"
 sudo: false
 deploy:
   provider: pages
