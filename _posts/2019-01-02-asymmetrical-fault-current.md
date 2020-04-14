@@ -21,7 +21,7 @@ The asymmetry, with respect to the zero axis of the sinusoidal current, arises f
 
 Asymmetrical current can be broken into both a purely symmetrical AC component and a purely aperiodic DC component. The AC component is symmetrical about the y-axis. The DC component is exponentially decaying with a time constant proportional to X/R. The initial magnitude of the DC current depends on the time of occurence due to the closing phase angle determined by the offset from the zero-crossing of the voltage waveform and the system phase angle, $$\theta=\tan^{-1}(X/R)$$.
 
-![A basic asymmetrical current waveform]({{"/assets/latex/asym-current/asym-current.pdf"}})
+![A basic asymmetrical current waveform]({{ site.url }}/assets/latex/asym-current/asym-current.png)
 
 The asymmetrical waveform is the sum of the DC and AC components. In a power system, it will develop from zero as shown.
 
