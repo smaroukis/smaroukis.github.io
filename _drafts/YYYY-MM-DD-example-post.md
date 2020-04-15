@@ -5,11 +5,15 @@ excerpt: "This is a description under the title."
 categories: [tag1, tag2]
 ---
 
-![Cover](/assets/img/foster_falls/ff_cover.jpeg)
+![Cover](/assets/img/avatar.jpg)
 
-## Photo with Caption
+## Photo with Caption - Using `baseurl`
 
-![Photo text]({{"/assets/img/foster_falls/ff_cover.jpeg"}})
+![Photo text]({{"/assets/img/avatar.jpg" | relative_url }})
+
+## Photo with Caption - Using Absolute Url `url`
+
+![Photo text]({{"/assets/img/avatar.jpg" | absolute_url }})
 
 ## PDF hyperlink
 
@@ -21,9 +25,9 @@ categories: [tag1, tag2]
 
 [//]: # (Below, site.baseurl is optional)
 
-[Link to a post]({{ site.baseurl }}{% link _posts/2017-01-27-southern-comfort-food.md %})
+[Link to a post]({{ site.baseurl }}{% link _posts/2019-01-02-asymmetrical-fault-current.md %} )
 
-[Link to a post]({{ site.baseurl }}{% post_url 2017-01-27-southern-comfort-food %})
+[Link to a post]({{ site.baseurl }}{% post_url 2019-01-02-asymmetrical-fault-current %})
 
 [Link to a page]({{ site.baseurl }}{% link index.html %})
 
@@ -40,4 +44,4 @@ categories: [tag1, tag2]
 
 ## Latex
 
-Surround maths in `$$...$$`
+Surround maths in `$$...$$` as described in `kramdown` documentation
