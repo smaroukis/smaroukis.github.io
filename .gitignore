@@ -1,13 +1,8 @@
-# metadata from Jekyll
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 Gemfile.lock
-
-# folders from bundler
 .bundle/
 vendor/
-
-# others
 *.ipynb
 README.log
