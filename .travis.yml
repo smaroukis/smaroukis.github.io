@@ -1,3 +1,5 @@
+language: python # we will use the ruby of the docker container
+os: linux
 dist: bionic
 before_install:
   - docker pull jekyll/jekyll:3.8
