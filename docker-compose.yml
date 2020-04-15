@@ -3,9 +3,7 @@
 version: '3.7'
 services:
   site:
-    environment:
-      - JEKYLL_ENV=docker
-    command: jekyll serve --incremental --drafts --config _config.yml,_config.docker.yml # needed for windows see https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/ 
+    command: jekyll serve --env JEKYLL_ENV=docker --incremental --drafts --config _config.yml,_config.docker.yml # needed for windows see https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/ 
     image: jekyll/jekyll
     volumes:
       - .:/srv/jekyll
