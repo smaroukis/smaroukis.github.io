@@ -10,6 +10,7 @@ script:
   - docker run --rm -it -v="$PWD:/srv/jekyll" jekyll/jekyll:3.8 jekyll build
 deploy:
   provider: pages
+  skip_cleanup: true
   token: $GITHUB_TOKEN
   strategy: git
   keep_history: true
