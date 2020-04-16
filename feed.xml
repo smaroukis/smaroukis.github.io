@@ -5,17 +5,22 @@
     <description>Electrical engineer. Previously University of Michigan and Pacific Gas &amp; Electric.</description>
     <link>https://smaroukis.github.io/</link>
     <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Apr 2020 21:55:36 +0000</pubDate>
-    <lastBuildDate>Thu, 16 Apr 2020 21:55:36 +0000</lastBuildDate>
+    <pubDate>Thu, 16 Apr 2020 22:51:22 +0000</pubDate>
+    <lastBuildDate>Thu, 16 Apr 2020 22:51:22 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>This Website Using Jekyll, GitHub Pages, Docker, and Travis</title>
         <description>&lt;p&gt;Test&lt;/p&gt;
+
+&lt;h3 id=&quot;going-further&quot;&gt;Going Further&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.seanh.cc/2019/09/29/liquid&quot;&gt;Liquid Templating Crash Course&lt;/a&gt; for extending the functionality of different &lt;code class=&quot;highlighter-rouge&quot;&gt;.html&lt;/code&gt; files and layouts.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
-        <link>https://smaroukis.github.io/blog/how-i-built-this</link>
-        <guid isPermaLink="true">https://smaroukis.github.io/blog/how-i-built-this</guid>
+        <link>https://smaroukis.github.io/dennis/</link>
+        <guid isPermaLink="true">https://smaroukis.github.io/dennis/</guid>
         
         
         <category>meta</category>
