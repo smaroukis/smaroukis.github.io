@@ -6,4 +6,4 @@ Gemfile.lock
 vendor/
 *.ipynb
 README.log
-_site/
+_site/*
