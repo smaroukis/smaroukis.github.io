@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spencer</title>
-    <description>Electrical engineer @ Pacific Gas &amp; Electric operating the distribution grid.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 11 Apr 2020 17:12:01 +0000</pubDate>
-    <lastBuildDate>Sat, 11 Apr 2020 17:12:01 +0000</lastBuildDate>
-    <generator>Jekyll v3.6.2</generator>
+    <description>Electrical engineer. Previously University of Michigan and Pacific Gas &amp; Electric.</description>
+    <link>https://smaroukis.github.io/</link>
+    <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 16 Apr 2020 18:13:11 +0000</pubDate>
+    <lastBuildDate>Thu, 16 Apr 2020 18:13:11 +0000</lastBuildDate>
+    <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>Asymmetrical Fault Currents</title>
@@ -30,7 +30,7 @@
 
 &lt;p&gt;Asymmetrical current can be broken into both a purely symmetrical AC component and a purely aperiodic DC component. The AC component is symmetrical about the y-axis. The DC component is exponentially decaying with a time constant proportional to X/R. The initial magnitude of the DC current depends on the time of occurence due to the closing phase angle determined by the offset from the zero-crossing of the voltage waveform and the system phase angle, &lt;script type=&quot;math/tex&quot;&gt;\theta=\tan^{-1}(X/R)&lt;/script&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/latex/asym-current/asym-current.pdf&quot; alt=&quot;A basic asymmetrical current waveform&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/assets/latex/asym-current/asym-current.png&quot; alt=&quot;A basic asymmetrical current waveform&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The asymmetrical waveform is the sum of the DC and AC components. In a power system, it will develop from zero as shown.&lt;/p&gt;
 
@@ -123,8 +123,8 @@
 &lt;/div&gt;
 </description>
         <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2019-01/asymmetrical-fault-current</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2019-01/asymmetrical-fault-current</guid>
+        <link>https://smaroukis.github.io/articles/2019-01/asymmetrical-fault-current</link>
+        <guid isPermaLink="true">https://smaroukis.github.io/articles/2019-01/asymmetrical-fault-current</guid>
         
         <category>power systems engineering</category>
         
@@ -182,8 +182,8 @@
 &lt;p&gt;I’ve found it easiest to plan out ahead of time what I want to do, and then execute when I get to the gym. But what are you doing still reading? Get off the compter and get to the gym!&lt;/p&gt;
 </description>
         <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2018-04/climbing-training</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2018-04/climbing-training</guid>
+        <link>https://smaroukis.github.io/articles/2018-04/climbing-training</link>
+        <guid isPermaLink="true">https://smaroukis.github.io/articles/2018-04/climbing-training</guid>
         
         <category>outdoors</category>
         
@@ -206,49 +206,49 @@
 
 &lt;p&gt;Mt. Ritter sits on the edge of Ansel Adams wilderness, the historic photographer that was famous for his black and white prints.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/img/2016/ansel_adams/ryan-lake.jpg&quot; alt=&quot;Ryan's BW photo of the lake&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/assets/img/2016/ansel_adams/ryan-lake.jpg&quot; alt=&quot;Ryan's BW photo of the lake&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Ryan woke up early and took some Ansel-inspired pictures of Ediza lake and the Minarets.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/img/2016/ansel_adams/ryan-minarets.jpg&quot; alt=&quot;Ryan BW Minarets&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/assets/img/2016/ansel_adams/ryan-minarets.jpg&quot; alt=&quot;Ryan BW Minarets&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Then we set off for a big day – three miles to the summit, then 9 more back down all the way to the trailhead.&lt;/p&gt;
 
 &lt;p&gt;The first few miles were meandering up the meadows towards the base of the mountain.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/img/2016/ansel_adams/approach.jpg&quot; alt=&quot;approach&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/assets/img/2016/ansel_adams/approach.jpg&quot; alt=&quot;approach&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Then there are some waterfall scrambles on tight precipices, but it is only class 2 or 3. Soon you start to feel very high.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;http://localhost:4000/assets/img/2016/ansel_adams/moraines_below.JPG&quot; /&gt;
+    &lt;img src=&quot;https://smaroukis.github.io/assets/img/2016/ansel_adams/moraines_below.JPG&quot; /&gt;
     &lt;figcaption&gt; Looking back at the moraines below. &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;There is mention of a frog looking structure. Once you go around that you should see the scree-filled gully that shoots up to the peak. It’s steep, and the rock is crumbly, but it’s maybe 4th class at most.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;http://localhost:4000/assets/img/2016/ansel_adams/scree1.JPG&quot; /&gt;
+    &lt;img src=&quot;https://smaroukis.github.io/assets/img/2016/ansel_adams/scree1.JPG&quot; /&gt;
     &lt;figcaption&gt; The scree field heads around the corner up and to the right.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/img/2016/ansel_adams/scree2.JPG&quot; alt=&quot;scree 2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/assets/img/2016/ansel_adams/scree2.JPG&quot; alt=&quot;scree 2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;There was still some snow left, albeit rotten.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/img/2016/ansel_adams/snowfield1.JPG&quot; alt=&quot;snowfield1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/assets/img/2016/ansel_adams/snowfield1.JPG&quot; alt=&quot;snowfield1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;At the top, it is hard not to feel like you’re on top of the world.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/img/2016/ansel_adams/cover.JPG&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/assets/img/2016/ansel_adams/cover.JPG&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;From the summit, looking out at the whole of Ansel Adams Wilderness&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/img/2016/ansel_adams/summit-3.JPG&quot; alt=&quot;me&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/assets/img/2016/ansel_adams/summit-3.JPG&quot; alt=&quot;me&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/articles/2016-08/ansel-adams-wlderness</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2016-08/ansel-adams-wlderness</guid>
+        <link>https://smaroukis.github.io/articles/2016-08/ansel-adams-wlderness</link>
+        <guid isPermaLink="true">https://smaroukis.github.io/articles/2016-08/ansel-adams-wlderness</guid>
         
         <category>outdoors</category>
         

@@ -10,13 +10,14 @@ script:
   - docker run --rm -it -v="$PWD:/srv/jekyll" jekyll/jekyll:3.8 jekyll build
 deploy:
   provider: pages
+  local_dir: _site/
   skip_cleanup: true
   target-branch: master
   token: $GITHUB_TOKEN
   strategy: git
   keep_history: true
   on:
-    branch: gh-pages
+    branch: master-source
 notifications:
   email:
     recipients:

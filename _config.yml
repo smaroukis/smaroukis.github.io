@@ -5,7 +5,7 @@
 #
 title: Spencer
 email: smaroukis@gmail.com
-description: Electrical engineer @ Pacific Gas & Electric operating the distribution grid.
+description: Electrical engineer. Previously University of Michigan and Pacific Gas & Electric. 
 url: https://smaroukis.github.io # the base hostname & protocol for your site
 keywords: ["Power Systems", "Energy", "Clean Tech"]
 
@@ -20,7 +20,8 @@ highlighter:       rouge
 excerpt_separator: <!--more-->
 permalink:         /articles/:year-:month/:title
 theme: leonids
-exclude: [vendor]
+exclude: [vendor, docker-compose.yml, Gemfile]
+include: [.nojekyll]
 
 sass:
     sass_dir: ./_sass
@@ -40,7 +41,7 @@ owner:
   name: Spencer
   avatar: assets/img/avatar.jpg
   job: "Power Systems Engineer"
-  bio: "Electron traffic controller by week, rock climber by weekend."
+  bio: "Electron traffic control"
   email: smaroukis@gmail.com 
   disqus-shortname: 
   twitter: that_marouk_ish #username
