@@ -21,7 +21,7 @@ excerpt_separator: <!--more-->
 permalink:         /blog/:title
 theme: leonids
 exclude: [vendor, docker-compose.yml, Gemfile]
-include: [.nojekyll]
+include: [.nojekyll, .placeholderfortravis]
 
 sass:
     sass_dir: ./_sass

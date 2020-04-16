@@ -1,0 +1,1 @@
+this is a placeholder for the _site folder so that the travis docker container can run jekyll build, it should be included in the _config.yml file and added to the .gitignore
