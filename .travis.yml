@@ -7,7 +7,7 @@ branches:
   only:
   - master-source
 script: 
-  - docker run --rm -it -v="$PWD:/srv/jekyll" jekyll/jekyll:3.8 /bin/sh -l "mkdir _site && chmod +w _site && jekyll build"
+  - docker run --rm -it -v="$PWD:/srv/jekyll" jekyll/jekyll:3.8 jekyll build
 deploy:
   provider: pages
   local_dir: _site/
