@@ -6,7 +6,7 @@ services:
     environment:
       - JEKYLL_ENV=local # can be anything other than 'production', to override url
     command: jekyll serve --drafts --incremental --force_polling --watch --config _config.yml,_config.docker.yml # needed for windows see https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/ 
-    image: jekyll/jekyll
+    image: jekyll/jekyll:3.8
     volumes:
       - .:/srv/jekyll
     ports:
