@@ -7,13 +7,9 @@ categories: [tag1, tag2]
 
 ![Cover](/assets/img/avatar.jpg)
 
-## Photo with Caption - Using `baseurl`
+## Photo with Caption 
 
-![Photo text]({{"/assets/img/avatar.jpg" | relative_url }})
-
-## Photo with Caption - Using Absolute Url `url`
-
-![Photo text]({{"/assets/img/avatar.jpg" | absolute_url }})
+![Photo text]({{ site.url }}/assets/img/avatar.jpg}})
 
 ## PDF hyperlink
 

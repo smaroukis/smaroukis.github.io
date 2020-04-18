@@ -26,41 +26,57 @@ Tip: Go to the beginning of any section to see further resources.
 * [docker](https://docs.docker.com/get-docker/) and, for Linux, [docker-compose](https://docs.docker.com/compose/install/) (docker-compose is included with the Docker-Desktop installation on Windows and Mac OS) 
 
 # Jekyll
-### Resources
+## Resources
 * [The best beginner guide for Jekyll and GitHub Pages](http://jmcglone.com/guides/github-pages)
 * [The docs](https://jekyllrb.com/docs/)
 * Jekyll's [Ruby 101](https://jekyllrb.com/docs/ruby-101/): describes gems, Gemfiles, and Bundler]
 * [Liquid Templating Crash Course](https://www.seanh.cc/2019/09/29/liquid) for extending the functionality of different `.html` files and layouts. 
 * Official Jekyll Docker [image](https://hub.docker.com/r/jekyll/jekyll/) and [repo](https://github.com/envygeeks/jekyll-docker/blob/master/README.md)
 * [Jekyll and Docker on Windows by Fabian Wetzel](https://fabse.net/blog/2018/07/16/Running-Jekyll-on-Windows-using-Docker/)
+* [Running Jekyll in Docker](https://ddewaele.github.io/running-jekyll-in-docker/) is a great quick and dirty intro to spinning a site up from scratch with Docker
 
-### Dependencies and Getting Started
+## Dependencies and Getting Started
 Since we are using the official jekyll docker image, the only thing we need to install locally is docker and git (for Windows and bare-bones Linux distributions). This makes it easy to use different computers and not worry about local dependencies. Here's an overview of how we're managing the ruby and gem dependencies, starting with the ones we explicitly state:
 - **Jekyll**: The version is determined mainly by our **Gemfile** (`gem "jekyll", "~> 3.8"`)[^1]. We should also make sure to match the docker image jekyll version as specified in our `docker-compose.yml` or from the command line (e.g. `jekyll/jekyll:3.8` for version 3.8)
 - **Theme and Other Plugins**: Either as explicitly specified in the **Gemfile**, or implicitly depending on the version of Jekyll and other dependent gems
 - **Katex** or **Mathjax**: Defined where you put your javascript, mine is in a file under my `_includes` folder
 
 Dependencies we don't explicitly state:
-- **Ruby**: The ruby version is handeled by the jekyll/jekyll docker image (as of writing it was using 2.6.3)
-- 
+- **Ruby**: The ruby version is handeled by the jekyll/jekyll docker image (as of writing it was using 2.6.3) 
 
-First you will either build a new site or pull one down from a repo. To build a new site you will run the `jekyll new <sitename>` command, and then to display the site locally you will do `jekyll serve` which will both build the site and serve it locally on port 4000 by default. If you didn't want to serve the site but instead just build the static html files you would do `jekyll build`. The docker commands are as follows:
+First you will either build a new site from scratch or pull one down from a repo. To build a new site you will run the `jekyll new <sitename>` command to pull down the jekyll source files into the `<sitename>` directory. Then run `jekyll serve` which will both build the site and serve it locally on port 4000 by default. If you didn't want to serve the site but instead just build the static html files you would do `jekyll build`. The docker commands are as follows (you may need `sudo` for `docker run`):
 
 ```
-$ mkdir gemcache
-$ sudo docker run -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll jekyll new .
+export JEKYLL_VERSION=3.8
+sudo docker run -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll:$JEKYLL_VERSION jekyll new .
 ```
 
-(Note this will use the latest jekyll version and not the 3.8 as I am using)
-The first line makes a folder so that we can locally cache the gems that Bundler will pull down (from whatever is specified in the Gemfile). 
+This does the following:
 
-The second line 
+1. mounts our current host directory to the container's `/srv/jekyll` (the docker image has specific priveleges to run jekyll commands in this location)
+2. creates and mounts the host folder `current_directory/gemcache` to the correct spot in the container (`/usr/local/bundle`)
+3. uses the `jekyll/jekyll:3.8` image to initialize a jekyll site in `/srv/jekyll` which will also show up in our current host directory. This consists of the bare bones files that Jekyll needs to build a site, notably a `Gemfile`, `_config.yml` and a Markdown entry under the `_posts` directory. If you look closely there is also a hidden `.gitignore` file created.
 
-1) mounts our current host directory to the container's `/srv/jekyll` (the docker image has specific priveleges to run jekyll commands in this location) 
-2) mounts the host gemcache to the correct spot in the container
-3) uses the `jekyll/jekyll:latest` image to initialize a jekyll site in `/srv/jekyll` which will show up in our current host directory. This consists of the bare bones files that Jekyll needs to build a site, notably a `Gemfile`, `_config.yml` and a Markdown entry under the `_posts` directory.
+The directory structure should now be
 
-![Directory Structure after `jekyll new .`]({{"/assets/img/2020/jekyll-new-ls.jpg" | relative_url }})
+![Directory Structure after `jekyll new .`]({{ site.url }}/assets/img/2020/jekyll-new-tree.png)
+
+We actually don't have a site yet, we just have the source files that jekyll will build one with. Let's do that now in docker.
+
+```
+sudo docker run -it -p 4000:4000 -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll:$JEKYLL_VERSION jekyll serve
+```
+
+We have added the `-it` command to run it interactively and the `-p` command to forward port 4000 on the container to port 4000 on the host. Navigate to [http://localhost:4000](http://localhost:4000) to see the website. The directory should look like
+
+![Directory Structure after jekyll build or serve]({{ site.url }}/assets/img/2020/jekyll-build-tree.png)
+
+You can see that all the static files needed for displaying a website are under `_site` and the rest of the source files are unchanged. In fact Jekyll will copy any of the source files into the `_site` directory unless they are excluded in the configuration file (Gemfiles, Markdown, and files beginning with `_` or `.` are excluded by default). 
+
+One last point -- the path to the actual blog posts in html depends on how the permalink and categories are set up in the configuration file, which we'll look at next.
+
+## Custom Configuration
+
 
 
 [^1]: `~> 3.8` in a Gemile means any version equal to or greater than 3.8 but less than the next major version (4.0)
