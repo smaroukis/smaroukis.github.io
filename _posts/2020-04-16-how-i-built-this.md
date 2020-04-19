@@ -48,7 +48,7 @@ First you will either build a new site from scratch or pull one down from a repo
 
 ```
 export JEKYLL_VERSION=3.8
-sudo docker run -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll:$JEKYLL_VERSION jekyll new .
+docker run -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll:$JEKYLL_VERSION jekyll new .
 ```
 
 This does the following:
@@ -76,6 +76,36 @@ You can see that all the static files needed for displaying a website are under 
 One last point -- the path to the actual blog posts in html depends on how the permalink and categories are set up in the configuration file, which we'll look at next.
 
 ## Custom Configuration
+
+### Changing Themes
+A list of theme showcases can be found at [https://jekyllrb.com/docs/themes/](https://jekyllrb.com/docs/themes/).
+
+Note any incompatibility between the jekyll version and the theme of choice. Some themes have not been updated to support Jekyll 4.0.
+
+Generally you'll want to check the theme's documentation on how to download a theme. In theory, for themes with gems, you can just add the gem to your gemfile and update the configuration file. Some themes require specific structure that is better mimicked from downloading the source files yourself.
+
+Update Gemfile with the theme's gem
+
+```
+gem "leonids"
+```
+
+Update `_config.yml` 
+
+```
+theme: leonids
+```
+
+See [here](https://jekyllrb.com/docs/themes/#overriding-theme-defaults) for info on to how to override theme defaults with your own `_includes` and `_layouts`
+### _config.yml
+Some other things you may want to change are:
+* `url`: the hostname and protocol for you site. If you're hosting on GitHub pages it will be `https://<username>.github.io`.
+* `permalink`: the path to your posts online, e.g. `/blog/:title`. See the [docs](https://jekyllrb.com/docs/permalinks/#placeholders) for other placeholders. Note that you can also add a permalink for an individual post in the YAML front matter of that post.
+* `exclude` and `include`: for Jekyll `build`
+  * If we want to build the site ourselves instead of GitHub Pages, we include a `.nojekyll` empty file, since hidden files are excluded by default and we want this file to propogate to our `_site` folder so that it is there when we push it to GitHub. 
+  * Other files that we need in our source but not our site should be excluded or prepended with `.` or `_`. 
+* anything else that you or your theme has chosen to define. These are available via liquid tags as {% raw %}`{{ site.<variable> }}`{% endraw %}
+
 
 
 
