@@ -5,15 +5,17 @@ excerpt: An indepth guide to the fundamentals of Jekyll through the lense of a n
 categories: [meta, code]
 katex: true
 ---
+Check out the [source][post-source] for this blog post!
+
 This post is for:
 * 1) someone who wants to use custom Jekyll plugins but still host on GitHub pages
 * 2) a technologically savvy user who wants to start a blog spend and likes to spend time on the command line (and doesn't want to [read the docs][jekyll-docs]) 
 * 3) someone who already has a Jekyll blog but wants to extend their theme's functionality (and doesn't want to [read the docs][jekyll-docs])
-> For (2 you may already have built a ruby project and thus are more ruby-savvy than me. Then you won't need docker and you probably have your own deployment workflow. But you need to know more about how Jekyll is building and serving files, what to include and exclude in your configurations, how to use Liquid tags and where to put your custom javascript. For (3) maybe you have been using Jekyll for a few months but want to develop a more fundamental understanding of what is going on behind the scenes. This is where I was a few months ago after I hadn't blogged for a year, I looked at my repo and realized I didn't know what was going on here.
+> For (2) you may already have built a ruby project and thus are more ruby-savvy than me. Then you won't need docker and you probably have your own deployment workflow. But you need to know more about how Jekyll is building and serving files, what to include and exclude in your configurations, how to use Liquid tags and where to put your custom javascript. For (3) maybe you have been using Jekyll for a few months but want to develop a more fundamental understanding of what is going on behind the scenes. This is where I was a few months ago after I hadn't blogged for a year, I looked at my repo and realized that I didn't know what was going on.
 
 [//]: TODO: TABLE OF CONTENTS
 
-# First Things First
+## Basic Knowledge, Ruby and Bundler
 Some basic knowledge of the command line, Jekyll, bash, docker, and git will be useful. You may want to read through Jekyll's [quick start guide][jekyll-docs] to see what is being installed and used locally like `ruby` and `Bundler`. The **TL;DR** is that `ruby` is a programming languagage whose libraries are packaged in `gems`. `Bundler` manages the gems using the versions found in a local `Gemfile`, installing the specified version of various gems and their dependencies. The `Gemfile` is stored in the root directory of the project and the gems are downloaded and stored by `Bundler` somewhere like `/usr/local/bundle`. See [this stack overflow answer](https://stackoverflow.com/questions/15586216/bundler-vs-rvm-vs-gems-vs-rubygems-vs-gemsets-vs-system-ruby) for more detail. 
 
 Here's what I'm using with links to the relevant sections: 
