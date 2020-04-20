@@ -1,9 +1,8 @@
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-Gemfile.lock
 .bundle/
 vendor/
 *.ipynb
 README.log
-_site/*
+_site

@@ -11,6 +11,8 @@ permalink: /dennis/
 # First Things First
 As with anything technical, there is a lack of material on that stage between beginner and professional — for me this is the stage I constantly live when it comes to software. Many blogs will tell you how to setup a basic GitHub Pages-hosted, Jekyll-built website, any other blogs will show you how they setup docker and microsoft azule to deploy their website. But not many will make that connection between "what is going on here" and "this is how you do it". This post tries to 1) break down what is going on "behind the scenes" as jekyll builds your website and 2) showcase my workflow and the challenges I overcame so that you can identify key blockages early on, understand why they happen, and improve upon them. 
 
+> Some basic knowledge of Jekyll will be useful. You may want to read through Jekyll's quick start guide to see what is being installed and used locally like `ruby` and `bundler`. The tl;dr is that `ruby` is a programming languagage whose libraries are packaged in `gems`. `Bundler` manages the gems using the versions found in a local `Gemfile`, installing the specified version of various gems and their dependencies. The `Gemfile` is stored in the root directory of the project and the gems are downloaded and stored by `Bundler` somewhere like `/usr/local/bundle`. See [this stack overflow answer](https://stackoverflow.com/questions/15586216/bundler-vs-rvm-vs-gems-vs-rubygems-vs-gemsets-vs-system-ruby) for more detail. To dive into the nethers of the web, read [this blog post](https://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/). 
+
 Here's what I'm using with links to the relevant sections: 
 * [Jekyll](https://jekyllrb.com):3.8 as a static site generator (_with custom plugins_). Note that as of writing the next major release of Jekyll (4.0.0) has been released but I have yet to upgrade.
 * [GitHub Pages](https://pages.github.com) to _host_ the website (plus routing from a custom domain provied by [Namecheap](https://www.namecheap.com))
@@ -68,7 +70,6 @@ The directory structure should now be
 ├── about.markdown
 ├── _config.yml
 ├── Gemfile
-├── Gemfile.lock
 ├── index.markdown
 ├── _posts
     └── 2020-04-18-welcome-to-jekyll.markdown
@@ -79,7 +80,7 @@ We actually don't have a site yet, we just have the source files that jekyll wil
 ```
 docker run -it -p 4000:4000 -v $(pwd):/srv/jekyll jekyll/jekyll:$JEKYLL_VERSION jekyll serve
 ```
-We have added the `-it` command to run it interactively and the `-p` command to forward port 4000 on the container to port 4000 on the host. Navigate to [http://localhost:4000](http://localhost:4000) to see the website. The directory should now have a new file `_site` in addition to the source files which are left untouched. 
+We have added the `-it` command to run it interactively and the `-p` command to forward port 4000 on the container to port 4000 on the host. Navigate to [http://localhost:4000](http://localhost:4000) to see the website. The directory should now have a new directory `_site` in addition to the source files which are left untouched. 
 
 ```sh
 _site
@@ -99,6 +100,8 @@ _site
                 └── 19
                     └── welcome-to-jekyll.html
 ```
+
+> A `Gemfile.lock` file will also have been created in the root directory. This is a list of all of the gems installed by `Bundler` at run time, including the exact versions and any dependencies not declared in the `Gemfile`. Note that both the `Gemfile` and the `Gemfile.lock` should both be checked in to our GitHub repo.
 
 You can see that all the static files needed for displaying a website are under `_site` and the rest of the source files are unchanged. In fact Jekyll will copy any of the source files into the `_site` directory unless they are excluded in the configuration file (Gemfiles, Markdown, and files beginning with `_` or `.` are excluded by default). Further, if any files have YAML front matter, these files will be "processed" by Jekyll. 
 
