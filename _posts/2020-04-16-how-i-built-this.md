@@ -158,7 +158,7 @@ Here are the highlights:
   * Anything under `_site` should be ignored by git (if not add `_site` to your `.gitignore`), which is necessary since you will have conflicts between building and serving, since `build` will use the actual `url` defined in `_config.yml` and `serve` will build the site to `localhost:4000`. 
 4. Build the site and push only the contents of `_site` to the `master` branch, which GitHub will host automatically. 
 
-### 2. Serving Via _Docker Compose_
+## 2. Serving Via _Docker Compose_
 Docker-Compose is normally used to spin up a fleet of containers, but I use it as a convenient short-hand way to use local development flags across multiple development environments. Of course you could write a simple shell script to do the same thing if you only use the same OS all the time.
 
 > On Windows things are a bit wonky. You'll have to create an extra `_config.yml` file so that you can use `url=localhost` instead of the default `0.0.0.0` that `jekyll serve` will do. [This blog post][jekyll-serve-windows] lays it all out. 
@@ -186,8 +186,9 @@ Note this will **only be used to preview the site locally**. If we are building 
 
 Since we are only using it locally we can add it to our `.gitignore` file. Since it does not begin with `.` or `_` we also need to exclude it in our `_config.yml` file or else it will be copied into the `_site` folder when built.
 
-```YAML
+```yaml
 # _config.yml
+
 exclude: [docker-compose.yml]
 ```
 
@@ -195,6 +196,38 @@ Then to run this in the background as we edit our posts we run:
 
 ```sh
 docker-compose up -d
+```
+
+with the detached `-d` flag to detach it from a shell. 
+
+### Other Docker Commands
+Use `docker ps` to list running containers and `docker ps -a` to list all containers. Use `docker image ls` to list docker images.
+
+**Executing commands in the container**: You have an existing container that you want to run something like  `bundle update` in[^3], but you don't want to start a new container from the `jekyll/jekyll` image which would cause all of the gems to be downloaded again[^4]. Get the container name from `docker ps` or `docker-compose ps` (the container has to be active) and run the following:
+
+```sh
+docker exec -it <container_name> bundle update
+```
+
+To get a shell in the container run
+
+```sh
+docker exec -it <container_name> /bin/sh
+```
+
+**Stopping a Container**: If you served the Jekyll site in detached mode (`-d`) and you want to stop the server so that port 4000 is available for something else.
+```sh
+docker kill <container_name>
+```
+
+**Restarting a Container**: You want to re-serve the Jekyll site, which means you need to restart the docker container (assuming the container still exists)
+```sh
+docker restart <container_name>
+```
+
+**Removing Unused Containers**: Any containers run without the `--rm` option will still be available. To delete all stopped containers use
+```sh
+docker system prune
 ```
 
 ### 3. Git & CI Options
@@ -210,6 +243,10 @@ docker-compose up -d
 [^1]: `~> 3.8` in a Gemile means any version equal to or greater than 3.8 but less than the next major version (4.0)
 
 [^2]: The syntax for a Windows machine will differ. Using `git-bash` (recommended) I used a backlash to escape the current working directory like `docker run -v /$(pwd):/srv/jekyll jekyll/jekyll`. For full paths you would need to follow Windows syntax before the colon and Linux after: `docker run -v c:\\path\\to\\Windows\\dir:/srv/jekyll ...`
+
+[^3]: You would want to do this if you've updated a gemfile with new themes. Other commands would be `docker exec -it <container_name> gem install "new-jekyll-theme"`.
+
+[^4]: In theory you should be able avoid this by caching the gems locally by additionally mounting a volume to the container's `/usr/local/bundle` directory (e.g. `docker run -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll jekyll build`), but due to permissions errors I was not able to get this to work. 
 
 [jekyll-docs]: https://jekyllrb.com/docs/
 [jekyll-serve-windows]: https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/
