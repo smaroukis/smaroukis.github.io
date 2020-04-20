@@ -24,7 +24,7 @@ Here's what I'm using with links to the relevant sections:
 * [Travis](https://travis-ci.org) and [Docker](https://www.docker.com) to _build and deploy_ the static site to the `master` branch of my GitHub repository, which GitHub serves and hosts automatically
 * [Katex](https://katex.org) for displaying Maths _whilst using [kramdown](https://kramdown.gettalong.org/index.html)_, the default markdown converter in Jekyll
 
-I'll also point out some Windows traps, demonstrate my git workflow (and provide alternatives), give you some ideas on how to extend your theme's layouts, and show you how to display Maths in _both Mathjax and Katex_. 
+I'll also point out some Windows traps, demonstrate my git workflow, and give you some ideas on how to extend your theme's layouts.
 
 
 Tip: Go to the beginning of any section to see further resources. 
@@ -48,7 +48,7 @@ Tip: Go to the beginning of any section to see further resources.
 Since we are using the official jekyll docker image, the only thing we need to install locally is docker and git (for Windows and bare-bones Linux distributions). This makes it easy to use different computers and not worry about local dependencies. Here's an overview of how we're managing the ruby and gem dependencies, starting with the ones we explicitly state:
 - **Jekyll**: (explicit) The version is determined mainly by our **Gemfile** (`gem "jekyll", "~> 3.8"`)[^1]. We should also make sure to match the docker image jekyll version as specified in our `docker-compose.yml` or from the command line (e.g. `jekyll/jekyll:3.8` for version 3.8)
 - **Theme and Other Plugins**: Either as explicitly specified in the **Gemfile**, or implicitly depending on the version of Jekyll and other dependent gems
-- **Katex** or **Mathjax**: (explicit) Defined where you put your javascript, mine is in a file under my `_includes` folder
+- **Katex** or **MathJax**: (explicit) Defined where you put your javascript, mine is in a file under my `_includes` folder
 - **Ruby**: (implicit) The ruby version is handeled by the jekyll/jekyll docker image (as of writing it was using 2.6.3) 
 
 First you will either build a new site from scratch or pull one down from a repo. Generally to build a new site you run `jekyll new <sitename>` to pull down the jekyll source files into the `<sitename>` directory. Then you go into this directory and run `jekyll serve` which will both build the site and serve it locally on port 4000 by default. If you didn't want to serve the site but instead just build the static html files you would do `jekyll build`. But since we don't have Ruby, Jekyll, or Bundler locally we use a docker container for all of these.
@@ -307,23 +307,79 @@ So now we understand what is going on behind the scenes with the _Asides_ above.
 1. `git checkout master-source`
 2. Make edits yada yada
 3. `git add` stuff and `git commit -m 'this blog is getting really long'`
-4. `git push --set-upstream origin master-source
+4. `git push --set-upstream origin master-source`
 
 Note that we really don't want to make edits on the `master-source` branch, so we would really checkout a different branch, merge those changes into `master-source` and then push to the remote. 
 
-### 4. 
+### 4. Setting Up Travis
 
-## Example: Theme with Layouts, Includes, custom JavaScript
+To setup or continuous integration (CI) tool we need to tell them what branch to watch for changes on, what docker command to run, and what branch and files to push the built site to. There are some good Travis + Jekyll + GitHub Pages how-to's like [this one][blog-travis-example].
+
+```yaml
+# ./.travis.yml
+language: python # we will use the ruby of the docker container
+os: linux
+dist: bionic
+before_install:
+  - docker pull jekyll/jekyll:3.8
+branches:
+  only:
+  - master-source # safelist to only build this branch; edit this to your release or source branch
+script: 
+  - docker run --rm -it -v="$PWD:/srv/jekyll" jekyll/jekyll:3.8 jekyll build
+deploy:
+  provider: pages
+  local_dir: _site/ # only deploy the contents of _site to the master branch
+  skip_cleanup: true
+  target-branch: master # where you want to deploy the build to
+  token: $GITHUB_TOKEN # set this up in your travis profile
+  strategy: git
+  keep_history: true
+  on:
+    branch: master-source # deploy only from the source branch
+notifications:
+  email:
+    recipients:
+      - smaroukis@gmail.com # I hope there are no bots scraping this webpage for email addresses
+    on_success: always
+    on_failure: always
+```
+
+A few things to note
+
+1. `script`: This is the main command we are using to build the site with Travis/Docker instead of GitHub Pages. Since we are using `jekyll build` by default we are using `JEKYLL_ENV=production` and the other matter specified in the `_config.yml`. 
+2. `only: master-source` and `branch: master-source`: Replace `master-source` with the name of your source/release branch.
+3. `local_dir: _site/`: Tells Travis to only deploy the _contents_ of `_site`.
+4. `target-branch: master`: Where you want to deploy the the built files to. This should be the same as in your GitHub repo's **Settings > Options > GitHub Pages > Source** points to. 
+4. `language: python`: We are using a `python` travis instance to show that we are only using the ruby version of the docker container. It is also faster than a `ruby` instance[^5].
 
 
+# Wrapping Up
+
+## How are Maths Displayed?
+
+By default the `kramdown` markdown parser will look for math delimiters (`$$...$$`, etc.) and convert these into MathJax html tags (`< script type="math/tex"> $$ P=IV $$ </script>`). Then the javascript included in the header or theme layout will use the specified MathJax version to render on the browser. 
+
+For those who want to use the faster `Katex` engine, you can switch out the `header` javascript pointing to the MathJax cdn host and instead point to Katex host (see [here][katex-cdn]). Then you turn the MathJax `math/tex` script tags into Katex style javascript which executes upon loading the page (see [here][katex-mathjax-conversion]). Note that I had to remove the `defer` part from the Katex starter template `<script>` tags since this will cause the remote javascript pointing to the Katex host to load _after_ the javascript that tries to convert math via Katex has been executed. 
+
+## Improvements and Feedback
+For any improvements to content please submit on [GitHub][post-source]. 
+
+* [ ] Environment variables for `$JEKYLL_VERSION` that propogate across OS's and into Travis
+
+---
+
+# Footnotes
 
 [^1]: `~> 3.8` in a Gemile means any version equal to or greater than 3.8 but less than the next major version (4.0)
 
-[^2]: The syntax for a Windows machine will differ. Using `git-bash` (recommended) I used a backlash to escape the current working directory like `docker run -v /$(pwd):/srv/jekyll jekyll/jekyll`. For full paths you would need to follow Windows syntax before the colon and Linux after: `docker run -v c:\\path\\to\\Windows\\dir:/srv/jekyll ...`
+[^2]: The syntax for a Windows machine will differ. Using `git-bash` (recommended) I used a backslash to escape the current working directory like `docker run -v /$(pwd):/srv/jekyll jekyll/jekyll`. For full paths you would need to follow Windows syntax before the colon and Linux after: `docker run -v c:\\path\\to\\Windows\\dir:/srv/jekyll ...`
 
 [^3]: You would want to do this if you've updated a gemfile with new themes. Other commands would be `docker exec -it <container_name> gem install "new-jekyll-theme"`.
 
 [^4]: In theory you should be able avoid this by caching the gems locally by additionally mounting a volume to the container's `/usr/local/bundle` directory (e.g. `docker run -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll jekyll build`), but due to permissions errors I was not able to get this to work. 
+
+[^5]: Improve [this post][post-source] by telling me what is the fastest Travis instance os. 
 
 [jekyll-docs]: https://jekyllrb.com/docs/
 [jekyll-docs-ghpages]: https://jekyllrb.com/docs/github-pages/
@@ -332,8 +388,12 @@ Note that we really don't want to make edits on the `master-source` branch, so w
 [docker-compose-install]: https://docs.docker.com/compose/install/
 [docker-install]: https://docs.docker.com/get-docker/
 [gh-pages-config]: https://help.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll#configuring-jekyll-in-your-github-pages-site
+[blog-travis-example]: https://medium.com/@mcred/supercharge-github-pages-with-jekyll-and-travis-ci-699bc0bde075
+[katex-cdn]: https://katex.org/docs/browser.html#starter-template
+[katex-mathjax-conversion]: https://kramdown.gettalong.org/math_engine/mathjax.html
 
 [//]: Images
 [gh-environ]: {{ site.url }}/assets/img/2020/gh-environ.png
 [gh-activity-log]: {{ site.url }}/assets/img/2020/gh-activity-log.png
 [gh-pages-source]: {{ site.url }}/assets/img/2020/gh-pages-source.png
+[post-source]: https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-16-how-i-built-this.md
