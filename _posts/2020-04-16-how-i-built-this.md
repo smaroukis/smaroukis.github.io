@@ -3,6 +3,7 @@ layout: post
 title: This Website Using Jekyll, GitHub Pages, Docker, and Travis
 excerpt: An indepth guide to the fundamentals of Jekyll through the lense of a non-coder.
 categories: [meta, code]
+katex: true
 hide: true
 permalink: /dennis/
 ---
@@ -30,6 +31,7 @@ Tip: Go to the beginning of any section to see further resources.
 * Official Jekyll Docker [image](https://hub.docker.com/r/jekyll/jekyll/) and [repo](https://github.com/envygeeks/jekyll-docker/blob/master/README.md)
 * [Jekyll and Docker on Windows by Fabian Wetzel](https://fabse.net/blog/2018/07/16/Running-Jekyll-on-Windows-using-Docker/)
 * [Running Jekyll in Docker](https://ddewaele.github.io/running-jekyll-in-docker/) is a great quick and dirty intro to spinning a site up from scratch with Docker
+* [Jekyll, Docker, Windows, and 0.0.0.0][jekyll-serve-windows]: for serving your site locally on Windows.
 
 ## Dependencies and Getting Started
 **Local Dependencies**
@@ -48,30 +50,57 @@ First you will either build a new site from scratch or pull one down from a repo
 
 ```
 export JEKYLL_VERSION=3.8
-docker run -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll:$JEKYLL_VERSION jekyll new .
+docker run -v $(pwd):/srv/jekyll jekyll/jekyll:$JEKYLL_VERSION jekyll new .
 ```
+
+> Note I will be using Jekyll 3.8 throughout, so anytime you see this change it to the version you are working with.
 
 This does the following:
 
-1. mounts our current host directory to the container's `/srv/jekyll` (the docker image has specific priveleges to run jekyll commands in this location)
-2. creates and mounts the host folder `current_directory/gemcache` to the correct spot in the container (`/usr/local/bundle`)
-3. uses the `jekyll/jekyll:3.8` image to initialize a jekyll site in `/srv/jekyll` which will also show up in our current host directory. This consists of the bare bones files that Jekyll needs to build a site, notably a `Gemfile`, `_config.yml` and a Markdown entry under the `_posts` directory. If you look closely there is also a hidden `.gitignore` file created.
+1. mounts our **current host directory**[^2] to the container's `/srv/jekyll` (the docker image has specific priveleges to run jekyll commands in this location)
+2. uses the `jekyll/jekyll:3.8` image to **initialize a jekyll site** in `/srv/jekyll` which will also show up in our current host directory. This consists of the bare bones files that Jekyll needs to build a site, notably a `Gemfile`, `_config.yml` and a Markdown entry under the `_posts` directory. If you look closely there is also a hidden `.gitignore` file created.
 
 The directory structure should now be
 
-![Directory Structure after `jekyll new .`]({{ site.url }}/assets/img/2020/jekyll-new-tree.png)
+```sh
+.
+├── 404.html
+├── about.markdown
+├── _config.yml
+├── Gemfile
+├── Gemfile.lock
+├── index.markdown
+├── _posts
+    └── 2020-04-18-welcome-to-jekyll.markdown
+```
 
 We actually don't have a site yet, we just have the source files that jekyll will build one with. Let's do that now in docker.
 
 ```
-sudo docker run -it -p 4000:4000 -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll:$JEKYLL_VERSION jekyll serve
+docker run -it -p 4000:4000 -v $(pwd):/srv/jekyll jekyll/jekyll:$JEKYLL_VERSION jekyll serve
+```
+We have added the `-it` command to run it interactively and the `-p` command to forward port 4000 on the container to port 4000 on the host. Navigate to [http://localhost:4000](http://localhost:4000) to see the website. The directory should now have a new file `_site` in addition to the source files which are left untouched. 
+
+```sh
+_site
+├── 404.html
+├── about
+│   └── index.html
+├── assets
+│   ├── main.css
+│   ├── main.css.map
+│   └── minima-social-icons.svg
+├── feed.xml
+├── index.html
+└── jekyll
+    └── update
+        └── 2020
+            └── 04
+                └── 19
+                    └── welcome-to-jekyll.html
 ```
 
-We have added the `-it` command to run it interactively and the `-p` command to forward port 4000 on the container to port 4000 on the host. Navigate to [http://localhost:4000](http://localhost:4000) to see the website. The directory should look like
-
-![Directory Structure after jekyll build or serve]({{ site.url }}/assets/img/2020/jekyll-build-tree.png)
-
-You can see that all the static files needed for displaying a website are under `_site` and the rest of the source files are unchanged. In fact Jekyll will copy any of the source files into the `_site` directory unless they are excluded in the configuration file (Gemfiles, Markdown, and files beginning with `_` or `.` are excluded by default). 
+You can see that all the static files needed for displaying a website are under `_site` and the rest of the source files are unchanged. In fact Jekyll will copy any of the source files into the `_site` directory unless they are excluded in the configuration file (Gemfiles, Markdown, and files beginning with `_` or `.` are excluded by default). Further, if any files have YAML front matter, these files will be "processed" by Jekyll. 
 
 One last point -- the path to the actual blog posts in html depends on how the permalink and categories are set up in the configuration file, which we'll look at next.
 
@@ -80,13 +109,13 @@ One last point -- the path to the actual blog posts in html depends on how the p
 ### Changing Themes
 A list of theme showcases can be found at [https://jekyllrb.com/docs/themes/](https://jekyllrb.com/docs/themes/).
 
-Note any incompatibility between the jekyll version and the theme of choice. Some themes have not been updated to support Jekyll 4.0.
+> Note any incompatibility between the Jekyll version and the theme of choice. Some themes have not been updated to support Jekyll 4.0.
 
 Generally you'll want to check the theme's documentation on how to download a theme. In theory, for themes with gems, you can just add the gem to your gemfile and update the configuration file. Some themes require specific structure that is better mimicked from downloading the source files yourself.
 
 In our case, let's try the [**Basically Basic**](https://mmistakes.github.io/jekyll-theme-basically-basic) theme which is a good out-of-the-box replacement for Jekyll's default Minima theme. It also has [great documentation](https://github.com/mmistakes/jekyll-theme-basically-basic) to explore and give you ideas on how to extend whatever theme you're using. 
 
-Update Gemfile with the theme's gem
+Update `Gemfile` with the theme's gem
 
 ```
 gem "jekyll-theme-basically-basic"
@@ -98,9 +127,10 @@ Update `_config.yml`
 theme: jekyll-theme-basically-basic
 ```
 
-See [here](https://jekyllrb.com/docs/themes/#overriding-theme-defaults) for info on to how to override theme defaults with your own `_includes` and `_layouts`
+### Extending Themes
+There are more source files actually stored within the gem that Bundler downloads. These are folders such as `assets`, `_includes`, `_layouts`, `_sass` that are called upon when Jekyll builds the site. Any local files with the same nomenclature as the theme's gem will override that file, allowing you to customize themes. For example, this allows us to use insert javascript that will render $$\LaTeX $$ for math posts. See [the docs](https://jekyllrb.com/docs/themes/#overriding-theme-defaults) for more. 
 
-### _config.yml
+### Editing _config.yml
 Some other things you may want to change are:
 * `url`: the hostname and protocol for you site. If you're hosting on GitHub pages it will be `https://<username>.github.io`.
 * `permalink`: the path to your posts online, e.g. `/blog/:title`. See the [docs](https://jekyllrb.com/docs/permalinks/#placeholders) for other placeholders. Note that you can also add a permalink for an individual post in the YAML front matter of that post.
@@ -117,15 +147,17 @@ Here are the highlights:
   * Anything under `_site` should be ignored by git (if not add `_site` to your `.gitignore`), which is necessary since you will have conflicts between building and serving, since `build` will use the actual `url` defined in `_config.yml` and `serve` will build the site to `localhost:4000`. 
 4. Build the site and push only the contents of `_site` to the `master` branch, which GitHub will host automatially. 
 
-To quickly serve the website we'll want to use docker compose. Create the following in a file named `docker-compose.yml`.
+### Serving Via **Docker Compose**
+> On Windows things are a bit wonky. You'll have to create an extra `_config.yml` file so that you can use `url=localhost` instead of the default `0.0.0.0` that `jekyll serve` will do. [This blog post][jekyll-serve-windows] lays it all out. 
+
+To quickly serve the website we'll want to use docker compose. Create the following in a file named `docker-compose.yml`:
+
 
 ```
-version: '3.7' # docker version
+version: '3.7' # docker compose version
 services:
   site:
-    environment:
-      - JEKYLL_ENV=local # can be anything other than 'production', to override url
-    command: jekyll serve --drafts --incremental --force_polling --watch --config _config.yml # see Windows notes on this line
+    command: jekyll serve --drafts --incremental --force_polling --watch
     image: jekyll/jekyll:3.8
     volumes:
       - .:/srv/jekyll
@@ -133,8 +165,30 @@ services:
       - 4000:4000 
 ```
 
+Note this will **only be used to preview the site locally**. If we are building the site ourselves locally we cannot serve it at the same time, since Jekyll has specific overrides for the `serve` command (such as the url). 
+
+Since we are only using it locally we can add it to our `.gitignore` file. Since it does not begin with `.` or `_` we also need to exclude it in our `_config.yml` file or else it will be copied into the `_site` folder when built.
+
+```YAML
+# _config.yml
+exclude: [docker-compose.yml]
+```
+
+Then to run this in the background as we edit our posts we run:
+
+```sh
+docker-compose up -d
+```
+
+### Git & CI Options
+
+
 ## Example: Theme with Layouts, Includes, custom JavaScript
 
 
 
 [^1]: `~> 3.8` in a Gemile means any version equal to or greater than 3.8 but less than the next major version (4.0)
+
+[^2]: The syntax for a Windows machine will differ. Using `git-bash` (recommended) I used a backlash to escape the current working directory like `docker run -v /$(pwd):/srv/jekyll jekyll/jekyll`. For full paths you would need to follow Windows syntax before the colon and Linux after: `docker run -v c:\\path\\to\\Windows\\dir:/srv/jekyll ...`
+
+[jekyll-serve-windows]: https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/
