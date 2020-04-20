@@ -5,13 +5,13 @@
     <description>Electrical engineer. Previously University of Michigan and Pacific Gas &amp; Electric.</description>
     <link>https://smaroukis.github.io/</link>
     <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Apr 2020 23:25:59 +0000</pubDate>
-    <lastBuildDate>Mon, 20 Apr 2020 23:25:59 +0000</lastBuildDate>
+    <pubDate>Mon, 20 Apr 2020 23:27:59 +0000</pubDate>
+    <lastBuildDate>Mon, 20 Apr 2020 23:27:59 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>How to Customize Jekyll Using GitHub Pages, Docker, and Travis</title>
-        <description>&lt;p&gt;Check out the &lt;a href=&quot;https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-16-how-i-built-this.md&quot;&gt;source&lt;/a&gt; for this blog post!&lt;/p&gt;
+        <description>&lt;p&gt;Check out the &lt;a href=&quot;https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-20-how-i-built-this.md&quot;&gt;source&lt;/a&gt; for this blog post!&lt;/p&gt;
 
 &lt;p&gt;This post is for:&lt;/p&gt;
 &lt;ul&gt;
@@ -383,7 +383,7 @@ jekyll
 &lt;p&gt;For those who want to use the faster &lt;code class=&quot;highlighter-rouge&quot;&gt;Katex&lt;/code&gt; engine, you can switch out the &lt;code class=&quot;highlighter-rouge&quot;&gt;header&lt;/code&gt; javascript pointing to the MathJax cdn host and instead point to Katex host (see &lt;a href=&quot;https://katex.org/docs/browser.html#starter-template&quot;&gt;here&lt;/a&gt;). Then you turn the MathJax &lt;code class=&quot;highlighter-rouge&quot;&gt;math/tex&lt;/code&gt; script tags into Katex style javascript which executes upon loading the page (see &lt;a href=&quot;https://kramdown.gettalong.org/math_engine/mathjax.html&quot;&gt;here&lt;/a&gt;). Note that I had to remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;defer&lt;/code&gt; part from the Katex starter template &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tags since this will cause the remote javascript pointing to the Katex host to load &lt;em&gt;after&lt;/em&gt; the javascript that tries to convert math via Katex has been executed.&lt;/p&gt;
 
 &lt;h2 id=&quot;improvements-and-feedback&quot;&gt;Improvements and Feedback&lt;/h2&gt;
-&lt;p&gt;For any improvements to content please submit on &lt;a href=&quot;https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-16-how-i-built-this.md&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For any improvements to content please submit on &lt;a href=&quot;https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-20-how-i-built-this.md&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;ul class=&quot;task-list&quot;&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Environment variables for &lt;code class=&quot;highlighter-rouge&quot;&gt;$JEKYLL_VERSION&lt;/code&gt; that propogate across OS’s and into Travis&lt;/li&gt;
@@ -408,7 +408,7 @@ jekyll
       &lt;p&gt;In theory you should be able avoid this by caching the gems locally by additionally mounting a volume to the container’s &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bundle&lt;/code&gt; directory (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll jekyll build&lt;/code&gt;), but due to permissions errors I was not able to get this to work. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:5&quot;&gt;
-      &lt;p&gt;Improve &lt;a href=&quot;https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-16-how-i-built-this.md&quot;&gt;this post&lt;/a&gt; by telling me what is the fastest Travis instance os. &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Improve &lt;a href=&quot;https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-20-how-i-built-this.md&quot;&gt;this post&lt;/a&gt; by telling me what is the fastest Travis instance os. &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;

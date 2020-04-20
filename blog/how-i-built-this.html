@@ -185,7 +185,7 @@
   </header>
 
   <article class="post-content">
-    <p>Check out the <a href="https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-16-how-i-built-this.md">source</a> for this blog post!</p>
+    <p>Check out the <a href="https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-20-how-i-built-this.md">source</a> for this blog post!</p>
 
 <p>This post is for:</p>
 <ul>
@@ -557,7 +557,7 @@ jekyll
 <p>For those who want to use the faster <code class="highlighter-rouge">Katex</code> engine, you can switch out the <code class="highlighter-rouge">header</code> javascript pointing to the MathJax cdn host and instead point to Katex host (see <a href="https://katex.org/docs/browser.html#starter-template">here</a>). Then you turn the MathJax <code class="highlighter-rouge">math/tex</code> script tags into Katex style javascript which executes upon loading the page (see <a href="https://kramdown.gettalong.org/math_engine/mathjax.html">here</a>). Note that I had to remove the <code class="highlighter-rouge">defer</code> part from the Katex starter template <code class="highlighter-rouge">&lt;script&gt;</code> tags since this will cause the remote javascript pointing to the Katex host to load <em>after</em> the javascript that tries to convert math via Katex has been executed.</p>
 
 <h2 id="improvements-and-feedback">Improvements and Feedback</h2>
-<p>For any improvements to content please submit on <a href="https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-16-how-i-built-this.md">GitHub</a>.</p>
+<p>For any improvements to content please submit on <a href="https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-20-how-i-built-this.md">GitHub</a>.</p>
 
 <ul class="task-list">
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Environment variables for <code class="highlighter-rouge">$JEKYLL_VERSION</code> that propogate across OS’s and into Travis</li>
@@ -582,7 +582,7 @@ jekyll
       <p>In theory you should be able avoid this by caching the gems locally by additionally mounting a volume to the container’s <code class="highlighter-rouge">/usr/local/bundle</code> directory (e.g. <code class="highlighter-rouge">docker run -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll jekyll build</code>), but due to permissions errors I was not able to get this to work. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:5">
-      <p>Improve <a href="https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-16-how-i-built-this.md">this post</a> by telling me what is the fastest Travis instance os. <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+      <p>Improve <a href="https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-20-how-i-built-this.md">this post</a> by telling me what is the fastest Travis instance os. <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
