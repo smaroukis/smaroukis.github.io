@@ -5,18 +5,215 @@
     <description>Electrical engineer. Previously University of Michigan and Pacific Gas &amp; Electric.</description>
     <link>https://smaroukis.github.io/</link>
     <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Apr 2020 13:51:15 +0000</pubDate>
-    <lastBuildDate>Fri, 17 Apr 2020 13:51:15 +0000</lastBuildDate>
+    <pubDate>Mon, 20 Apr 2020 01:49:19 +0000</pubDate>
+    <lastBuildDate>Mon, 20 Apr 2020 01:49:19 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>This Website Using Jekyll, GitHub Pages, Docker, and Travis</title>
-        <description>&lt;p&gt;Test&lt;/p&gt;
+        <description>&lt;h1 id=&quot;first-things-first&quot;&gt;First Things First&lt;/h1&gt;
+&lt;p&gt;As with anything technical, there is a lack of material on that stage between beginner and professional — for me this is the stage I constantly live when it comes to software. Many blogs will tell you how to setup a basic GitHub Pages-hosted, Jekyll-built website, any other blogs will show you how they setup docker and microsoft azule to deploy their website. But not many will make that connection between “what is going on here” and “this is how you do it”. This post tries to 1) break down what is going on “behind the scenes” as jekyll builds your website and 2) showcase my workflow and the challenges I overcame so that you can identify key blockages early on, understand why they happen, and improve upon them.&lt;/p&gt;
 
-&lt;h3 id=&quot;going-further&quot;&gt;Going Further&lt;/h3&gt;
+&lt;p&gt;Here’s what I’m using with links to the relevant sections:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.seanh.cc/2019/09/29/liquid&quot;&gt;Liquid Templating Crash Course&lt;/a&gt; for extending the functionality of different &lt;code class=&quot;highlighter-rouge&quot;&gt;.html&lt;/code&gt; files and layouts.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;:3.8 as a static site generator (&lt;em&gt;with custom plugins&lt;/em&gt;). Note that as of writing the next major release of Jekyll (4.0.0) has been released but I have yet to upgrade.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com&quot;&gt;GitHub Pages&lt;/a&gt; to &lt;em&gt;host&lt;/em&gt; the website (plus routing from a custom domain provied by &lt;a href=&quot;https://www.namecheap.com&quot;&gt;Namecheap&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis&lt;/a&gt; and &lt;a href=&quot;https://www.docker.com&quot;&gt;Docker&lt;/a&gt; to &lt;em&gt;build and deploy&lt;/em&gt; the static site to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch of my GitHub repository, which GitHub serves and hosts automatically&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://katex.org&quot;&gt;Katex&lt;/a&gt; for displaying Maths &lt;em&gt;whilst using &lt;a href=&quot;https://kramdown.gettalong.org/index.html&quot;&gt;kramdown&lt;/a&gt;&lt;/em&gt;, the default markdown converter in Jekyll&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;I’ll also point out some Windows traps, demonstrate my git workflow (and provide alternatives), give you some ideas on how to extend your theme’s layouts, and show you how to display Maths in &lt;em&gt;both Mathjax and Katex&lt;/em&gt;.&lt;/p&gt;
+
+&lt;!-- TODO: TABLE OF CONTENTS --&gt;
+&lt;p&gt;Tip: Go to the beginning of any section to see further resources.&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jmcglone.com/guides/github-pages&quot;&gt;The best beginner guide for Jekyll and GitHub Pages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;The docs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Jekyll’s &lt;a href=&quot;https://jekyllrb.com/docs/ruby-101/&quot;&gt;Ruby 101&lt;/a&gt;: describes gems, Gemfiles, and Bundler]&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.seanh.cc/2019/09/29/liquid&quot;&gt;Liquid Templating Crash Course&lt;/a&gt; for extending the functionality of different &lt;code class=&quot;highlighter-rouge&quot;&gt;.html&lt;/code&gt; files and layouts.&lt;/li&gt;
+  &lt;li&gt;Official Jekyll Docker &lt;a href=&quot;https://hub.docker.com/r/jekyll/jekyll/&quot;&gt;image&lt;/a&gt; and &lt;a href=&quot;https://github.com/envygeeks/jekyll-docker/blob/master/README.md&quot;&gt;repo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fabse.net/blog/2018/07/16/Running-Jekyll-on-Windows-using-Docker/&quot;&gt;Jekyll and Docker on Windows by Fabian Wetzel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ddewaele.github.io/running-jekyll-in-docker/&quot;&gt;Running Jekyll in Docker&lt;/a&gt; is a great quick and dirty intro to spinning a site up from scratch with Docker&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/&quot;&gt;Jekyll, Docker, Windows, and 0.0.0.0&lt;/a&gt;: for serving your site locally on Windows.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;dependencies-and-getting-started&quot;&gt;Dependencies and Getting Started&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Local Dependencies&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://git-scm.com/download/&quot;&gt;git&lt;/a&gt; - on Windows it is nice to use the git-bash shell that comes with git&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.docker.com/get-docker/&quot;&gt;docker&lt;/a&gt; and, for Linux, &lt;a href=&quot;https://docs.docker.com/compose/install/&quot;&gt;docker-compose&lt;/a&gt; (docker-compose is included with the Docker-Desktop installation on Windows and Mac OS)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since we are using the official jekyll docker image, the only thing we need to install locally is docker and git (for Windows and bare-bones Linux distributions). This makes it easy to use different computers and not worry about local dependencies. Here’s an overview of how we’re managing the ruby and gem dependencies, starting with the ones we explicitly state:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Jekyll&lt;/strong&gt;: The version is determined mainly by our &lt;strong&gt;Gemfile&lt;/strong&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;gem &quot;jekyll&quot;, &quot;~&amp;gt; 3.8&quot;&lt;/code&gt;)&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. We should also make sure to match the docker image jekyll version as specified in our &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; or from the command line (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll/jekyll:3.8&lt;/code&gt; for version 3.8)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Theme and Other Plugins&lt;/strong&gt;: Either as explicitly specified in the &lt;strong&gt;Gemfile&lt;/strong&gt;, or implicitly depending on the version of Jekyll and other dependent gems&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Katex&lt;/strong&gt; or &lt;strong&gt;Mathjax&lt;/strong&gt;: Defined where you put your javascript, mine is in a file under my &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; folder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Dependencies we don’t explicitly state:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Ruby&lt;/strong&gt;: The ruby version is handeled by the jekyll/jekyll docker image (as of writing it was using 2.6.3)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;First you will either build a new site from scratch or pull one down from a repo. To build a new site you will run the &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new &amp;lt;sitename&amp;gt;&lt;/code&gt; command to pull down the jekyll source files into the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;sitename&amp;gt;&lt;/code&gt; directory. Then run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; which will both build the site and serve it locally on port 4000 by default. If you didn’t want to serve the site but instead just build the static html files you would do &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt;. The docker commands are as follows (you may need &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; for &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export JEKYLL_VERSION=3.8
+docker run -v $(pwd):/srv/jekyll jekyll/jekyll:$JEKYLL_VERSION jekyll new .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note I will be using Jekyll 3.8 throughout, so anytime you see this change it to the version you are working with.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This does the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;mounts our &lt;strong&gt;current host directory&lt;/strong&gt;&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; to the container’s &lt;code class=&quot;highlighter-rouge&quot;&gt;/srv/jekyll&lt;/code&gt; (the docker image has specific priveleges to run jekyll commands in this location)&lt;/li&gt;
+  &lt;li&gt;uses the &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll/jekyll:3.8&lt;/code&gt; image to &lt;strong&gt;initialize a jekyll site&lt;/strong&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;/srv/jekyll&lt;/code&gt; which will also show up in our current host directory. This consists of the bare bones files that Jekyll needs to build a site, notably a &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and a Markdown entry under the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. If you look closely there is also a hidden &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; file created.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The directory structure should now be&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+├── 404.html
+├── about.markdown
+├── _config.yml
+├── Gemfile
+├── Gemfile.lock
+├── index.markdown
+├── _posts
+    └── 2020-04-18-welcome-to-jekyll.markdown
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We actually don’t have a site yet, we just have the source files that jekyll will build one with. Let’s do that now in docker.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -it -p 4000:4000 -v $(pwd):/srv/jekyll jekyll/jekyll:$JEKYLL_VERSION jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We have added the &lt;code class=&quot;highlighter-rouge&quot;&gt;-it&lt;/code&gt; command to run it interactively and the &lt;code class=&quot;highlighter-rouge&quot;&gt;-p&lt;/code&gt; command to forward port 4000 on the container to port 4000 on the host. Navigate to &lt;a href=&quot;http://localhost:4000&quot;&gt;http://localhost:4000&lt;/a&gt; to see the website. The directory should now have a new file &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; in addition to the source files which are left untouched.&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;_site
+├── 404.html
+├── about
+│   └── index.html
+├── assets
+│   ├── main.css
+│   ├── main.css.map
+│   └── minima-social-icons.svg
+├── feed.xml
+├── index.html
+└── jekyll
+    └── update
+        └── 2020
+            └── 04
+                └── 19
+                    └── welcome-to-jekyll.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can see that all the static files needed for displaying a website are under &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; and the rest of the source files are unchanged. In fact Jekyll will copy any of the source files into the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory unless they are excluded in the configuration file (Gemfiles, Markdown, and files beginning with &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; are excluded by default). Further, if any files have YAML front matter, these files will be “processed” by Jekyll.&lt;/p&gt;
+
+&lt;p&gt;One last point – the path to the actual blog posts in html depends on how the permalink and categories are set up in the configuration file, which we’ll look at next.&lt;/p&gt;
+
+&lt;h2 id=&quot;custom-configuration&quot;&gt;Custom Configuration&lt;/h2&gt;
+
+&lt;h3 id=&quot;changing-themes&quot;&gt;Changing Themes&lt;/h3&gt;
+&lt;p&gt;A list of theme showcases can be found at &lt;a href=&quot;https://jekyllrb.com/docs/themes/&quot;&gt;https://jekyllrb.com/docs/themes/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note any incompatibility between the Jekyll version and the theme of choice. Some themes have not been updated to support Jekyll 4.0.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Generally you’ll want to check the theme’s documentation on how to download a theme. In theory, for themes with gems, you can just add the gem to your gemfile and update the configuration file. Some themes require specific structure that is better mimicked from downloading the source files yourself.&lt;/p&gt;
+
+&lt;p&gt;In our case, let’s try the &lt;a href=&quot;https://mmistakes.github.io/jekyll-theme-basically-basic&quot;&gt;&lt;strong&gt;Basically Basic&lt;/strong&gt;&lt;/a&gt; theme which is a good out-of-the-box replacement for Jekyll’s default Minima theme. It also has &lt;a href=&quot;https://github.com/mmistakes/jekyll-theme-basically-basic&quot;&gt;great documentation&lt;/a&gt; to explore and give you ideas on how to extend whatever theme you’re using.&lt;/p&gt;
+
+&lt;p&gt;Update &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; with the theme’s gem&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem &quot;jekyll-theme-basically-basic&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Update &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;theme: jekyll-theme-basically-basic
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;extending-themes&quot;&gt;Extending Themes&lt;/h3&gt;
+&lt;p&gt;There are more source files actually stored within the gem that Bundler downloads. These are folders such as &lt;code class=&quot;highlighter-rouge&quot;&gt;assets&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_sass&lt;/code&gt; that are called upon when Jekyll builds the site. Any local files with the same nomenclature as the theme’s gem will override that file, allowing you to customize themes. For example, this allows us to use insert javascript that will render &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt; for math posts. See &lt;a href=&quot;https://jekyllrb.com/docs/themes/#overriding-theme-defaults&quot;&gt;the docs&lt;/a&gt; for more.&lt;/p&gt;
+
+&lt;h3 id=&quot;editing-_configyml&quot;&gt;Editing _config.yml&lt;/h3&gt;
+&lt;p&gt;Some other things you may want to change are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt;: the hostname and protocol for you site. If you’re hosting on GitHub pages it will be &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&amp;lt;username&amp;gt;.github.io&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;permalink&lt;/code&gt;: the path to your posts online, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/:title&lt;/code&gt;. See the &lt;a href=&quot;https://jekyllrb.com/docs/permalinks/#placeholders&quot;&gt;docs&lt;/a&gt; for other placeholders. Note that you can also add a permalink for an individual post in the YAML front matter of that post.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;exclude&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;include&lt;/code&gt;: for Jekyll &lt;code class=&quot;highlighter-rouge&quot;&gt;build&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;If we want to build the site ourselves instead of GitHub Pages, we include a &lt;code class=&quot;highlighter-rouge&quot;&gt;.nojekyll&lt;/code&gt; empty file, since hidden files are excluded by default and we want this file to propogate to our &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder so that it is there when we push it to GitHub.&lt;/li&gt;
+      &lt;li&gt;Other files that we need in our source but not our site should be excluded or prepended with &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;anything else that you or your theme has chosen to define. These are available via liquid tags as &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ site.&amp;lt;variable&amp;gt; }}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;setting-up-our-blogging-workflow&quot;&gt;Setting Up Our Blogging Workflow&lt;/h2&gt;
+&lt;p&gt;Here are the highlights:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Create and edit the Markdown files under your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory (note the specific naming structure of the files as &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-title-goes-here.md&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Easily serve the local website via container with &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose up&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Commit/Push edits to a &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;release&lt;/code&gt; branch
+    &lt;ul&gt;
+      &lt;li&gt;Anything under &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; should be ignored by git (if not add &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; to your &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt;), which is necessary since you will have conflicts between building and serving, since &lt;code class=&quot;highlighter-rouge&quot;&gt;build&lt;/code&gt; will use the actual &lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt; defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;serve&lt;/code&gt; will build the site to &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:4000&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Build the site and push only the contents of &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch, which GitHub will host automatially.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;serving-via-docker-compose&quot;&gt;Serving Via &lt;strong&gt;Docker Compose&lt;/strong&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;On Windows things are a bit wonky. You’ll have to create an extra &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file so that you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;url=localhost&lt;/code&gt; instead of the default &lt;code class=&quot;highlighter-rouge&quot;&gt;0.0.0.0&lt;/code&gt; that &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; will do. &lt;a href=&quot;https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/&quot;&gt;This blog post&lt;/a&gt; lays it all out.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To quickly serve the website we’ll want to use docker compose. Create the following in a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;version: '3.7' # docker compose version
+services:
+  site:
+    command: jekyll serve --drafts --incremental --force_polling --watch
+    image: jekyll/jekyll:3.8
+    volumes:
+      - .:/srv/jekyll
+    ports:
+      - 4000:4000 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note this will &lt;strong&gt;only be used to preview the site locally&lt;/strong&gt;. If we are building the site ourselves locally we cannot serve it at the same time, since Jekyll has specific overrides for the &lt;code class=&quot;highlighter-rouge&quot;&gt;serve&lt;/code&gt; command (such as the url).&lt;/p&gt;
+
+&lt;p&gt;Since we are only using it locally we can add it to our &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; file. Since it does not begin with &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; we also need to exclude it in our &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file or else it will be copied into the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder when built.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-YAML&quot;&gt;# _config.yml
+exclude: [docker-compose.yml]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then to run this in the background as we edit our posts we run:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker-compose up &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;git--ci-options&quot;&gt;Git &amp;amp; CI Options&lt;/h3&gt;
+
+&lt;h2 id=&quot;example-theme-with-layouts-includes-custom-javascript&quot;&gt;Example: Theme with Layouts, Includes, custom JavaScript&lt;/h2&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;~&amp;gt; 3.8&lt;/code&gt; in a Gemile means any version equal to or greater than 3.8 but less than the next major version (4.0) &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;The syntax for a Windows machine will differ. Using &lt;code class=&quot;highlighter-rouge&quot;&gt;git-bash&lt;/code&gt; (recommended) I used a backlash to escape the current working directory like &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -v /$(pwd):/srv/jekyll jekyll/jekyll&lt;/code&gt;. For full paths you would need to follow Windows syntax before the colon and Linux after: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -v c:\\path\\to\\Windows\\dir:/srv/jekyll ...&lt;/code&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
 </description>
         <pubDate>Thu, 16 Apr 2020 00:00:00 +0000</pubDate>
         <link>https://smaroukis.github.io/dennis/</link>
