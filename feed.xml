@@ -5,24 +5,26 @@
     <description>Electrical engineer. Previously University of Michigan and Pacific Gas &amp; Electric.</description>
     <link>https://smaroukis.github.io/</link>
     <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Apr 2020 19:52:58 +0000</pubDate>
-    <lastBuildDate>Mon, 20 Apr 2020 19:52:58 +0000</lastBuildDate>
+    <pubDate>Mon, 20 Apr 2020 23:20:29 +0000</pubDate>
+    <lastBuildDate>Mon, 20 Apr 2020 23:20:29 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>This Website Using Jekyll, GitHub Pages, Docker, and Travis</title>
-        <description>&lt;p&gt;This post is for:&lt;/p&gt;
+        <description>&lt;p&gt;Check out the &lt;a href=&quot;https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-16-how-i-built-this.md&quot;&gt;source&lt;/a&gt; for this blog post!&lt;/p&gt;
+
+&lt;p&gt;This post is for:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;1) someone who wants to use custom Jekyll plugins but still host on GitHub pages&lt;/li&gt;
   &lt;li&gt;2) a technologically savvy user who wants to start a blog spend and likes to spend time on the command line (and doesn’t want to &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;read the docs&lt;/a&gt;)&lt;/li&gt;
   &lt;li&gt;3) someone who already has a Jekyll blog but wants to extend their theme’s functionality (and doesn’t want to &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;read the docs&lt;/a&gt;)
     &lt;blockquote&gt;
-      &lt;p&gt;For (2 you may already have built a ruby project and thus are more ruby-savvy than me. Then you won’t need docker and you probably have your own deployment workflow. But you need to know more about how Jekyll is building and serving files, what to include and exclude in your configurations, how to use Liquid tags and where to put your custom javascript. For (3) maybe you have been using Jekyll for a few months but want to develop a more fundamental understanding of what is going on behind the scenes. This is where I was a few months ago after I hadn’t blogged for a year, I looked at my repo and realized I didn’t know what was going on here.&lt;/p&gt;
+      &lt;p&gt;For (2) you may already have built a ruby project and thus are more ruby-savvy than me. Then you won’t need docker and you probably have your own deployment workflow. But you need to know more about how Jekyll is building and serving files, what to include and exclude in your configurations, how to use Liquid tags and where to put your custom javascript. For (3) maybe you have been using Jekyll for a few months but want to develop a more fundamental understanding of what is going on behind the scenes. This is where I was a few months ago after I hadn’t blogged for a year, I looked at my repo and realized that I didn’t know what was going on.&lt;/p&gt;
     &lt;/blockquote&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;first-things-first&quot;&gt;First Things First&lt;/h1&gt;
+&lt;h2 id=&quot;basic-knowledge-ruby-and-bundler&quot;&gt;Basic Knowledge, Ruby and Bundler&lt;/h2&gt;
 &lt;p&gt;Some basic knowledge of the command line, Jekyll, bash, docker, and git will be useful. You may want to read through Jekyll’s &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;quick start guide&lt;/a&gt; to see what is being installed and used locally like &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt;. The &lt;strong&gt;TL;DR&lt;/strong&gt; is that &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt; is a programming languagage whose libraries are packaged in &lt;code class=&quot;highlighter-rouge&quot;&gt;gems&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt; manages the gems using the versions found in a local &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;, installing the specified version of various gems and their dependencies. The &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; is stored in the root directory of the project and the gems are downloaded and stored by &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt; somewhere like &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bundle&lt;/code&gt;. See &lt;a href=&quot;https://stackoverflow.com/questions/15586216/bundler-vs-rvm-vs-gems-vs-rubygems-vs-gemsets-vs-system-ruby&quot;&gt;this stack overflow answer&lt;/a&gt; for more detail.&lt;/p&gt;
 
 &lt;p&gt;Here’s what I’m using with links to the relevant sections:&lt;/p&gt;
