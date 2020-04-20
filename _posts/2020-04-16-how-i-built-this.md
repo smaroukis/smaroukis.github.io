@@ -4,8 +4,6 @@ title: This Website Using Jekyll, GitHub Pages, Docker, and Travis
 excerpt: An indepth guide to the fundamentals of Jekyll through the lense of a non-coder.
 categories: [meta, code]
 katex: true
-hide: true
-permalink: /dennis/
 ---
 This post is for:
 * 1) someone who wants to use custom Jekyll plugins but still host on GitHub pages
