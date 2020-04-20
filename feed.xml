@@ -5,12 +5,12 @@
     <description>Electrical engineer. Previously University of Michigan and Pacific Gas &amp; Electric.</description>
     <link>https://smaroukis.github.io/</link>
     <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Apr 2020 23:20:29 +0000</pubDate>
-    <lastBuildDate>Mon, 20 Apr 2020 23:20:29 +0000</lastBuildDate>
+    <pubDate>Mon, 20 Apr 2020 23:21:54 +0000</pubDate>
+    <lastBuildDate>Mon, 20 Apr 2020 23:21:54 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
-        <title>This Website Using Jekyll, GitHub Pages, Docker, and Travis</title>
+        <title>How to Customize Jekyll Using GitHub Pages, Docker, and Travis</title>
         <description>&lt;p&gt;Check out the &lt;a href=&quot;https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-16-how-i-built-this.md&quot;&gt;source&lt;/a&gt; for this blog post!&lt;/p&gt;
 
 &lt;p&gt;This post is for:&lt;/p&gt;
