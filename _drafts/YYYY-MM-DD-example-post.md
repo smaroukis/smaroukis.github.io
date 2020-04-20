@@ -7,6 +7,20 @@ categories: [tag1, tag2]
 
 ![Cover](/assets/img/avatar.jpg)
 
+## Urls
+
+[Inline style link to my blog](https://smaroukis.github.com)
+
+[Reference link to my blog][my blog]
+
+You can even use just [my-blog] as a link.
+
+For a hardcoded inline link use <https://smaroukis.github.io>
+
+declarations:
+
+[my blog]: https://smaroukis.github.io
+
 ## Photo with Caption 
 
 ![Photo text]({{ site.url }}/assets/img/avatar.jpg}})

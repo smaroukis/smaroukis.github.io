@@ -8,10 +8,12 @@ hide: true
 permalink: /dennis/
 ---
 
-# First Things First
-As with anything technical, there is a lack of material on that stage between beginner and professional — for me this is the stage I constantly live when it comes to software. Many blogs will tell you how to setup a basic GitHub Pages-hosted, Jekyll-built website, any other blogs will show you how they setup docker and microsoft azule to deploy their website. But not many will make that connection between "what is going on here" and "this is how you do it". This post tries to 1) break down what is going on "behind the scenes" as jekyll builds your website and 2) showcase my workflow and the challenges I overcame so that you can identify key blockages early on, understand why they happen, and improve upon them. 
+> The audience for this blog post is two-fold. It can be 1) a technologically savvy user who wants to start a blog (and doesn't want to [read the docs][jekyll-docs]) or 2) someone who already has a Jekyll blog but wants to extend their theme's functionality (and doesn't want to [read the docs][jekyll-docs]). For (1) you may already have built a ruby project and thus are more ruby-savvy than me. Then you won't need docker and you probably have your own deployment workflow. But you need to know more about how Jekyll is building and serving files, what to include and exclude in your configurations, how to use Liquid tags and where to put your custom javascript. For (2) maybe you have been using Jekyll for a few months but want to develop a more fundamental understanding of what is going on behind the scenes. This is where I was a few months ago after I hadn't blogged for a year, I looked at my repo and realized I didn't know what was going on here.
 
-> Some basic knowledge of Jekyll will be useful. You may want to read through Jekyll's quick start guide to see what is being installed and used locally like `ruby` and `bundler`. The tl;dr is that `ruby` is a programming languagage whose libraries are packaged in `gems`. `Bundler` manages the gems using the versions found in a local `Gemfile`, installing the specified version of various gems and their dependencies. The `Gemfile` is stored in the root directory of the project and the gems are downloaded and stored by `Bundler` somewhere like `/usr/local/bundle`. See [this stack overflow answer](https://stackoverflow.com/questions/15586216/bundler-vs-rvm-vs-gems-vs-rubygems-vs-gemsets-vs-system-ruby) for more detail. To dive into the nethers of the web, read [this blog post](https://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/). 
+[//]: TODO: TABLE OF CONTENTS
+
+# First Things First
+Some basic knowledge of the command line, Jekyll, bash, docker, and git will be useful. You may want to read through Jekyll's [quick start guide][jekyll-docs] to see what is being installed and used locally like `ruby` and `Bundler`. The **TL;DR** is that `ruby` is a programming languagage whose libraries are packaged in `gems`. `Bundler` manages the gems using the versions found in a local `Gemfile`, installing the specified version of various gems and their dependencies. The `Gemfile` is stored in the root directory of the project and the gems are downloaded and stored by `Bundler` somewhere like `/usr/local/bundle`. See [this stack overflow answer](https://stackoverflow.com/questions/15586216/bundler-vs-rvm-vs-gems-vs-rubygems-vs-gemsets-vs-system-ruby) for more detail. 
 
 Here's what I'm using with links to the relevant sections: 
 * [Jekyll](https://jekyllrb.com):3.8 as a static site generator (_with custom plugins_). Note that as of writing the next major release of Jekyll (4.0.0) has been released but I have yet to upgrade.
@@ -21,7 +23,7 @@ Here's what I'm using with links to the relevant sections:
 
 I'll also point out some Windows traps, demonstrate my git workflow (and provide alternatives), give you some ideas on how to extend your theme's layouts, and show you how to display Maths in _both Mathjax and Katex_. 
 
-<!-- TODO: TABLE OF CONTENTS -->
+
 Tip: Go to the beginning of any section to see further resources. 
 
 
@@ -37,20 +39,20 @@ Tip: Go to the beginning of any section to see further resources.
 
 ## Dependencies and Getting Started
 **Local Dependencies**
-* [git](https://git-scm.com/download/) - on Windows it is nice to use the git-bash shell that comes with git
+* [git](https://git-scm.com/download/) - also on Windows it is nice to use the git-bash shell that comes with git
 * [docker](https://docs.docker.com/get-docker/) and, for Linux, [docker-compose](https://docs.docker.com/compose/install/) (docker-compose is included with the Docker-Desktop installation on Windows and Mac OS) 
 
 Since we are using the official jekyll docker image, the only thing we need to install locally is docker and git (for Windows and bare-bones Linux distributions). This makes it easy to use different computers and not worry about local dependencies. Here's an overview of how we're managing the ruby and gem dependencies, starting with the ones we explicitly state:
-- **Jekyll**: The version is determined mainly by our **Gemfile** (`gem "jekyll", "~> 3.8"`)[^1]. We should also make sure to match the docker image jekyll version as specified in our `docker-compose.yml` or from the command line (e.g. `jekyll/jekyll:3.8` for version 3.8)
+- **Jekyll**: (explicit) The version is determined mainly by our **Gemfile** (`gem "jekyll", "~> 3.8"`)[^1]. We should also make sure to match the docker image jekyll version as specified in our `docker-compose.yml` or from the command line (e.g. `jekyll/jekyll:3.8` for version 3.8)
 - **Theme and Other Plugins**: Either as explicitly specified in the **Gemfile**, or implicitly depending on the version of Jekyll and other dependent gems
-- **Katex** or **Mathjax**: Defined where you put your javascript, mine is in a file under my `_includes` folder
+- **Katex** or **Mathjax**: (explicit) Defined where you put your javascript, mine is in a file under my `_includes` folder
+- **Ruby**: (implicit) The ruby version is handeled by the jekyll/jekyll docker image (as of writing it was using 2.6.3) 
 
-Dependencies we don't explicitly state:
-- **Ruby**: The ruby version is handeled by the jekyll/jekyll docker image (as of writing it was using 2.6.3) 
+First you will either build a new site from scratch or pull one down from a repo. Generally to build a new site you run `jekyll new <sitename>` to pull down the jekyll source files into the `<sitename>` directory. Then you go into this directory and run `jekyll serve` which will both build the site and serve it locally on port 4000 by default. If you didn't want to serve the site but instead just build the static html files you would do `jekyll build`. But since we don't have Ruby, Jekyll, or Bundler locally we use a docker container for all of these.
 
-First you will either build a new site from scratch or pull one down from a repo. To build a new site you will run the `jekyll new <sitename>` command to pull down the jekyll source files into the `<sitename>` directory. Then run `jekyll serve` which will both build the site and serve it locally on port 4000 by default. If you didn't want to serve the site but instead just build the static html files you would do `jekyll build`. The docker commands are as follows (you may need `sudo` for `docker run`):
+The docker commands are as follows (you may need `sudo` for `docker run`):
 
-```
+```sh
 export JEKYLL_VERSION=3.8
 docker run -v $(pwd):/srv/jekyll jekyll/jekyll:$JEKYLL_VERSION jekyll new .
 ```
@@ -59,8 +61,8 @@ docker run -v $(pwd):/srv/jekyll jekyll/jekyll:$JEKYLL_VERSION jekyll new .
 
 This does the following:
 
-1. mounts our **current host directory**[^2] to the container's `/srv/jekyll` (the docker image has specific priveleges to run jekyll commands in this location)
-2. uses the `jekyll/jekyll:3.8` image to **initialize a jekyll site** in `/srv/jekyll` which will also show up in our current host directory. This consists of the bare bones files that Jekyll needs to build a site, notably a `Gemfile`, `_config.yml` and a Markdown entry under the `_posts` directory. If you look closely there is also a hidden `.gitignore` file created.
+1. Mounts our **current host directory**[^2] (`$(pwd)`) to the container's `/srv/jekyll` (the docker image has specific priveleges to run jekyll commands in this location). Anything created by the container in `/srv/jekyll` will show up in our host's current directory, which should be our blog's project directory
+2. Uses the `jekyll/jekyll:3.8` image to **initialize a jekyll site** in `/srv/jekyll`, which will also appear in our current host directory (see #1). This consists of the bare bones files that Jekyll needs to build a site, notably a `Gemfile`, `_config.yml` and a Markdown entry under the `_posts` directory. If you look closely there is also a hidden `.gitignore` file created.
 
 The directory structure should now be
 
@@ -77,7 +79,7 @@ The directory structure should now be
 
 We actually don't have a site yet, we just have the source files that jekyll will build one with. Let's do that now in docker.
 
-```
+```sh
 docker run -it -p 4000:4000 -v $(pwd):/srv/jekyll jekyll/jekyll:$JEKYLL_VERSION jekyll serve
 ```
 We have added the `-it` command to run it interactively and the `-p` command to forward port 4000 on the container to port 4000 on the host. Navigate to [http://localhost:4000](http://localhost:4000) to see the website. The directory should now have a new directory `_site` in addition to the source files which are left untouched. 
@@ -120,14 +122,20 @@ In our case, let's try the [**Basically Basic**](https://mmistakes.github.io/jek
 
 Update `Gemfile` with the theme's gem
 
-```
+```yaml
 gem "jekyll-theme-basically-basic"
 ```
 
 Update `_config.yml` 
 
-```
+```yaml
 theme: jekyll-theme-basically-basic
+```
+
+If you are still in the interactive shell from the first `jekyll serve`, kill it with `ctrl + C`. Then **serve** the site with the same `docker run ... jekyll serve` command as before.
+
+```sh
+docker run -it -p 4000:4000 -v $(pwd):/srv/jekyll jekyll/jekyll:$JEKYLL_VERSION jekyll serve
 ```
 
 ### Extending Themes
@@ -136,7 +144,7 @@ There are more source files actually stored within the gem that Bundler download
 ### Editing _config.yml
 Some other things you may want to change are:
 * `url`: the hostname and protocol for you site. If you're hosting on GitHub pages it will be `https://<username>.github.io`.
-* `permalink`: the path to your posts online, e.g. `/blog/:title`. See the [docs](https://jekyllrb.com/docs/permalinks/#placeholders) for other placeholders. Note that you can also add a permalink for an individual post in the YAML front matter of that post.
+* `permalink`: the path to your posts online, e.g. `/blog/:title`. See the [docs](https://jekyllrb.com/docs/permalinks/#placeholders) for other placeholders like year, month, and day. Note that you can also add a permalink for an individual post in the YAML front matter of that post.
 * `exclude` and `include`: for Jekyll `build`
   * If we want to build the site ourselves instead of GitHub Pages, we include a `.nojekyll` empty file, since hidden files are excluded by default and we want this file to propogate to our `_site` folder so that it is there when we push it to GitHub. 
   * Other files that we need in our source but not our site should be excluded or prepended with `.` or `_`. 
@@ -148,17 +156,23 @@ Here are the highlights:
 2. Easily serve the local website via container with `docker-compose up`
 3. Commit/Push edits to a `source` or `release` branch 
   * Anything under `_site` should be ignored by git (if not add `_site` to your `.gitignore`), which is necessary since you will have conflicts between building and serving, since `build` will use the actual `url` defined in `_config.yml` and `serve` will build the site to `localhost:4000`. 
-4. Build the site and push only the contents of `_site` to the `master` branch, which GitHub will host automatially. 
+4. Build the site and push only the contents of `_site` to the `master` branch, which GitHub will host automatically. 
 
-### Serving Via **Docker Compose**
+### 2. Serving Via _Docker Compose_
+Docker-Compose is normally used to spin up a fleet of containers, but I use it as a convenient short-hand way to use local development flags across multiple development environments. Of course you could write a simple shell script to do the same thing if you only use the same OS all the time.
+
 > On Windows things are a bit wonky. You'll have to create an extra `_config.yml` file so that you can use `url=localhost` instead of the default `0.0.0.0` that `jekyll serve` will do. [This blog post][jekyll-serve-windows] lays it all out. 
 
-To quickly serve the website we'll want to use docker compose. Create the following in a file named `docker-compose.yml`:
+To quickly serve the website we create the following file named `docker-compose.yml` (install [docker][docker-install] and [docker-compose][docker-compose-install] as needed):
 
 
-```
+```yaml
+# ./docker-compose.yml
+
 version: '3.7' # docker compose version
 services:
+  environment:
+    - JEKYLL_ENV=local
   site:
     command: jekyll serve --drafts --incremental --force_polling --watch
     image: jekyll/jekyll:3.8
@@ -183,7 +197,10 @@ Then to run this in the background as we edit our posts we run:
 docker-compose up -d
 ```
 
-### Git & CI Options
+### 3. Git & CI Options
+
+
+### 4. Final GitHub Checks and Setups
 
 
 ## Example: Theme with Layouts, Includes, custom JavaScript
@@ -194,4 +211,8 @@ docker-compose up -d
 
 [^2]: The syntax for a Windows machine will differ. Using `git-bash` (recommended) I used a backlash to escape the current working directory like `docker run -v /$(pwd):/srv/jekyll jekyll/jekyll`. For full paths you would need to follow Windows syntax before the colon and Linux after: `docker run -v c:\\path\\to\\Windows\\dir:/srv/jekyll ...`
 
+[jekyll-docs]: https://jekyllrb.com/docs/
 [jekyll-serve-windows]: https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/
+[jekyll-ci]: https://jekyllrb.com/docs/deployment/automated/
+[docker-compose-install]: https://docs.docker.com/compose/install/
+[docker-install]: https://docs.docker.com/get-docker/
