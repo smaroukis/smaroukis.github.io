@@ -7,8 +7,11 @@ katex: true
 hide: true
 permalink: /dennis/
 ---
-
-> The audience for this blog post is two-fold. It can be 1) a technologically savvy user who wants to start a blog (and doesn't want to [read the docs][jekyll-docs]) or 2) someone who already has a Jekyll blog but wants to extend their theme's functionality (and doesn't want to [read the docs][jekyll-docs]). For (1) you may already have built a ruby project and thus are more ruby-savvy than me. Then you won't need docker and you probably have your own deployment workflow. But you need to know more about how Jekyll is building and serving files, what to include and exclude in your configurations, how to use Liquid tags and where to put your custom javascript. For (2) maybe you have been using Jekyll for a few months but want to develop a more fundamental understanding of what is going on behind the scenes. This is where I was a few months ago after I hadn't blogged for a year, I looked at my repo and realized I didn't know what was going on here.
+This post is for:
+* 1) someone who wants to use custom Jekyll plugins but still host on GitHub pages
+* 2) a technologically savvy user who wants to start a blog spend and likes to spend time on the command line (and doesn't want to [read the docs][jekyll-docs]) 
+* 3) someone who already has a Jekyll blog but wants to extend their theme's functionality (and doesn't want to [read the docs][jekyll-docs])
+> For (2 you may already have built a ruby project and thus are more ruby-savvy than me. Then you won't need docker and you probably have your own deployment workflow. But you need to know more about how Jekyll is building and serving files, what to include and exclude in your configurations, how to use Liquid tags and where to put your custom javascript. For (3) maybe you have been using Jekyll for a few months but want to develop a more fundamental understanding of what is going on behind the scenes. This is where I was a few months ago after I hadn't blogged for a year, I looked at my repo and realized I didn't know what was going on here.
 
 [//]: TODO: TABLE OF CONTENTS
 
@@ -230,11 +233,85 @@ docker restart <container_name>
 docker system prune
 ```
 
-### 3. Git & CI Options
+### Aside: How GitHub Pages Builds Jekyll in --Safe Mode
+Ok so now you have a full fledged Jekyll site locally with source files in the root of the project and all the static files necessary to serve the site in the `_site` folder. 
+
+If you wanted just to quickly see this site on the real internet you could simply try to push everything to the `master` branch on your `<username>.github.io` repo. What would happen? Likely GitHub pages would see that you have Jekyll source files and try to build and serve your site. 
+
+1. In your User repo go to ** Settings > Options > Scroll Down to GitHub Pages **. Here we can see that GitHub Pages is building the Jekyll site from the `master` branch. Note that for User pages (`<username>.github.io`) this is the only option. For Project pages, people often change this to `gh-pages`. 
+![GitHub Settings > Options > GitHub Pages][gh-pages-source]
+2. If you navigate to the **Environments** page on your repo you should see the GitHub Pages deployed your site
+![GitHub Environments on your repo][gh-environ]
+3. The Activity Log shows the history of deployments. Clicking on **View Deployment** shows you the current site.
+![GitHub Activity Log][gh-activity-log]
+4. If the GitHub pages `jekyll build` fails or if you are using an unsupported theme you will receive an email from GitHub pages support.
+
+So, what is going on here? Well behind the scenes GitHub pages is using `jekyll build --safe` to disable custom plugins and has the following configurations ([source][gh-pages-config] and [Jekyll docs][jekyll-docs-ghpages]):
+
+```yaml
+lsi: false
+safe: true
+source: [your repo's top level directory]
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+```
+
+If you wanted to build this locally you would use a different Gemfile than we've made:
+
+```
+# GH Pages Local Gemfile Example
+source 'https://rubygems.org'
+gem 'github-pages', group: :jekyll_plugins
+```
+
+A few things to note here. We are forced into `kramdown` for markup, `mathjax` for maths, and `rouge` for syntax highlighting. This is important later on because even if we specify something different, when we deploy to `master` these are what is being used. {: .notice}
 
 
-### 4. Final GitHub Checks and Setups
+### Aside: How to Override the GitHub Pages --Safe Build
 
+There are a few special setups to tell GitHub that we **don't** want them to build the site. First, instead of deploying to master the Jekyll source files, we deploy **only the built static files**, the contents of _`_site`_. Second we add an empty file named `.nojekyll` so that Pages knows not to run jekyll build.
+
+
+```sh
+.nojekyll
+404.html
+about
+└── index.html
+assets
+├── main.css
+├── main.css.map
+└── minima-social-icons.svg
+feed.xml
+index.html
+jekyll
+└── update
+    └── 2020
+        └── 04
+            └── 19
+                └── welcome-to-jekyll.html
+```
+
+Since Jekyll will overwrite whatever is in `_site` upon building, we create the `.nojekyll` file in the **root** directory and add `include: [.nojekyll]` into our `_config.yml` so that this file propogates into the build destination.
+
+### 3. Commiting Local Edits to a Source Branch
+
+So now we understand what is going on behind the scenes with the _Asides_ above. This allows us to develop blog posts in a source or release branch seperately from the static files that GitHub will host. We can either build the static files ourselves or, better yet, when we push to a release branch we can have a continuous deployment tool (like Travis or Jenkins) build and push the static files to the `master` branch on GitHub. 
+
+> Note: I named my release branch `master-source`. 
+
+1. `git checkout master-source`
+2. Make edits yada yada
+3. `git add` stuff and `git commit -m 'this blog is getting really long'`
+4. `git push --set-upstream origin master-source
+
+Note that we really don't want to make edits on the `master-source` branch, so we would really checkout a different branch, merge those changes into `master-source` and then push to the remote. 
+
+### 4. 
 
 ## Example: Theme with Layouts, Includes, custom JavaScript
 
@@ -249,7 +326,14 @@ docker system prune
 [^4]: In theory you should be able avoid this by caching the gems locally by additionally mounting a volume to the container's `/usr/local/bundle` directory (e.g. `docker run -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll jekyll build`), but due to permissions errors I was not able to get this to work. 
 
 [jekyll-docs]: https://jekyllrb.com/docs/
+[jekyll-docs-ghpages]: https://jekyllrb.com/docs/github-pages/
 [jekyll-serve-windows]: https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/
 [jekyll-ci]: https://jekyllrb.com/docs/deployment/automated/
 [docker-compose-install]: https://docs.docker.com/compose/install/
 [docker-install]: https://docs.docker.com/get-docker/
+[gh-pages-config]: https://help.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll#configuring-jekyll-in-your-github-pages-site
+
+[//]: Images
+[gh-environ]: {{ site.url }}/assets/img/2020/gh-environ.png
+[gh-activity-log]: {{ site.url }}/assets/img/2020/gh-activity-log.png
+[gh-pages-source]: {{ site.url }}/assets/img/2020/gh-pages-source.png
