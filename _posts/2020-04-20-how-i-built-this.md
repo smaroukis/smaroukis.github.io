@@ -13,35 +13,29 @@ This post is for:
 * 3) someone who already has a Jekyll blog but wants to extend their theme's functionality (and doesn't want to [read the docs][jekyll-docs])
 > For (2) you may already have built a ruby project and thus are more ruby-savvy than me. Then you won't need docker and you probably have your own deployment workflow. But you need to know more about how Jekyll is building and serving files, what to include and exclude in your configurations, how to use Liquid tags and where to put your custom javascript. For (3) maybe you have been using Jekyll for a few months but want to develop a more fundamental understanding of what is going on behind the scenes. This is where I was a few months ago after I hadn't blogged for a year, I looked at my repo and realized that I didn't know what was going on.
 
-[//]: TODO: TABLE OF CONTENTS
+[//]: TODO: add links to the relevant sections
+What I'm Using:
+* [Jekyll](https://jekyllrb.com) version 3.8
+* [GitHub Pages](https://pages.github.com) to _host_ the website but **not** to build it
+* [Docker](https://www.docker.com) to **build locally** and to **build in a Travis instance**
+* [Travis](https://travis-ci.org) to deploy the static site to the `master` branch of my GitHub repository 
+* [Katex](https://katex.org) for displaying Maths _whilst using [kramdown](https://kramdown.gettalong.org/index.html)_, the default markdown converter in Jekyll
+* Others: Plotly for graphs, Mapbox and Leaflet for maps.
 
-## Basic Knowledge, Ruby and Bundler
+## Table of Contents
+{:.no_toc}
+1. TOC_Placeholder
+{:toc}
+
+## Getting Started
+
+### Basic Knowledge, Ruby and Bundler
 Some basic knowledge of the command line, Jekyll, bash, docker, and git will be useful. You may want to read through Jekyll's [quick start guide][jekyll-docs] to see what is being installed and used locally like `ruby` and `Bundler`. The **TL;DR** is that `ruby` is a programming languagage whose libraries are packaged in `gems`. `Bundler` manages the gems using the versions found in a local `Gemfile`, installing the specified version of various gems and their dependencies. The `Gemfile` is stored in the root directory of the project and the gems are downloaded and stored by `Bundler` somewhere like `/usr/local/bundle`. See [this stack overflow answer](https://stackoverflow.com/questions/15586216/bundler-vs-rvm-vs-gems-vs-rubygems-vs-gemsets-vs-system-ruby) for more detail. 
 
-Here's what I'm using with links to the relevant sections: 
-* [Jekyll](https://jekyllrb.com):3.8 as a static site generator (_with custom plugins_). Note that as of writing the next major release of Jekyll (4.0.0) has been released but I have yet to upgrade.
-* [GitHub Pages](https://pages.github.com) to _host_ the website (plus routing from a custom domain provied by [Namecheap](https://www.namecheap.com))
-* [Travis](https://travis-ci.org) and [Docker](https://www.docker.com) to _build and deploy_ the static site to the `master` branch of my GitHub repository, which GitHub serves and hosts automatically
-* [Katex](https://katex.org) for displaying Maths _whilst using [kramdown](https://kramdown.gettalong.org/index.html)_, the default markdown converter in Jekyll
 
 I'll also point out some Windows traps, demonstrate my git workflow, and give you some ideas on how to extend your theme's layouts.
 
-
-Tip: Go to the beginning of any section to see further resources. 
-
-
-## Resources
-* [The best beginner guide for Jekyll and GitHub Pages](http://jmcglone.com/guides/github-pages)
-* [The docs](https://jekyllrb.com/docs/)
-* Jekyll's [Ruby 101](https://jekyllrb.com/docs/ruby-101/): describes gems, Gemfiles, and Bundler]
-* [Liquid Templating Crash Course](https://www.seanh.cc/2019/09/29/liquid) for extending the functionality of different `.html` files and layouts. 
-* Official Jekyll Docker [image](https://hub.docker.com/r/jekyll/jekyll/) and [repo](https://github.com/envygeeks/jekyll-docker/blob/master/README.md)
-* [Jekyll and Docker on Windows by Fabian Wetzel](https://fabse.net/blog/2018/07/16/Running-Jekyll-on-Windows-using-Docker/)
-* [Running Jekyll in Docker](https://ddewaele.github.io/running-jekyll-in-docker/) is a great quick and dirty intro to spinning a site up from scratch with Docker
-* [Jekyll, Docker, Windows, and 0.0.0.0][jekyll-serve-windows]: for serving your site locally on Windows.
-
-## Dependencies and Getting Started
-**Local Dependencies**
+### Local Dependencies
 * [git](https://git-scm.com/download/) - also on Windows it is nice to use the git-bash shell that comes with git
 * [docker](https://docs.docker.com/get-docker/) and, for Linux, [docker-compose](https://docs.docker.com/compose/install/) (docker-compose is included with the Docker-Desktop installation on Windows and Mac OS) 
 
@@ -50,6 +44,8 @@ Since we are using the official jekyll docker image, the only thing we need to i
 - **Theme and Other Plugins**: Either as explicitly specified in the **Gemfile**, or implicitly depending on the version of Jekyll and other dependent gems
 - **Katex** or **MathJax**: (explicit) Defined where you put your javascript, mine is in a file under my `_includes` folder
 - **Ruby**: (implicit) The ruby version is handeled by the jekyll/jekyll docker image (as of writing it was using 2.6.3) 
+
+### Building Your Site From Scratch
 
 First you will either build a new site from scratch or pull one down from a repo. Generally to build a new site you run `jekyll new <sitename>` to pull down the jekyll source files into the `<sitename>` directory. Then you go into this directory and run `jekyll serve` which will both build the site and serve it locally on port 4000 by default. If you didn't want to serve the site but instead just build the static html files you would do `jekyll build`. But since we don't have Ruby, Jekyll, or Bundler locally we use a docker container for all of these.
 
@@ -161,7 +157,7 @@ Here are the highlights:
   * Anything under `_site` should be ignored by git (if not add `_site` to your `.gitignore`), which is necessary since you will have conflicts between building and serving, since `build` will use the actual `url` defined in `_config.yml` and `serve` will build the site to `localhost:4000`. 
 4. Build the site and push only the contents of `_site` to the `master` branch, which GitHub will host automatically. 
 
-## 2. Serving Via _Docker Compose_
+### Serving Via _Docker Compose_
 Docker-Compose is normally used to spin up a fleet of containers, but I use it as a convenient short-hand way to use local development flags across multiple development environments. Of course you could write a simple shell script to do the same thing if you only use the same OS all the time.
 
 > On Windows things are a bit wonky. You'll have to create an extra `_config.yml` file so that you can use `url=localhost` instead of the default `0.0.0.0` that `jekyll serve` will do. [This blog post][jekyll-serve-windows] lays it all out. 
@@ -203,7 +199,7 @@ docker-compose up -d
 
 with the detached `-d` flag to detach it from a shell. 
 
-### Other Docker Commands
+#### Other Docker Commands
 Use `docker ps` to list running containers and `docker ps -a` to list all containers. Use `docker image ls` to list docker images.
 
 **Executing commands in the container**: You have an existing container that you want to run something like  `bundle update` in[^3], but you don't want to start a new container from the `jekyll/jekyll` image which would cause all of the gems to be downloaded again[^4]. Get the container name from `docker ps` or `docker-compose ps` (the container has to be active) and run the following:
@@ -298,7 +294,7 @@ jekyll
 
 Since Jekyll will overwrite whatever is in `_site` upon building, we create the `.nojekyll` file in the **root** directory and add `include: [.nojekyll]` into our `_config.yml` so that this file propogates into the build destination.
 
-### 3. Commiting Local Edits to a Source Branch
+### Commiting Local Edits to a Source Branch
 
 So now we understand what is going on behind the scenes with the _Asides_ above. This allows us to develop blog posts in a source or release branch seperately from the static files that GitHub will host. We can either build the static files ourselves or, better yet, when we push to a release branch we can have a continuous deployment tool (like Travis or Jenkins) build and push the static files to the `master` branch on GitHub. 
 
@@ -311,7 +307,7 @@ So now we understand what is going on behind the scenes with the _Asides_ above.
 
 Note that we really don't want to make edits on the `master-source` branch, so we would really checkout a different branch, merge those changes into `master-source` and then push to the remote. 
 
-### 4. Setting Up Travis
+### Setting Up Travis
 
 To setup or continuous integration (CI) tool we need to tell them what branch to watch for changes on, what docker command to run, and what branch and files to push the built site to. There are some good Travis + Jekyll + GitHub Pages how-to's like [this one][blog-travis-example].
 
@@ -366,6 +362,17 @@ For those who want to use the faster `Katex` engine, you can switch out the `hea
 For any improvements to content please submit on [GitHub][post-source]. 
 
 * [ ] Environment variables for `$JEKYLL_VERSION` that propogate across OS's and into Travis
+
+## Resources
+* [The best beginner guide for Jekyll and GitHub Pages](http://jmcglone.com/guides/github-pages)
+* [The docs](https://jekyllrb.com/docs/)
+* Jekyll's [Ruby 101](https://jekyllrb.com/docs/ruby-101/): describes gems, Gemfiles, and Bundler]
+* [Liquid Templating Crash Course](https://www.seanh.cc/2019/09/29/liquid) for extending the functionality of different `.html` files and layouts. 
+* Official Jekyll Docker [image](https://hub.docker.com/r/jekyll/jekyll/) and [repo](https://github.com/envygeeks/jekyll-docker/blob/master/README.md)
+* [Jekyll and Docker on Windows by Fabian Wetzel](https://fabse.net/blog/2018/07/16/Running-Jekyll-on-Windows-using-Docker/)
+* [Running Jekyll in Docker](https://ddewaele.github.io/running-jekyll-in-docker/) is a great quick and dirty intro to spinning a site up from scratch with Docker
+* [Jekyll, Docker, Windows, and 0.0.0.0][jekyll-serve-windows]: for serving your site locally on Windows.
+
 
 ---
 
