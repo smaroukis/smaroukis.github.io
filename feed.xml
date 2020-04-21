@@ -5,8 +5,8 @@
     <description>Electrical engineer. Previously University of Michigan and Pacific Gas &amp; Electric.</description>
     <link>https://smaroukis.github.io/</link>
     <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Apr 2020 23:27:59 +0000</pubDate>
-    <lastBuildDate>Mon, 20 Apr 2020 23:27:59 +0000</lastBuildDate>
+    <pubDate>Tue, 21 Apr 2020 20:04:48 +0000</pubDate>
+    <lastBuildDate>Tue, 21 Apr 2020 20:04:48 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -24,35 +24,58 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;basic-knowledge-ruby-and-bundler&quot;&gt;Basic Knowledge, Ruby and Bundler&lt;/h2&gt;
-&lt;p&gt;Some basic knowledge of the command line, Jekyll, bash, docker, and git will be useful. You may want to read through Jekyll’s &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;quick start guide&lt;/a&gt; to see what is being installed and used locally like &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt;. The &lt;strong&gt;TL;DR&lt;/strong&gt; is that &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt; is a programming languagage whose libraries are packaged in &lt;code class=&quot;highlighter-rouge&quot;&gt;gems&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt; manages the gems using the versions found in a local &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;, installing the specified version of various gems and their dependencies. The &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; is stored in the root directory of the project and the gems are downloaded and stored by &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt; somewhere like &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bundle&lt;/code&gt;. See &lt;a href=&quot;https://stackoverflow.com/questions/15586216/bundler-vs-rvm-vs-gems-vs-rubygems-vs-gemsets-vs-system-ruby&quot;&gt;this stack overflow answer&lt;/a&gt; for more detail.&lt;/p&gt;
-
-&lt;p&gt;Here’s what I’m using with links to the relevant sections:&lt;/p&gt;
+&lt;p&gt;What I’m Using:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;:3.8 as a static site generator (&lt;em&gt;with custom plugins&lt;/em&gt;). Note that as of writing the next major release of Jekyll (4.0.0) has been released but I have yet to upgrade.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pages.github.com&quot;&gt;GitHub Pages&lt;/a&gt; to &lt;em&gt;host&lt;/em&gt; the website (plus routing from a custom domain provied by &lt;a href=&quot;https://www.namecheap.com&quot;&gt;Namecheap&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis&lt;/a&gt; and &lt;a href=&quot;https://www.docker.com&quot;&gt;Docker&lt;/a&gt; to &lt;em&gt;build and deploy&lt;/em&gt; the static site to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch of my GitHub repository, which GitHub serves and hosts automatically&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; version 3.8&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com&quot;&gt;GitHub Pages&lt;/a&gt; to &lt;em&gt;host&lt;/em&gt; the website but &lt;strong&gt;not&lt;/strong&gt; to build it&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.docker.com&quot;&gt;Docker&lt;/a&gt; to &lt;strong&gt;build locally&lt;/strong&gt; and to &lt;strong&gt;build in a Travis instance&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis&lt;/a&gt; to deploy the static site to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch of my GitHub repository&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://katex.org&quot;&gt;Katex&lt;/a&gt; for displaying Maths &lt;em&gt;whilst using &lt;a href=&quot;https://kramdown.gettalong.org/index.html&quot;&gt;kramdown&lt;/a&gt;&lt;/em&gt;, the default markdown converter in Jekyll&lt;/li&gt;
+  &lt;li&gt;Others: Plotly for graphs, Mapbox and Leaflet for maps.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h2&gt;
+&lt;ol id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#getting-started&quot; id=&quot;markdown-toc-getting-started&quot;&gt;Getting Started&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#basic-knowledge-ruby-and-bundler&quot; id=&quot;markdown-toc-basic-knowledge-ruby-and-bundler&quot;&gt;Basic Knowledge, Ruby and Bundler&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#local-dependencies&quot; id=&quot;markdown-toc-local-dependencies&quot;&gt;Local Dependencies&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#building-your-site-from-scratch&quot; id=&quot;markdown-toc-building-your-site-from-scratch&quot;&gt;Building Your Site From Scratch&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#custom-configuration&quot; id=&quot;markdown-toc-custom-configuration&quot;&gt;Custom Configuration&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#changing-themes&quot; id=&quot;markdown-toc-changing-themes&quot;&gt;Changing Themes&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#extending-themes&quot; id=&quot;markdown-toc-extending-themes&quot;&gt;Extending Themes&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#editing-_configyml&quot; id=&quot;markdown-toc-editing-_configyml&quot;&gt;Editing _config.yml&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#setting-up-our-blogging-workflow&quot; id=&quot;markdown-toc-setting-up-our-blogging-workflow&quot;&gt;Setting Up Our Blogging Workflow&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#serving-via-docker-compose&quot; id=&quot;markdown-toc-serving-via-docker-compose&quot;&gt;Serving Via &lt;em&gt;Docker Compose&lt;/em&gt;&lt;/a&gt;        &lt;ol&gt;
+          &lt;li&gt;&lt;a href=&quot;#other-docker-commands&quot; id=&quot;markdown-toc-other-docker-commands&quot;&gt;Other Docker Commands&lt;/a&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#aside-how-github-pages-builds-jekyll-in-safe-mode&quot; id=&quot;markdown-toc-aside-how-github-pages-builds-jekyll-in-safe-mode&quot;&gt;Aside: How GitHub Pages Builds Jekyll in –Safe Mode&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#aside-how-to-override-the-github-pages-safe-build&quot; id=&quot;markdown-toc-aside-how-to-override-the-github-pages-safe-build&quot;&gt;Aside: How to Override the GitHub Pages –Safe Build&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#commiting-local-edits-to-a-source-branch&quot; id=&quot;markdown-toc-commiting-local-edits-to-a-source-branch&quot;&gt;Commiting Local Edits to a Source Branch&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#setting-up-travis&quot; id=&quot;markdown-toc-setting-up-travis&quot;&gt;Setting Up Travis&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#wrapping-up&quot; id=&quot;markdown-toc-wrapping-up&quot;&gt;Wrapping Up&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#how-are-maths-displayed&quot; id=&quot;markdown-toc-how-are-maths-displayed&quot;&gt;How are Maths Displayed?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#improvements-and-feedback&quot; id=&quot;markdown-toc-improvements-and-feedback&quot;&gt;Improvements and Feedback&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#footnotes&quot; id=&quot;markdown-toc-footnotes&quot;&gt;Footnotes&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h2&gt;
+
+&lt;h3 id=&quot;basic-knowledge-ruby-and-bundler&quot;&gt;Basic Knowledge, Ruby and Bundler&lt;/h3&gt;
+&lt;p&gt;Some basic knowledge of the command line, Jekyll, bash, docker, and git will be useful. You may want to read through Jekyll’s &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;quick start guide&lt;/a&gt; to see what is being installed and used locally like &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt;. The &lt;strong&gt;TL;DR&lt;/strong&gt; is that &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt; is a programming languagage whose libraries are packaged in &lt;code class=&quot;highlighter-rouge&quot;&gt;gems&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt; manages the gems using the versions found in a local &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;, installing the specified version of various gems and their dependencies. The &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; is stored in the root directory of the project and the gems are downloaded and stored by &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt; somewhere like &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bundle&lt;/code&gt;. See &lt;a href=&quot;https://stackoverflow.com/questions/15586216/bundler-vs-rvm-vs-gems-vs-rubygems-vs-gemsets-vs-system-ruby&quot;&gt;this stack overflow answer&lt;/a&gt; for more detail.&lt;/p&gt;
 
 &lt;p&gt;I’ll also point out some Windows traps, demonstrate my git workflow, and give you some ideas on how to extend your theme’s layouts.&lt;/p&gt;
 
-&lt;p&gt;Tip: Go to the beginning of any section to see further resources.&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jmcglone.com/guides/github-pages&quot;&gt;The best beginner guide for Jekyll and GitHub Pages&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;The docs&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Jekyll’s &lt;a href=&quot;https://jekyllrb.com/docs/ruby-101/&quot;&gt;Ruby 101&lt;/a&gt;: describes gems, Gemfiles, and Bundler]&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.seanh.cc/2019/09/29/liquid&quot;&gt;Liquid Templating Crash Course&lt;/a&gt; for extending the functionality of different &lt;code class=&quot;highlighter-rouge&quot;&gt;.html&lt;/code&gt; files and layouts.&lt;/li&gt;
-  &lt;li&gt;Official Jekyll Docker &lt;a href=&quot;https://hub.docker.com/r/jekyll/jekyll/&quot;&gt;image&lt;/a&gt; and &lt;a href=&quot;https://github.com/envygeeks/jekyll-docker/blob/master/README.md&quot;&gt;repo&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://fabse.net/blog/2018/07/16/Running-Jekyll-on-Windows-using-Docker/&quot;&gt;Jekyll and Docker on Windows by Fabian Wetzel&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ddewaele.github.io/running-jekyll-in-docker/&quot;&gt;Running Jekyll in Docker&lt;/a&gt; is a great quick and dirty intro to spinning a site up from scratch with Docker&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/&quot;&gt;Jekyll, Docker, Windows, and 0.0.0.0&lt;/a&gt;: for serving your site locally on Windows.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;dependencies-and-getting-started&quot;&gt;Dependencies and Getting Started&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Local Dependencies&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;local-dependencies&quot;&gt;Local Dependencies&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://git-scm.com/download/&quot;&gt;git&lt;/a&gt; - also on Windows it is nice to use the git-bash shell that comes with git&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.docker.com/get-docker/&quot;&gt;docker&lt;/a&gt; and, for Linux, &lt;a href=&quot;https://docs.docker.com/compose/install/&quot;&gt;docker-compose&lt;/a&gt; (docker-compose is included with the Docker-Desktop installation on Windows and Mac OS)&lt;/li&gt;
@@ -65,6 +88,8 @@
   &lt;li&gt;&lt;strong&gt;Katex&lt;/strong&gt; or &lt;strong&gt;MathJax&lt;/strong&gt;: (explicit) Defined where you put your javascript, mine is in a file under my &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; folder&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Ruby&lt;/strong&gt;: (implicit) The ruby version is handeled by the jekyll/jekyll docker image (as of writing it was using 2.6.3)&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;building-your-site-from-scratch&quot;&gt;Building Your Site From Scratch&lt;/h3&gt;
 
 &lt;p&gt;First you will either build a new site from scratch or pull one down from a repo. Generally to build a new site you run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new &amp;lt;sitename&amp;gt;&lt;/code&gt; to pull down the jekyll source files into the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;sitename&amp;gt;&lt;/code&gt; directory. Then you go into this directory and run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; which will both build the site and serve it locally on port 4000 by default. If you didn’t want to serve the site but instead just build the static html files you would do &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt;. But since we don’t have Ruby, Jekyll, or Bundler locally we use a docker container for all of these.&lt;/p&gt;
 
@@ -187,7 +212,7 @@ docker run &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot
   &lt;li&gt;Build the site and push only the contents of &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch, which GitHub will host automatically.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;2-serving-via-docker-compose&quot;&gt;2. Serving Via &lt;em&gt;Docker Compose&lt;/em&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;serving-via-docker-compose&quot;&gt;Serving Via &lt;em&gt;Docker Compose&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;Docker-Compose is normally used to spin up a fleet of containers, but I use it as a convenient short-hand way to use local development flags across multiple development environments. Of course you could write a simple shell script to do the same thing if you only use the same OS all the time.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -227,7 +252,7 @@ docker run &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot
 
 &lt;p&gt;with the detached &lt;code class=&quot;highlighter-rouge&quot;&gt;-d&lt;/code&gt; flag to detach it from a shell.&lt;/p&gt;
 
-&lt;h3 id=&quot;other-docker-commands&quot;&gt;Other Docker Commands&lt;/h3&gt;
+&lt;h4 id=&quot;other-docker-commands&quot;&gt;Other Docker Commands&lt;/h4&gt;
 &lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt; to list running containers and &lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps -a&lt;/code&gt; to list all containers. Use &lt;code class=&quot;highlighter-rouge&quot;&gt;docker image ls&lt;/code&gt; to list docker images.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Executing commands in the container&lt;/strong&gt;: You have an existing container that you want to run something like  &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle update&lt;/code&gt; in&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;, but you don’t want to start a new container from the &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll/jekyll&lt;/code&gt; image which would cause all of the gems to be downloaded again&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;. Get the container name from &lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose ps&lt;/code&gt; (the container has to be active) and run the following:&lt;/p&gt;
@@ -314,7 +339,7 @@ jekyll
 
 &lt;p&gt;Since Jekyll will overwrite whatever is in &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; upon building, we create the &lt;code class=&quot;highlighter-rouge&quot;&gt;.nojekyll&lt;/code&gt; file in the &lt;strong&gt;root&lt;/strong&gt; directory and add &lt;code class=&quot;highlighter-rouge&quot;&gt;include: [.nojekyll]&lt;/code&gt; into our &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; so that this file propogates into the build destination.&lt;/p&gt;
 
-&lt;h3 id=&quot;3-commiting-local-edits-to-a-source-branch&quot;&gt;3. Commiting Local Edits to a Source Branch&lt;/h3&gt;
+&lt;h3 id=&quot;commiting-local-edits-to-a-source-branch&quot;&gt;Commiting Local Edits to a Source Branch&lt;/h3&gt;
 
 &lt;p&gt;So now we understand what is going on behind the scenes with the &lt;em&gt;Asides&lt;/em&gt; above. This allows us to develop blog posts in a source or release branch seperately from the static files that GitHub will host. We can either build the static files ourselves or, better yet, when we push to a release branch we can have a continuous deployment tool (like Travis or Jenkins) build and push the static files to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch on GitHub.&lt;/p&gt;
 
@@ -331,7 +356,7 @@ jekyll
 
 &lt;p&gt;Note that we really don’t want to make edits on the &lt;code class=&quot;highlighter-rouge&quot;&gt;master-source&lt;/code&gt; branch, so we would really checkout a different branch, merge those changes into &lt;code class=&quot;highlighter-rouge&quot;&gt;master-source&lt;/code&gt; and then push to the remote.&lt;/p&gt;
 
-&lt;h3 id=&quot;4-setting-up-travis&quot;&gt;4. Setting Up Travis&lt;/h3&gt;
+&lt;h3 id=&quot;setting-up-travis&quot;&gt;Setting Up Travis&lt;/h3&gt;
 
 &lt;p&gt;To setup or continuous integration (CI) tool we need to tell them what branch to watch for changes on, what docker command to run, and what branch and files to push the built site to. There are some good Travis + Jekyll + GitHub Pages how-to’s like &lt;a href=&quot;https://medium.com/@mcred/supercharge-github-pages-with-jekyll-and-travis-ci-699bc0bde075&quot;&gt;this one&lt;/a&gt;.&lt;/p&gt;
 
@@ -387,6 +412,18 @@ jekyll
 
 &lt;ul class=&quot;task-list&quot;&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Environment variables for &lt;code class=&quot;highlighter-rouge&quot;&gt;$JEKYLL_VERSION&lt;/code&gt; that propogate across OS’s and into Travis&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jmcglone.com/guides/github-pages&quot;&gt;The best beginner guide for Jekyll and GitHub Pages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;The docs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Jekyll’s &lt;a href=&quot;https://jekyllrb.com/docs/ruby-101/&quot;&gt;Ruby 101&lt;/a&gt;: describes gems, Gemfiles, and Bundler]&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.seanh.cc/2019/09/29/liquid&quot;&gt;Liquid Templating Crash Course&lt;/a&gt; for extending the functionality of different &lt;code class=&quot;highlighter-rouge&quot;&gt;.html&lt;/code&gt; files and layouts.&lt;/li&gt;
+  &lt;li&gt;Official Jekyll Docker &lt;a href=&quot;https://hub.docker.com/r/jekyll/jekyll/&quot;&gt;image&lt;/a&gt; and &lt;a href=&quot;https://github.com/envygeeks/jekyll-docker/blob/master/README.md&quot;&gt;repo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fabse.net/blog/2018/07/16/Running-Jekyll-on-Windows-using-Docker/&quot;&gt;Jekyll and Docker on Windows by Fabian Wetzel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ddewaele.github.io/running-jekyll-in-docker/&quot;&gt;Running Jekyll in Docker&lt;/a&gt; is a great quick and dirty intro to spinning a site up from scratch with Docker&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/&quot;&gt;Jekyll, Docker, Windows, and 0.0.0.0&lt;/a&gt;: for serving your site locally on Windows.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
