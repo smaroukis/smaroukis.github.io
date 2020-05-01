@@ -176,7 +176,7 @@
       <span class="read-time" title="Estimated read time">
   
   
-    23 mins read
+    24 mins read
   
 </span>
 
@@ -235,6 +235,7 @@
   </li>
   <li><a href="#wrapping-up" id="markdown-toc-wrapping-up">Wrapping Up</a>    <ol>
       <li><a href="#how-are-maths-displayed" id="markdown-toc-how-are-maths-displayed">How are Maths Displayed?</a></li>
+      <li><a href="#displaying-captions-under-images-in-leonids" id="markdown-toc-displaying-captions-under-images-in-leonids">Displaying Captions Under Images in Leonids</a></li>
       <li><a href="#improvements-and-feedback" id="markdown-toc-improvements-and-feedback">Improvements and Feedback</a></li>
       <li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
     </ol>
@@ -580,6 +581,43 @@ jekyll
 <p>By default the <code class="highlighter-rouge">kramdown</code> markdown parser will look for math delimiters (<code class="highlighter-rouge">$$...$$</code>, etc.) and convert these into MathJax html tags (<code class="highlighter-rouge">&lt; script type="math/tex"&gt; $$ P=IV $$ &lt;/script&gt;</code>). Then the javascript included in the header or theme layout will use the specified MathJax version to render on the browser.</p>
 
 <p>For those who want to use the faster <code class="highlighter-rouge">Katex</code> engine, you can switch out the <code class="highlighter-rouge">header</code> javascript pointing to the MathJax cdn host and instead point to Katex host (see <a href="https://katex.org/docs/browser.html#starter-template">here</a>). Then you turn the MathJax <code class="highlighter-rouge">math/tex</code> script tags into Katex style javascript which executes upon loading the page (see <a href="https://kramdown.gettalong.org/math_engine/mathjax.html">here</a>). Note that I had to remove the <code class="highlighter-rouge">defer</code> part from the Katex starter template <code class="highlighter-rouge">&lt;script&gt;</code> tags since this will cause the remote javascript pointing to the Katex host to load <em>after</em> the javascript that tries to convert math via Katex has been executed.</p>
+
+<h2 id="displaying-captions-under-images-in-leonids">Displaying Captions Under Images in Leonids</h2>
+
+<p>Unfortunately neither kramdown nor my chosen theme, leonids, have good support for captions under photos. Normally you insert a photo in markdown as <code class="highlighter-rouge">[alt image text](/path/to/image)</code>, but in html the alt image text does not show up as a caption.</p>
+
+<p>The first workaround I found was to insert pure html with a <code class="highlighter-rouge">&lt;figure&gt; &lt;img src=...&gt; &lt;figcaption&gt;</code> block and corresponding CSS but that is pretty janky.</p>
+
+<p>The next workaround is to use liquid tags and a new html file in the <code class="highlighter-rouge">_includes</code> folder that will be rendered upon jekyll build processing. This requires edits to</p>
+
+<ul>
+  <li>the new html file created (mine is <code class="highlighter-rouge">_includes/img.html</code>)</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!--  ./_includes/img.html --&gt;</span>
+<span class="nt">&lt;figure&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://smaroukis.github.io/"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>  
+    <span class="nt">&lt;figcaption&gt;</span>{{ include.caption }}<span class="nt">&lt;/figcaption&gt;</span>
+<span class="nt">&lt;/figure&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>the css file for the class or block defined in html (<code class="highlighter-rouge">figure</code> and <code class="highlighter-rouge">figcaption</code> above)</li>
+</ul>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// in ./css/main.scss</span>
+<span class="nt">figure</span> <span class="nt">figcaption</span><span class="p">{</span>
+    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">font-style</span><span class="p">:</span> <span class="nb">italic</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>and finally the markdown has to be written with a liquid <code class="highlighter-rouge">include</code> statement</li>
+</ul>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include img.html file="assets/img/example/path/to/img.png" caption="This caption will show up beneath the picture with the formatting as defined in the main css file" %}
+</code></pre></div></div>
 
 <h2 id="improvements-and-feedback">Improvements and Feedback</h2>
 <p>For any improvements to content please submit on <a href="https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-20-how-i-built-this.md">GitHub</a>.</p>

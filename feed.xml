@@ -5,8 +5,8 @@
     <description>Electrical engineer. Previously University of Michigan and Pacific Gas &amp; Electric.</description>
     <link>https://smaroukis.github.io/</link>
     <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 May 2020 18:33:49 +0000</pubDate>
-    <lastBuildDate>Fri, 01 May 2020 18:33:49 +0000</lastBuildDate>
+    <pubDate>Fri, 01 May 2020 22:53:03 +0000</pubDate>
+    <lastBuildDate>Fri, 01 May 2020 22:53:03 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -61,6 +61,7 @@
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#wrapping-up&quot; id=&quot;markdown-toc-wrapping-up&quot;&gt;Wrapping Up&lt;/a&gt;    &lt;ol&gt;
       &lt;li&gt;&lt;a href=&quot;#how-are-maths-displayed&quot; id=&quot;markdown-toc-how-are-maths-displayed&quot;&gt;How are Maths Displayed?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#displaying-captions-under-images-in-leonids&quot; id=&quot;markdown-toc-displaying-captions-under-images-in-leonids&quot;&gt;Displaying Captions Under Images in Leonids&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#improvements-and-feedback&quot; id=&quot;markdown-toc-improvements-and-feedback&quot;&gt;Improvements and Feedback&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
     &lt;/ol&gt;
@@ -407,6 +408,43 @@ jekyll
 
 &lt;p&gt;For those who want to use the faster &lt;code class=&quot;highlighter-rouge&quot;&gt;Katex&lt;/code&gt; engine, you can switch out the &lt;code class=&quot;highlighter-rouge&quot;&gt;header&lt;/code&gt; javascript pointing to the MathJax cdn host and instead point to Katex host (see &lt;a href=&quot;https://katex.org/docs/browser.html#starter-template&quot;&gt;here&lt;/a&gt;). Then you turn the MathJax &lt;code class=&quot;highlighter-rouge&quot;&gt;math/tex&lt;/code&gt; script tags into Katex style javascript which executes upon loading the page (see &lt;a href=&quot;https://kramdown.gettalong.org/math_engine/mathjax.html&quot;&gt;here&lt;/a&gt;). Note that I had to remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;defer&lt;/code&gt; part from the Katex starter template &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tags since this will cause the remote javascript pointing to the Katex host to load &lt;em&gt;after&lt;/em&gt; the javascript that tries to convert math via Katex has been executed.&lt;/p&gt;
 
+&lt;h2 id=&quot;displaying-captions-under-images-in-leonids&quot;&gt;Displaying Captions Under Images in Leonids&lt;/h2&gt;
+
+&lt;p&gt;Unfortunately neither kramdown nor my chosen theme, leonids, have good support for captions under photos. Normally you insert a photo in markdown as &lt;code class=&quot;highlighter-rouge&quot;&gt;[alt image text](/path/to/image)&lt;/code&gt;, but in html the alt image text does not show up as a caption.&lt;/p&gt;
+
+&lt;p&gt;The first workaround I found was to insert pure html with a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;figure&amp;gt; &amp;lt;img src=...&amp;gt; &amp;lt;figcaption&amp;gt;&lt;/code&gt; block and corresponding CSS but that is pretty janky.&lt;/p&gt;
+
+&lt;p&gt;The next workaround is to use liquid tags and a new html file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; folder that will be rendered upon jekyll build processing. This requires edits to&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the new html file created (mine is &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes/img.html&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--  ./_includes/img.html --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://smaroukis.github.io/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;  
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;{{ include.caption }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the css file for the class or block defined in html (&lt;code class=&quot;highlighter-rouge&quot;&gt;figure&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;figcaption&lt;/code&gt; above)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// in ./css/main.scss&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;figure&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;figcaption&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;italic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;and finally the markdown has to be written with a liquid &lt;code class=&quot;highlighter-rouge&quot;&gt;include&lt;/code&gt; statement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include img.html file=&quot;assets/img/example/path/to/img.png&quot; caption=&quot;This caption will show up beneath the picture with the formatting as defined in the main css file&quot; %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h2 id=&quot;improvements-and-feedback&quot;&gt;Improvements and Feedback&lt;/h2&gt;
 &lt;p&gt;For any improvements to content please submit on &lt;a href=&quot;https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-20-how-i-built-this.md&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
@@ -501,8 +539,8 @@ jekyll
 &lt;p&gt;The bushings are labeled as H1, H2, H3, X1, X2, X3, and H0-X0. H0-X0 is the neutral bushing for the wye connection which is brought out to connect to the system neutral (if available). For the ungrounded case it is left unconnected. On the nameplate you should see that for each phase there is a tapped winding which separates the coil into the high and low side windings.&lt;/p&gt;
 
 &lt;figure&gt;
-    &lt;img src=&quot;https://smaroukis.github.io/assets/img/2019/autotransformer/auto-sld.png&quot; alt=&quot;Single phase schematic of an autotransformer&quot; /&gt;  
-    &lt;figcaption&gt;Single phase schematic of an autotransformer&lt;/figcaption&gt;
+    &lt;img src=&quot;https://smaroukis.github.io/assets/img/2019/autotransformer/auto-sld.png&quot; alt=&quot;Single line schematic of an autotransformer (only one phase shown)&quot; /&gt;  
+    &lt;figcaption&gt;Single line schematic of an autotransformer (only one phase shown)&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;winding-configuration&quot;&gt;Winding Configuration&lt;/h2&gt;
