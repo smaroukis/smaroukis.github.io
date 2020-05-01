@@ -23,7 +23,7 @@ In this post I'll talk about tying different level distribution systems together
 1. TOC
 {:toc}
 
-# Construction and Use Cases
+## Construction and Use Cases
 
 Autotransformers ("autos") are a special type of transformer that have their primary and secondary windings electrically connected, allowing for cheaper construction in certain cases but losing the electrical isolation that normal two or three-winding transformers have.
 
@@ -33,7 +33,7 @@ The bushings are labeled as H1, H2, H3, X1, X2, X3, and H0-X0. H0-X0 is the neut
 
 {% include img.html file="auto-sld.png" caption="Single phase schematic of an autotransformer" %}
 
-## Winding Configuration
+### Winding Configuration
 
 [//]: TODO: nameplate of transformer
 
@@ -47,7 +47,7 @@ Additionally the delta tertiary acts as a stabilizing winding for unbalanced vol
 
 [//]: TODO link to why delta connections do not pass third harmonics
 
-## Virtual Tertiary and Zero Sequence Flux Paths
+### Virtual Tertiary and Zero Sequence Flux Paths
 
 Just like an imbalance of line currents results in a neutral or zero sequence current, the imbalance of flux in a magnetic core can result in a zero sequence flux. This happens during unbalanced conditions like a single phase-to-ground fault, load imbalance, or neutral shift. For three-phase core type transformer construction there is no return path for zero sequence flux, so the flux must return outside the core which can lead to severe tank heating[^c57-105]. This return path is known as a virtual, phantom, or tank tertiary.
 
@@ -73,11 +73,11 @@ $$
 \end{aligned}
 $$
 
-# Protection of Distribution Autos
+## Protection of Distribution Autos
 
 The type of system-tie transformer can greatly affect the protection scheme of the distribution circuit. Here we will focus only on Wye connected autos. Note there is only really one (tapped) winding, so there is only one configuration (Delta or Wye) plus a tertiary if available.
 
-## Three Terminal Equivalent
+### Three Terminal Equivalent
 
 The three terminal equivalent model is used to convert the multi-winding impedances ($$Z_{HL/HT/LT}$$) to branch impedances ($$Z_{H/L/T}$$) which is used in the zero sequence network for fault analysis. 
 
@@ -87,7 +87,7 @@ The branch impedance of one winding is equal to the sum of the adjacent minus th
 
 $$Z_H=\frac{Z_{HL}+Z_{HT}-Z_{LT}}{2}$$
 
-## Sequence Networks
+### Sequence Networks
 
 A Wye-grounded auto without a tertiary will have the sequence network impedance of just the primary-to-secondary winding for both the positive and zero sequence. Grounded autotransformers with tertiaries (and even without, due to the virtual tertiary) create a zero sequence source of current. Ungrounded autos without a delta tertiary, or with the tertiary switch open, are essentially an open-circuit to zero sequence impedances and are not recommended due to the difficulty of fault detection. Ungrounded autos with a delta tertiary pass un-transformed zero sequence current. 
 
@@ -97,7 +97,7 @@ The nameplate usually gives the positive sequence impedance for $$Z_1^{HL}$$ and
 
 [//]: TODO Table of common values for impedances
 
-## To Ground or Not to Ground? Connections for 3 and 4 Wire System Interties
+### To Ground or Not to Ground? Connections for 3 and 4 Wire System Interties
 
 How to choose what protection is required? It will be based on the fault analysis, which is based on the configuration and grounding of the auto. Let's walk through some common scenarios when connecting two systems of different voltage levels together.
 
@@ -105,7 +105,7 @@ Note in the cases we are assuming a 4-wire multi-grounded system and a 3-wire sy
 
 Although it will be most common that the autotransformer can be fed from both directions (dual-source), it will help to first investigate the radial case to understand the configuration's effect on fault currents.
 
-### Single Source Scenarios (Radially Fed)
+#### Single Source Scenarios (Radially Fed)
 
 These are radial connections where there is no chance of reverse feeding the transformer.
 
@@ -127,7 +127,7 @@ _4-wire system sourcing a 4-wire system_
 - Clearly we will be **grounded** since we have two multi-grounded systems. But what about the tertiary? We should **open the tertiary** so that we don't introduce a ground source. The auto still passes zero sequence currents since it is grounded. **⇒ grounded + open tertiary**
 - note that in this case it is important that we have a four or five legged core to have a zero-sequence flux return path for any unbalance or fault conditions
 
-#### Radial Protection Summary Table
+### Radial Protection Summary Table
 
 | Source → Load | Grounding  | Tertiary | Protection  |
 |:--------------:|:----------:|:--------:|:-----------:|
@@ -144,7 +144,7 @@ _4-wire ↔ 3-wire_
 
 - Again, anytime we source a 4-wire system with a 3-wire system, we want to provide a good ground at the point of transition (the 4-wire system is already "grounded")  **⇒ grounded + closed tertiary + source side protection**
 
-#### Intertie/Dual Source Protection Summary Table
+### Intertie/Dual Source Protection Summary Table
 
 | Source ↔ Load | Grounding  | Tertiary | Protection  |
 |:--------------:|:----------:|:--------:|:-----------:|
@@ -153,7 +153,7 @@ _4-wire ↔ 3-wire_
 | 4W↔4W          | Grounded | Open       | None              |
 
 
-### Fault Flow Summary Diagram
+## Fault Flow Summary Diagram
 
 The fault flow summary is shown in these two diagrams: 
 
@@ -164,14 +164,14 @@ The fault flow summary is shown in these two diagrams:
 
 Usually distribution autotransformers are located far from the substation, but for autos with a higher fault duty the engineer should check the protection clearing time is below the IEEE C57.109 transformer damage curve. 
 
-### Further Reading
+# Further Reading
 
 - IEEE Std C57.105 Guide for Application of Transformers in Three-Phase Distribution Systems
 - IEEE Std C57.158 Guide for the Application of Tertiary and Stabilizing Windings in Power Transformers
 - IEEE Std C57.109 IEEE Guide for Liquid-Immersed Transformers Through-Fault-Current Duration
 - X. Zhang and A. Echeverria, "Three-Winding Autotransformer Fault Study and Impact on Protection Application", New York Power Authority. [Online]. Available: [https://www.eiseverywhere.com/file_uploads/a99e2aa556135afc2ea43c68303bd462_zha_pap.pdf](https://www.eiseverywhere.com/file_uploads/a99e2aa556135afc2ea43c68303bd462_zha_pap.pdf)
 
-### Notes & References
+# Notes & References
 
 [^c57-105]: IEEE Guide for Application of Transformers in Three-Phase Distribution Systems, Section 3.3.3 "Zero Sequence Flux"
 
