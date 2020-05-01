@@ -198,21 +198,20 @@
       <li><a href="#three-terminal-equivalent" id="markdown-toc-three-terminal-equivalent">Three Terminal Equivalent</a></li>
       <li><a href="#sequence-networks" id="markdown-toc-sequence-networks">Sequence Networks</a></li>
       <li><a href="#to-ground-or-not-to-ground-connections-for-3-and-4-wire-system-interties" id="markdown-toc-to-ground-or-not-to-ground-connections-for-3-and-4-wire-system-interties">To Ground or Not to Ground? Connections for 3 and 4 Wire System Interties</a>        <ol>
-          <li><a href="#single-source-scenarios-radially-fed" id="markdown-toc-single-source-scenarios-radially-fed">Single Source Scenarios (Radially Fed)</a>            <ol>
-              <li><a href="#radial-protection-summary-table" id="markdown-toc-radial-protection-summary-table">Radial Protection Summary Table</a></li>
-            </ol>
-          </li>
-          <li><a href="#intertie-use-dual-source" id="markdown-toc-intertie-use-dual-source">Intertie Use (Dual Source)</a>            <ol>
-              <li><a href="#intertiedual-source-protection-summary-table" id="markdown-toc-intertiedual-source-protection-summary-table">Intertie/Dual Source Protection Summary Table</a></li>
-            </ol>
-          </li>
-          <li><a href="#fault-flow-summary-diagram" id="markdown-toc-fault-flow-summary-diagram">Fault Flow Summary Diagram</a></li>
-          <li><a href="#further-reading" id="markdown-toc-further-reading">Further Reading</a></li>
-          <li><a href="#notes--references" id="markdown-toc-notes--references">Notes &amp; References</a></li>
+          <li><a href="#single-source-scenarios-radially-fed" id="markdown-toc-single-source-scenarios-radially-fed">Single Source Scenarios (Radially Fed)</a></li>
+          <li><a href="#intertie-use-dual-source" id="markdown-toc-intertie-use-dual-source">Intertie Use (Dual Source)</a></li>
         </ol>
       </li>
     </ol>
   </li>
+  <li><a href="#summary-diagrams-and-tables" id="markdown-toc-summary-diagrams-and-tables">Summary Diagrams and Tables</a>    <ol>
+      <li><a href="#radial-use-configuration--protection" id="markdown-toc-radial-use-configuration--protection">Radial Use Configuration &amp; Protection</a></li>
+      <li><a href="#intertie-use-configuration--protection" id="markdown-toc-intertie-use-configuration--protection">Intertie Use Configuration &amp; Protection</a></li>
+      <li><a href="#fault-flow-summary-diagrams" id="markdown-toc-fault-flow-summary-diagrams">Fault Flow Summary Diagrams</a></li>
+    </ol>
+  </li>
+  <li><a href="#further-reading" id="markdown-toc-further-reading">Further Reading</a></li>
+  <li><a href="#notes--references" id="markdown-toc-notes--references">Notes &amp; References</a></li>
 </ol>
 
 <h1 id="construction-and-use-cases">Construction and Use Cases</h1>
@@ -260,7 +259,7 @@
     <figcaption>A five-legged core construction for a three-phase transformer provides two return paths for zero sequence flux.</figcaption>
 </figure>
 
-<p>The economics of auto’s usually results in a turns ratio near 2:1. That’s why they are used on both Transmission and Distribution levels to tie e.g. 230kV and 115kV together, or 12 and 21kV circuits together.</p>
+<p>The economics of autos usually results in a turns ratio near 2:1. That’s why they are used on both Transmission and Distribution levels to tie e.g. 230kV and 115kV together, or 12 and 21kV circuits together.</p>
 
 <p>An interesting fact is that if you took an existing single phase transformer and turned it into an autotransformer by connecting its primary and secondary windings, you would increase your kVA rating of the transformer. This is due to the fact that not all the current needs to flow over both windings. Using the ideal transformer equation <script type="math/tex">V_2/V_1=N_2/N_1</script> and with <script type="math/tex">N_1=N_C+N_S</script> we can solve for the power that is in common winding, <script type="math/tex">P_W</script> versus the input and output power, <script type="math/tex">P_{IO}</script>.</p>
 
@@ -339,7 +338,18 @@
   <li>note that in this case it is important that we have a four or five legged core to have a zero-sequence flux return path for any unbalance or fault conditions</li>
 </ul>
 
-<h4 id="radial-protection-summary-table">Radial Protection Summary Table</h4>
+<h3 id="intertie-use-dual-source">Intertie Use (Dual Source)</h3>
+
+<p>This is the most common since it increases reliability by allowing for uninterrupted power delivery during normal or emergency system maintenance. The only difference for the dual source will be the mix of a 4-wire system with a 3-wire system (since 3W↔3W and 4W↔4W are the same as the radial case).</p>
+
+<p><em>4-wire ↔ 3-wire</em></p>
+
+<ul>
+  <li>Again, anytime we source a 4-wire system with a 3-wire system, we want to provide a good ground at the point of transition (the 4-wire system is already “grounded”)  <strong>⇒ grounded + closed tertiary + source side protection</strong></li>
+</ul>
+
+<h1 id="summary-diagrams-and-tables">Summary Diagrams and Tables</h1>
+<h2 id="radial-use-configuration--protection">Radial Use Configuration &amp; Protection</h2>
 
 <table>
   <thead>
@@ -378,17 +388,7 @@
   </tbody>
 </table>
 
-<h3 id="intertie-use-dual-source">Intertie Use (Dual Source)</h3>
-
-<p>This is the most common since it increases reliability by allowing for uninterrupted power delivery during normal or emergency system maintenance. The only difference for the dual source will be the mix of a 4-wire system with a 3-wire system (since 3W↔3W and 4W↔4W are the same as the radial case).</p>
-
-<p><em>4-wire ↔ 3-wire</em></p>
-
-<ul>
-  <li>Again, anytime we source a 4-wire system with a 3-wire system, we want to provide a good ground at the point of transition (the 4-wire system is already “grounded”)  <strong>⇒ grounded + closed tertiary + source side protection</strong></li>
-</ul>
-
-<h4 id="intertiedual-source-protection-summary-table">Intertie/Dual Source Protection Summary Table</h4>
+<h2 id="intertie-use-configuration--protection">Intertie Use Configuration &amp; Protection</h2>
 
 <table>
   <thead>
@@ -421,8 +421,7 @@
   </tbody>
 </table>
 
-<h3 id="fault-flow-summary-diagram">Fault Flow Summary Diagram</h3>
-
+<h2 id="fault-flow-summary-diagrams">Fault Flow Summary Diagrams</h2>
 <p>The fault flow summary is shown in these two diagrams:</p>
 
 <p><img src="https://smaroukis.github.io/assets/img/2019/autotransformer/auto-protection1.png" alt="autotransformer fault flow diagram" /></p>
@@ -431,7 +430,7 @@
 
 <p>Usually distribution autotransformers are located far from the substation, but for autos with a higher fault duty the engineer should check the protection clearing time is below the IEEE C57.109 transformer damage curve.</p>
 
-<h3 id="further-reading">Further Reading</h3>
+<h1 id="further-reading">Further Reading</h1>
 
 <ul>
   <li>IEEE Std C57.105 Guide for Application of Transformers in Three-Phase Distribution Systems</li>
@@ -440,7 +439,7 @@
   <li>X. Zhang and A. Echeverria, “Three-Winding Autotransformer Fault Study and Impact on Protection Application”, New York Power Authority. [Online]. Available: <a href="https://www.eiseverywhere.com/file_uploads/a99e2aa556135afc2ea43c68303bd462_zha_pap.pdf">https://www.eiseverywhere.com/file_uploads/a99e2aa556135afc2ea43c68303bd462_zha_pap.pdf</a></li>
 </ul>
 
-<h3 id="notes--references">Notes &amp; References</h3>
+<h1 id="notes--references">Notes &amp; References</h1>
 
 <div class="footnotes">
   <ol>

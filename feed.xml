@@ -5,8 +5,8 @@
     <description>Electrical engineer. Previously University of Michigan and Pacific Gas &amp; Electric.</description>
     <link>https://smaroukis.github.io/</link>
     <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 May 2020 05:08:02 +0000</pubDate>
-    <lastBuildDate>Fri, 01 May 2020 05:08:02 +0000</lastBuildDate>
+    <pubDate>Fri, 01 May 2020 18:33:49 +0000</pubDate>
+    <lastBuildDate>Fri, 01 May 2020 18:33:49 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -476,21 +476,20 @@ jekyll
       &lt;li&gt;&lt;a href=&quot;#three-terminal-equivalent&quot; id=&quot;markdown-toc-three-terminal-equivalent&quot;&gt;Three Terminal Equivalent&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#sequence-networks&quot; id=&quot;markdown-toc-sequence-networks&quot;&gt;Sequence Networks&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#to-ground-or-not-to-ground-connections-for-3-and-4-wire-system-interties&quot; id=&quot;markdown-toc-to-ground-or-not-to-ground-connections-for-3-and-4-wire-system-interties&quot;&gt;To Ground or Not to Ground? Connections for 3 and 4 Wire System Interties&lt;/a&gt;        &lt;ol&gt;
-          &lt;li&gt;&lt;a href=&quot;#single-source-scenarios-radially-fed&quot; id=&quot;markdown-toc-single-source-scenarios-radially-fed&quot;&gt;Single Source Scenarios (Radially Fed)&lt;/a&gt;            &lt;ol&gt;
-              &lt;li&gt;&lt;a href=&quot;#radial-protection-summary-table&quot; id=&quot;markdown-toc-radial-protection-summary-table&quot;&gt;Radial Protection Summary Table&lt;/a&gt;&lt;/li&gt;
-            &lt;/ol&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#intertie-use-dual-source&quot; id=&quot;markdown-toc-intertie-use-dual-source&quot;&gt;Intertie Use (Dual Source)&lt;/a&gt;            &lt;ol&gt;
-              &lt;li&gt;&lt;a href=&quot;#intertiedual-source-protection-summary-table&quot; id=&quot;markdown-toc-intertiedual-source-protection-summary-table&quot;&gt;Intertie/Dual Source Protection Summary Table&lt;/a&gt;&lt;/li&gt;
-            &lt;/ol&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#fault-flow-summary-diagram&quot; id=&quot;markdown-toc-fault-flow-summary-diagram&quot;&gt;Fault Flow Summary Diagram&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#further-reading&quot; id=&quot;markdown-toc-further-reading&quot;&gt;Further Reading&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#notes--references&quot; id=&quot;markdown-toc-notes--references&quot;&gt;Notes &amp;amp; References&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#single-source-scenarios-radially-fed&quot; id=&quot;markdown-toc-single-source-scenarios-radially-fed&quot;&gt;Single Source Scenarios (Radially Fed)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#intertie-use-dual-source&quot; id=&quot;markdown-toc-intertie-use-dual-source&quot;&gt;Intertie Use (Dual Source)&lt;/a&gt;&lt;/li&gt;
         &lt;/ol&gt;
       &lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#summary-diagrams-and-tables&quot; id=&quot;markdown-toc-summary-diagrams-and-tables&quot;&gt;Summary Diagrams and Tables&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#radial-use-configuration--protection&quot; id=&quot;markdown-toc-radial-use-configuration--protection&quot;&gt;Radial Use Configuration &amp;amp; Protection&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#intertie-use-configuration--protection&quot; id=&quot;markdown-toc-intertie-use-configuration--protection&quot;&gt;Intertie Use Configuration &amp;amp; Protection&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#fault-flow-summary-diagrams&quot; id=&quot;markdown-toc-fault-flow-summary-diagrams&quot;&gt;Fault Flow Summary Diagrams&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#further-reading&quot; id=&quot;markdown-toc-further-reading&quot;&gt;Further Reading&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#notes--references&quot; id=&quot;markdown-toc-notes--references&quot;&gt;Notes &amp;amp; References&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;construction-and-use-cases&quot;&gt;Construction and Use Cases&lt;/h1&gt;
@@ -538,7 +537,7 @@ jekyll
     &lt;figcaption&gt;A five-legged core construction for a three-phase transformer provides two return paths for zero sequence flux.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;The economics of auto’s usually results in a turns ratio near 2:1. That’s why they are used on both Transmission and Distribution levels to tie e.g. 230kV and 115kV together, or 12 and 21kV circuits together.&lt;/p&gt;
+&lt;p&gt;The economics of autos usually results in a turns ratio near 2:1. That’s why they are used on both Transmission and Distribution levels to tie e.g. 230kV and 115kV together, or 12 and 21kV circuits together.&lt;/p&gt;
 
 &lt;p&gt;An interesting fact is that if you took an existing single phase transformer and turned it into an autotransformer by connecting its primary and secondary windings, you would increase your kVA rating of the transformer. This is due to the fact that not all the current needs to flow over both windings. Using the ideal transformer equation &lt;script type=&quot;math/tex&quot;&gt;V_2/V_1=N_2/N_1&lt;/script&gt; and with &lt;script type=&quot;math/tex&quot;&gt;N_1=N_C+N_S&lt;/script&gt; we can solve for the power that is in common winding, &lt;script type=&quot;math/tex&quot;&gt;P_W&lt;/script&gt; versus the input and output power, &lt;script type=&quot;math/tex&quot;&gt;P_{IO}&lt;/script&gt;.&lt;/p&gt;
 
@@ -617,7 +616,18 @@ jekyll
   &lt;li&gt;note that in this case it is important that we have a four or five legged core to have a zero-sequence flux return path for any unbalance or fault conditions&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;radial-protection-summary-table&quot;&gt;Radial Protection Summary Table&lt;/h4&gt;
+&lt;h3 id=&quot;intertie-use-dual-source&quot;&gt;Intertie Use (Dual Source)&lt;/h3&gt;
+
+&lt;p&gt;This is the most common since it increases reliability by allowing for uninterrupted power delivery during normal or emergency system maintenance. The only difference for the dual source will be the mix of a 4-wire system with a 3-wire system (since 3W↔3W and 4W↔4W are the same as the radial case).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;4-wire ↔ 3-wire&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Again, anytime we source a 4-wire system with a 3-wire system, we want to provide a good ground at the point of transition (the 4-wire system is already “grounded”)  &lt;strong&gt;⇒ grounded + closed tertiary + source side protection&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;summary-diagrams-and-tables&quot;&gt;Summary Diagrams and Tables&lt;/h1&gt;
+&lt;h2 id=&quot;radial-use-configuration--protection&quot;&gt;Radial Use Configuration &amp;amp; Protection&lt;/h2&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -656,17 +666,7 @@ jekyll
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&quot;intertie-use-dual-source&quot;&gt;Intertie Use (Dual Source)&lt;/h3&gt;
-
-&lt;p&gt;This is the most common since it increases reliability by allowing for uninterrupted power delivery during normal or emergency system maintenance. The only difference for the dual source will be the mix of a 4-wire system with a 3-wire system (since 3W↔3W and 4W↔4W are the same as the radial case).&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;4-wire ↔ 3-wire&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Again, anytime we source a 4-wire system with a 3-wire system, we want to provide a good ground at the point of transition (the 4-wire system is already “grounded”)  &lt;strong&gt;⇒ grounded + closed tertiary + source side protection&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;intertiedual-source-protection-summary-table&quot;&gt;Intertie/Dual Source Protection Summary Table&lt;/h4&gt;
+&lt;h2 id=&quot;intertie-use-configuration--protection&quot;&gt;Intertie Use Configuration &amp;amp; Protection&lt;/h2&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -699,8 +699,7 @@ jekyll
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&quot;fault-flow-summary-diagram&quot;&gt;Fault Flow Summary Diagram&lt;/h3&gt;
-
+&lt;h2 id=&quot;fault-flow-summary-diagrams&quot;&gt;Fault Flow Summary Diagrams&lt;/h2&gt;
 &lt;p&gt;The fault flow summary is shown in these two diagrams:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/assets/img/2019/autotransformer/auto-protection1.png&quot; alt=&quot;autotransformer fault flow diagram&quot; /&gt;&lt;/p&gt;
@@ -709,7 +708,7 @@ jekyll
 
 &lt;p&gt;Usually distribution autotransformers are located far from the substation, but for autos with a higher fault duty the engineer should check the protection clearing time is below the IEEE C57.109 transformer damage curve.&lt;/p&gt;
 
-&lt;h3 id=&quot;further-reading&quot;&gt;Further Reading&lt;/h3&gt;
+&lt;h1 id=&quot;further-reading&quot;&gt;Further Reading&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;IEEE Std C57.105 Guide for Application of Transformers in Three-Phase Distribution Systems&lt;/li&gt;
@@ -718,7 +717,7 @@ jekyll
   &lt;li&gt;X. Zhang and A. Echeverria, “Three-Winding Autotransformer Fault Study and Impact on Protection Application”, New York Power Authority. [Online]. Available: &lt;a href=&quot;https://www.eiseverywhere.com/file_uploads/a99e2aa556135afc2ea43c68303bd462_zha_pap.pdf&quot;&gt;https://www.eiseverywhere.com/file_uploads/a99e2aa556135afc2ea43c68303bd462_zha_pap.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;notes--references&quot;&gt;Notes &amp;amp; References&lt;/h3&gt;
+&lt;h1 id=&quot;notes--references&quot;&gt;Notes &amp;amp; References&lt;/h1&gt;
 
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
