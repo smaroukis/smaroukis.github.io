@@ -371,7 +371,7 @@ The next workaround is to use liquid tags and a new html file in the `_includes`
 <!--  ./_includes/img.html -->
 <figure>
     <img src="{{site.url}}/{{ include.file }}" alt="{{ include.caption}}">  
-    <figcaption>{% begin raw %}{{ include.caption }}{% endraw %}</figcaption>
+    <figcaption>{% raw %}{{ include.caption }}{% endraw %}</figcaption>
 </figure>
 ```
 
@@ -386,7 +386,7 @@ figure figcaption{
 
 3. and finally the markdown has to be written with a liquid `include` statement
 ```markdown
-{% begin raw %}{% include img.html file="assets/img/example/path/to/img.png" caption="This caption will show up beneath the picture with the formatting as defined in the main css file" %}{% endraw %}
+{% raw %}{% include img.html file="assets/img/example/path/to/img.png" caption="This caption will show up beneath the picture with the formatting as defined in the main css file" %}{% endraw %}
 ```
 
 ## Improvements and Feedback
