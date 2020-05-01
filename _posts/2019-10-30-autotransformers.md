@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Distribution Autotransformers -- Configurations, Fault Analysis and Model Verification
+title: Distribution Autotransformers for Intertie Use - Grounding, Tertiary, & Fault Analysis
 excerpt: Protection considerations for connecting distribution voltage level power systems together with autotransformers.
 categories: [engineering, power systems, transformers]
 tags: [technical, power systems]
