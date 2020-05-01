@@ -358,6 +358,37 @@ By default the `kramdown` markdown parser will look for math delimiters (`$$...$
 
 For those who want to use the faster `Katex` engine, you can switch out the `header` javascript pointing to the MathJax cdn host and instead point to Katex host (see [here][katex-cdn]). Then you turn the MathJax `math/tex` script tags into Katex style javascript which executes upon loading the page (see [here][katex-mathjax-conversion]). Note that I had to remove the `defer` part from the Katex starter template `<script>` tags since this will cause the remote javascript pointing to the Katex host to load _after_ the javascript that tries to convert math via Katex has been executed. 
 
+## Displaying Captions Under Images in Leonids
+
+Unfortunately neither kramdown nor my chosen theme, leonids, have good support for captions under photos. Normally you insert a photo in markdown as `[alt image text](/path/to/image)`, but in HTML the alt image text does not show up as a caption.
+
+The first workaround I found was to insert pure html with a `<figure> <img src=...> <figcaption>` block and corresponding CSS but that pretty janky. 
+
+The next workaround is to use liquid tags and a new html file in the `_includes` folder that will be rendered upon jekyll build processing. This requires edits to
+1. the new html file created (mine is `_includes/img.html`)
+
+```html
+<!--  ./_includes/img.html -->
+<figure>
+    <img src="{{site.url}}/{{ include.file }}" alt="{{ include.caption}}">  
+    <figcaption>{% begin raw %}{{ include.caption }}{% endraw %}</figcaption>
+</figure>
+```
+
+2. the css file for the class or block defined in html (`figure` and `figcaption` above)
+```scss
+// in ./css/main.scss
+figure figcaption{
+    text-align: center;
+    font-style: italic;
+}
+```
+
+3. and finally the markdown has to be written with a liquid `include` statement
+```markdown
+{% begin raw %}{% include img.html file="assets/img/example/path/to/img.png" caption="This caption will show up beneath the picture with the formatting as defined in the main css file" %}{% endraw %}
+```
+
 ## Improvements and Feedback
 For any improvements to content please submit on [GitHub][post-source]. 
 
