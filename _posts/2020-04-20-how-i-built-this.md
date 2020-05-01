@@ -360,12 +360,13 @@ For those who want to use the faster `Katex` engine, you can switch out the `hea
 
 ## Displaying Captions Under Images in Leonids
 
-Unfortunately neither kramdown nor my chosen theme, leonids, have good support for captions under photos. Normally you insert a photo in markdown as `[alt image text](/path/to/image)`, but in HTML the alt image text does not show up as a caption.
+Unfortunately neither kramdown nor my chosen theme, leonids, have good support for captions under photos. Normally you insert a photo in markdown as `[alt image text](/path/to/image)`, but in html the alt image text does not show up as a caption.
 
-The first workaround I found was to insert pure html with a `<figure> <img src=...> <figcaption>` block and corresponding CSS but that pretty janky. 
+The first workaround I found was to insert pure html with a `<figure> <img src=...> <figcaption>` block and corresponding CSS but that is pretty janky. 
 
 The next workaround is to use liquid tags and a new html file in the `_includes` folder that will be rendered upon jekyll build processing. This requires edits to
-1. the new html file created (mine is `_includes/img.html`)
+
+- the new html file created (mine is `_includes/img.html`)
 
 ```html
 <!--  ./_includes/img.html -->
@@ -375,7 +376,8 @@ The next workaround is to use liquid tags and a new html file in the `_includes`
 </figure>
 ```
 
-2. the css file for the class or block defined in html (`figure` and `figcaption` above)
+- the css file for the class or block defined in html (`figure` and `figcaption` above)
+
 ```scss
 // in ./css/main.scss
 figure figcaption{
@@ -384,7 +386,8 @@ figure figcaption{
 }
 ```
 
-3. and finally the markdown has to be written with a liquid `include` statement
+- and finally the markdown has to be written with a liquid `include` statement
+
 ```markdown
 {% raw %}{% include img.html file="assets/img/example/path/to/img.png" caption="This caption will show up beneath the picture with the formatting as defined in the main css file" %}{% endraw %}
 ```
