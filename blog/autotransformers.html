@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Protection considerations for connecting distribution voltage level power systems together with autotransformers.">
+  <meta name="keywords" content="Power Systems, Energy, and Clean Tech">
+  <meta name="author" content="Distribution Autotransformers -- Configurations, Fault Analysis and Model Verification | Spencer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+  
+  
+    <!-- JS and CSS CDN Sources for Katex ... See /_includes/js.html for script converting kramdown math/tex script tags (used for mathjax) to kramdown recognizeable ones -->
+  <!-- Include Katex for Latex Rendering-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+  
+  
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Distribution Autotransformers -- Configurations, Fault Analysis and Model Verification | Spencer">
+  <meta name="twitter:description" content="Protection considerations for connecting distribution voltage level power systems together with autotransformers.">
+  <meta name="twitter:image" content="https://smaroukis.github.io/assets/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="https://smaroukis.github.io">
+  <meta property="og:title" content="Distribution Autotransformers -- Configurations, Fault Analysis and Model Verification | Spencer">
+  <meta property="og:description" content="Protection considerations for connecting distribution voltage level power systems together with autotransformers.">
+  <meta property="og:image" content="https://smaroukis.github.io/assets/img/leonids-logo.png">
+  <title>Distribution Autotransformers -- Configurations, Fault Analysis and Model Verification | Spencer</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="https://smaroukis.github.io/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://smaroukis.github.io/css/main.css">
+  <link rel="stylesheet" href="https://smaroukis.github.io/css/leaflet.css" media="screen" type="text/css">
+
+  <link rel="canonical" href="https://smaroukis.github.io/blog/autotransformers">
+  <link rel="alternate" type="application/rss+xml" title="Spencer" href="https://smaroukis.github.io /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="https://smaroukis.github.io/assets/img/favicon16.png">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="https://smaroukis.github.io/assets/img/favicon.png">
+</head>
+
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="https://smaroukis.github.io/assets/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="https://smaroukis.github.io/" class="author_name">Spencer</a>
+  <span class="author_job">Power Systems Engineer</span>
+  <span class="author_bio mbm">Electron traffic control</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/about/">About</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/tags">Tags</a>
+        
+          <span>/</span>
+        
+      </li>
+         
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('smaroukis@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    <li><a href="http://twitter.com/that_marouk_ish" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    
+    
+    <li><a href="http://linkedin.com/in/spencermaroukis" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    <li><a href="http://github.com/smaroukis" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "https://smaroukis.github.io/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Distribution Autotransformers -- Configurations, Fault Analysis and Model Verification">Distribution Autotransformers -- Configurations, Fault Analysis and Model Verification</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        30 OCT 2019
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    12 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    
+<p>In this post I’ll talk about tying different level distribution systems together with autotransformers and walk through the fault analysis of different tertiary and grounding configurations.</p>
+
+<ol id="markdown-toc">
+  <li><a href="#construction-and-use-cases" id="markdown-toc-construction-and-use-cases">Construction and Use Cases</a>    <ol>
+      <li><a href="#winding-configuration" id="markdown-toc-winding-configuration">Winding Configuration</a></li>
+      <li><a href="#virtual-tertiary-and-zero-sequence-flux-paths" id="markdown-toc-virtual-tertiary-and-zero-sequence-flux-paths">Virtual Tertiary and Zero Sequence Flux Paths</a></li>
+    </ol>
+  </li>
+  <li><a href="#protection-of-distribution-autos" id="markdown-toc-protection-of-distribution-autos">Protection of Distribution Autos</a>    <ol>
+      <li><a href="#three-terminal-equivalent" id="markdown-toc-three-terminal-equivalent">Three Terminal Equivalent</a></li>
+      <li><a href="#sequence-networks" id="markdown-toc-sequence-networks">Sequence Networks</a></li>
+      <li><a href="#to-ground-or-not-to-ground-connections-for-3-and-4-wire-system-interties" id="markdown-toc-to-ground-or-not-to-ground-connections-for-3-and-4-wire-system-interties">To Ground or Not to Ground? Connections for 3 and 4 Wire System Interties</a>        <ol>
+          <li><a href="#single-source-scenarios-radially-fed" id="markdown-toc-single-source-scenarios-radially-fed">Single Source Scenarios (Radially Fed)</a>            <ol>
+              <li><a href="#radial-protection-summary-table" id="markdown-toc-radial-protection-summary-table">Radial Protection Summary Table</a></li>
+            </ol>
+          </li>
+          <li><a href="#intertie-use-dual-source" id="markdown-toc-intertie-use-dual-source">Intertie Use (Dual Source)</a>            <ol>
+              <li><a href="#intertiedual-source-protection-summary-table" id="markdown-toc-intertiedual-source-protection-summary-table">Intertie/Dual Source Protection Summary Table</a></li>
+            </ol>
+          </li>
+          <li><a href="#fault-flow-summary-diagram" id="markdown-toc-fault-flow-summary-diagram">Fault Flow Summary Diagram</a></li>
+          <li><a href="#further-reading" id="markdown-toc-further-reading">Further Reading</a></li>
+          <li><a href="#notes--references" id="markdown-toc-notes--references">Notes &amp; References</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h1 id="construction-and-use-cases">Construction and Use Cases</h1>
+
+<p>Autotransformers (“autos”) are a special type of transformer that have their primary and secondary windings electrically connected, allowing for cheaper construction in certain cases but losing the electrical isolation that normal two or three-winding transformers have.</p>
+
+<p>On the distribution power system they are usually pad-mounted three-phase transformers used to connect two disparate distribution voltage levels together (e.g. 12kV to 21kV). This could be the result of a voltage cutover (upgrade) or when two disparate sources come together over time from system expansion.</p>
+
+<p>The bushings are labeled as H1, H2, H3, X1, X2, X3, and H0-X0. H0-X0 is the neutral bushing for the wye connection which is brought out to connect to the system neutral (if available). For the ungrounded case it is left unconnected. On the nameplate you should see that for each phase there is a tapped winding which separates the coil into the high and low side windings.</p>
+
+<figure>
+    <img src="https://smaroukis.github.io/assets/img/2019/autotransformer/auto-sld.png" alt="Single phase schematic of an autotransformer" />  
+    <figcaption>Single phase schematic of an autotransformer</figcaption>
+</figure>
+
+<h2 id="winding-configuration">Winding Configuration</h2>
+
+<p>Three-phase autotransformers are normally connected in Wye with a Delta-connected tertiary that can be opened or closed depending on desired operation. This delta tertiary allows for zero-sequence fault currents to flow so that source side protective devices can operate and isolate the faulted section, otherwise the fault duty may be too low for protective devices to detect the fault. The specific fault duty depends on</p>
+
+<ul>
+  <li>the system design (3 wire or 4 wire)</li>
+  <li>the delta tertiary switch status</li>
+  <li>if the H0-X0 bushing is grounded or ungrounded.</li>
+</ul>
+
+<p>Additionally the delta tertiary acts as a stabilizing winding for unbalanced voltages and a path for third harmonics. Specific protection schemes will be explained in detail in the <a href="#protection-of-distribution-autos">Protection</a> section.</p>
+
+<h2 id="virtual-tertiary-and-zero-sequence-flux-paths">Virtual Tertiary and Zero Sequence Flux Paths</h2>
+
+<p>Just like an imbalance of line currents results in a neutral or zero sequence current, the imbalance of flux in a magnetic core can result in a zero sequence flux. This happens during unbalanced conditions like a single phase-to-ground fault, load imbalance, or neutral shift. For three-phase core type transformer construction there is no return path for zero sequence flux, so the flux must return outside the core which can lead to severe tank heating<sup id="fnref:c57-105"><a href="#fn:c57-105" class="footnote">1</a></sup>. This return path is known as a virtual, phantom, or tank tertiary.</p>
+
+<figure>
+    <img src="https://smaroukis.github.io/assets/img/2019/autotransformer/three-legged-core.png" alt="In the three-legged core (esp. without a tertiary), there is no return path for zero sequence flux. This flux, resulting from single phase faults or voltage imbalance, is forced to return via a high reluctance path outside of the core and can cause heating in conductive material such as the tank. The high reluctance path is known as the 'virtual tertiary'" />  
+    <figcaption>In the three-legged core (esp. without a tertiary), there is no return path for zero sequence flux. This flux, resulting from single phase faults or voltage imbalance, is forced to return via a high reluctance path outside of the core and can cause heating in conductive material such as the tank. The high reluctance path is known as the 'virtual tertiary'</figcaption>
+</figure>
+
+<p>To provide a path for zero sequence flux and limit any tank heating during unbalanced conditions, the preferred construction is four or five-legged cores. Note that per IEEE C57.105</p>
+
+<blockquote>
+  <p>Adding a third winding (tertiary) of a substantially lower power rating and connected Δ reduces the zero-sequence exciting flux by reducing the level to which zero-sequence voltage may rise, but <strong>does not prevent flux from entering the tank</strong>.</p>
+</blockquote>
+
+<figure>
+    <img src="https://smaroukis.github.io/assets/img/2019/autotransformer/five-legged-core.png" alt="A five-legged core construction for a three-phase transformer provides two return paths for zero sequence flux." />  
+    <figcaption>A five-legged core construction for a three-phase transformer provides two return paths for zero sequence flux.</figcaption>
+</figure>
+
+<p>The economics of auto’s usually results in a turns ratio near 2:1. That’s why they are used on both Transmission and Distribution levels to tie e.g. 230kV and 115kV together, or 12 and 21kV circuits together.</p>
+
+<p>An interesting fact is that if you took an existing single phase transformer and turned it into an autotransformer by connecting its primary and secondary windings, you would increase your kVA rating of the transformer. This is due to the fact that not all the current needs to flow over both windings. Using the ideal transformer equation <script type="math/tex">V_2/V_1=N_2/N_1</script> and with <script type="math/tex">N_1=N_C+N_S</script> we can solve for the power that is in common winding, <script type="math/tex">P_W</script> versus the input and output power, <script type="math/tex">P_{IO}</script>.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+    V_L&=V_H\frac{N_C}{N_C+N_S}  \\ 
+    P_W&=I_S(V_H-V_L) \\
+    &= I_S V_H(1-\frac{N_C}{N_C+N_S}) \\ 
+    &= P_{IO}(\frac{N_S}{N_C+N_S})  \\ 
+    & \therefore P_W < P_{IO}
+\end{aligned} %]]></script>
+
+<h1 id="protection-of-distribution-autos">Protection of Distribution Autos</h1>
+
+<p>The type of system-tie transformer can greatly affect the protection scheme of the distribution circuit. Here we will focus only on Wye connected autos. Note there is only really one (tapped) winding, so there is only one configuration (Delta or Wye) plus a tertiary if available.</p>
+
+<h2 id="three-terminal-equivalent">Three Terminal Equivalent</h2>
+
+<p>The three terminal equivalent model is used to convert the multi-winding impedances (<script type="math/tex">Z_{HL/HT/LT}</script>) to branch impedances (<script type="math/tex">Z_{H/L/T}</script>) which is used in the zero sequence network for fault analysis.</p>
+
+<figure>
+    <img src="https://smaroukis.github.io/assets/img/2019/autotransformer/auto-three-terminal.png" alt="Three terminal equivalent where H, L, and T are high, low and tertiary windings respectively." />  
+    <figcaption>Three terminal equivalent where H, L, and T are high, low and tertiary windings respectively.</figcaption>
+</figure>
+
+<p>The branch impedance of one winding is equal to the sum of the adjacent minus the opposite, divided by two. For example:</p>
+
+<script type="math/tex; mode=display">Z_H=\frac{Z_{HL}+Z_{HT}-Z_{LT}}{2}</script>
+
+<h2 id="sequence-networks">Sequence Networks</h2>
+
+<p>A Wye-grounded auto without a tertiary will have the sequence network impedance of just the primary-to-secondary winding for both the positive and zero sequence. Grounded autotransformers with tertiaries (and even without, due to the virtual tertiary) create a zero sequence source of current. Ungrounded autos without a delta tertiary, or with the tertiary switch open, are essentially an open-circuit to zero sequence impedances and are not recommended due to the difficulty of fault detection. Ungrounded autos with a delta tertiary pass un-transformed zero sequence current.</p>
+
+<figure>
+    <img src="https://smaroukis.github.io/assets/img/2019/autotransformer/auto-sequence-networks.png" alt="Sequence networks for autotransformers 1) Wye-grounded without tertiary (or with tertiary switch open) 2) Wye-grounded with delta tertiary and 3) Wye-ungrounded with delta tertiary." />  
+    <figcaption>Sequence networks for autotransformers 1) Wye-grounded without tertiary (or with tertiary switch open) 2) Wye-grounded with delta tertiary and 3) Wye-ungrounded with delta tertiary.</figcaption>
+</figure>
+
+<p>The nameplate usually gives the positive sequence impedance for <script type="math/tex">Z_1^{HL}</script> and the zero sequence values as shown above (HL, HT, LT). In modeling it is usually assumed that the negative sequence impedance is equal to the positive.</p>
+
+<h2 id="to-ground-or-not-to-ground-connections-for-3-and-4-wire-system-interties">To Ground or Not to Ground? Connections for 3 and 4 Wire System Interties</h2>
+
+<p>How to choose what protection is required? It will be based on the fault analysis, which is based on the configuration and grounding of the auto. Let’s walk through some common scenarios when connecting two systems of different voltage levels together.</p>
+
+<p>Note in the cases we are assuming a 4-wire multi-grounded system and a 3-wire system grounded at the substation only<sup id="fnref:ca-system"><a href="#fn:ca-system" class="footnote">2</a></sup>. Of course even in the “ungrounded” case (uni-ground at the substation), there will still be grounds on the tank and equipment. “Grounding” the transformer means connecting the H0/X0 bushing to the neutral wire and establishing an effective ground.</p>
+
+<p>Although it will be most common that the autotransformer can be fed from both directions (dual-source), it will help to first investigate the radial case to understand the configuration’s effect on fault currents.</p>
+
+<h3 id="single-source-scenarios-radially-fed">Single Source Scenarios (Radially Fed)</h3>
+
+<p>These are radial connections where there is no chance of reverse feeding the transformer.</p>
+
+<p><em>3-wire system sourcing a 4-wire system</em></p>
+
+<ul>
+  <li>The 3-wire system is grounded only at the substation, but the 4-wire system is grounded at many points along the primary. <strong>Since we are sourcing a 4-wire multi-grounded system we must ground the auto.</strong> Closing the tertiary will help stabilize voltages and provide a path for zero sequence current. <strong>This introduces a source of ground current</strong> so a gang-operated source-side protective device should be used to interrupt the auto feeding <em>upstream</em> faults. Also there must be no open delta regulators on the 3-wire side since off-neutral taps will shift the neutral point and could cause sensitive ground relays to false target.<strong>⇒ grounded + closed tertiary + source-side protection</strong></li>
+</ul>
+
+<p><em>4-wire system sourcing a 3-wire system</em></p>
+
+<ul>
+  <li>Since our 3-wire system is an ungrounded primary we don’t necessarily need a ground (protective elements can operate on residual currents), we can unground the autotransformer so it is not a ground source. <strong>For the ungrounded case we must have a closed tertiary to pass zero-sequence currents</strong>. This is a special technical case for fault analysis — the current does not flow across the common winding and thus is not transformed. The zero sequence impedance used is a calculated value called the series-to-tertiary impedance. <strong>⇒ ungrounded + closed tertiary</strong></li>
+  <li>Note that if we had a large generator downstream we would want to ground the transformer.</li>
+</ul>
+
+<p><em>3-wire system sourcing a 3-wire system</em></p>
+
+<ul>
+  <li>Similar to the 4-wire → 3-wire case <strong>⇒ ungrounded + closed tertiary</strong>. In this case there is no reason to ground since the source system is only grounded at the substation.</li>
+</ul>
+
+<p><em>4-wire system sourcing a 4-wire system</em></p>
+
+<ul>
+  <li>Clearly we will be <strong>grounded</strong> since we have two multi-grounded systems. But what about the tertiary? We should <strong>open the tertiary</strong> so that we don’t introduce a ground source. The auto still passes zero sequence currents since it is grounded. <strong>⇒ grounded + open tertiary</strong></li>
+  <li>note that in this case it is important that we have a four or five legged core to have a zero-sequence flux return path for any unbalance or fault conditions</li>
+</ul>
+
+<h4 id="radial-protection-summary-table">Radial Protection Summary Table</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Source → Load</th>
+      <th style="text-align: center">Grounding</th>
+      <th style="text-align: center">Tertiary</th>
+      <th style="text-align: center">Protection</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">3W→3W</td>
+      <td style="text-align: center">Ungrounded</td>
+      <td style="text-align: center">Closed</td>
+      <td style="text-align: center">None</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3W→4W</td>
+      <td style="text-align: center">Grounded</td>
+      <td style="text-align: center">Closed</td>
+      <td style="text-align: center">Source Side</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4W→3W</td>
+      <td style="text-align: center">Ungrounded</td>
+      <td style="text-align: center">Closed</td>
+      <td style="text-align: center">None</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4W→4W</td>
+      <td style="text-align: center">Grounded</td>
+      <td style="text-align: center">Open</td>
+      <td style="text-align: center">None</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="intertie-use-dual-source">Intertie Use (Dual Source)</h3>
+
+<p>This is the most common since it increases reliability by allowing for uninterrupted power delivery during normal or emergency system maintenance. The only difference for the dual source will be the mix of a 4-wire system with a 3-wire system (since 3W↔3W and 4W↔4W are the same as the radial case).</p>
+
+<p><em>4-wire ↔ 3-wire</em></p>
+
+<ul>
+  <li>Again, anytime we source a 4-wire system with a 3-wire system, we want to provide a good ground at the point of transition (the 4-wire system is already “grounded”)  <strong>⇒ grounded + closed tertiary + source side protection</strong></li>
+</ul>
+
+<h4 id="intertiedual-source-protection-summary-table">Intertie/Dual Source Protection Summary Table</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Source ↔ Load</th>
+      <th style="text-align: center">Grounding</th>
+      <th style="text-align: center">Tertiary</th>
+      <th style="text-align: center">Protection</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">3W↔3W</td>
+      <td style="text-align: center">Ungrounded</td>
+      <td style="text-align: center">Closed</td>
+      <td style="text-align: center">None</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3W↔4W</td>
+      <td style="text-align: center">Grounded</td>
+      <td style="text-align: center">Closed</td>
+      <td style="text-align: center">Source and Load Side</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4W↔4W</td>
+      <td style="text-align: center">Grounded</td>
+      <td style="text-align: center">Open</td>
+      <td style="text-align: center">None</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fault-flow-summary-diagram">Fault Flow Summary Diagram</h3>
+
+<p>The fault flow summary is shown in these two diagrams:</p>
+
+<p><img src="https://smaroukis.github.io/assets/img/2019/autotransformer/auto-protection1.png" alt="autotransformer fault flow diagram" /></p>
+
+<p><img src="https://smaroukis.github.io/assets/img/2019/autotransformer/auto-protection2.png" alt="autotransformer fault flow diagram" /></p>
+
+<p>Usually distribution autotransformers are located far from the substation, but for autos with a higher fault duty the engineer should check the protection clearing time is below the IEEE C57.109 transformer damage curve.</p>
+
+<h3 id="further-reading">Further Reading</h3>
+
+<ul>
+  <li>IEEE Std C57.105 Guide for Application of Transformers in Three-Phase Distribution Systems</li>
+  <li>IEEE Std C57.158 Guide for the Application of Tertiary and Stabilizing Windings in Power Transformers</li>
+  <li>IEEE Std C57.109 IEEE Guide for Liquid-Immersed Transformers Through-Fault-Current Duration</li>
+  <li>X. Zhang and A. Echeverria, “Three-Winding Autotransformer Fault Study and Impact on Protection Application”, New York Power Authority. [Online]. Available: <a href="https://www.eiseverywhere.com/file_uploads/a99e2aa556135afc2ea43c68303bd462_zha_pap.pdf">https://www.eiseverywhere.com/file_uploads/a99e2aa556135afc2ea43c68303bd462_zha_pap.pdf</a></li>
+</ul>
+
+<h3 id="notes--references">Notes &amp; References</h3>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:c57-105">
+      <p>IEEE Guide for Application of Transformers in Three-Phase Distribution Systems, Section 3.3.3 “Zero Sequence Flux” <a href="#fnref:c57-105" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:ca-system">
+      <p>These are the two most common setups in California. the 4-wire multigrounded system operates at a nominal 20.78 kV with most service transformers connected Line-to-Neutral (12.00 kV) and the 3-wire uni-grounded system operates at a nominal 12.00 kV with service transformers connected Line-to-Line. <a href="#fnref:ca-system" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=https://smaroukis.github.io/blog/autotransformers" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://smaroukis.github.io/blog/autotransformers" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=https://smaroukis.github.io/blog/autotransformers" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=https://smaroukis.github.io/blog/autotransformers" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=https://smaroukis.github.io/blog/autotransformers" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2020 Spencer. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-bolt bolt-icon" style="color:gold"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://smaroukis.github.io/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://smaroukis.github.io/js/main.js"></script>
+
+<!-- for using katex with kramdown, to render math/tex tags via katex -->
+
+<script>
+  $("script[type='math/tex']").replaceWith(function() {
+      var tex = $(this).text();
+      return katex.renderToString(tex, {displayMode: false});
+  });
+
+  $("script[type='math/tex; mode=display']").replaceWith(function() {
+      var tex = $(this).html();
+      return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+  });
+</script>
+
+
+
+
+</body>
+</html>
