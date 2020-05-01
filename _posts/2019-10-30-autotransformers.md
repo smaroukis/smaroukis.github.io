@@ -31,7 +31,7 @@ On the distribution power system they are usually pad-mounted three-phase transf
 
 The bushings are labeled as H1, H2, H3, X1, X2, X3, and H0-X0. H0-X0 is the neutral bushing for the wye connection which is brought out to connect to the system neutral (if available). For the ungrounded case it is left unconnected. On the nameplate you should see that for each phase there is a tapped winding which separates the coil into the high and low side windings. 
 
-{% include img.html file="auto-sld.png" caption="Single phase schematic of an autotransformer" %}
+{% include img.html file="auto-sld.png" caption="Single line schematic of an autotransformer (only one phase shown)" %}
 
 ## Winding Configuration
 
