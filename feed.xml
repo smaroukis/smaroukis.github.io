@@ -5,8 +5,8 @@
     <description>Electrical engineer. Previously University of Michigan and Pacific Gas &amp; Electric.</description>
     <link>https://smaroukis.github.io/</link>
     <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 May 2020 04:51:09 +0000</pubDate>
-    <lastBuildDate>Fri, 01 May 2020 04:51:09 +0000</lastBuildDate>
+    <pubDate>Fri, 01 May 2020 05:08:02 +0000</pubDate>
+    <lastBuildDate>Fri, 01 May 2020 05:08:02 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -462,7 +462,7 @@ jekyll
       </item>
     
       <item>
-        <title>Distribution Autotransformers -- Configurations, Fault Analysis and Model Verification</title>
+        <title>Distribution Autotransformers for Intertie Use - Grounding, Tertiary, &amp; Fault Analysis</title>
         <description>
 &lt;p&gt;In this post I’ll talk about tying different level distribution systems together with autotransformers and walk through the fault analysis of different tertiary and grounding configurations.&lt;/p&gt;
 
