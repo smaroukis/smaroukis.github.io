@@ -2,7 +2,7 @@
 layout: post
 title: How to Customize Jekyll Using GitHub Pages, Docker, and Travis
 excerpt: An indepth guide to the fundamentals of Jekyll through the lense of a non-coder.
-categories: [meta, code]
+categories: [code, blogging]
 katex: true
 ---
 Check out the [source][post-source] for this blog post!
