@@ -234,7 +234,7 @@ Ok so now you have a full fledged Jekyll site locally with source files in the r
 
 If you wanted just to quickly see this site on the real internet you could simply try to push everything to the `master` branch on your `<username>.github.io` repo. What would happen? Likely GitHub pages would see that you have Jekyll source files and try to build and serve your site. 
 
-1. In your User repo go to ** Settings > Options > Scroll Down to GitHub Pages **. Here we can see that GitHub Pages is building the Jekyll site from the `master` branch. Note that for User pages (`<username>.github.io`) this is the only option. For Project pages, people often change this to `gh-pages`. 
+1. In your User repo go to **Settings > Options > Scroll Down to GitHub Pages**. Here we can see that GitHub Pages is building the Jekyll site from the `master` branch. Note that for User pages (`<username>.github.io`) this is the only option. For Project pages, people often change this to `gh-pages`. 
 ![GitHub Settings > Options > GitHub Pages][gh-pages-source]
 2. If you navigate to the **Environments** page on your repo you should see the GitHub Pages deployed your site
 ![GitHub Environments on your repo][gh-environ]
@@ -265,7 +265,7 @@ source 'https://rubygems.org'
 gem 'github-pages', group: :jekyll_plugins
 ```
 
-A few things to note here. We are forced into `kramdown` for markup, `mathjax` for maths, and `rouge` for syntax highlighting. This is important later on because even if we specify something different, when we deploy to `master` these are what is being used. {: .notice}
+A few things to note here. We are forced into `kramdown` for markup, `mathjax` for maths, and `rouge` for syntax highlighting. This is important later on because even if we specify something different, when we deploy to `master` these are what is being used. {:.notice}
 
 
 ### Aside: How to Override the GitHub Pages --Safe Build
@@ -360,7 +360,7 @@ For those who want to use the faster `Katex` engine, you can switch out the `hea
 
 ## Displaying Captions Under Images in Leonids
 
-Unfortunately neither kramdown nor my chosen theme, leonids, have good support for captions under photos. Normally you insert a photo in markdown as `[alt image text](/path/to/image)`, but in html the alt image text does not show up as a caption.
+Unfortunately neither kramdown nor my chosen theme, leonids, have good support for captions under photos. Normally you insert a photo in markdown as `![alt image text](/path/to/image)`, but in html the alt image text does not show up as a caption.
 
 The first workaround I found was to insert pure html with a `<figure> <img src=...> <figcaption>` block and corresponding CSS but that is pretty janky. 
 
@@ -370,10 +370,10 @@ The next workaround is to use liquid tags and a new html file in the `_includes`
 
 ```html
 <!--  ./_includes/img.html -->
-<figure>
+{% raw %}<figure>
     <img src="{{site.url}}/{{ include.file }}" alt="{{ include.caption}}">  
     <figcaption>{% raw %}{{ include.caption }}{% endraw %}</figcaption>
-</figure>
+</figure>{% endraw %}
 ```
 
 - the css file for the class or block defined in html (`figure` and `figcaption` above)
