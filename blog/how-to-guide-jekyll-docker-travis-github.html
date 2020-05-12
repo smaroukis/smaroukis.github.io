@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="An indepth guide to the fundamentals of Jekyll through the lense of a non-coder.">
+  <meta name="keywords" content="Power Systems, Energy, and Clean Tech">
+  <meta name="author" content="How to Customize Jekyll Using GitHub Pages, Docker, and Travis | Spencer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+  
+  
+    <!-- JS and CSS CDN Sources for Katex ... See /_includes/js.html for script converting kramdown math/tex script tags (used for mathjax) to kramdown recognizeable ones -->
+  <!-- Include Katex for Latex Rendering-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+  
+  
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Customize Jekyll Using GitHub Pages, Docker, and Travis | Spencer">
+  <meta name="twitter:description" content="An indepth guide to the fundamentals of Jekyll through the lense of a non-coder.">
+  <meta name="twitter:image" content="https://smaroukis.github.io/assets/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="https://smaroukis.github.io">
+  <meta property="og:title" content="How to Customize Jekyll Using GitHub Pages, Docker, and Travis | Spencer">
+  <meta property="og:description" content="An indepth guide to the fundamentals of Jekyll through the lense of a non-coder.">
+  <meta property="og:image" content="https://smaroukis.github.io/assets/img/leonids-logo.png">
+  <title>How to Customize Jekyll Using GitHub Pages, Docker, and Travis | Spencer</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="https://smaroukis.github.io/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://smaroukis.github.io/css/main.css">
+  <link rel="stylesheet" href="https://smaroukis.github.io/css/leaflet.css" media="screen" type="text/css">
+
+  <link rel="canonical" href="https://smaroukis.github.io/blog/how-to-guide-jekyll-docker-travis-github">
+  <link rel="alternate" type="application/rss+xml" title="Spencer" href="https://smaroukis.github.io /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="https://smaroukis.github.io/assets/img/favicon16.png">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="https://smaroukis.github.io/assets/img/favicon.png">
+</head>
+
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="https://smaroukis.github.io/assets/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="https://smaroukis.github.io/" class="author_name">Spencer</a>
+  <span class="author_job">Power Systems Engineer</span>
+  <span class="author_bio mbm">Electron traffic control</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/about/">About</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/tags">Tags</a>
+        
+          <span>/</span>
+        
+      </li>
+         
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('smaroukis@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    <li><a href="http://twitter.com/that_marouk_ish" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    
+    
+    <li><a href="http://linkedin.com/in/spencermaroukis" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    <li><a href="http://github.com/smaroukis" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "https://smaroukis.github.io/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="How to Customize Jekyll Using GitHub Pages, Docker, and Travis">How to Customize Jekyll Using GitHub Pages, Docker, and Travis</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        20 APR 2020
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    24 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>Check out the <a href="/blog/how-to-guide-jekyll-docker-travis-github">source</a> for this blog post!</p>
+
+<p>This post is for:</p>
+<ul>
+  <li>1) someone who wants to use custom Jekyll plugins but still host on GitHub pages</li>
+  <li>2) a technologically savvy user who wants to start a blog spend and likes to spend time on the command line (and doesn’t want to <a href="https://jekyllrb.com/docs/">read the docs</a>)</li>
+  <li>3) someone who already has a Jekyll blog but wants to extend their theme’s functionality (and doesn’t want to <a href="https://jekyllrb.com/docs/">read the docs</a>)
+    <blockquote>
+      <p>For (2) you may already have built a ruby project and thus are more ruby-savvy than me. Then you won’t need docker and you probably have your own deployment workflow. But you need to know more about how Jekyll is building and serving files, what to include and exclude in your configurations, how to use Liquid tags and where to put your custom javascript. For (3) maybe you have been using Jekyll for a few months but want to develop a more fundamental understanding of what is going on behind the scenes. This is where I was a few months ago after I hadn’t blogged for a year, I looked at my repo and realized that I didn’t know what was going on.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>What I’m Using:</p>
+<ul>
+  <li><a href="https://jekyllrb.com">Jekyll</a> version 3.8</li>
+  <li><a href="https://pages.github.com">GitHub Pages</a> to <em>host</em> the website but <strong>not</strong> to build it</li>
+  <li><a href="https://www.docker.com">Docker</a> to <strong>build locally</strong> and to <strong>build in a Travis instance</strong></li>
+  <li><a href="https://travis-ci.org">Travis</a> to deploy the static site to the <code class="highlighter-rouge">master</code> branch of my GitHub repository</li>
+  <li><a href="https://katex.org">Katex</a> for displaying Maths <em>whilst using <a href="https://kramdown.gettalong.org/index.html">kramdown</a></em>, the default markdown converter in Jekyll</li>
+  <li>Others: Plotly for graphs, Mapbox and Leaflet for maps.</li>
+</ul>
+
+<h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
+<ol id="markdown-toc">
+  <li><a href="#getting-started" id="markdown-toc-getting-started">Getting Started</a>    <ol>
+      <li><a href="#basic-knowledge-ruby-and-bundler" id="markdown-toc-basic-knowledge-ruby-and-bundler">Basic Knowledge, Ruby and Bundler</a></li>
+      <li><a href="#local-dependencies" id="markdown-toc-local-dependencies">Local Dependencies</a></li>
+      <li><a href="#building-your-site-from-scratch" id="markdown-toc-building-your-site-from-scratch">Building Your Site From Scratch</a></li>
+    </ol>
+  </li>
+  <li><a href="#custom-configuration" id="markdown-toc-custom-configuration">Custom Configuration</a>    <ol>
+      <li><a href="#changing-themes" id="markdown-toc-changing-themes">Changing Themes</a></li>
+      <li><a href="#extending-themes" id="markdown-toc-extending-themes">Extending Themes</a></li>
+      <li><a href="#editing-_configyml" id="markdown-toc-editing-_configyml">Editing _config.yml</a></li>
+    </ol>
+  </li>
+  <li><a href="#setting-up-our-blogging-workflow" id="markdown-toc-setting-up-our-blogging-workflow">Setting Up Our Blogging Workflow</a>    <ol>
+      <li><a href="#serving-via-docker-compose" id="markdown-toc-serving-via-docker-compose">Serving Via <em>Docker Compose</em></a>        <ol>
+          <li><a href="#other-docker-commands" id="markdown-toc-other-docker-commands">Other Docker Commands</a></li>
+        </ol>
+      </li>
+      <li><a href="#aside-how-github-pages-builds-jekyll-in-safe-mode" id="markdown-toc-aside-how-github-pages-builds-jekyll-in-safe-mode">Aside: How GitHub Pages Builds Jekyll in –Safe Mode</a></li>
+      <li><a href="#aside-how-to-override-the-github-pages-safe-build" id="markdown-toc-aside-how-to-override-the-github-pages-safe-build">Aside: How to Override the GitHub Pages –Safe Build</a></li>
+      <li><a href="#commiting-local-edits-to-a-source-branch" id="markdown-toc-commiting-local-edits-to-a-source-branch">Commiting Local Edits to a Source Branch</a></li>
+      <li><a href="#setting-up-travis" id="markdown-toc-setting-up-travis">Setting Up Travis</a></li>
+    </ol>
+  </li>
+  <li><a href="#wrapping-up" id="markdown-toc-wrapping-up">Wrapping Up</a>    <ol>
+      <li><a href="#how-are-maths-displayed" id="markdown-toc-how-are-maths-displayed">How are Maths Displayed?</a></li>
+      <li><a href="#displaying-captions-under-images-in-leonids" id="markdown-toc-displaying-captions-under-images-in-leonids">Displaying Captions Under Images in Leonids</a></li>
+      <li><a href="#improvements-and-feedback" id="markdown-toc-improvements-and-feedback">Improvements and Feedback</a></li>
+      <li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
+    </ol>
+  </li>
+  <li><a href="#footnotes" id="markdown-toc-footnotes">Footnotes</a></li>
+</ol>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<h3 id="basic-knowledge-ruby-and-bundler">Basic Knowledge, Ruby and Bundler</h3>
+<p>Some basic knowledge of the command line, Jekyll, bash, docker, and git will be useful. You may want to read through Jekyll’s <a href="https://jekyllrb.com/docs/">quick start guide</a> to see what is being installed and used locally like <code class="highlighter-rouge">ruby</code> and <code class="highlighter-rouge">Bundler</code>. The <strong>TL;DR</strong> is that <code class="highlighter-rouge">ruby</code> is a programming languagage whose libraries are packaged in <code class="highlighter-rouge">gems</code>. <code class="highlighter-rouge">Bundler</code> manages the gems using the versions found in a local <code class="highlighter-rouge">Gemfile</code>, installing the specified version of various gems and their dependencies. The <code class="highlighter-rouge">Gemfile</code> is stored in the root directory of the project and the gems are downloaded and stored by <code class="highlighter-rouge">Bundler</code> somewhere like <code class="highlighter-rouge">/usr/local/bundle</code>. See <a href="https://stackoverflow.com/questions/15586216/bundler-vs-rvm-vs-gems-vs-rubygems-vs-gemsets-vs-system-ruby">this stack overflow answer</a> for more detail.</p>
+
+<p>I’ll also point out some Windows traps, demonstrate my git workflow, and give you some ideas on how to extend your theme’s layouts.</p>
+
+<h3 id="local-dependencies">Local Dependencies</h3>
+<ul>
+  <li><a href="https://git-scm.com/download/">git</a> - also on Windows it is nice to use the git-bash shell that comes with git</li>
+  <li><a href="https://docs.docker.com/get-docker/">docker</a> and, for Linux, <a href="https://docs.docker.com/compose/install/">docker-compose</a> (docker-compose is included with the Docker-Desktop installation on Windows and Mac OS)</li>
+</ul>
+
+<p>Since we are using the official jekyll docker image, the only thing we need to install locally is docker and git (for Windows and bare-bones Linux distributions). This makes it easy to use different computers and not worry about local dependencies. Here’s an overview of how we’re managing the ruby and gem dependencies, starting with the ones we explicitly state:</p>
+<ul>
+  <li><strong>Jekyll</strong>: (explicit) The version is determined mainly by our <strong>Gemfile</strong> (<code class="highlighter-rouge">gem "jekyll", "~&gt; 3.8"</code>)<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>. We should also make sure to match the docker image jekyll version as specified in our <code class="highlighter-rouge">docker-compose.yml</code> or from the command line (e.g. <code class="highlighter-rouge">jekyll/jekyll:3.8</code> for version 3.8)</li>
+  <li><strong>Theme and Other Plugins</strong>: Either as explicitly specified in the <strong>Gemfile</strong>, or implicitly depending on the version of Jekyll and other dependent gems</li>
+  <li><strong>Katex</strong> or <strong>MathJax</strong>: (explicit) Defined where you put your javascript, mine is in a file under my <code class="highlighter-rouge">_includes</code> folder</li>
+  <li><strong>Ruby</strong>: (implicit) The ruby version is handeled by the jekyll/jekyll docker image (as of writing it was using 2.6.3)</li>
+</ul>
+
+<h3 id="building-your-site-from-scratch">Building Your Site From Scratch</h3>
+
+<p>First you will either build a new site from scratch or pull one down from a repo. Generally to build a new site you run <code class="highlighter-rouge">jekyll new &lt;sitename&gt;</code> to pull down the jekyll source files into the <code class="highlighter-rouge">&lt;sitename&gt;</code> directory. Then you go into this directory and run <code class="highlighter-rouge">jekyll serve</code> which will both build the site and serve it locally on port 4000 by default. If you didn’t want to serve the site but instead just build the static html files you would do <code class="highlighter-rouge">jekyll build</code>. But since we don’t have Ruby, Jekyll, or Bundler locally we use a docker container for all of these.</p>
+
+<p>The docker commands are as follows (you may need <code class="highlighter-rouge">sudo</code> for <code class="highlighter-rouge">docker run</code>):</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">JEKYLL_VERSION</span><span class="o">=</span>3.8
+docker run <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>:/srv/jekyll jekyll/jekyll:<span class="nv">$JEKYLL_VERSION</span> jekyll new <span class="nb">.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note I will be using Jekyll 3.8 throughout, so anytime you see this change it to the version you are working with.</p>
+</blockquote>
+
+<p>This does the following:</p>
+
+<ol>
+  <li>Mounts our <strong>current host directory</strong><sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> (<code class="highlighter-rouge">$(pwd)</code>) to the container’s <code class="highlighter-rouge">/srv/jekyll</code> (the docker image has specific priveleges to run jekyll commands in this location). Anything created by the container in <code class="highlighter-rouge">/srv/jekyll</code> will show up in our host’s current directory, which should be our blog’s project directory</li>
+  <li>Uses the <code class="highlighter-rouge">jekyll/jekyll:3.8</code> image to <strong>initialize a jekyll site</strong> in <code class="highlighter-rouge">/srv/jekyll</code>, which will also appear in our current host directory (see #1). This consists of the bare bones files that Jekyll needs to build a site, notably a <code class="highlighter-rouge">Gemfile</code>, <code class="highlighter-rouge">_config.yml</code> and a Markdown entry under the <code class="highlighter-rouge">_posts</code> directory. If you look closely there is also a hidden <code class="highlighter-rouge">.gitignore</code> file created.</li>
+</ol>
+
+<p>The directory structure should now be</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">.</span>
+├── 404.html
+├── about.markdown
+├── _config.yml
+├── Gemfile
+├── index.markdown
+├── _posts
+    └── 2020-04-18-welcome-to-jekyll.markdown
+</code></pre></div></div>
+
+<p>We actually don’t have a site yet, we just have the source files that jekyll will build one with. Let’s do that now in docker.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> <span class="nt">-p</span> 4000:4000 <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>:/srv/jekyll jekyll/jekyll:<span class="nv">$JEKYLL_VERSION</span> jekyll serve
+</code></pre></div></div>
+<p>We have added the <code class="highlighter-rouge">-it</code> command to run it interactively and the <code class="highlighter-rouge">-p</code> command to forward port 4000 on the container to port 4000 on the host. Navigate to <a href="http://localhost:4000">http://localhost:4000</a> to see the website. The directory should now have a new directory <code class="highlighter-rouge">_site</code> in addition to the source files which are left untouched.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_site
+├── 404.html
+├── about
+│   └── index.html
+├── assets
+│   ├── main.css
+│   ├── main.css.map
+│   └── minima-social-icons.svg
+├── feed.xml
+├── index.html
+└── jekyll
+    └── update
+        └── 2020
+            └── 04
+                └── 19
+                    └── welcome-to-jekyll.html
+</code></pre></div></div>
+
+<blockquote>
+  <p>A <code class="highlighter-rouge">Gemfile.lock</code> file will also have been created in the root directory. This is a list of all of the gems installed by <code class="highlighter-rouge">Bundler</code> at run time, including the exact versions and any dependencies not declared in the <code class="highlighter-rouge">Gemfile</code>. Note that both the <code class="highlighter-rouge">Gemfile</code> and the <code class="highlighter-rouge">Gemfile.lock</code> should both be checked in to our GitHub repo.</p>
+</blockquote>
+
+<p>You can see that all the static files needed for displaying a website are under <code class="highlighter-rouge">_site</code> and the rest of the source files are unchanged. In fact Jekyll will copy any of the source files into the <code class="highlighter-rouge">_site</code> directory unless they are excluded in the configuration file (Gemfiles, Markdown, and files beginning with <code class="highlighter-rouge">_</code> or <code class="highlighter-rouge">.</code> are excluded by default). Further, if any files have YAML front matter, these files will be “processed” by Jekyll.</p>
+
+<p>One last point – the path to the actual blog posts in html depends on how the permalink and categories are set up in the configuration file, which we’ll look at next.</p>
+
+<h2 id="custom-configuration">Custom Configuration</h2>
+
+<h3 id="changing-themes">Changing Themes</h3>
+<p>A list of theme showcases can be found at <a href="https://jekyllrb.com/docs/themes/">https://jekyllrb.com/docs/themes/</a>.</p>
+
+<blockquote>
+  <p>Note any incompatibility between the Jekyll version and the theme of choice. Some themes have not been updated to support Jekyll 4.0.</p>
+</blockquote>
+
+<p>Generally you’ll want to check the theme’s documentation on how to download a theme. In theory, for themes with gems, you can just add the gem to your gemfile and update the configuration file. Some themes require specific structure that is better mimicked from downloading the source files yourself.</p>
+
+<p>In our case, let’s try the <a href="https://mmistakes.github.io/jekyll-theme-basically-basic"><strong>Basically Basic</strong></a> theme which is a good out-of-the-box replacement for Jekyll’s default Minima theme. It also has <a href="https://github.com/mmistakes/jekyll-theme-basically-basic">great documentation</a> to explore and give you ideas on how to extend whatever theme you’re using.</p>
+
+<p>Update <code class="highlighter-rouge">Gemfile</code> with the theme’s gem</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">gem "jekyll-theme-basically-basic"</span>
+</code></pre></div></div>
+
+<p>Update <code class="highlighter-rouge">_config.yml</code></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">theme</span><span class="pi">:</span> <span class="s">jekyll-theme-basically-basic</span>
+</code></pre></div></div>
+
+<p>If you are still in the interactive shell from the first <code class="highlighter-rouge">jekyll serve</code>, kill it with <code class="highlighter-rouge">ctrl + C</code>. Then <strong>serve</strong> the site with the same <code class="highlighter-rouge">docker run ... jekyll serve</code> command as before.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> <span class="nt">-p</span> 4000:4000 <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>:/srv/jekyll jekyll/jekyll:<span class="nv">$JEKYLL_VERSION</span> jekyll serve
+</code></pre></div></div>
+
+<h3 id="extending-themes">Extending Themes</h3>
+<p>There are more source files actually stored within the gem that Bundler downloads. These are folders such as <code class="highlighter-rouge">assets</code>, <code class="highlighter-rouge">_includes</code>, <code class="highlighter-rouge">_layouts</code>, <code class="highlighter-rouge">_sass</code> that are called upon when Jekyll builds the site. Any local files with the same nomenclature as the theme’s gem will override that file, allowing you to customize themes. For example, this allows us to use insert javascript that will render <script type="math/tex">\LaTeX</script> for math posts. See <a href="https://jekyllrb.com/docs/themes/#overriding-theme-defaults">the docs</a> for more.</p>
+
+<h3 id="editing-_configyml">Editing _config.yml</h3>
+<p>Some other things you may want to change are:</p>
+<ul>
+  <li><code class="highlighter-rouge">url</code>: the hostname and protocol for you site. If you’re hosting on GitHub pages it will be <code class="highlighter-rouge">https://&lt;username&gt;.github.io</code>.</li>
+  <li><code class="highlighter-rouge">permalink</code>: the path to your posts online, e.g. <code class="highlighter-rouge">/blog/:title</code>. See the <a href="https://jekyllrb.com/docs/permalinks/#placeholders">docs</a> for other placeholders like year, month, and day. Note that you can also add a permalink for an individual post in the YAML front matter of that post.</li>
+  <li><code class="highlighter-rouge">exclude</code> and <code class="highlighter-rouge">include</code>: for Jekyll <code class="highlighter-rouge">build</code>
+    <ul>
+      <li>If we want to build the site ourselves instead of GitHub Pages, we include a <code class="highlighter-rouge">.nojekyll</code> empty file, since hidden files are excluded by default and we want this file to propogate to our <code class="highlighter-rouge">_site</code> folder so that it is there when we push it to GitHub.</li>
+      <li>Other files that we need in our source but not our site should be excluded or prepended with <code class="highlighter-rouge">.</code> or <code class="highlighter-rouge">_</code>.</li>
+    </ul>
+  </li>
+  <li>anything else that you or your theme has chosen to define. These are available via liquid tags as <code class="highlighter-rouge">{{ site.&lt;variable&gt; }}</code></li>
+</ul>
+
+<h2 id="setting-up-our-blogging-workflow">Setting Up Our Blogging Workflow</h2>
+<p>Here are the highlights:</p>
+<ol>
+  <li>Create and edit the Markdown files under your <code class="highlighter-rouge">_posts</code> directory (note the specific naming structure of the files as <code class="highlighter-rouge">YYYY-MM-DD-title-goes-here.md</code>)</li>
+  <li>Easily serve the local website via container with <code class="highlighter-rouge">docker-compose up</code></li>
+  <li>Commit/Push edits to a <code class="highlighter-rouge">source</code> or <code class="highlighter-rouge">release</code> branch
+    <ul>
+      <li>Anything under <code class="highlighter-rouge">_site</code> should be ignored by git (if not add <code class="highlighter-rouge">_site</code> to your <code class="highlighter-rouge">.gitignore</code>), which is necessary since you will have conflicts between building and serving, since <code class="highlighter-rouge">build</code> will use the actual <code class="highlighter-rouge">url</code> defined in <code class="highlighter-rouge">_config.yml</code> and <code class="highlighter-rouge">serve</code> will build the site to <code class="highlighter-rouge">localhost:4000</code>.</li>
+    </ul>
+  </li>
+  <li>Build the site and push only the contents of <code class="highlighter-rouge">_site</code> to the <code class="highlighter-rouge">master</code> branch, which GitHub will host automatically.</li>
+</ol>
+
+<h3 id="serving-via-docker-compose">Serving Via <em>Docker Compose</em></h3>
+<p>Docker-Compose is normally used to spin up a fleet of containers, but I use it as a convenient short-hand way to use local development flags across multiple development environments. Of course you could write a simple shell script to do the same thing if you only use the same OS all the time.</p>
+
+<blockquote>
+  <p>On Windows things are a bit wonky. You’ll have to create an extra <code class="highlighter-rouge">_config.yml</code> file so that you can use <code class="highlighter-rouge">url=localhost</code> instead of the default <code class="highlighter-rouge">0.0.0.0</code> that <code class="highlighter-rouge">jekyll serve</code> will do. <a href="https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/">This blog post</a> lays it all out.</p>
+</blockquote>
+
+<p>To quickly serve the website we create the following file named <code class="highlighter-rouge">docker-compose.yml</code> (install <a href="https://docs.docker.com/get-docker/">docker</a> and <a href="https://docs.docker.com/compose/install/">docker-compose</a> as needed):</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ./docker-compose.yml</span>
+
+<span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.7'</span> <span class="c1"># docker compose version</span>
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">environment</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">JEKYLL_ENV=local</span>
+  <span class="na">site</span><span class="pi">:</span>
+    <span class="na">command</span><span class="pi">:</span> <span class="s">jekyll serve --drafts --incremental --force_polling --watch</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">jekyll/jekyll:3.8</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">.:/srv/jekyll</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">4000:4000</span> 
+</code></pre></div></div>
+
+<p>Note this will <strong>only be used to preview the site locally</strong>. If we are building the site ourselves locally we cannot serve it at the same time, since Jekyll has specific overrides for the <code class="highlighter-rouge">serve</code> command (such as the url).</p>
+
+<p>Since we are only using it locally we can add it to our <code class="highlighter-rouge">.gitignore</code> file. Since it does not begin with <code class="highlighter-rouge">.</code> or <code class="highlighter-rouge">_</code> we also need to exclude it in our <code class="highlighter-rouge">_config.yml</code> file or else it will be copied into the <code class="highlighter-rouge">_site</code> folder when built.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config.yml</span>
+
+<span class="na">exclude</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">docker-compose.yml</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>Then to run this in the background as we edit our posts we run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose up <span class="nt">-d</span>
+</code></pre></div></div>
+
+<p>with the detached <code class="highlighter-rouge">-d</code> flag to detach it from a shell.</p>
+
+<h4 id="other-docker-commands">Other Docker Commands</h4>
+<p>Use <code class="highlighter-rouge">docker ps</code> to list running containers and <code class="highlighter-rouge">docker ps -a</code> to list all containers. Use <code class="highlighter-rouge">docker image ls</code> to list docker images.</p>
+
+<p><strong>Executing commands in the container</strong>: You have an existing container that you want to run something like  <code class="highlighter-rouge">bundle update</code> in<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>, but you don’t want to start a new container from the <code class="highlighter-rouge">jekyll/jekyll</code> image which would cause all of the gems to be downloaded again<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>. Get the container name from <code class="highlighter-rouge">docker ps</code> or <code class="highlighter-rouge">docker-compose ps</code> (the container has to be active) and run the following:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> &lt;container_name&gt; bundle update
+</code></pre></div></div>
+
+<p>To get a shell in the container run</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> &lt;container_name&gt; /bin/sh
+</code></pre></div></div>
+
+<p><strong>Stopping a Container</strong>: If you served the Jekyll site in detached mode (<code class="highlighter-rouge">-d</code>) and you want to stop the server so that port 4000 is available for something else.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">kill</span> &lt;container_name&gt;
+</code></pre></div></div>
+
+<p><strong>Restarting a Container</strong>: You want to re-serve the Jekyll site, which means you need to restart the docker container (assuming the container still exists)</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker restart &lt;container_name&gt;
+</code></pre></div></div>
+
+<p><strong>Removing Unused Containers</strong>: Any containers run without the <code class="highlighter-rouge">--rm</code> option will still be available. To delete all stopped containers use</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker system prune
+</code></pre></div></div>
+
+<h3 id="aside-how-github-pages-builds-jekyll-in-safe-mode">Aside: How GitHub Pages Builds Jekyll in –Safe Mode</h3>
+<p>Ok so now you have a full fledged Jekyll site locally with source files in the root of the project and all the static files necessary to serve the site in the <code class="highlighter-rouge">_site</code> folder.</p>
+
+<p>If you wanted just to quickly see this site on the real internet you could simply try to push everything to the <code class="highlighter-rouge">master</code> branch on your <code class="highlighter-rouge">&lt;username&gt;.github.io</code> repo. What would happen? Likely GitHub pages would see that you have Jekyll source files and try to build and serve your site.</p>
+
+<ol>
+  <li>In your User repo go to <strong>Settings &gt; Options &gt; Scroll Down to GitHub Pages</strong>. Here we can see that GitHub Pages is building the Jekyll site from the <code class="highlighter-rouge">master</code> branch. Note that for User pages (<code class="highlighter-rouge">&lt;username&gt;.github.io</code>) this is the only option. For Project pages, people often change this to <code class="highlighter-rouge">gh-pages</code>. 
+<img src="https://smaroukis.github.io/assets/img/2020/gh-pages-source.png" alt="GitHub Settings &gt; Options &gt; GitHub Pages" /></li>
+  <li>If you navigate to the <strong>Environments</strong> page on your repo you should see the GitHub Pages deployed your site
+<img src="https://smaroukis.github.io/assets/img/2020/gh-environ.png" alt="GitHub Environments on your repo" /></li>
+  <li>The Activity Log shows the history of deployments. Clicking on <strong>View Deployment</strong> shows you the current site.
+<img src="https://smaroukis.github.io/assets/img/2020/gh-activity-log.png" alt="GitHub Activity Log" /></li>
+  <li>If the GitHub pages <code class="highlighter-rouge">jekyll build</code> fails or if you are using an unsupported theme you will receive an email from GitHub pages support.</li>
+</ol>
+
+<p>So, what is going on here? Well behind the scenes GitHub pages is using <code class="highlighter-rouge">jekyll build --safe</code> to disable custom plugins and has the following configurations (<a href="https://help.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll#configuring-jekyll-in-your-github-pages-site">source</a> and <a href="https://jekyllrb.com/docs/github-pages/">Jekyll docs</a>):</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">lsi</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">safe</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">source</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">your repo's top level directory</span><span class="pi">]</span>
+<span class="na">incremental</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">highlighter</span><span class="pi">:</span> <span class="s">rouge</span>
+<span class="na">gist</span><span class="pi">:</span>
+  <span class="na">noscript</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">kramdown</span><span class="pi">:</span>
+  <span class="na">math_engine</span><span class="pi">:</span> <span class="s">mathjax</span>
+  <span class="na">syntax_highlighter</span><span class="pi">:</span> <span class="s">rouge</span>
+</code></pre></div></div>
+
+<p>If you wanted to build this locally you would use a different Gemfile than we’ve made:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># GH Pages Local Gemfile Example
+source 'https://rubygems.org'
+gem 'github-pages', group: :jekyll_plugins
+</code></pre></div></div>
+
+<p>A few things to note here. We are forced into <code class="highlighter-rouge">kramdown</code> for markup, <code class="highlighter-rouge">mathjax</code> for maths, and <code class="highlighter-rouge">rouge</code> for syntax highlighting. This is important later on because even if we specify something different, when we deploy to <code class="highlighter-rouge">master</code> these are what is being used. {:.notice}</p>
+
+<h3 id="aside-how-to-override-the-github-pages-safe-build">Aside: How to Override the GitHub Pages –Safe Build</h3>
+
+<p>There are a few special setups to tell GitHub that we <strong>don’t</strong> want them to build the site. First, instead of deploying to master the Jekyll source files, we deploy <strong>only the built static files</strong>, the contents of <em><code class="highlighter-rouge">_site</code></em>. Second we add an empty file named <code class="highlighter-rouge">.nojekyll</code> so that Pages knows not to run jekyll build.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.nojekyll
+404.html
+about
+└── index.html
+assets
+├── main.css
+├── main.css.map
+└── minima-social-icons.svg
+feed.xml
+index.html
+jekyll
+└── update
+    └── 2020
+        └── 04
+            └── 19
+                └── welcome-to-jekyll.html
+</code></pre></div></div>
+
+<p>Since Jekyll will overwrite whatever is in <code class="highlighter-rouge">_site</code> upon building, we create the <code class="highlighter-rouge">.nojekyll</code> file in the <strong>root</strong> directory and add <code class="highlighter-rouge">include: [.nojekyll]</code> into our <code class="highlighter-rouge">_config.yml</code> so that this file propogates into the build destination.</p>
+
+<h3 id="commiting-local-edits-to-a-source-branch">Commiting Local Edits to a Source Branch</h3>
+
+<p>So now we understand what is going on behind the scenes with the <em>Asides</em> above. This allows us to develop blog posts in a source or release branch seperately from the static files that GitHub will host. We can either build the static files ourselves or, better yet, when we push to a release branch we can have a continuous deployment tool (like Travis or Jenkins) build and push the static files to the <code class="highlighter-rouge">master</code> branch on GitHub.</p>
+
+<blockquote>
+  <p>Note: I named my release branch <code class="highlighter-rouge">master-source</code>.</p>
+</blockquote>
+
+<ol>
+  <li><code class="highlighter-rouge">git checkout master-source</code></li>
+  <li>Make edits yada yada</li>
+  <li><code class="highlighter-rouge">git add</code> stuff and <code class="highlighter-rouge">git commit -m 'this blog is getting really long'</code></li>
+  <li><code class="highlighter-rouge">git push --set-upstream origin master-source</code></li>
+</ol>
+
+<p>Note that we really don’t want to make edits on the <code class="highlighter-rouge">master-source</code> branch, so we would really checkout a different branch, merge those changes into <code class="highlighter-rouge">master-source</code> and then push to the remote.</p>
+
+<h3 id="setting-up-travis">Setting Up Travis</h3>
+
+<p>To setup or continuous integration (CI) tool we need to tell them what branch to watch for changes on, what docker command to run, and what branch and files to push the built site to. There are some good Travis + Jekyll + GitHub Pages how-to’s like <a href="https://medium.com/@mcred/supercharge-github-pages-with-jekyll-and-travis-ci-699bc0bde075">this one</a>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ./.travis.yml</span>
+<span class="na">language</span><span class="pi">:</span> <span class="s">python</span> <span class="c1"># we will use the ruby of the docker container</span>
+<span class="na">os</span><span class="pi">:</span> <span class="s">linux</span>
+<span class="na">dist</span><span class="pi">:</span> <span class="s">bionic</span>
+<span class="na">before_install</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">docker pull jekyll/jekyll:3.8</span>
+<span class="na">branches</span><span class="pi">:</span>
+  <span class="na">only</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">master-source</span> <span class="c1"># safelist to only build this branch; edit this to your release or source branch</span>
+<span class="na">script</span><span class="pi">:</span> 
+  <span class="pi">-</span> <span class="s">docker run --rm -it -v="$PWD:/srv/jekyll" jekyll/jekyll:3.8 jekyll build</span>
+<span class="na">deploy</span><span class="pi">:</span>
+  <span class="na">provider</span><span class="pi">:</span> <span class="s">pages</span>
+  <span class="na">local_dir</span><span class="pi">:</span> <span class="s">_site/</span> <span class="c1"># only deploy the contents of _site to the master branch</span>
+  <span class="na">skip_cleanup</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">target-branch</span><span class="pi">:</span> <span class="s">master</span> <span class="c1"># where you want to deploy the build to</span>
+  <span class="na">token</span><span class="pi">:</span> <span class="s">$GITHUB_TOKEN</span> <span class="c1"># set this up in your travis profile</span>
+  <span class="na">strategy</span><span class="pi">:</span> <span class="s">git</span>
+  <span class="na">keep_history</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">on</span><span class="pi">:</span>
+    <span class="na">branch</span><span class="pi">:</span> <span class="s">master-source</span> <span class="c1"># deploy only from the source branch</span>
+<span class="na">notifications</span><span class="pi">:</span>
+  <span class="na">email</span><span class="pi">:</span>
+    <span class="na">recipients</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">smaroukis@gmail.com</span> <span class="c1"># I hope there are no bots scraping this webpage for email addresses</span>
+    <span class="na">on_success</span><span class="pi">:</span> <span class="s">always</span>
+    <span class="na">on_failure</span><span class="pi">:</span> <span class="s">always</span>
+</code></pre></div></div>
+
+<p>A few things to note</p>
+
+<ol>
+  <li><code class="highlighter-rouge">script</code>: This is the main command we are using to build the site with Travis/Docker instead of GitHub Pages. Since we are using <code class="highlighter-rouge">jekyll build</code> by default we are using <code class="highlighter-rouge">JEKYLL_ENV=production</code> and the other matter specified in the <code class="highlighter-rouge">_config.yml</code>.</li>
+  <li><code class="highlighter-rouge">only: master-source</code> and <code class="highlighter-rouge">branch: master-source</code>: Replace <code class="highlighter-rouge">master-source</code> with the name of your source/release branch.</li>
+  <li><code class="highlighter-rouge">local_dir: _site/</code>: Tells Travis to only deploy the <em>contents</em> of <code class="highlighter-rouge">_site</code>.</li>
+  <li><code class="highlighter-rouge">target-branch: master</code>: Where you want to deploy the the built files to. This should be the same as in your GitHub repo’s <strong>Settings &gt; Options &gt; GitHub Pages &gt; Source</strong> points to.</li>
+  <li><code class="highlighter-rouge">language: python</code>: We are using a <code class="highlighter-rouge">python</code> travis instance to show that we are only using the ruby version of the docker container. It is also faster than a <code class="highlighter-rouge">ruby</code> instance<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>.</li>
+</ol>
+
+<h1 id="wrapping-up">Wrapping Up</h1>
+
+<h2 id="how-are-maths-displayed">How are Maths Displayed?</h2>
+
+<p>By default the <code class="highlighter-rouge">kramdown</code> markdown parser will look for math delimiters (<code class="highlighter-rouge">$$...$$</code>, etc.) and convert these into MathJax html tags (<code class="highlighter-rouge">&lt; script type="math/tex"&gt; $$ P=IV $$ &lt;/script&gt;</code>). Then the javascript included in the header or theme layout will use the specified MathJax version to render on the browser.</p>
+
+<p>For those who want to use the faster <code class="highlighter-rouge">Katex</code> engine, you can switch out the <code class="highlighter-rouge">header</code> javascript pointing to the MathJax cdn host and instead point to Katex host (see <a href="https://katex.org/docs/browser.html#starter-template">here</a>). Then you turn the MathJax <code class="highlighter-rouge">math/tex</code> script tags into Katex style javascript which executes upon loading the page (see <a href="https://kramdown.gettalong.org/math_engine/mathjax.html">here</a>). Note that I had to remove the <code class="highlighter-rouge">defer</code> part from the Katex starter template <code class="highlighter-rouge">&lt;script&gt;</code> tags since this will cause the remote javascript pointing to the Katex host to load <em>after</em> the javascript that tries to convert math via Katex has been executed.</p>
+
+<h2 id="displaying-captions-under-images-in-leonids">Displaying Captions Under Images in Leonids</h2>
+
+<p>Unfortunately neither kramdown nor my chosen theme, leonids, have good support for captions under photos. Normally you insert a photo in markdown as <code class="highlighter-rouge">![alt image text](/path/to/image)</code>, but in html the alt image text does not show up as a caption.</p>
+
+<p>The first workaround I found was to insert pure html with a <code class="highlighter-rouge">&lt;figure&gt; &lt;img src=...&gt; &lt;figcaption&gt;</code> block and corresponding CSS but that is pretty janky.</p>
+
+<p>The next workaround is to use liquid tags and a new html file in the <code class="highlighter-rouge">_includes</code> folder that will be rendered upon jekyll build processing. This requires edits to</p>
+
+<ul>
+  <li>the new html file created (mine is <code class="highlighter-rouge">_includes/img.html</code>)</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!--  ./_includes/img.html --&gt;</span>
+<span class="nt">&lt;figure&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"{{site.url}}/{{ include.file }}"</span> <span class="na">alt=</span><span class="s">"{{ include.caption}}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;figcaption&gt;</span>{{ include.caption }}<span class="nt">&lt;/figcaption&gt;</span>
+<span class="nt">&lt;/figure&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>the css file for the class or block defined in html (<code class="highlighter-rouge">figure</code> and <code class="highlighter-rouge">figcaption</code> above)</li>
+</ul>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// in ./css/main.scss</span>
+<span class="nt">figure</span> <span class="nt">figcaption</span><span class="p">{</span>
+    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">font-style</span><span class="p">:</span> <span class="nb">italic</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>and finally the markdown has to be written with a liquid <code class="highlighter-rouge">include</code> statement</li>
+</ul>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include img.html file="assets/img/example/path/to/img.png" caption="This caption will show up beneath the picture with the formatting as defined in the main css file" %}
+</code></pre></div></div>
+
+<h2 id="improvements-and-feedback">Improvements and Feedback</h2>
+<p>For any improvements to content please submit on <a href="/blog/how-to-guide-jekyll-docker-travis-github">GitHub</a>.</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Environment variables for <code class="highlighter-rouge">$JEKYLL_VERSION</code> that propogate across OS’s and into Travis</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+<ul>
+  <li><a href="http://jmcglone.com/guides/github-pages">The best beginner guide for Jekyll and GitHub Pages</a></li>
+  <li><a href="https://jekyllrb.com/docs/">The docs</a></li>
+  <li>Jekyll’s <a href="https://jekyllrb.com/docs/ruby-101/">Ruby 101</a>: describes gems, Gemfiles, and Bundler]</li>
+  <li><a href="https://www.seanh.cc/2019/09/29/liquid">Liquid Templating Crash Course</a> for extending the functionality of different <code class="highlighter-rouge">.html</code> files and layouts.</li>
+  <li>Official Jekyll Docker <a href="https://hub.docker.com/r/jekyll/jekyll/">image</a> and <a href="https://github.com/envygeeks/jekyll-docker/blob/master/README.md">repo</a></li>
+  <li><a href="https://fabse.net/blog/2018/07/16/Running-Jekyll-on-Windows-using-Docker/">Jekyll and Docker on Windows by Fabian Wetzel</a></li>
+  <li><a href="https://ddewaele.github.io/running-jekyll-in-docker/">Running Jekyll in Docker</a> is a great quick and dirty intro to spinning a site up from scratch with Docker</li>
+  <li><a href="https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/">Jekyll, Docker, Windows, and 0.0.0.0</a>: for serving your site locally on Windows.</li>
+</ul>
+
+<hr />
+
+<h1 id="footnotes">Footnotes</h1>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><code class="highlighter-rouge">~&gt; 3.8</code> in a Gemile means any version equal to or greater than 3.8 but less than the next major version (4.0) <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>The syntax for a Windows machine will differ. Using <code class="highlighter-rouge">git-bash</code> (recommended) I used a backslash to escape the current working directory like <code class="highlighter-rouge">docker run -v /$(pwd):/srv/jekyll jekyll/jekyll</code>. For full paths you would need to follow Windows syntax before the colon and Linux after: <code class="highlighter-rouge">docker run -v c:\\path\\to\\Windows\\dir:/srv/jekyll ...</code> <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>You would want to do this if you’ve updated a gemfile with new themes. Other commands would be <code class="highlighter-rouge">docker exec -it &lt;container_name&gt; gem install "new-jekyll-theme"</code>. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>In theory you should be able avoid this by caching the gems locally by additionally mounting a volume to the container’s <code class="highlighter-rouge">/usr/local/bundle</code> directory (e.g. <code class="highlighter-rouge">docker run -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll jekyll build</code>), but due to permissions errors I was not able to get this to work. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>Improve <a href="/blog/how-to-guide-jekyll-docker-travis-github">this post</a> by telling me what is the fastest Travis instance os. <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=https://smaroukis.github.io/blog/how-to-guide-jekyll-docker-travis-github" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://smaroukis.github.io/blog/how-to-guide-jekyll-docker-travis-github" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=https://smaroukis.github.io/blog/how-to-guide-jekyll-docker-travis-github" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=https://smaroukis.github.io/blog/how-to-guide-jekyll-docker-travis-github" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=https://smaroukis.github.io/blog/how-to-guide-jekyll-docker-travis-github" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2020 Spencer. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-bolt bolt-icon" style="color:gold"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://smaroukis.github.io/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://smaroukis.github.io/js/main.js"></script>
+
+<!-- for using katex with kramdown, to render math/tex tags via katex -->
+
+<script>
+  $("script[type='math/tex']").replaceWith(function() {
+      var tex = $(this).text();
+      return katex.renderToString(tex, {displayMode: false});
+  });
+
+  $("script[type='math/tex; mode=display']").replaceWith(function() {
+      var tex = $(this).html();
+      return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+  });
+</script>
+
+
+
+
+</body>
+</html>

@@ -5,9 +5,674 @@
     <description>Electrical engineer. Previously University of Michigan and Pacific Gas &amp; Electric.</description>
     <link>https://smaroukis.github.io/</link>
     <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 May 2020 19:16:21 +0000</pubDate>
-    <lastBuildDate>Mon, 11 May 2020 19:16:21 +0000</lastBuildDate>
+    <pubDate>Tue, 12 May 2020 15:11:27 +0000</pubDate>
+    <lastBuildDate>Tue, 12 May 2020 15:11:27 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Grounding Explained for the Masses (with Drawings!)</title>
+        <description>
+&lt;p&gt;So… about that third prong (or not).&lt;/p&gt;
+
+&lt;p&gt;Have you ever wondered why some power cords have a third prong and some don’t? By popular request, today I will de-mystify the concept of Ground in household electrical systems.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: I will only be talking about single phase secondary service connections here, or the 120/240V  service commonly delivered to residential customers. For utility grounding systems, see my next post.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#electricity-fundamentals-through-analogies&quot; id=&quot;markdown-toc-electricity-fundamentals-through-analogies&quot;&gt;Electricity Fundamentals Through Analogies&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ground-as-demonstrated-via-your-cars-electrical-system&quot; id=&quot;markdown-toc-ground-as-demonstrated-via-your-cars-electrical-system&quot;&gt;“Ground” as Demonstrated via Your Car’s Electrical System&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#the-three-wires-in-your-home-live-neutral-and-ground&quot; id=&quot;markdown-toc-the-three-wires-in-your-home-live-neutral-and-ground&quot;&gt;The Three Wires in Your Home: Live, Neutral, and Ground&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#the-neutral&quot; id=&quot;markdown-toc-the-neutral&quot;&gt;The Neutral&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#the-grounding-conductor&quot; id=&quot;markdown-toc-the-grounding-conductor&quot;&gt;The Grounding Conductor&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#the-ground-rod&quot; id=&quot;markdown-toc-the-ground-rod&quot;&gt;The Ground Rod&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#the-120240v-split-phase-service&quot; id=&quot;markdown-toc-the-120240v-split-phase-service&quot;&gt;The 120/240V “Split Phase” Service&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#further-reading&quot; id=&quot;markdown-toc-further-reading&quot;&gt;Further Reading&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#references--footnotes&quot; id=&quot;markdown-toc-references--footnotes&quot;&gt;References &amp;amp; Footnotes&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;definitions&quot;&gt;Definitions:&lt;/h2&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;&lt;strong&gt;Ground&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;an intentional low impedance path connection to Earth&lt;/dd&gt;
+  &lt;dt&gt;&lt;strong&gt;the ground&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;the literal soil&lt;/dd&gt;
+  &lt;dt&gt;&lt;strong&gt;Earth&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;the Mother of all living things; also an ideal sink for electrons such that no amount of current flow into the earth will create a voltage rise; used to establish a reference voltage&lt;/dd&gt;
+  &lt;dt&gt;&lt;strong&gt;Grounding conductor&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;a conductive path to Ground used in the case of an equipment failure. The conductive path allows protection equipment to operate and disconnect the failed equipment. Known as EGC — equipment grounding conductor — in the National Electric Code (NEC).&lt;/dd&gt;
+  &lt;dt&gt;&lt;strong&gt;neutral conductor&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;a system conductor other than a phase conductor that provides a return path for current to the source. Used for single phase and line-to-neutral connected loads to provide a return path to the source.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h2 id=&quot;electricity-fundamentals-through-analogies&quot;&gt;Electricity Fundamentals Through Analogies&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Electrons don’t necessarily flow; instead, energy moves through them like a travelling wave. When I talk about electrons or current “flowing” from one source to another, I’m really talking about is energy being transported by electrons bumping into one another. I won’t even mention conventional current. Now forget this and let’s move to the classic water analogy.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Think of electricity as water&lt;/strong&gt;, flowing from a high potential to a low potential. Voltage is a measure of the &lt;em&gt;force&lt;/em&gt; that the electricity has. Current is a measure of the &lt;em&gt;rate of flow&lt;/em&gt;. At the highest voltages even an insulator such as air will break down and allow charges to flow across it (lightning). At higher currents conductors melt. Higher voltages will ”push” higher currents since&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;V=IR&lt;/script&gt;
+
+&lt;p&gt;where R is the resistance of the conductor and I is the current flowing over said resistance.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/assets/img/2020/grounding/water-analogy.png&quot; alt=&quot;water-analogy&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Notice the difference between transmission towers (the metal structures beside the highway) and distribution lines (the wooden poles outside your house). The distance between the conductors and the tower is an indication of the voltage level.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Why do we need a return path for current?&lt;/strong&gt; A circuit needs a closed loop from the power source to the load &lt;strong&gt;and back&lt;/strong&gt; for electrons to flow&lt;sup id=&quot;fnref:closed-loop&quot;&gt;&lt;a href=&quot;#fn:closed-loop&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. For single phase service, a metallic conductor called the neutral is provided as a return path for electrons.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What is more dangerous, current or voltage? “&lt;/strong&gt;Current kills”, as the saying goes: as little as 1mA is the point at which you will let go because of pain and prolonged exposure to 20mA or more may be fatal&lt;sup id=&quot;fnref:electric-shock-data&quot;&gt;&lt;a href=&quot;#fn:electric-shock-data&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;script type=&quot;math/tex&quot;&gt;^,&lt;/script&gt;&lt;sup id=&quot;fnref:dalziel&quot;&gt;&lt;a href=&quot;#fn:dalziel&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;.  Higher voltages will push more current through you. Although there is no &lt;strong&gt;“&lt;/strong&gt;safe” voltage, Wikipedia and others mention up to 50V as being safe in normal (dry) conditions.&lt;/p&gt;
+
+&lt;h2 id=&quot;ground-as-demonstrated-via-your-cars-electrical-system&quot;&gt;“Ground” as Demonstrated via Your Car’s Electrical System&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Batteries provide DC voltage versus the AC voltage from your wall outlet, but the concept of ground is the same&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Car batteries are 12V, so it is a safe way to experiment and learn the fundamentals. It also provides us a ready electrical system to play with.&lt;/p&gt;
+
+&lt;p&gt;First you’ll notice your battery has a positive (+) and negative (-) terminal. The (-) terminal is connected to the chassis of the car. This provides a common point for any other negative wires — since the chassis is metal, anything attached should be electrically connected. &lt;strong&gt;The common point allows us to complete the circuit &lt;em&gt;anywhere in the car, without running a second wire back to the battery&lt;/em&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This common point for historical reasons is called “ground” (in your home, the common point is in fact connected to ground — the actual Earth). In a car, the metal chassis is used as both the return path and the reference point. Later we will see that home electrical systems have two return paths for different purposes.&lt;/p&gt;
+
+&lt;p&gt;If you have a 12V appliance you can connect it between the positive terminal and anywhere on the chassis and it should work. What if you connected it between the positive terminal of &lt;em&gt;your&lt;/em&gt; car and the chassis of someone &lt;em&gt;else’s&lt;/em&gt; car? Since the cars are insulated from the pavement by tires, there is no way for the circuit to be completed and the appliance won’t work. More info on car electrical systems can be found &lt;a href=&quot;https://www.howacarworks.com/basics/how-car-electrical-systems-work&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Taking this a step further, envision the whole of Earth’s soil as a common point that you could, in theory, use as a return path if both the power source and the load were connected to ground&lt;sup id=&quot;fnref:swer&quot;&gt;&lt;a href=&quot;#fn:swer&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;. In fact this is how it is used on utility power systems to trip protective devices during ground fault conditions.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-three-wires-in-your-home-live-neutral-and-ground&quot;&gt;The Three Wires in Your Home: Live, Neutral, and Ground&lt;/h2&gt;
+
+&lt;p&gt;Starting with the most common receptacle in your wall, you’ll notice three holes. This is a &lt;a href=&quot;https://en.wikipedia.org/wiki/NEMA_connector#NEMA_5&quot;&gt;NEMA 5&lt;/a&gt; plug that has been common since the mid-twentieth century. The wider left slot connects to the neutral conductor and the right slot connects to the phase or hot wire. The U shaped is connected to the grounding conductor from which a connection to Earth is established by driving a “ground rod” into the actual ground near your main panel.&lt;/p&gt;
+
+&lt;p&gt;If you were to look at the wiring behind the receptacle, the ground wire would have green insulation, the hot would be red or black, and the neutral would be black with a white stripe.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/assets/img/2020/grounding/nema5.png&quot; alt=&quot;nema5&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;the-neutral&quot;&gt;The Neutral&lt;/h3&gt;
+
+&lt;p&gt;Normally current flows in from the phase conductor and back out the neutral. Both the grounding wire and the neutral wire are bonded to the ground rod at the main panel, but for different reasons. The neutral is grounded to provide a stable reference point (ideally 0 volts) and limit over-voltages on equipment during surges and lightning strikes. The grounding wire is used as an alternative (low impedance) path which completes the circuit during fault conditions.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;https://smaroukis.github.io/assets/img/2020/grounding/nema5-panel.png&quot; alt=&quot;Tracing out the connection from a standard wall outlet to the main panel. Shown above, current normally flows in from the hot (red) and back out through the neutral (black). If the appliance fails internally or the housing becomes energized, the grounding wire (green) provides a path for current to ground, resulting in currents large enough to trip the circuit breaker.&quot; /&gt;  
+    &lt;figcaption&gt;Tracing out the connection from a standard wall outlet to the main panel. Shown above, current normally flows in from the hot (red) and back out through the neutral (black). If the appliance fails internally or the housing becomes energized, the grounding wire (green) provides a path for current to ground, resulting in currents large enough to trip the circuit breaker.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;the-grounding-conductor&quot;&gt;The Grounding Conductor&lt;/h3&gt;
+
+&lt;p&gt;The ground plug is a safety measure in case the internal wiring of an appliance fails which could energize the appliance housing and cause an electrocution (the failure of the wiring and/or insulation is known as a “fault”). The appliance housing is connected internally to the ground prong which connects through the grounding wire back to the Earth at the main panel. If the applicance becomes energizes, the grounding wire diverts enough of the fault current allowing protective devices to quickly sense and de-energize the circuit.&lt;/p&gt;
+
+&lt;p&gt;If we didn’t have this grounding wire (called the effective fault path), the electrons may eventually make their way to Ground, but the impedance could be too high for our protective devices to sense the current.&lt;/p&gt;
+
+&lt;p&gt;Any metallic structure that could become accidentally energized will also be grounded for this reason.&lt;/p&gt;
+
+&lt;p&gt;Not all appliances require grounding, like when the 120V AC is converted to usable DC voltage right next to the outlet (phone chargers). Other appliances have extra insulation that would prevent the casing or wiring from being exposed.&lt;/p&gt;
+
+&lt;p&gt;A special type of receptacle located in kitchens and bathrooms is the GFCI (“ground fault current interrupting”) outlet. These work on the principle that the current flowing on the “hot” wire should be equal and opposite the current flowing on the neutral. If any current unbalance is sensed, the receptacle immediately de-energizes the circuit.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;https://smaroukis.github.io/assets/img/2020/grounding/gfci.png&quot; alt=&quot;A hot wire connected to water will cause a current to flow through the water and into the soil instead of back through the neutral. The GFCI outlet works on the principle that current on the hot must be equal to current on the neutral, else the current is undesirably flowing somewhere else (through a person maybe?). This device senses even micro-amps of current imbalance and immediately de-energizes the circuit.&quot; /&gt;  
+    &lt;figcaption&gt;A hot wire connected to water will cause a current to flow through the water and into the soil instead of back through the neutral. The GFCI outlet works on the principle that current on the hot must be equal to current on the neutral, else the current is undesirably flowing somewhere else (through a person maybe?). This device senses even micro-amps of current imbalance and immediately de-energizes the circuit.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;the-ground-rod&quot;&gt;The Ground Rod&lt;/h3&gt;
+
+&lt;p&gt;The ground rod at the main panel is the connection to Mother Earth (sustenance of all life forms), providing&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a return path to dissipate fault currents&lt;/li&gt;
+  &lt;li&gt;an infinite sink for lightning strikes and voltage surges, which protects equipment and human beings from dangerous voltages&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The ground rod is also known as the grounding electrode. Installations try to minimize the soil-to-electrode impedance which is the main determining factor in the quality of Ground.&lt;/p&gt;
+
+&lt;p&gt;Without proper Grounding, fault current will find its own path to Earth (an infinite sink for electrons), potentially damaging equipment and creating dangerous touch voltages.&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&quot;https://smaroukis.github.io/assets/img/2020/grounding/ground-rod.png&quot; alt=&quot;The more contact with the soil, the lower the impedance. The contact resistance between the rod and soil is high but due to the almost infinite number of parallel paths the Earth itself has a very low resistance. The impedance can be thought of as being contained within a few ''spheres of influence'' after a point which additional distance from the electrode adds no more appreciable impedance. Ground rods are usually driven at least 8 ft into the ground. &quot; /&gt;  
+    &lt;figcaption&gt;The more contact with the soil, the lower the impedance. The contact resistance between the rod and soil is high but due to the almost infinite number of parallel paths the Earth itself has a very low resistance. The impedance can be thought of as being contained within a few ''spheres of influence'' after a point which additional distance from the electrode adds no more appreciable impedance. Ground rods are usually driven at least 8 ft into the ground. &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;the-120240v-split-phase-service&quot;&gt;The 120/240V “Split Phase” Service&lt;/h2&gt;
+
+&lt;p&gt;If we trace our electrical system back to the transformer, we should find two hots and a neutral. This is because the transformer bushing-to-bushing secondary is 240V, and a connection to the middle of the secondary winding gives us half, or 120V. So we have three connections we can make: L1-N is 120V. L2-N is 120V. and L1-L2 is 240V. The 240V service is used for heavier duty equipment such as dryers, water heaters and stoves, and has a different NEMA plug as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://smaroukis.github.io/assets/img/2020/grounding/split-phase-service.png&quot; alt=&quot;split-phase-service&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If we go back further to the lines on the utility poles, we see that our transformers is only on two out of three or four lines on the primary distribution system. This system is three phase and has its roots in the three rotating magnetic fields of large generators.&lt;/p&gt;
+
+&lt;h2 id=&quot;further-reading&quot;&gt;Further Reading&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.mikeholt.com/instructor2/img/product/pdf/1292448885sample.pdf&quot;&gt;Mike Holt&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://physics.stackexchange.com/questions/71383/does-current-flow-back-to-the-source-through-earth&quot;&gt;Does current flow back to the source through Earth?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;references--footnotes&quot;&gt;References &amp;amp; Footnotes&lt;/h2&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:closed-loop&quot;&gt;
+      &lt;p&gt;Generally, due to displacement currents and capacitance, a physically closed loop with a metallic conductor is &lt;strong&gt;not&lt;/strong&gt; required, but I’ll let the physicists &lt;a href=&quot;https://physics.stackexchange.com/questions/74625/does-alternating-current-ac-require-a-complete-circuit/74999#74999&quot;&gt;prove that one&lt;/a&gt;. &lt;a href=&quot;#fnref:closed-loop&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:electric-shock-data&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.allaboutcircuits.com/textbook/direct-current/chpt-3/electric-shock-data/&quot;&gt;https://www.allaboutcircuits.com/textbook/direct-current/chpt-3/electric-shock-data/&lt;/a&gt; &lt;a href=&quot;#fnref:electric-shock-data&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:dalziel&quot;&gt;
+      &lt;p&gt;Charles F. Dalziel, “Dangerous Electric Currents”, AIEE Transactions, August – September 1946, Vol. 65, pp. 579 – 585. &lt;a href=&quot;http://sci-hub.tw/10.1109/T-AIEE.1946.5059386&quot;&gt;sci-hub.tw/10.1109/T-AIEE.1946.5059386&lt;/a&gt; &lt;a href=&quot;#fnref:dalziel&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:swer&quot;&gt;
+      &lt;p&gt;This is actually done in rare cases to run a single wire out to rural customers, but is not allowed in most U.S. standards, see &lt;a href=&quot;https://en.wikipedia.org/wiki/Single-wire_earth_return#Safety&quot;&gt;https://en.wikipedia.org/wiki/Single-wire_earth_return&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://www.cpuc.ca.gov/gos/GO95/go_95_rule_33_2.html&quot;&gt;GO-95 Rule 33.2&lt;/a&gt; &lt;a href=&quot;#fnref:swer&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+        <link>https://smaroukis.github.io/blog/grounding-for-everyone</link>
+        <guid isPermaLink="true">https://smaroukis.github.io/blog/grounding-for-everyone</guid>
+        
+        
+        <category>power</category>
+        
+        <category>grounding</category>
+        
+      </item>
+    
+      <item>
+        <title>How to Customize Jekyll Using GitHub Pages, Docker, and Travis</title>
+        <description>&lt;p&gt;Check out the &lt;a href=&quot;/blog/how-to-guide-jekyll-docker-travis-github&quot;&gt;source&lt;/a&gt; for this blog post!&lt;/p&gt;
+
+&lt;p&gt;This post is for:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;1) someone who wants to use custom Jekyll plugins but still host on GitHub pages&lt;/li&gt;
+  &lt;li&gt;2) a technologically savvy user who wants to start a blog spend and likes to spend time on the command line (and doesn’t want to &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;read the docs&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;3) someone who already has a Jekyll blog but wants to extend their theme’s functionality (and doesn’t want to &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;read the docs&lt;/a&gt;)
+    &lt;blockquote&gt;
+      &lt;p&gt;For (2) you may already have built a ruby project and thus are more ruby-savvy than me. Then you won’t need docker and you probably have your own deployment workflow. But you need to know more about how Jekyll is building and serving files, what to include and exclude in your configurations, how to use Liquid tags and where to put your custom javascript. For (3) maybe you have been using Jekyll for a few months but want to develop a more fundamental understanding of what is going on behind the scenes. This is where I was a few months ago after I hadn’t blogged for a year, I looked at my repo and realized that I didn’t know what was going on.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What I’m Using:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; version 3.8&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com&quot;&gt;GitHub Pages&lt;/a&gt; to &lt;em&gt;host&lt;/em&gt; the website but &lt;strong&gt;not&lt;/strong&gt; to build it&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.docker.com&quot;&gt;Docker&lt;/a&gt; to &lt;strong&gt;build locally&lt;/strong&gt; and to &lt;strong&gt;build in a Travis instance&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis&lt;/a&gt; to deploy the static site to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch of my GitHub repository&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://katex.org&quot;&gt;Katex&lt;/a&gt; for displaying Maths &lt;em&gt;whilst using &lt;a href=&quot;https://kramdown.gettalong.org/index.html&quot;&gt;kramdown&lt;/a&gt;&lt;/em&gt;, the default markdown converter in Jekyll&lt;/li&gt;
+  &lt;li&gt;Others: Plotly for graphs, Mapbox and Leaflet for maps.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h2&gt;
+&lt;ol id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#getting-started&quot; id=&quot;markdown-toc-getting-started&quot;&gt;Getting Started&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#basic-knowledge-ruby-and-bundler&quot; id=&quot;markdown-toc-basic-knowledge-ruby-and-bundler&quot;&gt;Basic Knowledge, Ruby and Bundler&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#local-dependencies&quot; id=&quot;markdown-toc-local-dependencies&quot;&gt;Local Dependencies&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#building-your-site-from-scratch&quot; id=&quot;markdown-toc-building-your-site-from-scratch&quot;&gt;Building Your Site From Scratch&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#custom-configuration&quot; id=&quot;markdown-toc-custom-configuration&quot;&gt;Custom Configuration&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#changing-themes&quot; id=&quot;markdown-toc-changing-themes&quot;&gt;Changing Themes&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#extending-themes&quot; id=&quot;markdown-toc-extending-themes&quot;&gt;Extending Themes&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#editing-_configyml&quot; id=&quot;markdown-toc-editing-_configyml&quot;&gt;Editing _config.yml&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#setting-up-our-blogging-workflow&quot; id=&quot;markdown-toc-setting-up-our-blogging-workflow&quot;&gt;Setting Up Our Blogging Workflow&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#serving-via-docker-compose&quot; id=&quot;markdown-toc-serving-via-docker-compose&quot;&gt;Serving Via &lt;em&gt;Docker Compose&lt;/em&gt;&lt;/a&gt;        &lt;ol&gt;
+          &lt;li&gt;&lt;a href=&quot;#other-docker-commands&quot; id=&quot;markdown-toc-other-docker-commands&quot;&gt;Other Docker Commands&lt;/a&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#aside-how-github-pages-builds-jekyll-in-safe-mode&quot; id=&quot;markdown-toc-aside-how-github-pages-builds-jekyll-in-safe-mode&quot;&gt;Aside: How GitHub Pages Builds Jekyll in –Safe Mode&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#aside-how-to-override-the-github-pages-safe-build&quot; id=&quot;markdown-toc-aside-how-to-override-the-github-pages-safe-build&quot;&gt;Aside: How to Override the GitHub Pages –Safe Build&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#commiting-local-edits-to-a-source-branch&quot; id=&quot;markdown-toc-commiting-local-edits-to-a-source-branch&quot;&gt;Commiting Local Edits to a Source Branch&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#setting-up-travis&quot; id=&quot;markdown-toc-setting-up-travis&quot;&gt;Setting Up Travis&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#wrapping-up&quot; id=&quot;markdown-toc-wrapping-up&quot;&gt;Wrapping Up&lt;/a&gt;    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#how-are-maths-displayed&quot; id=&quot;markdown-toc-how-are-maths-displayed&quot;&gt;How are Maths Displayed?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#displaying-captions-under-images-in-leonids&quot; id=&quot;markdown-toc-displaying-captions-under-images-in-leonids&quot;&gt;Displaying Captions Under Images in Leonids&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#improvements-and-feedback&quot; id=&quot;markdown-toc-improvements-and-feedback&quot;&gt;Improvements and Feedback&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#footnotes&quot; id=&quot;markdown-toc-footnotes&quot;&gt;Footnotes&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h2&gt;
+
+&lt;h3 id=&quot;basic-knowledge-ruby-and-bundler&quot;&gt;Basic Knowledge, Ruby and Bundler&lt;/h3&gt;
+&lt;p&gt;Some basic knowledge of the command line, Jekyll, bash, docker, and git will be useful. You may want to read through Jekyll’s &lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;quick start guide&lt;/a&gt; to see what is being installed and used locally like &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt;. The &lt;strong&gt;TL;DR&lt;/strong&gt; is that &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt; is a programming languagage whose libraries are packaged in &lt;code class=&quot;highlighter-rouge&quot;&gt;gems&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt; manages the gems using the versions found in a local &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;, installing the specified version of various gems and their dependencies. The &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; is stored in the root directory of the project and the gems are downloaded and stored by &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt; somewhere like &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bundle&lt;/code&gt;. See &lt;a href=&quot;https://stackoverflow.com/questions/15586216/bundler-vs-rvm-vs-gems-vs-rubygems-vs-gemsets-vs-system-ruby&quot;&gt;this stack overflow answer&lt;/a&gt; for more detail.&lt;/p&gt;
+
+&lt;p&gt;I’ll also point out some Windows traps, demonstrate my git workflow, and give you some ideas on how to extend your theme’s layouts.&lt;/p&gt;
+
+&lt;h3 id=&quot;local-dependencies&quot;&gt;Local Dependencies&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://git-scm.com/download/&quot;&gt;git&lt;/a&gt; - also on Windows it is nice to use the git-bash shell that comes with git&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.docker.com/get-docker/&quot;&gt;docker&lt;/a&gt; and, for Linux, &lt;a href=&quot;https://docs.docker.com/compose/install/&quot;&gt;docker-compose&lt;/a&gt; (docker-compose is included with the Docker-Desktop installation on Windows and Mac OS)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since we are using the official jekyll docker image, the only thing we need to install locally is docker and git (for Windows and bare-bones Linux distributions). This makes it easy to use different computers and not worry about local dependencies. Here’s an overview of how we’re managing the ruby and gem dependencies, starting with the ones we explicitly state:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Jekyll&lt;/strong&gt;: (explicit) The version is determined mainly by our &lt;strong&gt;Gemfile&lt;/strong&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;gem &quot;jekyll&quot;, &quot;~&amp;gt; 3.8&quot;&lt;/code&gt;)&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. We should also make sure to match the docker image jekyll version as specified in our &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; or from the command line (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll/jekyll:3.8&lt;/code&gt; for version 3.8)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Theme and Other Plugins&lt;/strong&gt;: Either as explicitly specified in the &lt;strong&gt;Gemfile&lt;/strong&gt;, or implicitly depending on the version of Jekyll and other dependent gems&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Katex&lt;/strong&gt; or &lt;strong&gt;MathJax&lt;/strong&gt;: (explicit) Defined where you put your javascript, mine is in a file under my &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; folder&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ruby&lt;/strong&gt;: (implicit) The ruby version is handeled by the jekyll/jekyll docker image (as of writing it was using 2.6.3)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;building-your-site-from-scratch&quot;&gt;Building Your Site From Scratch&lt;/h3&gt;
+
+&lt;p&gt;First you will either build a new site from scratch or pull one down from a repo. Generally to build a new site you run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new &amp;lt;sitename&amp;gt;&lt;/code&gt; to pull down the jekyll source files into the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;sitename&amp;gt;&lt;/code&gt; directory. Then you go into this directory and run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; which will both build the site and serve it locally on port 4000 by default. If you didn’t want to serve the site but instead just build the static html files you would do &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt;. But since we don’t have Ruby, Jekyll, or Bundler locally we use a docker container for all of these.&lt;/p&gt;
+
+&lt;p&gt;The docker commands are as follows (you may need &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; for &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JEKYLL_VERSION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3.8
+docker run &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;:/srv/jekyll jekyll/jekyll:&lt;span class=&quot;nv&quot;&gt;$JEKYLL_VERSION&lt;/span&gt; jekyll new &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note I will be using Jekyll 3.8 throughout, so anytime you see this change it to the version you are working with.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This does the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Mounts our &lt;strong&gt;current host directory&lt;/strong&gt;&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;$(pwd)&lt;/code&gt;) to the container’s &lt;code class=&quot;highlighter-rouge&quot;&gt;/srv/jekyll&lt;/code&gt; (the docker image has specific priveleges to run jekyll commands in this location). Anything created by the container in &lt;code class=&quot;highlighter-rouge&quot;&gt;/srv/jekyll&lt;/code&gt; will show up in our host’s current directory, which should be our blog’s project directory&lt;/li&gt;
+  &lt;li&gt;Uses the &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll/jekyll:3.8&lt;/code&gt; image to &lt;strong&gt;initialize a jekyll site&lt;/strong&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;/srv/jekyll&lt;/code&gt;, which will also appear in our current host directory (see #1). This consists of the bare bones files that Jekyll needs to build a site, notably a &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and a Markdown entry under the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. If you look closely there is also a hidden &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; file created.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The directory structure should now be&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+├── 404.html
+├── about.markdown
+├── _config.yml
+├── Gemfile
+├── index.markdown
+├── _posts
+    └── 2020-04-18-welcome-to-jekyll.markdown
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We actually don’t have a site yet, we just have the source files that jekyll will build one with. Let’s do that now in docker.&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 4000:4000 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;:/srv/jekyll jekyll/jekyll:&lt;span class=&quot;nv&quot;&gt;$JEKYLL_VERSION&lt;/span&gt; jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We have added the &lt;code class=&quot;highlighter-rouge&quot;&gt;-it&lt;/code&gt; command to run it interactively and the &lt;code class=&quot;highlighter-rouge&quot;&gt;-p&lt;/code&gt; command to forward port 4000 on the container to port 4000 on the host. Navigate to &lt;a href=&quot;http://localhost:4000&quot;&gt;http://localhost:4000&lt;/a&gt; to see the website. The directory should now have a new directory &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; in addition to the source files which are left untouched.&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;_site
+├── 404.html
+├── about
+│   └── index.html
+├── assets
+│   ├── main.css
+│   ├── main.css.map
+│   └── minima-social-icons.svg
+├── feed.xml
+├── index.html
+└── jekyll
+    └── update
+        └── 2020
+            └── 04
+                └── 19
+                    └── welcome-to-jekyll.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile.lock&lt;/code&gt; file will also have been created in the root directory. This is a list of all of the gems installed by &lt;code class=&quot;highlighter-rouge&quot;&gt;Bundler&lt;/code&gt; at run time, including the exact versions and any dependencies not declared in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;. Note that both the &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; and the &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile.lock&lt;/code&gt; should both be checked in to our GitHub repo.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can see that all the static files needed for displaying a website are under &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; and the rest of the source files are unchanged. In fact Jekyll will copy any of the source files into the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory unless they are excluded in the configuration file (Gemfiles, Markdown, and files beginning with &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; are excluded by default). Further, if any files have YAML front matter, these files will be “processed” by Jekyll.&lt;/p&gt;
+
+&lt;p&gt;One last point – the path to the actual blog posts in html depends on how the permalink and categories are set up in the configuration file, which we’ll look at next.&lt;/p&gt;
+
+&lt;h2 id=&quot;custom-configuration&quot;&gt;Custom Configuration&lt;/h2&gt;
+
+&lt;h3 id=&quot;changing-themes&quot;&gt;Changing Themes&lt;/h3&gt;
+&lt;p&gt;A list of theme showcases can be found at &lt;a href=&quot;https://jekyllrb.com/docs/themes/&quot;&gt;https://jekyllrb.com/docs/themes/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note any incompatibility between the Jekyll version and the theme of choice. Some themes have not been updated to support Jekyll 4.0.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Generally you’ll want to check the theme’s documentation on how to download a theme. In theory, for themes with gems, you can just add the gem to your gemfile and update the configuration file. Some themes require specific structure that is better mimicked from downloading the source files yourself.&lt;/p&gt;
+
+&lt;p&gt;In our case, let’s try the &lt;a href=&quot;https://mmistakes.github.io/jekyll-theme-basically-basic&quot;&gt;&lt;strong&gt;Basically Basic&lt;/strong&gt;&lt;/a&gt; theme which is a good out-of-the-box replacement for Jekyll’s default Minima theme. It also has &lt;a href=&quot;https://github.com/mmistakes/jekyll-theme-basically-basic&quot;&gt;great documentation&lt;/a&gt; to explore and give you ideas on how to extend whatever theme you’re using.&lt;/p&gt;
+
+&lt;p&gt;Update &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; with the theme’s gem&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-theme-basically-basic&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Update &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-theme-basically-basic&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you are still in the interactive shell from the first &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, kill it with &lt;code class=&quot;highlighter-rouge&quot;&gt;ctrl + C&lt;/code&gt;. Then &lt;strong&gt;serve&lt;/strong&gt; the site with the same &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run ... jekyll serve&lt;/code&gt; command as before.&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 4000:4000 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;:/srv/jekyll jekyll/jekyll:&lt;span class=&quot;nv&quot;&gt;$JEKYLL_VERSION&lt;/span&gt; jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;extending-themes&quot;&gt;Extending Themes&lt;/h3&gt;
+&lt;p&gt;There are more source files actually stored within the gem that Bundler downloads. These are folders such as &lt;code class=&quot;highlighter-rouge&quot;&gt;assets&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_sass&lt;/code&gt; that are called upon when Jekyll builds the site. Any local files with the same nomenclature as the theme’s gem will override that file, allowing you to customize themes. For example, this allows us to use insert javascript that will render &lt;script type=&quot;math/tex&quot;&gt;\LaTeX&lt;/script&gt; for math posts. See &lt;a href=&quot;https://jekyllrb.com/docs/themes/#overriding-theme-defaults&quot;&gt;the docs&lt;/a&gt; for more.&lt;/p&gt;
+
+&lt;h3 id=&quot;editing-_configyml&quot;&gt;Editing _config.yml&lt;/h3&gt;
+&lt;p&gt;Some other things you may want to change are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt;: the hostname and protocol for you site. If you’re hosting on GitHub pages it will be &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&amp;lt;username&amp;gt;.github.io&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;permalink&lt;/code&gt;: the path to your posts online, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/:title&lt;/code&gt;. See the &lt;a href=&quot;https://jekyllrb.com/docs/permalinks/#placeholders&quot;&gt;docs&lt;/a&gt; for other placeholders like year, month, and day. Note that you can also add a permalink for an individual post in the YAML front matter of that post.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;exclude&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;include&lt;/code&gt;: for Jekyll &lt;code class=&quot;highlighter-rouge&quot;&gt;build&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;If we want to build the site ourselves instead of GitHub Pages, we include a &lt;code class=&quot;highlighter-rouge&quot;&gt;.nojekyll&lt;/code&gt; empty file, since hidden files are excluded by default and we want this file to propogate to our &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder so that it is there when we push it to GitHub.&lt;/li&gt;
+      &lt;li&gt;Other files that we need in our source but not our site should be excluded or prepended with &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;anything else that you or your theme has chosen to define. These are available via liquid tags as &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ site.&amp;lt;variable&amp;gt; }}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;setting-up-our-blogging-workflow&quot;&gt;Setting Up Our Blogging Workflow&lt;/h2&gt;
+&lt;p&gt;Here are the highlights:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Create and edit the Markdown files under your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory (note the specific naming structure of the files as &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-title-goes-here.md&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Easily serve the local website via container with &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose up&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Commit/Push edits to a &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;release&lt;/code&gt; branch
+    &lt;ul&gt;
+      &lt;li&gt;Anything under &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; should be ignored by git (if not add &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; to your &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt;), which is necessary since you will have conflicts between building and serving, since &lt;code class=&quot;highlighter-rouge&quot;&gt;build&lt;/code&gt; will use the actual &lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt; defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;serve&lt;/code&gt; will build the site to &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:4000&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Build the site and push only the contents of &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch, which GitHub will host automatically.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;serving-via-docker-compose&quot;&gt;Serving Via &lt;em&gt;Docker Compose&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;Docker-Compose is normally used to spin up a fleet of containers, but I use it as a convenient short-hand way to use local development flags across multiple development environments. Of course you could write a simple shell script to do the same thing if you only use the same OS all the time.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;On Windows things are a bit wonky. You’ll have to create an extra &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file so that you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;url=localhost&lt;/code&gt; instead of the default &lt;code class=&quot;highlighter-rouge&quot;&gt;0.0.0.0&lt;/code&gt; that &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; will do. &lt;a href=&quot;https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/&quot;&gt;This blog post&lt;/a&gt; lays it all out.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To quickly serve the website we create the following file named &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; (install &lt;a href=&quot;https://docs.docker.com/get-docker/&quot;&gt;docker&lt;/a&gt; and &lt;a href=&quot;https://docs.docker.com/compose/install/&quot;&gt;docker-compose&lt;/a&gt; as needed):&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# ./docker-compose.yml&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3.7'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# docker compose version&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;JEKYLL_ENV=local&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll serve --drafts --incremental --force_polling --watch&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll/jekyll:3.8&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.:/srv/jekyll&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;4000:4000&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note this will &lt;strong&gt;only be used to preview the site locally&lt;/strong&gt;. If we are building the site ourselves locally we cannot serve it at the same time, since Jekyll has specific overrides for the &lt;code class=&quot;highlighter-rouge&quot;&gt;serve&lt;/code&gt; command (such as the url).&lt;/p&gt;
+
+&lt;p&gt;Since we are only using it locally we can add it to our &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; file. Since it does not begin with &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;_&lt;/code&gt; we also need to exclude it in our &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file or else it will be copied into the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder when built.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# _config.yml&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;exclude&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;docker-compose.yml&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then to run this in the background as we edit our posts we run:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker-compose up &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;with the detached &lt;code class=&quot;highlighter-rouge&quot;&gt;-d&lt;/code&gt; flag to detach it from a shell.&lt;/p&gt;
+
+&lt;h4 id=&quot;other-docker-commands&quot;&gt;Other Docker Commands&lt;/h4&gt;
+&lt;p&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt; to list running containers and &lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps -a&lt;/code&gt; to list all containers. Use &lt;code class=&quot;highlighter-rouge&quot;&gt;docker image ls&lt;/code&gt; to list docker images.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Executing commands in the container&lt;/strong&gt;: You have an existing container that you want to run something like  &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle update&lt;/code&gt; in&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;, but you don’t want to start a new container from the &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll/jekyll&lt;/code&gt; image which would cause all of the gems to be downloaded again&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;. Get the container name from &lt;code class=&quot;highlighter-rouge&quot;&gt;docker ps&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose ps&lt;/code&gt; (the container has to be active) and run the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; &amp;lt;container_name&amp;gt; bundle update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To get a shell in the container run&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; &amp;lt;container_name&amp;gt; /bin/sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Stopping a Container&lt;/strong&gt;: If you served the Jekyll site in detached mode (&lt;code class=&quot;highlighter-rouge&quot;&gt;-d&lt;/code&gt;) and you want to stop the server so that port 4000 is available for something else.&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; &amp;lt;container_name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Restarting a Container&lt;/strong&gt;: You want to re-serve the Jekyll site, which means you need to restart the docker container (assuming the container still exists)&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker restart &amp;lt;container_name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Removing Unused Containers&lt;/strong&gt;: Any containers run without the &lt;code class=&quot;highlighter-rouge&quot;&gt;--rm&lt;/code&gt; option will still be available. To delete all stopped containers use&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker system prune
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;aside-how-github-pages-builds-jekyll-in-safe-mode&quot;&gt;Aside: How GitHub Pages Builds Jekyll in –Safe Mode&lt;/h3&gt;
+&lt;p&gt;Ok so now you have a full fledged Jekyll site locally with source files in the root of the project and all the static files necessary to serve the site in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;p&gt;If you wanted just to quickly see this site on the real internet you could simply try to push everything to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch on your &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt; repo. What would happen? Likely GitHub pages would see that you have Jekyll source files and try to build and serve your site.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In your User repo go to &lt;strong&gt;Settings &amp;gt; Options &amp;gt; Scroll Down to GitHub Pages&lt;/strong&gt;. Here we can see that GitHub Pages is building the Jekyll site from the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch. Note that for User pages (&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;) this is the only option. For Project pages, people often change this to &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;. 
+&lt;img src=&quot;https://smaroukis.github.io/assets/img/2020/gh-pages-source.png&quot; alt=&quot;GitHub Settings &amp;gt; Options &amp;gt; GitHub Pages&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;If you navigate to the &lt;strong&gt;Environments&lt;/strong&gt; page on your repo you should see the GitHub Pages deployed your site
+&lt;img src=&quot;https://smaroukis.github.io/assets/img/2020/gh-environ.png&quot; alt=&quot;GitHub Environments on your repo&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;The Activity Log shows the history of deployments. Clicking on &lt;strong&gt;View Deployment&lt;/strong&gt; shows you the current site.
+&lt;img src=&quot;https://smaroukis.github.io/assets/img/2020/gh-activity-log.png&quot; alt=&quot;GitHub Activity Log&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;If the GitHub pages &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; fails or if you are using an unsupported theme you will receive an email from GitHub pages support.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So, what is going on here? Well behind the scenes GitHub pages is using &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build --safe&lt;/code&gt; to disable custom plugins and has the following configurations (&lt;a href=&quot;https://help.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll#configuring-jekyll-in-your-github-pages-site&quot;&gt;source&lt;/a&gt; and &lt;a href=&quot;https://jekyllrb.com/docs/github-pages/&quot;&gt;Jekyll docs&lt;/a&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;lsi&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;safe&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;your repo's top level directory&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;incremental&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;highlighter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rouge&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;gist&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;noscript&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;kramdown&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;math_engine&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;mathjax&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;syntax_highlighter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rouge&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you wanted to build this locally you would use a different Gemfile than we’ve made:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# GH Pages Local Gemfile Example
+source 'https://rubygems.org'
+gem 'github-pages', group: :jekyll_plugins
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A few things to note here. We are forced into &lt;code class=&quot;highlighter-rouge&quot;&gt;kramdown&lt;/code&gt; for markup, &lt;code class=&quot;highlighter-rouge&quot;&gt;mathjax&lt;/code&gt; for maths, and &lt;code class=&quot;highlighter-rouge&quot;&gt;rouge&lt;/code&gt; for syntax highlighting. This is important later on because even if we specify something different, when we deploy to &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; these are what is being used. {:.notice}&lt;/p&gt;
+
+&lt;h3 id=&quot;aside-how-to-override-the-github-pages-safe-build&quot;&gt;Aside: How to Override the GitHub Pages –Safe Build&lt;/h3&gt;
+
+&lt;p&gt;There are a few special setups to tell GitHub that we &lt;strong&gt;don’t&lt;/strong&gt; want them to build the site. First, instead of deploying to master the Jekyll source files, we deploy &lt;strong&gt;only the built static files&lt;/strong&gt;, the contents of &lt;em&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;&lt;/em&gt;. Second we add an empty file named &lt;code class=&quot;highlighter-rouge&quot;&gt;.nojekyll&lt;/code&gt; so that Pages knows not to run jekyll build.&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.nojekyll
+404.html
+about
+└── index.html
+assets
+├── main.css
+├── main.css.map
+└── minima-social-icons.svg
+feed.xml
+index.html
+jekyll
+└── update
+    └── 2020
+        └── 04
+            └── 19
+                └── welcome-to-jekyll.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Since Jekyll will overwrite whatever is in &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; upon building, we create the &lt;code class=&quot;highlighter-rouge&quot;&gt;.nojekyll&lt;/code&gt; file in the &lt;strong&gt;root&lt;/strong&gt; directory and add &lt;code class=&quot;highlighter-rouge&quot;&gt;include: [.nojekyll]&lt;/code&gt; into our &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; so that this file propogates into the build destination.&lt;/p&gt;
+
+&lt;h3 id=&quot;commiting-local-edits-to-a-source-branch&quot;&gt;Commiting Local Edits to a Source Branch&lt;/h3&gt;
+
+&lt;p&gt;So now we understand what is going on behind the scenes with the &lt;em&gt;Asides&lt;/em&gt; above. This allows us to develop blog posts in a source or release branch seperately from the static files that GitHub will host. We can either build the static files ourselves or, better yet, when we push to a release branch we can have a continuous deployment tool (like Travis or Jenkins) build and push the static files to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch on GitHub.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: I named my release branch &lt;code class=&quot;highlighter-rouge&quot;&gt;master-source&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git checkout master-source&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Make edits yada yada&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add&lt;/code&gt; stuff and &lt;code class=&quot;highlighter-rouge&quot;&gt;git commit -m 'this blog is getting really long'&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git push --set-upstream origin master-source&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Note that we really don’t want to make edits on the &lt;code class=&quot;highlighter-rouge&quot;&gt;master-source&lt;/code&gt; branch, so we would really checkout a different branch, merge those changes into &lt;code class=&quot;highlighter-rouge&quot;&gt;master-source&lt;/code&gt; and then push to the remote.&lt;/p&gt;
+
+&lt;h3 id=&quot;setting-up-travis&quot;&gt;Setting Up Travis&lt;/h3&gt;
+
+&lt;p&gt;To setup or continuous integration (CI) tool we need to tell them what branch to watch for changes on, what docker command to run, and what branch and files to push the built site to. There are some good Travis + Jekyll + GitHub Pages how-to’s like &lt;a href=&quot;https://medium.com/@mcred/supercharge-github-pages-with-jekyll-and-travis-ci-699bc0bde075&quot;&gt;this one&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# ./.travis.yml&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;python&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# we will use the ruby of the docker container&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;linux&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bionic&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;before_install&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;docker pull jekyll/jekyll:3.8&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master-source&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# safelist to only build this branch; edit this to your release or source branch&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;docker run --rm -it -v=&quot;$PWD:/srv/jekyll&quot; jekyll/jekyll:3.8 jekyll build&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;pages&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;local_dir&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_site/&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# only deploy the contents of _site to the master branch&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;target-branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# where you want to deploy the build to&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$GITHUB_TOKEN&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# set this up in your travis profile&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;strategy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;git&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;keep_history&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master-source&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# deploy only from the source branch&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;notifications&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;recipients&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;smaroukis@gmail.com&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# I hope there are no bots scraping this webpage for email addresses&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;on_success&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;always&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;on_failure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;always&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A few things to note&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;script&lt;/code&gt;: This is the main command we are using to build the site with Travis/Docker instead of GitHub Pages. Since we are using &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; by default we are using &lt;code class=&quot;highlighter-rouge&quot;&gt;JEKYLL_ENV=production&lt;/code&gt; and the other matter specified in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;only: master-source&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;branch: master-source&lt;/code&gt;: Replace &lt;code class=&quot;highlighter-rouge&quot;&gt;master-source&lt;/code&gt; with the name of your source/release branch.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;local_dir: _site/&lt;/code&gt;: Tells Travis to only deploy the &lt;em&gt;contents&lt;/em&gt; of &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;target-branch: master&lt;/code&gt;: Where you want to deploy the the built files to. This should be the same as in your GitHub repo’s &lt;strong&gt;Settings &amp;gt; Options &amp;gt; GitHub Pages &amp;gt; Source&lt;/strong&gt; points to.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;language: python&lt;/code&gt;: We are using a &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt; travis instance to show that we are only using the ruby version of the docker container. It is also faster than a &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt; instance&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h1&gt;
+
+&lt;h2 id=&quot;how-are-maths-displayed&quot;&gt;How are Maths Displayed?&lt;/h2&gt;
+
+&lt;p&gt;By default the &lt;code class=&quot;highlighter-rouge&quot;&gt;kramdown&lt;/code&gt; markdown parser will look for math delimiters (&lt;code class=&quot;highlighter-rouge&quot;&gt;$$...$$&lt;/code&gt;, etc.) and convert these into MathJax html tags (&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt; script type=&quot;math/tex&quot;&amp;gt; $$ P=IV $$ &amp;lt;/script&amp;gt;&lt;/code&gt;). Then the javascript included in the header or theme layout will use the specified MathJax version to render on the browser.&lt;/p&gt;
+
+&lt;p&gt;For those who want to use the faster &lt;code class=&quot;highlighter-rouge&quot;&gt;Katex&lt;/code&gt; engine, you can switch out the &lt;code class=&quot;highlighter-rouge&quot;&gt;header&lt;/code&gt; javascript pointing to the MathJax cdn host and instead point to Katex host (see &lt;a href=&quot;https://katex.org/docs/browser.html#starter-template&quot;&gt;here&lt;/a&gt;). Then you turn the MathJax &lt;code class=&quot;highlighter-rouge&quot;&gt;math/tex&lt;/code&gt; script tags into Katex style javascript which executes upon loading the page (see &lt;a href=&quot;https://kramdown.gettalong.org/math_engine/mathjax.html&quot;&gt;here&lt;/a&gt;). Note that I had to remove the &lt;code class=&quot;highlighter-rouge&quot;&gt;defer&lt;/code&gt; part from the Katex starter template &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tags since this will cause the remote javascript pointing to the Katex host to load &lt;em&gt;after&lt;/em&gt; the javascript that tries to convert math via Katex has been executed.&lt;/p&gt;
+
+&lt;h2 id=&quot;displaying-captions-under-images-in-leonids&quot;&gt;Displaying Captions Under Images in Leonids&lt;/h2&gt;
+
+&lt;p&gt;Unfortunately neither kramdown nor my chosen theme, leonids, have good support for captions under photos. Normally you insert a photo in markdown as &lt;code class=&quot;highlighter-rouge&quot;&gt;![alt image text](/path/to/image)&lt;/code&gt;, but in html the alt image text does not show up as a caption.&lt;/p&gt;
+
+&lt;p&gt;The first workaround I found was to insert pure html with a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;figure&amp;gt; &amp;lt;img src=...&amp;gt; &amp;lt;figcaption&amp;gt;&lt;/code&gt; block and corresponding CSS but that is pretty janky.&lt;/p&gt;
+
+&lt;p&gt;The next workaround is to use liquid tags and a new html file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; folder that will be rendered upon jekyll build processing. This requires edits to&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the new html file created (mine is &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes/img.html&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--  ./_includes/img.html --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{site.url}}/{{ include.file }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ include.caption}}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;{{ include.caption }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the css file for the class or block defined in html (&lt;code class=&quot;highlighter-rouge&quot;&gt;figure&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;figcaption&lt;/code&gt; above)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-scss highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// in ./css/main.scss&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;figure&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;figcaption&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;italic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;and finally the markdown has to be written with a liquid &lt;code class=&quot;highlighter-rouge&quot;&gt;include&lt;/code&gt; statement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include img.html file=&quot;assets/img/example/path/to/img.png&quot; caption=&quot;This caption will show up beneath the picture with the formatting as defined in the main css file&quot; %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;improvements-and-feedback&quot;&gt;Improvements and Feedback&lt;/h2&gt;
+&lt;p&gt;For any improvements to content please submit on &lt;a href=&quot;/blog/how-to-guide-jekyll-docker-travis-github&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Environment variables for &lt;code class=&quot;highlighter-rouge&quot;&gt;$JEKYLL_VERSION&lt;/code&gt; that propogate across OS’s and into Travis&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jmcglone.com/guides/github-pages&quot;&gt;The best beginner guide for Jekyll and GitHub Pages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;The docs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Jekyll’s &lt;a href=&quot;https://jekyllrb.com/docs/ruby-101/&quot;&gt;Ruby 101&lt;/a&gt;: describes gems, Gemfiles, and Bundler]&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.seanh.cc/2019/09/29/liquid&quot;&gt;Liquid Templating Crash Course&lt;/a&gt; for extending the functionality of different &lt;code class=&quot;highlighter-rouge&quot;&gt;.html&lt;/code&gt; files and layouts.&lt;/li&gt;
+  &lt;li&gt;Official Jekyll Docker &lt;a href=&quot;https://hub.docker.com/r/jekyll/jekyll/&quot;&gt;image&lt;/a&gt; and &lt;a href=&quot;https://github.com/envygeeks/jekyll-docker/blob/master/README.md&quot;&gt;repo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fabse.net/blog/2018/07/16/Running-Jekyll-on-Windows-using-Docker/&quot;&gt;Jekyll and Docker on Windows by Fabian Wetzel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ddewaele.github.io/running-jekyll-in-docker/&quot;&gt;Running Jekyll in Docker&lt;/a&gt; is a great quick and dirty intro to spinning a site up from scratch with Docker&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tonyho.net/jekyll-docker-windows-and-0-0-0-0/&quot;&gt;Jekyll, Docker, Windows, and 0.0.0.0&lt;/a&gt;: for serving your site locally on Windows.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h1&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;~&amp;gt; 3.8&lt;/code&gt; in a Gemile means any version equal to or greater than 3.8 but less than the next major version (4.0) &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;The syntax for a Windows machine will differ. Using &lt;code class=&quot;highlighter-rouge&quot;&gt;git-bash&lt;/code&gt; (recommended) I used a backslash to escape the current working directory like &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -v /$(pwd):/srv/jekyll jekyll/jekyll&lt;/code&gt;. For full paths you would need to follow Windows syntax before the colon and Linux after: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -v c:\\path\\to\\Windows\\dir:/srv/jekyll ...&lt;/code&gt; &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;You would want to do this if you’ve updated a gemfile with new themes. Other commands would be &lt;code class=&quot;highlighter-rouge&quot;&gt;docker exec -it &amp;lt;container_name&amp;gt; gem install &quot;new-jekyll-theme&quot;&lt;/code&gt;. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;In theory you should be able avoid this by caching the gems locally by additionally mounting a volume to the container’s &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bundle&lt;/code&gt; directory (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -v $(pwd):/srv/jekyll -v $(pwd)/gemcache:/usr/local/bundle jekyll/jekyll jekyll build&lt;/code&gt;), but due to permissions errors I was not able to get this to work. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot;&gt;
+      &lt;p&gt;Improve &lt;a href=&quot;/blog/how-to-guide-jekyll-docker-travis-github&quot;&gt;this post&lt;/a&gt; by telling me what is the fastest Travis instance os. &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+        <link>https://smaroukis.github.io/blog/how-to-guide-jekyll-docker-travis-github</link>
+        <guid isPermaLink="true">https://smaroukis.github.io/blog/how-to-guide-jekyll-docker-travis-github</guid>
+        
+        
+        <category>code</category>
+        
+        <category>blogging</category>
+        
+      </item>
     
       <item>
         <title>Distribution Autotransformers for Intertie Use - Grounding, Tertiary, &amp; Fault Analysis</title>
@@ -418,67 +1083,6 @@
         
         
         <category>power systems engineering</category>
-        
-      </item>
-    
-      <item>
-        <title>Climbing Training — Train to Perform</title>
-        <description>&lt;p&gt;tl;dr just download the &lt;a href=&quot;/assets/file/bouldering-log.pdf&quot;&gt;bouldering logbook&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;why-train&quot;&gt;Why Train?&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Training and performance are two different things. If you’re trying to perform all the time, you aren’t going to realize your potential. If you’re not trying to realize your potential, then don’t bother reading the rest of this.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://www.tensionclimbing.com/tension-climbing-blog/2017/4/2/rules&quot;&gt;quote from tension climbing&lt;/a&gt; sums it up well. At times we may wonder why we go to the nearest warehouse-turned-climbing-gym to slap, crimp, and pinch “plastic globs attached to plywood walls”, we may be frustrated with our stagnating climbing grade, we may curse in frustration at another rainy weekend or lack of dependable partners. But could we imagine a life without climbing, without purpose?&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The mystery of human existence lies not in just staying alive, but in finding something to live for.
-~ &lt;em&gt;The Brothers Karamazov&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;And when training season rolls around in the Spring, you can bet that in this moment, climbing is what we live for.&lt;/p&gt;
-
-&lt;h2 id=&quot;workouts&quot;&gt;Workouts&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.tensionclimbing.com/tension-climbing-blog/2017/5/20/training-with-bouldering-circuits&quot;&gt;bouldering circuits&lt;/a&gt; by tension climbing. 3 different circuits spanning the power-to-endurance spectrum.&lt;/li&gt;
-  &lt;li&gt;Steve Maisch’s &lt;a href=&quot;https://touchstoneclimbing.com/building-a-pyramid-for-better-climbing/&quot;&gt;pyramids&lt;/a&gt;. Basically you need to build out your pyramid by sending easier climbs and not trying to redpoint everything. My notes in a &lt;a href=&quot;/assets/file/pyramid-training.pdf&quot;&gt;pdf&lt;/a&gt; since Steve’s website was down when I wrote this. More of reality check/tracking tool.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;tracking&quot;&gt;Tracking&lt;/h2&gt;
-&lt;p&gt;I’m not the &lt;a href=&quot;https://www.mountainproject.com/forum/topic/109211980/the-nerdy-joy-of-tracking-your-training&quot;&gt;first&lt;/a&gt;, &lt;a href=&quot;http://stevenlow.org/my-4-year-self-assessment-of-climbing-strength-training-and-hangboard/&quot;&gt;nor&lt;/a&gt; the &lt;a href=&quot;http://therockgymlog.byethost7.com/MartinsTraining.html&quot;&gt;last&lt;/a&gt; to track training, but I’d thought I’d share what I’m using.&lt;/p&gt;
-
-&lt;p&gt;Since you can’t improve what you can’t measure, I’ve made a &lt;a href=&quot;/assets/file/bouldering-log.pdf&quot;&gt;pdf&lt;/a&gt; that, if you print with the binding on the &lt;em&gt;short edge&lt;/em&gt;, will turn into a booklet perfectly innocuous enough to fold into your chalk bag.&lt;/p&gt;
-
-&lt;p&gt;I like to quantify the bouldering circuit workouts above by:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;number of sets&lt;/li&gt;
-  &lt;li&gt;number of rounds within a set (where you climb multiple problems – either linked or unlinked)&lt;/li&gt;
-  &lt;li&gt;rest between rounds and between sets&lt;/li&gt;
-  &lt;li&gt;angle of wall&lt;/li&gt;
-  &lt;li&gt;type of holds&lt;/li&gt;
-  &lt;li&gt;V-difficulty&lt;/li&gt;
-  &lt;li&gt;total time climbing&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Then it is easy to compare if you’re working more on the power side (less total time on the wall versus total time of workout) or if you’re more on the endurance side.&lt;/p&gt;
-
-&lt;p&gt;I’ve found it easiest to plan out ahead of time what I want to do, and then execute when I get to the gym. But what are you doing still reading? Get off the compter and get to the gym!&lt;/p&gt;
-</description>
-        <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
-        <link>https://smaroukis.github.io/blog/climbing-training</link>
-        <guid isPermaLink="true">https://smaroukis.github.io/blog/climbing-training</guid>
-        
-        <category>outdoors</category>
-        
-        <category>quantified-self</category>
-        
-        
-        <category>outdoors</category>
-        
-        <category>quantified-self</category>
         
       </item>
     

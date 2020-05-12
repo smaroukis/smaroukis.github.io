@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="An explanation of grounding and neutral conductors in the context of your own car and home.">
+  <meta name="keywords" content="Power Systems, Energy, and Clean Tech">
+  <meta name="author" content="Grounding Explained for the Masses (with Drawings!) | Spencer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+  
+  
+    <!-- JS and CSS CDN Sources for Katex ... See /_includes/js.html for script converting kramdown math/tex script tags (used for mathjax) to kramdown recognizeable ones -->
+  <!-- Include Katex for Latex Rendering-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+  
+  
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Grounding Explained for the Masses (with Drawings!) | Spencer">
+  <meta name="twitter:description" content="An explanation of grounding and neutral conductors in the context of your own car and home.">
+  <meta name="twitter:image" content="https://smaroukis.github.io/assets/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="https://smaroukis.github.io">
+  <meta property="og:title" content="Grounding Explained for the Masses (with Drawings!) | Spencer">
+  <meta property="og:description" content="An explanation of grounding and neutral conductors in the context of your own car and home.">
+  <meta property="og:image" content="https://smaroukis.github.io/assets/img/leonids-logo.png">
+  <title>Grounding Explained for the Masses (with Drawings!) | Spencer</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="https://smaroukis.github.io/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://smaroukis.github.io/css/main.css">
+  <link rel="stylesheet" href="https://smaroukis.github.io/css/leaflet.css" media="screen" type="text/css">
+
+  <link rel="canonical" href="https://smaroukis.github.io/blog/grounding-for-everyone">
+  <link rel="alternate" type="application/rss+xml" title="Spencer" href="https://smaroukis.github.io /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="https://smaroukis.github.io/assets/img/favicon16.png">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="https://smaroukis.github.io/assets/img/favicon.png">
+</head>
+
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="https://smaroukis.github.io/assets/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="https://smaroukis.github.io/" class="author_name">Spencer</a>
+  <span class="author_job">Power Systems Engineer</span>
+  <span class="author_bio mbm">Electron traffic control</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/about/">About</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/tags">Tags</a>
+        
+          <span>/</span>
+        
+      </li>
+         
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('smaroukis@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    <li><a href="http://twitter.com/that_marouk_ish" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    
+    
+    <li><a href="http://linkedin.com/in/spencermaroukis" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    <li><a href="http://github.com/smaroukis" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "https://smaroukis.github.io/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Grounding Explained for the Masses (with Drawings!)">Grounding Explained for the Masses (with Drawings!)</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        11 MAY 2020
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    11 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    
+<p>So… about that third prong (or not).</p>
+
+<p>Have you ever wondered why some power cords have a third prong and some don’t? By popular request, today I will de-mystify the concept of Ground in household electrical systems.</p>
+
+<blockquote>
+  <p>Note: I will only be talking about single phase secondary service connections here, or the 120/240V  service commonly delivered to residential customers. For utility grounding systems, see my next post.</p>
+</blockquote>
+
+<ol id="markdown-toc">
+  <li><a href="#electricity-fundamentals-through-analogies" id="markdown-toc-electricity-fundamentals-through-analogies">Electricity Fundamentals Through Analogies</a></li>
+  <li><a href="#ground-as-demonstrated-via-your-cars-electrical-system" id="markdown-toc-ground-as-demonstrated-via-your-cars-electrical-system">“Ground” as Demonstrated via Your Car’s Electrical System</a></li>
+  <li><a href="#the-three-wires-in-your-home-live-neutral-and-ground" id="markdown-toc-the-three-wires-in-your-home-live-neutral-and-ground">The Three Wires in Your Home: Live, Neutral, and Ground</a>    <ol>
+      <li><a href="#the-neutral" id="markdown-toc-the-neutral">The Neutral</a></li>
+      <li><a href="#the-grounding-conductor" id="markdown-toc-the-grounding-conductor">The Grounding Conductor</a></li>
+      <li><a href="#the-ground-rod" id="markdown-toc-the-ground-rod">The Ground Rod</a></li>
+    </ol>
+  </li>
+  <li><a href="#the-120240v-split-phase-service" id="markdown-toc-the-120240v-split-phase-service">The 120/240V “Split Phase” Service</a></li>
+  <li><a href="#further-reading" id="markdown-toc-further-reading">Further Reading</a></li>
+  <li><a href="#references--footnotes" id="markdown-toc-references--footnotes">References &amp; Footnotes</a></li>
+</ol>
+
+<h2 class="no_toc" id="definitions">Definitions:</h2>
+
+<dl>
+  <dt><strong>Ground</strong></dt>
+  <dd>an intentional low impedance path connection to Earth</dd>
+  <dt><strong>the ground</strong></dt>
+  <dd>the literal soil</dd>
+  <dt><strong>Earth</strong></dt>
+  <dd>the Mother of all living things; also an ideal sink for electrons such that no amount of current flow into the earth will create a voltage rise; used to establish a reference voltage</dd>
+  <dt><strong>Grounding conductor</strong></dt>
+  <dd>a conductive path to Ground used in the case of an equipment failure. The conductive path allows protection equipment to operate and disconnect the failed equipment. Known as EGC — equipment grounding conductor — in the National Electric Code (NEC).</dd>
+  <dt><strong>neutral conductor</strong></dt>
+  <dd>a system conductor other than a phase conductor that provides a return path for current to the source. Used for single phase and line-to-neutral connected loads to provide a return path to the source.</dd>
+</dl>
+
+<h2 id="electricity-fundamentals-through-analogies">Electricity Fundamentals Through Analogies</h2>
+
+<blockquote>
+  <p>Electrons don’t necessarily flow; instead, energy moves through them like a travelling wave. When I talk about electrons or current “flowing” from one source to another, I’m really talking about is energy being transported by electrons bumping into one another. I won’t even mention conventional current. Now forget this and let’s move to the classic water analogy.</p>
+</blockquote>
+
+<p><strong>Think of electricity as water</strong>, flowing from a high potential to a low potential. Voltage is a measure of the <em>force</em> that the electricity has. Current is a measure of the <em>rate of flow</em>. At the highest voltages even an insulator such as air will break down and allow charges to flow across it (lightning). At higher currents conductors melt. Higher voltages will ”push” higher currents since</p>
+
+<script type="math/tex; mode=display">V=IR</script>
+
+<p>where R is the resistance of the conductor and I is the current flowing over said resistance.</p>
+
+<p><img src="https://smaroukis.github.io/assets/img/2020/grounding/water-analogy.png" alt="water-analogy" /></p>
+
+<blockquote>
+  <p>Notice the difference between transmission towers (the metal structures beside the highway) and distribution lines (the wooden poles outside your house). The distance between the conductors and the tower is an indication of the voltage level.</p>
+</blockquote>
+
+<p><strong>Why do we need a return path for current?</strong> A circuit needs a closed loop from the power source to the load <strong>and back</strong> for electrons to flow<sup id="fnref:closed-loop"><a href="#fn:closed-loop" class="footnote">1</a></sup>. For single phase service, a metallic conductor called the neutral is provided as a return path for electrons.</p>
+
+<p><strong>What is more dangerous, current or voltage? “</strong>Current kills”, as the saying goes: as little as 1mA is the point at which you will let go because of pain and prolonged exposure to 20mA or more may be fatal<sup id="fnref:electric-shock-data"><a href="#fn:electric-shock-data" class="footnote">2</a></sup><script type="math/tex">^,</script><sup id="fnref:dalziel"><a href="#fn:dalziel" class="footnote">3</a></sup>.  Higher voltages will push more current through you. Although there is no <strong>“</strong>safe” voltage, Wikipedia and others mention up to 50V as being safe in normal (dry) conditions.</p>
+
+<h2 id="ground-as-demonstrated-via-your-cars-electrical-system">“Ground” as Demonstrated via Your Car’s Electrical System</h2>
+
+<blockquote>
+  <p>Batteries provide DC voltage versus the AC voltage from your wall outlet, but the concept of ground is the same</p>
+</blockquote>
+
+<p>Car batteries are 12V, so it is a safe way to experiment and learn the fundamentals. It also provides us a ready electrical system to play with.</p>
+
+<p>First you’ll notice your battery has a positive (+) and negative (-) terminal. The (-) terminal is connected to the chassis of the car. This provides a common point for any other negative wires — since the chassis is metal, anything attached should be electrically connected. <strong>The common point allows us to complete the circuit <em>anywhere in the car, without running a second wire back to the battery</em>.</strong></p>
+
+<p>This common point for historical reasons is called “ground” (in your home, the common point is in fact connected to ground — the actual Earth). In a car, the metal chassis is used as both the return path and the reference point. Later we will see that home electrical systems have two return paths for different purposes.</p>
+
+<p>If you have a 12V appliance you can connect it between the positive terminal and anywhere on the chassis and it should work. What if you connected it between the positive terminal of <em>your</em> car and the chassis of someone <em>else’s</em> car? Since the cars are insulated from the pavement by tires, there is no way for the circuit to be completed and the appliance won’t work. More info on car electrical systems can be found <a href="https://www.howacarworks.com/basics/how-car-electrical-systems-work">here</a>.</p>
+
+<p>Taking this a step further, envision the whole of Earth’s soil as a common point that you could, in theory, use as a return path if both the power source and the load were connected to ground<sup id="fnref:swer"><a href="#fn:swer" class="footnote">4</a></sup>. In fact this is how it is used on utility power systems to trip protective devices during ground fault conditions.</p>
+
+<h2 id="the-three-wires-in-your-home-live-neutral-and-ground">The Three Wires in Your Home: Live, Neutral, and Ground</h2>
+
+<p>Starting with the most common receptacle in your wall, you’ll notice three holes. This is a <a href="https://en.wikipedia.org/wiki/NEMA_connector#NEMA_5">NEMA 5</a> plug that has been common since the mid-twentieth century. The wider left slot connects to the neutral conductor and the right slot connects to the phase or hot wire. The U shaped is connected to the grounding conductor from which a connection to Earth is established by driving a “ground rod” into the actual ground near your main panel.</p>
+
+<p>If you were to look at the wiring behind the receptacle, the ground wire would have green insulation, the hot would be red or black, and the neutral would be black with a white stripe.</p>
+
+<p><img src="https://smaroukis.github.io/assets/img/2020/grounding/nema5.png" alt="nema5" /></p>
+
+<h3 id="the-neutral">The Neutral</h3>
+
+<p>Normally current flows in from the phase conductor and back out the neutral. Both the grounding wire and the neutral wire are bonded to the ground rod at the main panel, but for different reasons. The neutral is grounded to provide a stable reference point (ideally 0 volts) and limit over-voltages on equipment during surges and lightning strikes. The grounding wire is used as an alternative (low impedance) path which completes the circuit during fault conditions.</p>
+
+<figure>
+    <img src="https://smaroukis.github.io/assets/img/2020/grounding/nema5-panel.png" alt="Tracing out the connection from a standard wall outlet to the main panel. Shown above, current normally flows in from the hot (red) and back out through the neutral (black). If the appliance fails internally or the housing becomes energized, the grounding wire (green) provides a path for current to ground, resulting in currents large enough to trip the circuit breaker." />  
+    <figcaption>Tracing out the connection from a standard wall outlet to the main panel. Shown above, current normally flows in from the hot (red) and back out through the neutral (black). If the appliance fails internally or the housing becomes energized, the grounding wire (green) provides a path for current to ground, resulting in currents large enough to trip the circuit breaker.</figcaption>
+</figure>
+
+<h3 id="the-grounding-conductor">The Grounding Conductor</h3>
+
+<p>The ground plug is a safety measure in case the internal wiring of an appliance fails which could energize the appliance housing and cause an electrocution (the failure of the wiring and/or insulation is known as a “fault”). The appliance housing is connected internally to the ground prong which connects through the grounding wire back to the Earth at the main panel. If the applicance becomes energizes, the grounding wire diverts enough of the fault current allowing protective devices to quickly sense and de-energize the circuit.</p>
+
+<p>If we didn’t have this grounding wire (called the effective fault path), the electrons may eventually make their way to Ground, but the impedance could be too high for our protective devices to sense the current.</p>
+
+<p>Any metallic structure that could become accidentally energized will also be grounded for this reason.</p>
+
+<p>Not all appliances require grounding, like when the 120V AC is converted to usable DC voltage right next to the outlet (phone chargers). Other appliances have extra insulation that would prevent the casing or wiring from being exposed.</p>
+
+<p>A special type of receptacle located in kitchens and bathrooms is the GFCI (“ground fault current interrupting”) outlet. These work on the principle that the current flowing on the “hot” wire should be equal and opposite the current flowing on the neutral. If any current unbalance is sensed, the receptacle immediately de-energizes the circuit.</p>
+
+<figure>
+    <img src="https://smaroukis.github.io/assets/img/2020/grounding/gfci.png" alt="A hot wire connected to water will cause a current to flow through the water and into the soil instead of back through the neutral. The GFCI outlet works on the principle that current on the hot must be equal to current on the neutral, else the current is undesirably flowing somewhere else (through a person maybe?). This device senses even micro-amps of current imbalance and immediately de-energizes the circuit." />  
+    <figcaption>A hot wire connected to water will cause a current to flow through the water and into the soil instead of back through the neutral. The GFCI outlet works on the principle that current on the hot must be equal to current on the neutral, else the current is undesirably flowing somewhere else (through a person maybe?). This device senses even micro-amps of current imbalance and immediately de-energizes the circuit.</figcaption>
+</figure>
+
+<h3 id="the-ground-rod">The Ground Rod</h3>
+
+<p>The ground rod at the main panel is the connection to Mother Earth (sustenance of all life forms), providing</p>
+
+<ul>
+  <li>a return path to dissipate fault currents</li>
+  <li>an infinite sink for lightning strikes and voltage surges, which protects equipment and human beings from dangerous voltages</li>
+</ul>
+
+<p>The ground rod is also known as the grounding electrode. Installations try to minimize the soil-to-electrode impedance which is the main determining factor in the quality of Ground.</p>
+
+<p>Without proper Grounding, fault current will find its own path to Earth (an infinite sink for electrons), potentially damaging equipment and creating dangerous touch voltages.</p>
+
+<figure>
+    <img src="https://smaroukis.github.io/assets/img/2020/grounding/ground-rod.png" alt="The more contact with the soil, the lower the impedance. The contact resistance between the rod and soil is high but due to the almost infinite number of parallel paths the Earth itself has a very low resistance. The impedance can be thought of as being contained within a few ''spheres of influence'' after a point which additional distance from the electrode adds no more appreciable impedance. Ground rods are usually driven at least 8 ft into the ground. " />  
+    <figcaption>The more contact with the soil, the lower the impedance. The contact resistance between the rod and soil is high but due to the almost infinite number of parallel paths the Earth itself has a very low resistance. The impedance can be thought of as being contained within a few ''spheres of influence'' after a point which additional distance from the electrode adds no more appreciable impedance. Ground rods are usually driven at least 8 ft into the ground. </figcaption>
+</figure>
+
+<h2 id="the-120240v-split-phase-service">The 120/240V “Split Phase” Service</h2>
+
+<p>If we trace our electrical system back to the transformer, we should find two hots and a neutral. This is because the transformer bushing-to-bushing secondary is 240V, and a connection to the middle of the secondary winding gives us half, or 120V. So we have three connections we can make: L1-N is 120V. L2-N is 120V. and L1-L2 is 240V. The 240V service is used for heavier duty equipment such as dryers, water heaters and stoves, and has a different NEMA plug as well.</p>
+
+<p><img src="https://smaroukis.github.io/assets/img/2020/grounding/split-phase-service.png" alt="split-phase-service" /></p>
+
+<p>If we go back further to the lines on the utility poles, we see that our transformers is only on two out of three or four lines on the primary distribution system. This system is three phase and has its roots in the three rotating magnetic fields of large generators.</p>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<ul>
+  <li><a href="https://www.mikeholt.com/instructor2/img/product/pdf/1292448885sample.pdf">Mike Holt</a></li>
+  <li><a href="https://physics.stackexchange.com/questions/71383/does-current-flow-back-to-the-source-through-earth">Does current flow back to the source through Earth?</a></li>
+</ul>
+
+<h2 id="references--footnotes">References &amp; Footnotes</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:closed-loop">
+      <p>Generally, due to displacement currents and capacitance, a physically closed loop with a metallic conductor is <strong>not</strong> required, but I’ll let the physicists <a href="https://physics.stackexchange.com/questions/74625/does-alternating-current-ac-require-a-complete-circuit/74999#74999">prove that one</a>. <a href="#fnref:closed-loop" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:electric-shock-data">
+      <p><a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-3/electric-shock-data/">https://www.allaboutcircuits.com/textbook/direct-current/chpt-3/electric-shock-data/</a> <a href="#fnref:electric-shock-data" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:dalziel">
+      <p>Charles F. Dalziel, “Dangerous Electric Currents”, AIEE Transactions, August – September 1946, Vol. 65, pp. 579 – 585. <a href="http://sci-hub.tw/10.1109/T-AIEE.1946.5059386">sci-hub.tw/10.1109/T-AIEE.1946.5059386</a> <a href="#fnref:dalziel" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:swer">
+      <p>This is actually done in rare cases to run a single wire out to rural customers, but is not allowed in most U.S. standards, see <a href="https://en.wikipedia.org/wiki/Single-wire_earth_return#Safety">https://en.wikipedia.org/wiki/Single-wire_earth_return</a> &amp; <a href="https://www.cpuc.ca.gov/gos/GO95/go_95_rule_33_2.html">GO-95 Rule 33.2</a> <a href="#fnref:swer" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=https://smaroukis.github.io/blog/grounding-for-everyone" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://smaroukis.github.io/blog/grounding-for-everyone" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=https://smaroukis.github.io/blog/grounding-for-everyone" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=https://smaroukis.github.io/blog/grounding-for-everyone" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=https://smaroukis.github.io/blog/grounding-for-everyone" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2020 Spencer. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-bolt bolt-icon" style="color:gold"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://smaroukis.github.io/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://smaroukis.github.io/js/main.js"></script>
+
+<!-- for using katex with kramdown, to render math/tex tags via katex -->
+
+<script>
+  $("script[type='math/tex']").replaceWith(function() {
+      var tex = $(this).text();
+      return katex.renderToString(tex, {displayMode: false});
+  });
+
+  $("script[type='math/tex; mode=display']").replaceWith(function() {
+      var tex = $(this).html();
+      return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+  });
+</script>
+
+
+
+
+</body>
+</html>
