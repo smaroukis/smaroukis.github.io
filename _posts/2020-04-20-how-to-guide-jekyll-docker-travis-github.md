@@ -437,6 +437,6 @@ For any improvements to content please submit on [GitHub][post-source].
 [gh-environ]: {{ site.url }}/assets/img/2020/gh-environ.png
 [gh-activity-log]: {{ site.url }}/assets/img/2020/gh-activity-log.png
 [gh-pages-source]: {{ site.url }}/assets/img/2020/gh-pages-source.png
-[post-source]: https://github.com/smaroukis/smaroukis.github.io/blob/master-source/_posts/2020-04-20-how-i-built-this.md
+[post-source]: {{ page.url }}
 
 [//]: TODO: change post-source to use liquid tags to reference itself
