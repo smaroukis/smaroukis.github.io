@@ -370,10 +370,10 @@ The next workaround is to use liquid tags and a new html file in the `_includes`
 
 ```html
 <!--  ./_includes/img.html -->
-{% raw %}<figure>
-    <img src="{{site.url}}/{{ include.file }}" alt="{{ include.caption}}">  
+<figure>
+    {% raw %}<img src="{{site.url}}/{{ include.file }}" alt="{{ include.caption}}">{% endraw %}
     <figcaption>{% raw %}{{ include.caption }}{% endraw %}</figcaption>
-</figure>{% endraw %}
+</figure>
 ```
 
 - the css file for the class or block defined in html (`figure` and `figcaption` above)
