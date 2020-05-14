@@ -3,8 +3,9 @@ layout: post
 title: Distribution Autotransformers for Intertie Use - Grounding, Tertiary, & Fault Analysis
 excerpt: Protection considerations for connecting distribution voltage level power systems together with autotransformers.
 categories: [engineering, power systems, transformers]
-tags: [technical, power systems]
+tags: [technical, electricity]
 katex: true
+img: assets/img/2019/autotransformer/auto-sld.png
 img_path: "assets/img/2019/autotransformer"
 ---
 {% capture imgs %}{{site.url}}/{{page.img_path}}{% endcapture %}

@@ -20,6 +20,8 @@ highlighter:       rouge
 excerpt_separator: <!--more-->
 permalink:         /blog/:title
 theme: leonids
+plugins:
+  - jekyll-seo-tag
 exclude: [vendor, docker-compose.yml, Gemfile]
 include: [.nojekyll, .placeholder_for_travis]
 

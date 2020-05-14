@@ -2,7 +2,9 @@
 layout: post
 title: Grounding Explained for the Masses (with Drawings!)
 excerpt: An explanation of grounding and neutral conductors in the context of your own car and home.
-categories: [power, grounding]
+categories: [engineering, power systems, grounding]
+tags: [electricity]
+image: assets/img/2020/grounding/ground-rod.png
 img_path: "assets/img/2020/grounding"
 katex: true
 ---

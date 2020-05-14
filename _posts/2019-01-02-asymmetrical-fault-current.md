@@ -2,10 +2,11 @@
 layout: post
 title: Asymmetrical Fault Currents
 excerpt: "Overview of asymmetrical fault currents and curve of asymmetry factor back-calculation"
-categories: [power systems engineering]
-tags: [power systems engineering, graphs]
+categories: [engineering, power systems, protection]
+tags: [technical, electricity]
 katex: true
 graphs: true
+image: assets/latex/asym-current/asym-current.png
 ---
 
 > Asymmetry in fault currents due to the inductive nature of power systems results in higher-than-normal transient conditions that may exceed the interrupting rating of devices or cause saturation of relaying CTs (and thus device misoperation).
