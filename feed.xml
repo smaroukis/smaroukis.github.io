@@ -5,8 +5,8 @@
     <description>Electrical engineer. Previously University of Michigan and Pacific Gas &amp; Electric.</description>
     <link>https://smaroukis.github.io/</link>
     <atom:link href="https://smaroukis.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 12 May 2020 18:41:10 +0000</pubDate>
-    <lastBuildDate>Tue, 12 May 2020 18:41:10 +0000</lastBuildDate>
+    <pubDate>Thu, 14 May 2020 21:08:28 +0000</pubDate>
+    <lastBuildDate>Thu, 14 May 2020 21:08:28 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -177,8 +177,12 @@
         <link>https://smaroukis.github.io/blog/grounding-for-everyone</link>
         <guid isPermaLink="true">https://smaroukis.github.io/blog/grounding-for-everyone</guid>
         
+        <category>electricity</category>
         
-        <category>power</category>
+        
+        <category>engineering</category>
+        
+        <category>power systems</category>
         
         <category>grounding</category>
         
@@ -949,7 +953,7 @@ jekyll
         
         <category>technical</category>
         
-        <category>power systems</category>
+        <category>electricity</category>
         
         
         <category>engineering</category>
@@ -1077,12 +1081,16 @@ jekyll
         <link>https://smaroukis.github.io/blog/asymmetrical-fault-current</link>
         <guid isPermaLink="true">https://smaroukis.github.io/blog/asymmetrical-fault-current</guid>
         
-        <category>power systems engineering</category>
+        <category>technical</category>
         
-        <category>graphs</category>
+        <category>electricity</category>
         
         
-        <category>power systems engineering</category>
+        <category>engineering</category>
+        
+        <category>power systems</category>
+        
+        <category>protection</category>
         
       </item>
     
