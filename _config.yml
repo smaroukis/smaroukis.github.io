@@ -1,13 +1,19 @@
 #
 ###################################
-# Site wide configuration
+# Site wide configuration & SEO
 ####################################
 #
-title: Spencer
+title: Spencer's Power Blog
+tagline: A blog about power systems and electrical engineering
 email: smaroukis@gmail.com
 description: Electrical engineer. Previously University of Michigan and Pacific Gas & Electric. 
 url: https://smaroukis.github.io # the base hostname & protocol for your site
 keywords: ["Power Systems", "Energy", "Clean Tech"]
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/blog-default-card.png
 
 #
 ###################################
@@ -54,21 +60,7 @@ owner:
     verify:
     ad-client:
     ad-slot:
-  bing-verify:
   github: smaroukis #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
   linkedin: spencermaroukis #username
-  xing: #username
   instagram: #username
-  lastfm: #username
-  tumblr: #username
-  pinterest: #username
-  foursquare: #username
-  steam: #username
-  dribbble: #username
-  youtube: #username
-  soundcloud: #username
-  weibo: #username
-  flickr: #username
-  codepen: #username
-  telegram: #username
