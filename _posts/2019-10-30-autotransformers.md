@@ -5,7 +5,7 @@ excerpt: Protection considerations for connecting distribution voltage level pow
 categories: [engineering, power systems, transformers]
 tags: [technical, electricity]
 katex: true
-img: assets/img/2019/autotransformer/auto-sld.png
+image: assets/img/2019/autotransformer/auto-sld.png
 img_path: "assets/img/2019/autotransformer"
 ---
 {% capture imgs %}{{site.url}}/{{page.img_path}}{% endcapture %}
