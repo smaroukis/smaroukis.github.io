@@ -5,7 +5,7 @@ excerpt: "A graphical explanation of magnetic saturation, knee point demonstrati
 categories: [engineering, power systems, protection]
 tags: [technical, electricity]
 katex: true
-image: assets/img/2020/ct-saturation/excitation.gif
+image: assets/img/2020/ct-saturation/window_ct.png
 img_path: "assets/img/2020/ct-saturation"
 ---
 
