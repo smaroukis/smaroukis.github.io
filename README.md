@@ -10,7 +10,7 @@ Screens:
 
 ![Map Example](assets/img/screen-2.png)
 
-I'll be sporadically updating [this blog post][https://maroukis.me/blog/how-to-guide-jekyll-docker-travis-github] with my current workflow including info on:
+I'll be sporadically updating [this blog post](https://maroukis.me/blog/how-to-guide-jekyll-docker-travis-github) with my current workflow including info on:
  - extending themes
  - using unsupported plugins on Github pages by building with Travis
  - using KaTeX for TeX rendering instead of MathJax whilst using kramdown
