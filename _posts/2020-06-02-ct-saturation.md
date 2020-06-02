@@ -47,8 +47,10 @@ The magnetic atoms in the magnetic core material react in a non-linear fashion w
 
 Also note that $$d\phi/dI$$ represents the magnetizing inductance of the core. 
 
-{% include img.html file="excitation.gif" caption="The B-H curve of a current transformer core for varying levels of excitation[^Zocholl]." %}
+![B-H Curve of CT for varying levels of excitation][excitation]
 
+{:.caption}
+The B-H curve of a current transformer core for varying levels of excitation[^Zocholl].
 
 To understand the above graph we need the equivalent circuit of the current transformer.
 
@@ -70,7 +72,10 @@ Simplifying the equivalent circuit above, the secondary can be represented as a 
 
 > An increase in burden impedance at a given current will demand an increase in excitation voltage.
 
-{% include img.html file="ct_equivalent_circuit_phasors.png" caption="Phasor diagram of CT secondary with standard burden of 0.5 power factor (60 degrees). Take the secondary current and add the voltage drop from the leakage reactance and winding impedance. This voltage plus the secondary terminal voltage equals the excitation voltage. The flux and magnetizing current lag this voltage by 90 degrees.[c^37]" %}
+![Phasor diagram of CT secondary][ct-equivalent-circuit-phasors]
+
+{:.caption}
+Phasor diagram of CT secondary with standard burden of 0.5 power factor (60 degrees). Take the secondary current and add the voltage drop from the leakage reactance and winding impedance. This voltage plus the secondary terminal voltage equals the excitation voltage. The flux and magnetizing current lag this voltage by 90 degrees.[^c37]
 
 ## The Volt-Time Area
 
@@ -93,7 +98,10 @@ Other things to note:
 
 The excitation curve is a graph of the secondary voltage ($$V_e$$) vs the excitation current ($$I_e$$). This shows us what current the burden **won't** see for various voltage levels. It is directly related to the magnetizing impedance given by $$V_e/I_e$$. This also gives us our ratio correction factor. 
 
-{% include img.html file="excitation_curve_ann.png" caption="The standard CT excitation curve that manufacturers provide. Here we can read the voltage rating from the excitation voltage at 10A of excitation current. The voltage rating must be less the voltage read off the graph minus the winding and leakage drop, which means that the CT can develop this voltage without exceeding 10A excitation (or 10% error at 100A secondary)[^Hargrave]." %}
+![Excitation curve for CT][excitation_curve_ann.png]
+
+{:.caption}
+The standard CT excitation curve that manufacturers provide. Here we can read the voltage rating from the excitation voltage at 10A of excitation current. The voltage rating must be less the voltage read off the graph minus the winding and leakage drop, which means that the CT can develop this voltage without exceeding 10A excitation (or 10% error at 100A secondary)[^Hargrave].
 
 The "knee point" represents the maximum permeability, or the minimum magnetizing impedance. Since most current will flow through the burden at this point, it is where we want our CT to operate for maximum fault currents.
 
@@ -138,17 +146,15 @@ An air gap can be added to the core which 1) increases magnetizing current and 2
 
 {% include img.html file="core_gap_effect.gif" caption="An air gap can be introduce to extend the linear region of the B-H curve at the expense of reduced permeability." %}
 
-## References & Footnotes
-
-[^Zocholl]: Zocholl, Stanley E. _Analyzing and applying current transformers_. Schweitzer Engineering Laboratories, Incorporated, 2004.
-
-[^c37]: C37.110-2007: IEEE Guide for the Application of Current Transformers Used for Protective Relaying Purposes
-
-[^1]: This assumes 1) the worst case DC offset given by the X/R ratio — in fact the offset will be determined by the closing angle of the fault and 2) a purely resistive burden. For inductive burden see C37.110-2007.
-
-[^Hargrave]: Hargrave, Ariana, Michael J. Thompson, and Brad Heilman. "Beyond the knee point: A practical guide to CT saturation." 2018 71st Annual Conference for Protective Relay Engineers (CPRE). IEEE, 2018. Available: [https://cdn.selinc.com/assets/Literature/Publications/Technical Papers/6811_BeyondKneePoint_AH_20190418_Web.pdf?v=20190418-200921](https://cdn.selinc.com/assets/Literature/Publications/Technical%20Papers/6811_BeyondKneePoint_AH_20190418_Web.pdf?v=20190418-200921)
-
-### Further Reading
+## Further Reading
 
 - C57.13-2016: IEEE Standard Requirements for Instrumentation Transformers
 - Moreton, S. D. "A simple method for the determination of bushing-current-transformer characteristics." Electrical Engineering 62.9 (1943): 581-585.
+
+## References & Footnotes
+
+[^Zocholl]: Zocholl, Stanley E. _Analyzing and applying current transformers_. Schweitzer Engineering Laboratories, Incorporated, 2004.
+[^c37]: C37.110-2007: IEEE Guide for the Application of Current Transformers Used for Protective Relaying Purposes
+[^1]: This assumes 1) the worst case DC offset given by the X/R ratio — in fact the offset will be determined by the closing angle of the fault and 2) a purely resistive burden. For inductive burden see C37.110-2007.
+[^Hargrave]: Hargrave, Ariana, Michael J. Thompson, and Brad Heilman. "Beyond the knee point: A practical guide to CT saturation." 2018 71st Annual Conference for Protective Relay Engineers (CPRE). IEEE, 2018. Available: [https://cdn.selinc.com/assets/Literature/Publications/Technical Papers/6811_BeyondKneePoint_AH_20190418_Web.pdf?v=20190418-200921](https://cdn.selinc.com/assets/Literature/Publications/Technical%20Papers/6811_BeyondKneePoint_AH_20190418_Web.pdf?v=20190418-200921)
+
