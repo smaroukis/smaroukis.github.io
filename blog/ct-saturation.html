@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A graphical explanation of magnetic saturation, knee point demonstration and voltage ratings of CTs">
+  <meta name="keywords" content="Power Systems, Energy, and Clean Tech">
+  <meta name="author" content="Current Transformers for Protective Relaying -- Saturation and Knee Point Explained | Spencer's Power Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+  
+  
+    <!-- JS and CSS CDN Sources for Katex ... See /_includes/js.html for script converting kramdown math/tex script tags (used for mathjax) to kramdown recognizeable ones -->
+  <!-- Include Katex for Latex Rendering-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+  
+  
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="https://smaroukis.github.io/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://smaroukis.github.io/css/main.css">
+  <link rel="stylesheet" href="https://smaroukis.github.io/css/leaflet.css" media="screen" type="text/css">
+
+  <link rel="canonical" href="https://smaroukis.github.io/blog/ct-saturation">
+  <link rel="alternate" type="application/rss+xml" title="Spencer's Power Blog" href="https://smaroukis.github.io /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="https://smaroukis.github.io/assets/img/favicon16.png">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="https://smaroukis.github.io/assets/img/favicon.png">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Current Transformers for Protective Relaying -- Saturation and Knee Point Explained | Spencer's Power Blog">
+  <meta name="twitter:description" content="A graphical explanation of magnetic saturation, knee point demonstration and voltage ratings of CTs">
+  <meta name="twitter:image" content="https://smaroukis.github.io/assets/img/blog-default-card.png">
+  
+  <!-- Open Graph Tags -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Current Transformers for Protective Relaying – Saturation and Knee Point Explained | Spencer’s Power Blog</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Current Transformers for Protective Relaying – Saturation and Knee Point Explained" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A graphical explanation of magnetic saturation, knee point demonstration and voltage ratings of CTs" />
+<meta property="og:description" content="A graphical explanation of magnetic saturation, knee point demonstration and voltage ratings of CTs" />
+<link rel="canonical" href="https://smaroukis.github.io/blog/ct-saturation" />
+<meta property="og:url" content="https://smaroukis.github.io/blog/ct-saturation" />
+<meta property="og:site_name" content="Spencer’s Power Blog" />
+<meta property="og:image" content="https://smaroukis.github.io/assets/img/2020/ct-saturation/excitation.gif" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-02T00:00:00+00:00" />
+<script type="application/ld+json">
+{"headline":"Current Transformers for Protective Relaying – Saturation and Knee Point Explained","dateModified":"2020-06-02T00:00:00+00:00","datePublished":"2020-06-02T00:00:00+00:00","description":"A graphical explanation of magnetic saturation, knee point demonstration and voltage ratings of CTs","mainEntityOfPage":{"@type":"WebPage","@id":"https://smaroukis.github.io/blog/ct-saturation"},"@type":"BlogPosting","image":"https://smaroukis.github.io/assets/img/2020/ct-saturation/excitation.gif","url":"https://smaroukis.github.io/blog/ct-saturation","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="https://smaroukis.github.io/assets/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="https://smaroukis.github.io/" class="author_name">Spencer</a>
+  <span class="author_job">Power Systems Engineer</span>
+  <span class="author_bio mbm">Electron traffic control</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/about/">About</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="https://smaroukis.github.io/tags">Tags</a>
+        
+          <span>/</span>
+        
+      </li>
+         
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('smaroukis@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    <li><a href="http://twitter.com/that_marouk_ish" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    
+    
+    <li><a href="http://linkedin.com/in/spencermaroukis" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    <li><a href="http://github.com/smaroukis" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "https://smaroukis.github.io/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Current Transformers for Protective Relaying -- Saturation and Knee Point Explained">Current Transformers for Protective Relaying -- Saturation and Knee Point Explained</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        2 JUN 2020
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    11 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    
+<p>Current transformers (CTs) are one of the most important devices in a power system, yet it took me a few years in the industry to find a proper explanation of CT saturation and the meaning “knee point” of the excitation curve.  The knee point is not the point of saturation — the point of saturation corresponds to a volt-time area since the flux is given by the integration of the voltage waveform. Although it is desired to operate in the linear region below the knee, where the excitation current is small compared to the current through the secondary burden, CTs often operate beyond this knee point for relaying applications due to asymmetrical fault currents, remanence flux, and design constraints.</p>
+
+<h2 class="no_toc" id="contents">Contents</h2>
+<ol id="markdown-toc">
+  <li><a href="#current-transformer-theory" id="markdown-toc-current-transformer-theory">Current Transformer Theory</a></li>
+  <li><a href="#equivalent-circuit" id="markdown-toc-equivalent-circuit">Equivalent Circuit</a></li>
+  <li><a href="#the-volt-time-area" id="markdown-toc-the-volt-time-area">The Volt-Time Area</a></li>
+  <li><a href="#excitation-curve-and-the-knee-point" id="markdown-toc-excitation-curve-and-the-knee-point">Excitation Curve and the Knee Point</a></li>
+  <li><a href="#criterion-to-avoid-saturation" id="markdown-toc-criterion-to-avoid-saturation">Criterion to Avoid Saturation</a></li>
+  <li><a href="#ct-ratings-classes-and-other-types" id="markdown-toc-ct-ratings-classes-and-other-types">CT Ratings, Classes and Other Types</a>    <ol>
+      <li><a href="#other-ct-types" id="markdown-toc-other-ct-types">Other CT types</a></li>
+    </ol>
+  </li>
+  <li><a href="#further-reading" id="markdown-toc-further-reading">Further Reading</a></li>
+  <li><a href="#references--footnotes" id="markdown-toc-references--footnotes">References &amp; Footnotes</a></li>
+</ol>
+
+<h2 id="current-transformer-theory">Current Transformer Theory</h2>
+
+<p>Transformers operate on the fundamental principle that a time-varying magnetic flux induces a voltage to oppose it (Faraday’s Law). A current through a primary winding creates a magnetic field (H-field) which induces an amount of flux depending on the magnetic properties of the material, the excitation level and the number of turns of coil around the secondary.</p>
+
+<figure>
+    <img src="https://smaroukis.github.io/assets/img/2020/ct-saturation/window_ct.png" alt="Note: load must be connected for current to flow. Never open circuit a CT." />  
+    <figcaption>Note: load must be connected for current to flow. Never open circuit a CT.</figcaption>
+</figure>
+
+<script type="math/tex; mode=display">e=N\frac{d\phi}{dt}</script>
+
+<p>When a load (normally called a “burden”) is connected to this secondary voltage, a current will flow. How well this secondary current is an exact replication of the primary current depends on the level of excitation. At low excitation values all of the current is used to develop the core’s magnetic field and at high excitation values the core can saturate.</p>
+
+<p>The magnetic atoms in the magnetic core material react in a non-linear fashion when an H-field is applied, since they can only “line-up” so much in one direction. This results in the familiar B-H curve showing magnetic flux density vs. magnetic field intensity. The Flux-Magnetizing Current curve has the same shape since it is the magnetizing current driving the H-field and the flux also includes the proportional affect of the area of the magnetic core. This curve will be different for varying levels of excitation.</p>
+
+<p>Also note that <script type="math/tex">d\phi/dI</script> represents the magnetizing inductance of the core.</p>
+
+<p><img src="https://smaroukis.github.io/assets/img/2020/ct-saturation/excitation.gif" alt="B-H Curve of CT for varying levels of excitation" /></p>
+
+<p class="caption">The B-H curve of a current transformer core for varying levels of excitation<sup id="fnref:Zocholl"><a href="#fn:Zocholl" class="footnote">1</a></sup>.</p>
+
+<p>To understand the above graph we need the equivalent circuit of the current transformer.</p>
+
+<h2 id="equivalent-circuit">Equivalent Circuit</h2>
+
+<figure>
+    <img src="https://smaroukis.github.io/assets/img/2020/ct-saturation/ct_equivalent_circuit.png" alt="Equivalent circuit of current transformer. Note the exciting branch is made up of a varying reactive magnetizing impedance and resistive losses." />  
+    <figcaption>Equivalent circuit of current transformer. Note the exciting branch is made up of a varying reactive magnetizing impedance and resistive losses.</figcaption>
+</figure>
+
+<p>Since the primary turns is 1, the burden appears on the primary as a very small impedance (<script type="math/tex">Z_B'=Z_B \cdot 1/N_2^2</script>).</p>
+
+<p>Clearly not all current is delivered to the burden (which is what we can measure, and what our relays “see”). The <strong>ratio correction factor</strong> (RCF) is used to correct the secondary current for this non-ideal case.</p>
+
+<p>Above we can see the variable magnetizing impedance. At low excitation levels <script type="math/tex">d\phi / dI = L</script> is low, so the majority of the total secondary current (<script type="math/tex">I_{ST}</script>) flows over <script type="math/tex">Z_e</script> and not through the burden. At moderate levels of excitation the magnetizing impedance increases and most of the secondary current flows over the burden. At high levels of excitation the impedance flips between an open and a short. This is the saturation region where the secondary current that flows across the burden (which is the only current that we “see”) is not an accurate representation of the primary current.</p>
+
+<p>The magnetization current lags the exciting voltage by 90 degrees and the losses are nearly in phase. These two vectors give the excitation current.</p>
+
+<p>Simplifying the equivalent circuit above, the secondary can be represented as a current source from the ideal transformer where <script type="math/tex">I_{sec}=I_{pri} \cdot N_1/N_2</script>. This current is “fixed” depending on the primary current — the excitation voltage will be developed due to the connected burden, secondary resistance and leakage impedance.</p>
+
+<figure>
+    <img src="https://smaroukis.github.io/assets/img/2020/ct-saturation/ct_secondary_equivalent_excitation.gif" alt="A simplified secondary CT equivalent with animation of different excitation levels: 1) the current source is a reflection of the primary current 2) since the magnetizing impedance dominates the losses, we just show Zm 3) ) leakage reactance is negligible for Class C CTs.  At low excitation (green), the majority of current flows through the small magnetizing impedance to generate the magnetic field. At moderate levels of excitation (orange) most of the secondary current flows through the burden. At high levels of excitation (red) the magnetizing impedance switches between an open and a short during different values of the sinusoidal current and resulting B-H curve." />  
+    <figcaption>A simplified secondary CT equivalent with animation of different excitation levels: 1) the current source is a reflection of the primary current 2) since the magnetizing impedance dominates the losses, we just show Zm 3) ) leakage reactance is negligible for Class C CTs.  At low excitation (green), the majority of current flows through the small magnetizing impedance to generate the magnetic field. At moderate levels of excitation (orange) most of the secondary current flows through the burden. At high levels of excitation (red) the magnetizing impedance switches between an open and a short during different values of the sinusoidal current and resulting B-H curve.</figcaption>
+</figure>
+
+<blockquote>
+  <p>An increase in burden impedance at a given current will demand an increase in excitation voltage.</p>
+</blockquote>
+
+<p><img src="https://smaroukis.github.io/assets/img/2020/ct-saturation/ct_equivalent_circuit_phasors.png" alt="Phasor diagram of CT secondary" /></p>
+
+<p class="caption">Phasor diagram of CT secondary with standard burden of 0.5 power factor (60 degrees). Take the secondary current and add the voltage drop from the leakage reactance and winding impedance. This voltage plus the secondary terminal voltage equals the excitation voltage. The flux and magnetizing current lag this voltage by 90 degrees.<sup id="fnref:c37"><a href="#fn:c37" class="footnote">2</a></sup></p>
+
+<h2 id="the-volt-time-area">The Volt-Time Area</h2>
+
+<p>Integrating both sides of the flux-voltage equation gives</p>
+
+<script type="math/tex; mode=display">\phi N=BAN=\int_0^t v\cdot dt</script>
+
+<p>So the flux can be thought of as the area under the voltage sine wave, known as the volt-time area. There is a value for this volt-time area that corresponds to the saturation flux point. Increased area due to asymmetrical offset or a higher peak can result in the core going above the saturation flux limit.</p>
+
+<p>Other things to note:</p>
+
+<ul>
+  <li>a larger cross sectional area results in an increased volt-time area before saturation</li>
+  <li>from Faraday’s law, an increase in turns reduces the amount of flux necessary to produce a given secondary EMF, which means saturation occurs at a proportionally higher voltage when the number of secondary turns is increased</li>
+</ul>
+
+<h2 id="excitation-curve-and-the-knee-point">Excitation Curve and the Knee Point</h2>
+
+<blockquote>
+  <p>The rating is the voltage the CT can support across a standard burden with 20 times rated current without exceeding 10% ratio correction error</p>
+</blockquote>
+
+<p>The excitation curve is a graph of the secondary voltage (<script type="math/tex">V_e</script>) vs the excitation current (<script type="math/tex">I_e</script>). This shows us what current the burden <strong>won’t</strong> see for various voltage levels. It is directly related to the magnetizing impedance given by <script type="math/tex">V_e/I_e</script>. This also gives us our ratio correction factor.</p>
+
+<p>![Excitation curve for CT][excitation_curve_ann.png]</p>
+
+<p class="caption">The standard CT excitation curve that manufacturers provide. Here we can read the voltage rating from the excitation voltage at 10A of excitation current. The voltage rating must be less the voltage read off the graph minus the winding and leakage drop, which means that the CT can develop this voltage without exceeding 10A excitation (or 10% error at 100A secondary)<sup id="fnref:Hargrave"><a href="#fn:Hargrave" class="footnote">3</a></sup>.</p>
+
+<p>The “knee point” represents the maximum permeability, or the minimum magnetizing impedance. Since most current will flow through the burden at this point, it is where we want our CT to operate for maximum fault currents.</p>
+
+<p>The voltage rating can be taken directly from this since “the rating is the voltage the CT can support across a standard burden with 20 times rated current without exceeding 10% ratio correction error”<sup id="fnref:c37:1"><a href="#fn:c37" class="footnote">2</a></sup>. Since 20 times the rated secondary current of 5A equals 100A, a 10% ratio correction error means 10A of shunted excitation current. We can read this secondary voltage corresponding to 10A excitation. This voltage value from the graph minus voltage drop of the winding resistance should be <strong><em>greater than</em></strong> the voltage rating of the CT, meaning that the CT can develop this voltage level without saturating the flux core.</p>
+
+<p>For multi-ratio CTs, the ability to develop voltage without saturating is scaled proportionally by the number of turns. Thus for a C400 600:5 CT operating on the 300:5 tap, the new voltage “rating” is 200V.</p>
+
+<h2 id="criterion-to-avoid-saturation">Criterion to Avoid Saturation</h2>
+
+<blockquote>
+  <p>When the DC offset is at maximum, the CT flux can potentially increase to <script type="math/tex">1+X/R</script> times the flux of the non-offset component</p>
+</blockquote>
+
+<p>Saturation can occur from both symmetrical and asymmetrical currents on the primary. Symmetrical current waveforms with a large peak can saturate the core within the first cycle. Asymmetrical current waveforms with a DC offset may not saturate in the first cycle, but in the latter cycle since the volt-time area does not cancel out with negative values.</p>
+
+<p>The asymmetrical current is due to the X/R system ratio. With the voltage developed by the fault current and the secondary burden, we can develop the criterion to avoid saturation (to stay under the voltage rating of the CT) as<sup id="fnref:1"><a href="#fn:1" class="footnote">4</a></sup>:</p>
+
+<script type="math/tex; mode=display">20 \ge (\frac{X}{R}+1)\cdot I_f \cdot Z_b</script>
+
+<p>We risk saturation if</p>
+
+<ol>
+  <li>The fault current is higher than 20 times rated current OR</li>
+  <li>The connected burden is higher than standard</li>
+</ol>
+
+<p>This gives the following rule of thumbs:</p>
+
+<ul>
+  <li>Limit max fault current &lt;100A max on secondary</li>
+  <li>Limit <script type="math/tex">I_f \cdot Z_b</script> &lt; half the voltage rating of the CT. This allows for DC offset and remanence flux (<script type="math/tex">I_f</script> is maximum symmetrical fault current)</li>
+</ul>
+
+<h2 id="ct-ratings-classes-and-other-types">CT Ratings, Classes and Other Types</h2>
+
+<p>Almost all CTs used in protective relaying are class C or K</p>
+
+<ul>
+  <li><strong>C</strong>: “<strong>Calculated</strong>”, negligible leakage flux, excitation curve can be used directly to determine performance, assumed that burden and excitation currents are in phase and that secondary winding is uniformly distributed; ANSI
+    <ul>
+      <li>e.g. C100, C200, C400, C800 corresponding to secondary voltages (@100A) of 100V,200V,400V,800V etc and burdens of 1,2,4,8 respectively (due to Z=V/100);  ANSI specifies PF of burden at 0.5 (60 degrees);</li>
+    </ul>
+  </li>
+  <li><strong>K</strong>: same as C + knee-point voltage at least 70% of voltage rating; results in larger core cross section area</li>
+  <li><strong>T</strong>: “<strong>Test</strong>”, ratio error must be determined by test; has appreciable core flux leakage and thus ratio error</li>
+  <li><strong>H,L</strong>: old ANSI classifications mostly for CTs manufactured before 1954</li>
+</ul>
+
+<h3 id="other-ct-types">Other CT types</h3>
+
+<p><strong>Gapped cores</strong>
+An air gap can be added to the core which 1) increases magnetizing current and 2) reduces the possibility of remanence. Large-gapped cores are known as linearized cores; the effect is to increase the linear region of the BH curve &amp; decrease the permeability (lower magnetizing impedance).</p>
+
+<figure>
+    <img src="https://smaroukis.github.io/assets/img/2020/ct-saturation/core_gap_effect.gif" alt="An air gap can be introduce to extend the linear region of the B-H curve at the expense of reduced permeability." />  
+    <figcaption>An air gap can be introduce to extend the linear region of the B-H curve at the expense of reduced permeability.</figcaption>
+</figure>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<ul>
+  <li>C57.13-2016: IEEE Standard Requirements for Instrumentation Transformers</li>
+  <li>Moreton, S. D. “A simple method for the determination of bushing-current-transformer characteristics.” Electrical Engineering 62.9 (1943): 581-585.</li>
+</ul>
+
+<h2 id="references--footnotes">References &amp; Footnotes</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:Zocholl">
+      <p>Zocholl, Stanley E. <em>Analyzing and applying current transformers</em>. Schweitzer Engineering Laboratories, Incorporated, 2004. <a href="#fnref:Zocholl" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:c37">
+      <p>C37.110-2007: IEEE Guide for the Application of Current Transformers Used for Protective Relaying Purposes <a href="#fnref:c37" class="reversefootnote">&#8617;</a> <a href="#fnref:c37:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:Hargrave">
+      <p>Hargrave, Ariana, Michael J. Thompson, and Brad Heilman. “Beyond the knee point: A practical guide to CT saturation.” 2018 71st Annual Conference for Protective Relay Engineers (CPRE). IEEE, 2018. Available: <a href="https://cdn.selinc.com/assets/Literature/Publications/Technical%20Papers/6811_BeyondKneePoint_AH_20190418_Web.pdf?v=20190418-200921">https://cdn.selinc.com/assets/Literature/Publications/Technical Papers/6811_BeyondKneePoint_AH_20190418_Web.pdf?v=20190418-200921</a> <a href="#fnref:Hargrave" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:1">
+      <p>This assumes 1) the worst case DC offset given by the X/R ratio — in fact the offset will be determined by the closing angle of the fault and 2) a purely resistive burden. For inductive burden see C37.110-2007. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=https://smaroukis.github.io/blog/ct-saturation" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://smaroukis.github.io/blog/ct-saturation" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=https://smaroukis.github.io/blog/ct-saturation" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=https://smaroukis.github.io/blog/ct-saturation" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=https://smaroukis.github.io/blog/ct-saturation" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2020 Spencer. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-bolt bolt-icon" style="color:gold"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://smaroukis.github.io/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://smaroukis.github.io/js/main.js"></script>
+
+<!-- for using katex with kramdown, to render math/tex tags via katex -->
+
+<script>
+  $("script[type='math/tex']").replaceWith(function() {
+      var tex = $(this).text();
+      return katex.renderToString(tex, {displayMode: false});
+  });
+
+  $("script[type='math/tex; mode=display']").replaceWith(function() {
+      var tex = $(this).html();
+      return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+  });
+</script>
+
+
+
+
+</body>
+</html>

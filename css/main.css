@@ -1797,3 +1797,7 @@ a.read-more {
 figure figcaption {
   text-align: center;
   font-style: italic; }
+
+.caption {
+  text-align: center;
+  font-style: italic; }
