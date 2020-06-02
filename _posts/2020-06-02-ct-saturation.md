@@ -6,6 +6,7 @@ categories: [engineering, power systems, protection]
 tags: [technical, electricity]
 katex: true
 image: assets/img/2020/ct-saturation/excitation.gif
+img_path: "assets/img/2020/ct-saturation"
 ---
 
 [//]: TOODS: link to asymmetrical fault currents & insert volt-time area figure
@@ -25,7 +26,7 @@ image: assets/img/2020/ct-saturation/excitation.gif
 
 [//]: URLs
 
-Current transformers (CTs) are one of the most important devices in a power system, yet it took me a few years in the industry to find a proper explanation of CT saturation and the meaning "knee point" of the excitation curve.  The knee point is not the point of saturation — the point of saturation corresponds to a volt-time area since the flux is given by the integration of the voltage waveform. CTs often operate beyond this knee point for relaying applications due to asymmetrical fault currents, remanence flux, and design constraints. 
+Current transformers (CTs) are one of the most important devices in a power system, yet it took me a few years in the industry to find a proper explanation of CT saturation and the meaning "knee point" of the excitation curve.  The knee point is not the point of saturation — the point of saturation corresponds to a volt-time area since the flux is given by the integration of the voltage waveform. Although it is desired to operate in the linear region below the knee, where the excitation current is small compared to the current through the secondary burden, CTs often operate beyond this knee point for relaying applications due to asymmetrical fault currents, remanence flux, and design constraints. 
 
 ## Contents
 {:.no_toc}
@@ -40,11 +41,11 @@ Transformers operate on the fundamental principle that a time-varying magnetic f
 
 $$e=N\frac{d\phi}{dt}$$
 
-When a load (normally called a "burden") is connected to this secondary voltage, a current will flow. How well this secondary current is an exact replication of the primary current depends on if the core goes into saturation or not. 
+When a load (normally called a "burden") is connected to this secondary voltage, a current will flow. How well this secondary current is an exact replication of the primary current depends on the level of excitation. At low excitation values all of the current is used to develop the core's magnetic field and at high excitation values the core can saturate.
 
 The magnetic atoms in the magnetic core material react in a non-linear fashion when an H-field is applied, since they can only "line-up" so much in one direction. This results in the familiar B-H curve showing magnetic flux density vs. magnetic field intensity. The Flux-Magnetizing Current curve has the same shape since it is the magnetizing current driving the H-field and the flux also includes the proportional affect of the area of the magnetic core. This curve will be different for varying levels of excitation.
 
-Also note that $d\phi/dI$ represents the magnetizing inductance of the core. 
+Also note that $$d\phi/dI$$ represents the magnetizing inductance of the core. 
 
 {% include img.html file="excitation.gif" caption="The B-H curve of a current transformer core for varying levels of excitation[^Zocholl]." %}
 
@@ -55,17 +56,17 @@ To understand the above graph we need the equivalent circuit of the current tran
 
 {% include img.html file="ct_equivalent_circuit.png" caption="Equivalent circuit of current transformer. Note the exciting branch is made up of a varying reactive magnetizing impedance and resistive losses." %}
 
-Since the primary turns is 1, the burden appears on the primary as a very small impedance ($Z_B'=Z_B \cdot 1/N_2^2$). 
+Since the primary turns is 1, the burden appears on the primary as a very small impedance ($$Z_B'=Z_B \cdot 1/N_2^2$$). 
 
 Clearly not all current is delivered to the burden (which is what we can measure, and what our relays "see"). The **ratio correction factor** (RCF) is used to correct the secondary current for this non-ideal case. 
 
-Above we can see the variable magnetizing impedance. At low excitation levels $d\phi / dI = L$ is low, so the majority of the total secondary current ($I_{ST}$) flows over $Z_e$ and not through the burden. At moderate levels of excitation the magnetizing impedance increases and most of the secondary current flows over the burden. At high levels of excitation the impedance flips between an open and a short. This is the saturation region where the secondary current that flows across the burden (which is the only current that we "see") is not an accurate representation of the primary current.
+Above we can see the variable magnetizing impedance. At low excitation levels $$d\phi / dI = L$$ is low, so the majority of the total secondary current ($$I_{ST}$$) flows over $$Z_e$$ and not through the burden. At moderate levels of excitation the magnetizing impedance increases and most of the secondary current flows over the burden. At high levels of excitation the impedance flips between an open and a short. This is the saturation region where the secondary current that flows across the burden (which is the only current that we "see") is not an accurate representation of the primary current.
 
 The magnetization current lags the exciting voltage by 90 degrees and the losses are nearly in phase. These two vectors give the excitation current. 
 
-Simplifying the equivalent circuit above, the secondary can be represented as a current source from the ideal transformer where $I_{sec}=I_{pri} \cdot N_1/N_2$. This current is "fixed" depending on the primary current — the excitation voltage will be developed due to the connected burden, secondary resistance and leakage impedance. 
+Simplifying the equivalent circuit above, the secondary can be represented as a current source from the ideal transformer where $$I_{sec}=I_{pri} \cdot N_1/N_2$$. This current is "fixed" depending on the primary current — the excitation voltage will be developed due to the connected burden, secondary resistance and leakage impedance. 
 
-{% include file="CT_secondary_equivalent_excitation.gif" caption="A simplified secondary CT equivalent with animation of different excitation levels: 1) the current source is a reflection of the primary current 2) since the magnetizing impedance dominates the losses, we just show Zm 3) ) leakage reactance is negligible for Class C CTs.  At low excitation (green), the majority of current flows through the small magnetizing impedance to generate the magnetic field. At moderate levels of excitation (orange) most of the secondary current flows through the burden. At high levels of excitation (red) the magnetizing impedance switches between an open and a short during different values of the sinusoidal current and resulting B-H curve." %}
+{% include img.html file="ct_secondary_equivalent_excitation.gif" caption="A simplified secondary CT equivalent with animation of different excitation levels: 1) the current source is a reflection of the primary current 2) since the magnetizing impedance dominates the losses, we just show Zm 3) ) leakage reactance is negligible for Class C CTs.  At low excitation (green), the majority of current flows through the small magnetizing impedance to generate the magnetic field. At moderate levels of excitation (orange) most of the secondary current flows through the burden. At high levels of excitation (red) the magnetizing impedance switches between an open and a short during different values of the sinusoidal current and resulting B-H curve." %}
 
 > An increase in burden impedance at a given current will demand an increase in excitation voltage.
 
@@ -90,7 +91,7 @@ Other things to note:
 
 > The rating is the voltage the CT can support across a standard burden with 20 times rated current without exceeding 10% ratio correction error
 
-The excitation curve is a graph of the secondary voltage ($V_e$) vs the excitation current ($I_e$). This shows us what current the burden **won't** see for various voltage levels. It is directly related to the magnetizing impedance given by $V_e/I_e$. This also gives us our ratio correction factor. 
+The excitation curve is a graph of the secondary voltage ($$V_e$$) vs the excitation current ($$I_e$$). This shows us what current the burden **won't** see for various voltage levels. It is directly related to the magnetizing impedance given by $$V_e/I_e$$. This also gives us our ratio correction factor. 
 
 {% include img.html file="excitation_curve_ann.png" caption="The standard CT excitation curve that manufacturers provide. Here we can read the voltage rating from the excitation voltage at 10A of excitation current. The voltage rating must be less the voltage read off the graph minus the winding and leakage drop, which means that the CT can develop this voltage without exceeding 10A excitation (or 10% error at 100A secondary)[^Hargrave]." %}
 
@@ -112,13 +113,13 @@ $$20 \ge (\frac{X}{R}+1)\cdot I_f \cdot Z_b$$
 
 We risk saturation if
 
-1. the fault current is higher than 20 times rated current or
-2. the connected burden is higher than standard.
+1. The fault current is higher than 20 times rated current OR
+2. The connected burden is higher than standard
 
 This gives the following rule of thumbs:
 
-- max fault current <100A max on secondary
-- $I_f \cdot Z_b$ < half the voltage rating of the CT. This allows for DC offset and remanence flux ($I_f$ is maximum symmetrical fault current).
+- Limit max fault current <100A max on secondary
+- Limit $$I_f \cdot Z_b$$ < half the voltage rating of the CT. This allows for DC offset and remanence flux ($$I_f$$ is maximum symmetrical fault current)
 
 ## CT Ratings, Classes and Other Types
 
@@ -132,7 +133,8 @@ Almost all CTs used in protective relaying are class C or K
 
 ### Other CT types
 
-**Gapped cores**: 1) increase magnetizing current and 2) reduces the possibility of remanence; large-gapped cores are known as linearized cores; the effect is to increase the linear region of the BH curve & decrease the permeability (lower magnetizing impedance
+**Gapped cores**
+An air gap can be added to the core which 1) increases magnetizing current and 2) reduces the possibility of remanence. Large-gapped cores are known as linearized cores; the effect is to increase the linear region of the BH curve & decrease the permeability (lower magnetizing impedance). 
 
 {% include img.html file="core_gap_effect.gif" caption="An air gap can be introduce to extend the linear region of the B-H curve at the expense of reduced permeability." %}
 
