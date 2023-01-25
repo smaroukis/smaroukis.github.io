@@ -10,6 +10,7 @@
 
 # bundler cache
 vendor
+_site/
 Gemfile.lock
 
 # rubygem
