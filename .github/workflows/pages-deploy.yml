@@ -26,6 +26,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # checkout the repo code
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -34,6 +35,7 @@ jobs:
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
 
+      # by default the publishing branch is `gh-pages`
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v1
