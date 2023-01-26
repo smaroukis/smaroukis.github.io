@@ -2,7 +2,7 @@
 title: "Asymmetrical Fault Current: Worst Case Factor Derivation"
 excerpt: "Overview of asymmetrical fault currents and curve of asymmetry factor back-calculation"
 categories: [Engineering, Power Systems]
-tags: [technical-post, power-systems, electrical-engineering]
+tags: [writings , power-systems, electrical-engineering]
 math: true
 img_path: /assets/img/
 image:

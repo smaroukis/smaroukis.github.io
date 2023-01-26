@@ -2,7 +2,7 @@
 title: "Current Transformers for Protective Relaying: Saturation and Knee Point Explained"
 excerpt: "A graphical explanation of magnetic saturation, knee point demonstration and voltage ratings of CTs"
 categories: [Engineering, Power Systems]
-tags: [technical-post, power-systems, electrical-engineering]
+tags: [writings , power-systems, electrical-engineering]
 math: true
 img_path: /assets/img/
 image:
