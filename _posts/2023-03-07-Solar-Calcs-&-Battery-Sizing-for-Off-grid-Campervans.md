@@ -1,12 +1,12 @@
 ---
 title: "Solar Calcs and Battery Sizing for Off-grid Campervans"
 excerpt: "Example energy yield using PVWatts"
-categories: [engineering, power systems]
-tags: [writings, van, electrical-engineering, energy-calculations]
+categories: [Engineering, Renewable Energy]
+tags: [writings, van, electrical-engineering, renewable-energy]
 math: true
-img_path: /assets/img/
+img_path:
 image:
-  path: batteries.png
+  path: /assets/img/2023-03-07-Solar-Calcs-&-Battery-Sizing-for-Off-grid-Campervans/batteries.png
 ---
 
 I wanted the van to be as fully electric as possible. Electric cooking, heating, and hot water, in addition to the other loads on the system — is it possible at a reasonable price?
@@ -125,7 +125,7 @@ For vans it is common to put anywhere from 150W to 1000W of solar on the roof. F
 
 First of all we need to understand the limitations of solar. Unfortunately if you by a 300W solar panel you will never get 300W out of it. You will only get ~70-80% of that **maximum** depending on weather, your system efficiencies, the angle at which the sun hits the panels, etc. A great resource is the National Renewable Energy Laboratory solar calculator [PVWatts](https://web.archive.org/web/20211020220617/http://pvwatts.nrel.gov/), which uses historic locational weather and irradiance data to predict your solar output for _each hour over a historically represented year_. For example here is the results of my 600W flat mounted (tilt=0), high efficiency (premium) solar cells for January in San Diego, CA:
 
-![[Solar Calcs & Battery Sizing for Off-grid Campervans-1675217558801.jpeg]]
+![image](/assets/img/2023-03-07-Solar-Calcs-&-Battery-Sizing-for-Off-grid-Campervans/Solar-Calcs-&-Battery-Sizing-for-Off-grid-Campervans-1675217558801.jpeg)
 
 600W system, tilt=0, premium cells located in San Diego, CA. Top top bottom is January to December for each hour.
 
@@ -135,7 +135,7 @@ The graph shows the average and maximum power output, for each hour of each mont
 
 Looking at Watts makes it clear that you’re never going to get the nameplate out of your system. Also, we need a better way to estimate our _energy_ output (in Ah or Wh). Below we can see the average daily Amp Hour output for each month (at 12V DC).
 
-![[Solar Calcs & Battery Sizing for Off-grid Campervans-1675217595168.jpeg]]
+![image](/assets/img/2023-03-07-Solar-Calcs-&-Battery-Sizing-for-Off-grid-Campervans/Solar-Calcs-&-Battery-Sizing-for-Off-grid-Campervans-1675217595168.jpeg)
 
 Same 600W system, the daily Ah output (aggregated over all hours, averaged over the month) 
 
